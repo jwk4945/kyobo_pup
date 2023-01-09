@@ -1,0 +1,14 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-.9%" y="-1%" width="101.9%" height="102%" filterUnits="objectBoundingBox" id="oygdty4xyb">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" in="shadowInnerInner1"/>
+        </filter>
+        <path d="M30.007 6.346A4 4 0 0 1 37 9v13.663h12.815a7 7 0 0 1 6.845 8.467l-3.857 18a7 7 0 0 1-6.845 5.533H10a7 7 0 0 1-7-7v-18a7 7 0 0 1 7-7h4.188a3 3 0 0 0 2.244-1.01zM14.644 26.648c-.152.01-.304.015-.456.015H10a3 3 0 0 0-3 3v18a3 3 0 0 0 3 3h4.643zM33 9 19.425 24.308a7 7 0 0 1-.781.754l-.001 25.601h27.315a3 3 0 0 0 2.89-2.193l.043-.178 3.857-18a3 3 0 0 0-2.933-3.629H37a4 4 0 0 1-4-4V9z" id="lkqczvquza"/>
+    </defs>
+    <g fill-rule="nonzero" fill="none">
+        <use fill="#FFF" xlink:href="#lkqczvquza"/>
+        <use fill="#000" filter="url(#oygdty4xyb)" xlink:href="#lkqczvquza"/>
+    </g>
+</svg>

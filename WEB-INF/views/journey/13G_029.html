@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-y-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/swiper-bundle.min.css">
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <title>누가 보험금을 받을 수 있을까?</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_13G_029 survey-type bg-6">
+    <!--gnb(헤더 - 뒤로가기)-->
+    <nav class="bg-white">
+        <a href="javascript:history.back()" class="go-back-btn">
+            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
+        </a>
+        <div>
+            누가 보험금을 받을 수 있을까?
+        </div>
+        <div></div>
+    </nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+<div class="main-wrapper">
+    <header>
+        <div id="survey-area" data-is-showing="true">
+            <article class="fc-white">
+                    <span class="tag fc-13 opacity-0"
+                          data-animation-type="onload"
+                          data-animation-infos="remove-class-nm: 'opacity-0',
+                                               start-ms:'300',
+                                               transition-props:'[opacity]',
+                                               transition-duration:'0.7s'">질병</span>
+                <p class="mt-10">
+                <h1 class="opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                               style-bf-ani: 'transform:translateY(-100%);',
+                                               style-af-ani: 'transform:',
+                                               start-ms:'500',
+                                               transition-props:'[opacity,transform]',
+                                               transition-duration:'0.8s'">건강검진 결과</h1>
+                <h1 class="strong-underline opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                               style-bf-ani: 'transform:translateY(-250%);',
+                                               style-af-ani: 'transform:',
+                                               start-ms:'700',
+                                               transition-props:'[opacity,transform]',
+                                               transition-duration:'0.8s'">
+                    보험금을 받을 수 있는 사람은?
+                </h1>
+                </p>
+                <div class="opacity-0"
+                     data-animation-type="onload"
+                     data-animation-infos="remove-class-nm: 'opacity-0',
+                                               style-bf-ani: 'transform:translateY(-400%);',
+                                               style-af-ani: 'transform:',
+                                               start-ms:'900',
+                                               transition-props:'[opacity,transform]',
+                                               transition-duration:'0.8s'">
+                        <span>
+                            당뇨병도 보험금을<br>
+                            받을 수 있다는 것 아시나요?
+                        </span>
+                </div>
+            </article>
+
+            <form class="survey-form">
+                <ul class="horizontal-ul">
+                    <li data-animation-type="onload"
+                        data-animation-infos="style-bf-ani: 'filter:none;',
+                                               style-af-ani: 'filter:',
+                                               start-ms:'1700', transition-duration:'0.7s'">
+                        <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
+                        <label for="answer-01"
+                               style="width: 0"
+                                class="speech-box transition-all"
+                               data-animation-type="onload"
+                               data-animation-infos="style-bf-ani: 'width:0;',
+                                               style-af-ani: 'width:107px',
+                                               start-ms:'1100', transition-duration:'0.5s'"
+                        >
+                            <img src="../../../resources/v1/img/13G_029_img-speech-off.svg">
+                            <img src="../../../resources/v1/img/13G_029_img-speech-on.svg" width="0">
+                            <div class="contents">
+                                <div class="text-align-center">
+                                    <small class="fc-4 mt-0 mb-4">01.</small>
+                                    <p class="fc-2 mt-0 mb-0">공복혈당</p>
+                                    <p class="fc-2 mt-0 mb-0 fw-700">132 mg/dL</p>
+                                </div>
+                                <div class="image-box">
+                                    <img src="../../../resources/v1/img/13G_029_img-01.png" width="80px">
+                                </div>
+                                <div class="radio-btn"></div>
+                            </div>
+                        </label>
+                    </li>
+                    <li data-animation-type="onload"
+                        data-animation-infos="style-bf-ani: 'filter:none;',
+                                               style-af-ani: 'filter:',
+                                               start-ms:'1700', transition-duration:'0.7s'">
+                        <input type="radio" name="kyobolife-survey" value="02" id="answer-02">
+                        <label for="answer-02"
+                               style="width: 0;"
+                                class="speech-box transition-width"
+                               data-animation-type="onload"
+                               data-animation-infos="style-bf-ani: 'width:0;',
+                                               style-af-ani: 'width:107px',
+                                               start-ms:'1300', transition-duration:'0.5s'">
+                            <img src="../../../resources/v1/img/13G_029_img-speech-off.svg">
+                            <img src="../../../resources/v1/img/13G_029_img-speech-on.svg" width="0">
+                            <div class="contents">
+                                <div class="text-align-center">
+                                    <small class="fc-4 mt-0 mb-4">02.</small>
+                                    <p class="fc-2 mt-0 mb-0">식후혈당</p>
+                                    <p class="fc-2 mt-0 mb-0 fw-700">240 mg/dL</p>
+                                </div>
+                                <div class="image-box">
+                                    <img src="../../../resources/v1/img/13G_029_img-02.png" width="80px">
+                                </div>
+                                <div class="radio-btn"></div>
+                            </div>
+                        </label>
+                    </li>
+                    <li data-animation-type="onload"
+                        data-animation-infos="style-bf-ani: 'filter:none;',
+                                               style-af-ani: 'filter:',
+                                               start-ms:'1700', transition-duration:'0.7s'">
+                        <input type="radio" name="kyobolife-survey" value="02" id="answer-03">
+                        <label for="answer-03"
+                               style="width: 0;"
+                                class="speech-box transition-width"
+                               data-animation-type="onload"
+                               data-animation-infos="style-bf-ani: 'width:0;',
+                                               style-af-ani: 'width:107px',
+                                               start-ms:'1500', transition-duration:'0.5s'"
+                        >
+                            <img src="../../../resources/v1/img/13G_029_img-speech-off.svg">
+                            <img src="../../../resources/v1/img/13G_029_img-speech-on.svg" width="0">
+                            <div class="contents">
+                                <div class="text-align-center">
+                                    <small class="fc-4 mt-0 mb-4">03.</small>
+                                    <p class="fc-2 mt-0 mb-0">당화혈색소</p>
+                                    <p class="fc-2 mt-0 mb-0 fw-700">6.7 %</p>
+                                </div>
+                                <div class="image-box">
+                                    <img src="../../../resources/v1/img/13G_029_img-03.png" width="80px">
+                                </div>
+                                <div class="radio-btn"></div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </form>
+            <div class="footer-area">
+                <button type="submit" id="goNextBtn" class="bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
+            </div>
+        </div>
+        <article id="result-area" class="text-align-center" data-is-showing="false">
+            <div>
+                <div class="fc-white mt-5 opacity-0 transition-all" id="animation01"
+                     data-animation-type="onload"
+                     data-animation-infos="style-bf-ani: 'transform:translateY(-100%);',
+                                            transition-duration: '0.5s'">
+                    <h1 class="fw-700">정답은 3번 입니다!</h1>
+                </div>
+                <p class="mt-10 mb-20 fc-white opacity-0 transition-all" id="animation02"
+                   data-animation-type="onload"
+                   data-animation-infos="style-bf-ani: 'transform:translateY(-250%);',
+                                            transition-duration: '0.5s'">
+                    당화혈색소 수치가 6.5% 이상이면<br>
+                    보험금을 받을 수 있습니다.
+                </p>
+                <img src="../../../resources/v1/img/13G_029_img-04.gif" width="300" class="transition-all opacity-0" id="animation03"
+                     data-animation-type="onload"
+                     data-animation-infos="style-bf-ani: 'transform:translateX(100vw);',
+                                            transition-duration: '0.5s'">
+            </div>
+        </article>
+    </header>
+
+    <section data-is-showing="false">
+        <div class="card-section"
+             data-animation-type="onscroll"
+             data-animation-infos="style-bf-ani: 'background-color:#f4f4f4;', style-af-ani: 'background-color:#ffffff;'">
+            <article class="text-align-left">
+                <div class="title-msg mt-30">
+                        <span class="section-no fw-700 fc-7 transition-all"
+                              id="animation04"
+                            data-animation-type="onload"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(80px); opacity:0;',
+                                            transition-duration: '0.5s'">1</span>
+                    <h1 class="fw-700 fc-1 opacity-0" id="animation05"
+                        data-animation-type="onload"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(80px);',
+                                            transition-duration: '0.5s'">
+                        혈당검사는 8시간 금식 후 측정하는<br>
+                        공복혈당 검사로 충분할까요?
+                    </h1>
+                </div>
+                <div class="fc-3"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    <p class="mt-5 mb-0 fs-5">공복혈당은 식사나 운동, 스트레스 정도에 따라 혈당이 다르게 측정될 수 있습니다.</p>
+                    <p class="mt-5 mb-0 fs-5">반면 당화혈색소는 3개월 평균 혈당 수치를 알 수 있기 때문에, 당뇨병을 확진할 때 유용하게 사용됩니다.</p>
+                </div>
+
+                <div class="mt-25 text-align-center">
+                    <img src="../../../resources/v1/img/13G_029_img-05.png" width="200"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                </div>
+            </article>
+            <article class="text-align-left">
+                <div class="title-msg mt-30">
+                        <span class="section-no fw-700 fc-7"
+                              data-animation-type="onscroll"
+                              data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                               style-af-ani: 'margin-left:0px; opacity:0.2'">2</span>
+                    <h1 class="fw-700 fc-1"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'"
+                    >문제는 당뇨 전 단계입니다.</h1>
+                </div>
+                <div class="fc-3"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    <p class="mt-5 mb-0 fs-5">아직 당뇨가 아니라고 생각해서 더 위험합니다.</p>
+                </div>
+
+                <div class="mt-25 text-align-center">
+                    <img src="../../../resources/v1/img/13G_029_img-06.png" width="300"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                </div>
+            </article>
+            <article class="text-align-left">
+                <div class="title-msg mt-30">
+                        <span class="section-no fw-700 fc-7"
+                              data-animation-type="onscroll"
+                              data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                               style-af-ani: 'margin-left:0px; opacity:0.2'">3</span>
+                    <h1 class="fw-700 fc-1"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'"
+                    >나의 혈당 수치를 알고 있나요?</h1>
+                </div>
+
+                <div class="mt-25 text-align-center">
+                    <img src="../../../resources/v1/img/13G_029_img-07.png" width="300"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                </div>
+            </article>
+            <article class="text-align-left">
+                <div class="title-msg mt-30">
+                        <span class="section-no fw-700 fc-7"
+                              data-animation-type="onscroll"
+                              data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                               style-af-ani: 'margin-left:0px; opacity:0.2'">4</span>
+                    <h1 class="fw-700 fc-1"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'"
+                    >건강관리도 흐름이 중요합니다.</h1>
+                </div>
+                <div class="fc-3"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    <p class="mt-5 mb-0 fs-5">국가건강검진으로 혈당 수치 흐름을 살펴보세요.</p>
+                </div>
+                <div class="mt-25 mb-20 text-align-center">
+                    <img src="../../../resources/v1/img/13G_029_img-08.png" width="300"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                </div>
+            </article>
+        </div>
+    </section>
+    <section data-is-showing="false">
+        <div class="mt-30 pd-bt-30 text-align-center">
+            <img src="../../../resources/v1/img/check-bg-07.png" width="50"
+                 data-animation-type="onscroll"
+                 data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                      style-af-ani: 'transform: scale(1); opacity:1'">
+            <p class="fs-1 mt-0 mb-0"
+               data-animation-type="onscroll"
+               data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                잠깐!! 당뇨가 걱정된다면
+            </p>
+            <h1 class="fc-13 fw-700 mt-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                미리 준비해 보세요.
+            </h1>
+        </div>
+    </section>
+
+<!--콘텐츠 평가영역-->
+    <section id="feedback-area" data-is-showing="false" class="bg-14">
+        <article class="text-align-center fc-white">
+            <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
+            <div class="feedback-btn-box mt-10 text-align-center">
+                <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                <label class="feedback-btn" for="feedback-radio-01">
+                    <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                    <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                </label>
+                <div class="vertical-line mb-15"></div>
+                <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                <label class="feedback-btn" for="feedback-radio-02">
+                    <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                    <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                </label>
+            </div>
+        </article>
+    </section>
+</div>
+<div class="header-bg-panel-wrapper">
+    <div class="header-bg-panel bg-7"></div>
+</div>
+<!--돌아가기 버튼-->
+<div class="bottom-fixed-area" data-is-showing="false">
+    <button class="bg-white fc-7 fs-4 fw-700 bdc-7" id="goFirstBtn">다시 선택하기</button>
+</div>
+
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                       background="transparent"
+                       style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
+<script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+<script src="../../../resources/v1/js/Customer-Journey.js"></script>
+<script>
+    const swiper = new Swiper(".swiper-container",{
+        loop: true,
+        pagination:{
+            el: '.swiper-pagination',
+            type: 'bullets',
+            bulletClass: 'swiper-my-bullet',
+            bulletActiveClass: 'active'
+        }
+    });
+
+    // customerJourney.createImageSlides('.image-slide-inner-zone');
+    // customerJourney.loadElementsToAnimate();
+    customerJourney.setElemsAniOnLoad();
+
+    //컴포넌트 이벤트 및 기본설정
+    EventProcessor.initSetting({
+        contentsId : '13G_029',  //콘텐츠id
+        linkInfoForInsurance : {
+            //상품 링크 url
+            url : 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000881&evcode=DCJ_MO',
+            //상품명
+            name : '(무)교보내맘쏙건강보험(DM)',
+            //상품 이미지 url
+            imgUrl : '/resources/v1//img/img-product-svg-health-life.svg',
+            //상품 설명
+            explain : '부족한 보장을 꽉 채운 건강보험',
+            //심의필
+            certificationMsg : '생명보험협회 심의필 제 2022-05466호 (2022-12-27 ~ 2023-12-26)'
+        },
+        linkInfoForService : {
+            //부가서비스 링크 url
+            url : 'https://www.kyobo.com/dgt/web/product/healthBasic-service',
+            //부가서비스명
+            name : '교보헬스케어서비스Basic II',
+            //부가서비스 이미지 url
+            imgUrl : '/resources/v1/img/img-service-svg-healthcare-basic.svg',
+            //부가서비스 설명
+            explain : '꼭 필요한 것만 담은 똑똑한 건강가이드'
+        }
+    });
+
+    [...document.querySelectorAll('.survey-form input[type="radio"]')].forEach(elem=>
+        elem.addEventListener('change', e=> {
+            const footerBtn = document.querySelector('.footer-area button:disabled');
+            if(footerBtn!==null)
+                document.querySelector('.footer-area button:disabled').disabled = false;
+        })
+    );
+
+    EventProcessor.setGoNextAndFirstBtn(()=>{
+        // 결과페이지 애니메이션 함수
+        window.setTimeout(() => {
+            document.querySelector('#animation01').classList.remove('opacity-0');
+            document.querySelector('#animation01').style.transform='';
+        }, 300);
+        window.setTimeout(() => {
+            document.querySelector('#animation02').classList.remove('opacity-0');
+            document.querySelector('#animation02').style.transform='';
+        }, 500);
+        window.setTimeout(() => {
+            document.querySelector('#animation03').classList.remove('opacity-0');
+            document.querySelector('#animation03').style.transform='';
+        }, 700);
+        window.setTimeout(() => {
+            document.querySelector('#animation04').style.opacity='';
+            document.querySelector('#animation04').style.transform='';
+        }, 1000);
+        window.setTimeout(() => {
+            document.querySelector('#animation05').classList.remove('opacity-0');
+            document.querySelector('#animation05').style.transform='';
+        }, 1100);
+    });
+</script>
+</body>
+</html>
