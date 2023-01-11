@@ -1,32 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/resources/v1/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/resources/v1/css/customerJourney.css">
-    <link rel="stylesheet" type="text/css" href="/resources/v1/css/swiper-bundle.min.css">
-    <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
-    <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <title>SNS에 올리는 우리 아이 사진 괜찮을까?</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../../resources/css/customerJourney.css}" href="../css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" th:href="@{../../resources/css/swiper-bundle.min.css}" href="../css/swiper-bundle.min.css">
+    <link th:href="@{../../resources/img/favicon.ico}" href="../img/favicon.ico" rel="shrtcut icon">
+    <link th:href="@{../../resources/img.favicon.ico}" rel="apple-touch-icon-precomposed">
+    <title>정보제공형-자녀</title>
 </head>
-<script>
-    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
-</script>
-<body class="_3A_004 information-type type-a bg-1">
-<!--gnb헤더 영역-->
-<nav class="bg-white">
-    <a href="javascript:history.back()" class="go-back-btn">
-        <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
-    </a>
-    <div class="fc-1">
-        SNS에 올리는 우리 아이 사진 괜찮을까?
-    </div>
-    <div></div>
-</nav>
-    <!--서버로부터 전달받는 변수영역-->
-    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
-    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+<body class="information-type type-a bg-1">
     <header>
         <article>
             <div>
@@ -44,7 +28,7 @@
                                            style-af-ani: 'transform:',
                                            start-ms:'500',
                                            transition-props:'[opacity,transform]',
-                                           transition-duration:'0.8s'">귀엽고 사랑스러운 우리 아이</h1>
+                                           transition-duration:'0.8s'">귀엽고 사랑스런 우리아이</h1>
                     <h1 class="fw-700 strong-underline mb-15 opacity-0"
                         data-animation-type="onload"
                         data-animation-infos="remove-class-nm: 'opacity-0',
@@ -64,14 +48,13 @@
                                            start-ms:'900',
                                            transition-props:'[opacity,transform]',
                                            transition-duration:'0.8s'">
-                    사람들에게 자랑하고 싶은 우리 아이 사진,<br>
+                    사람들에게 자랑하고 싶은 우리아이 사진,<br>
                     과연 문제는 없을까?
                 </div>
             </div>
-            <div class="main-banner-wrapper mt-25 mb-5 position-relative opacity-0"
+            <div class="main-banner-wrapper mt-25 mb-5 position-relative"
                  data-animation-type="onload"
-                 data-animation-infos="remove-class-nm: 'opacity-0',
-                                       style-bf-ani: 'transform:translateX(100vw);',
+                 data-animation-infos="style-bf-ani: 'transform:translateX(100vw);',
                                        style-af-ani: 'transform:',
                                        start-ms:'300',
                                        transition-duration:'0.7s',
@@ -116,18 +99,17 @@
                         올리는 이유 TOP 4</h3>
                     <div class="mt-10 fc-4"><span>출처 : 세이브더칠드런 2021.02월</span></div>
                 </div>
-                <img class="bg-image" src="/resources/v1/img/3A_004_img-01.png" width="150">
+                <img class="bg-image" th:src="@{../../resources/img/20221024/type-a-img-01.png}" src="../img/20221024/type-a-img-01.png" width="150">
             </div>
 
             <div class="mt-40">
                 <h2 class="fw-700">셰어런팅을 아시나요?</h2>
                 <p class="mt-10 mb-20 fs-5 fw-400">
-                    셰어런팅은 공유를 뜻하는<br>
-                    셰어(Share)와 육아(Parenting)의 합성으로<br>
-                    부모들이 자녀의 일상을 SNS에 공유하는 것을 말해요.
+                    <span>셰어런팅은 공유를 뜻하는 셰어(Share)와</span><br>
+                    <span>육아(Parenting)의 합성으로 부모들이 자녀의 일상을</span><br>
+                    <span>SNS에 공유하는 것을 말해요.</span>
                 </p>
                 <div class="animation-vertical-box"
-                     style="height:0"
                      data-animation-type="onscroll"
                      data-animation-infos="style-bf-ani: 'height: 0px',
                                    style-af-ani: 'height: 100px',
@@ -137,6 +119,8 @@
             </div>
         </article>
     </header>
+    <img th:src="@{../../resources/banner/empty-star.png}">
+    <img src="../../../resources/banner/empty-star.png?kywr=1MCB30Y7ST9GW">
     <section data-animation-type="onscroll"
              data-animation-infos="style-bf-ani: 'background-color: #27809e',
                                    style-af-ani: 'background-color: #23738e',
@@ -147,25 +131,24 @@
                 <span class="section-no fw-700"
                       data-animation-type="onscroll"
                       data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                       style-af-ani: 'margin-left:0px; opacity:0.2'">1</span>
+                                       style-af-ani: 'margin-left:0px; opacity:1'">1</span>
                 <h1 class="fw-700"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                        style-af-ani: 'margin-left:0px; opacity:1'"
                 >우리 아이에게도<br>이런일이 일어날 수 있어요 🤔 </h1>
-            </div>
             <div data-animation-type="onscroll"
                  data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                        style-af-ani: 'margin-left:0px; opacity:1'">
                 <p class="mt-5 mb-0 fs-5">엄마와 잠시 떨어져 혼자 놀고 있는 아이에게 낯선 사람이 접근한다.</p>
                 <p class="mt-5 mb-0 fs-5">이 사람은 엄마의 SNS에서 가족의 일상사진을 보고 아이에 대한 여러 정보를 알고 있다.</p>
                 <p class="mt-5 mb-0 fs-5">"안녕, 엄마랑 친한 이모야. 지난주에 한강에서 강아지랑 놀았지?"</p>
-                <p class="mt-5 mb-0 fs-5">친밀감을 느끼게 된 아이는 처음 보는 사람이지만 아이스크림을 사 주겠다는 말을 듣고 따라간다.</p>
-                <p class="mt-5 mb-0 fs-8 text-align-right">[EBS 다큐시선 모의실험 인용]</p>
+                <p class="mt-5 mb-0 fs-5">친밀감을 느끼게 된 아이는 처음 보는 사라밍지만 아이스크림을 사 주겠다는 말을 듣고 따라간다.</p>
+                <p class="mt-5 mb-0 fs-7 text-align-right">[EBS 다큐시선 모의실험 인용]</p>
             </div>
 
             <div class="mt-25">
-                <img src="/resources/v1/img/3A_004_img-02.png" width="200"
+                <img th:src="@{../../resources/img/20221024/type-a-img-02.png}" src="../img/20221024/type-a-img-02.png" width="200"
                      data-animation-type="onscroll"
                      data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
                                            style-af-ani: 'margin-left: 0px; opacity:1'">
@@ -181,23 +164,20 @@
                 <span class="section-no fw-700"
                       data-animation-type="onscroll"
                       data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                       style-af-ani: 'margin-left:0px; opacity:0.2'">2</span>
+                                       style-af-ani: 'margin-left:0px; opacity:1'">2</span>
                 <h1 class="fw-700"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                        style-af-ani: 'margin-left:0px; opacity:1'"
                 >엄마·아빠 10명 중<br>8명이 셰어런팅을 하고 있어요 🤭</h1>
-            </div>
                 <div data-animation-type="onscroll"
                      data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                        style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="mt-5 mb-0 fs-5">
-                        만 11세 이하의 자녀를 둔 부모 1,000명을 대상으로 조사한 결과,
-                        86.1%가 자녀의 사진이나 영상을 SNS에 올린 경험이 있어요.
-                    </p>
+                    <p class="mt-5 mb-0 fs-5">만 11세 이하의 자녀를 둔 부모 1,000명을 대상으로 조사한 결과</p>
+                    <p class="mt-5 mb-0 fs-5"> 86.1%가 자녀의 사진이나 영상을 SNS에 올린 경험이 있어요.</p>
                 </div>
                 <div class="text-align-right mt-25">
-                    <img id="pic01" src="/resources/v1/img/3A_004_img-03.png" width="200"
+                    <img id="pic01" th:src="@{../../resources/img/20221024/type-a-img-03.png}" src="../img/20221024/type-a-img-03.png" width="200"
                          data-animation-type="onscroll"
                          data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
                                       style-af-ani: 'margin-right: 0px; opacity:1'">
@@ -208,7 +188,7 @@
                          data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
                         42.7%는 일주일에 1회 이상 사진이나 영상을 올리고 있어요.
                     </p>
-                    <img class="mt-25" src="/resources/v1/img/3A_004_img-04.png" width="200"
+                    <img th:src="@{../../resources/img/20221024/type-a-img-04.png}" class="mt-25" src="../img/20221024/type-a-img-04.png" width="200"
                          data-animation-type="onscroll"
                          data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
                                            style-af-ani: 'margin-left: 0px; opacity:1'">
@@ -217,7 +197,7 @@
                     <p class="mt-0 mb-0"
                          data-animation-type="onscroll"
                          data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                        부모들이 SNS에 사진을 올리는 이유는 이런 거래요.
+                        부모들이 SNS에 사진을 올리는 이유는 이런거래요.
                     </p>
                     <div class="mb-0"
                        data-animation-type="onscroll"
@@ -228,7 +208,7 @@
                         <p class="mt-5 mb-0">· 후기이벤트 참여 등 : 0.9%</p>
                     </div>
                     <div class="text-align-right mt-25">
-                        <img src="/resources/v1/img/3A_004_img-05.png" width="200"
+                        <img th:src="@{../../resources/img/20221024/type-a-img-05.png}" src="../img/20221024/type-a-img-05.png" width="200"
                              data-animation-type="onscroll"
                              data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
                                       style-af-ani: 'margin-right: 0px; opacity:1'">
@@ -238,20 +218,19 @@
     </section>
     <section data-animation-type="onscroll"
              data-animation-infos="style-bf-ani: 'background-color: #1f667e',
-                                   style-af-ani: 'background-color: #1b596e',
+                                   style-af-ani: 'background-color: #1B596E',
                                    scroll-duration: 300;">
         <article class="text-align-left">
             <div class="title-msg mt-10">
                 <span class="section-no fw-700"
                       data-animation-type="onscroll"
                       data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                       style-af-ani: 'margin-left:0px; opacity:0.2'">3</span>
+                                       style-af-ani: 'margin-left:0px; opacity:1'">3</span>
                 <h1 class="fw-700"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                        style-af-ani: 'margin-left:0px; opacity:1'"
                 >아직은 취약한<br>우리아이 함께 보호해 주세요 😘</h1>
-            </div>
                 <div data-animation-type="onscroll"
                      data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                        style-af-ani: 'margin-left:0px; opacity:1'">
@@ -260,94 +239,91 @@
                     <p class="mt-5 mb-0 fs-5"> 보호.03 : 사고로부터 잘 보호되고 있는지 자녀보험을 점검해 주세요.</p>
                 </div>
                 <div class="mt-25">
-                    <img src="/resources/v1/img/3A_004_img-06.png" width="200"
+                    <img th:src="@{../../resources/img/20221024/type-a-img-06.png}" src="../img/20221024/type-a-img-06.png" width="200"
                          data-animation-type="onscroll"
                          data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
                                            style-af-ani: 'margin-left: 0px; opacity:1'">
                 </div>
         </article>
     </section>
-<!--콘텐츠 평가영역-->
-<section id="feedback-area" class="bg-17">
-    <article class="text-align-center fc-white">
-        <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
-        <div class="feedback-btn-box mt-10 text-align-center">
-            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-            <label class="feedback-btn" for="feedback-radio-01">
-                <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
-                <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
-            </label>
-            <div class="vertical-line mb-15"></div>
-            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-            <label class="feedback-btn" for="feedback-radio-02">
-                <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
-                <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
-            </label>
-        </div>
-    </article>
-</section>
-
-    <!--로딩스크린-->
-    <div class="text-align-center loading-screen" data-is-playing-loading="false">
-        <lottie-player src="/resources/v1/img/loading-animation.json"
-                       background="transparent"
-                       style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
-        </lottie-player>
-        <div class="fc-2 fs-6 fw-500">
-            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
-            이동중이에요!
-        </div>
-    </div>
-    <script src="/resources/v1/js/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
-    <script src="/resources/v1/js/Customer-Journey.js"></script>
+    <section data-animation-type="onscroll"
+             data-animation-infos="style-bf-ani: 'background-color: #1B596E',
+                                   style-af-ani: 'background-color: #133F4E'">
+        <article class="text-align-center"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+            <h3 class="fw-700 text-align-left">잠깐! 확인 한 번 해보세요!</h3>
+            <div class="footer-banner-zone mt-15 text-align-center">
+                <img th:src="@{../../resources/img/20221024/type-a-img-07.png}" src="../img/20221024/type-a-img-07.png" width="80">
+                <div class="mt-15">
+                    <h4 class="fw-700">(무)교보금쪽같은 내아이보험(갱신형)</h4>
+                    <div class="mt-5 mb-15"><small>태아부터 어른이 될 때까지</small></div>
+                </div>
+<!--                <div class="banner-box mt-20 mb-20">-->
+<!--                    <div id="pic09" class="img-content testing-box">-->
+<!--                        <h4  class="mt-5 mb-5">IMG Area<br>-</h4>-->
+<!--                        <span>이미지 노출영역<br>(1:1 비율로 노출)</span>-->
+<!--                    </div>-->
+<!--                    <div class="text-align-left">-->
+<!--                        <div class="fw-500">일이삼사오육칠팔구십</div>-->
+<!--                        <div class="mt-5">-->
+<!--                            <small>일이삼사오육칠팔구십일이<br>-->
+<!--                                일이삼사오육칠팔</small>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="footer-banner-link">
+                    <a class="fw-700" href="#">더 알아보기</a>
+                    <div class="link-img"></div>
+                </div>
+            </div>
+            <div class="text-align-center mt-30">
+                <h4 class="fw-500">
+                    이 콘텐츠가 도움이 되었나요?
+                </h4>
+                <div id="star-points-box" class="mt-10">
+                    <img class="empty-star" th:src="@{../../resources/img/20221024/star-empty.png}" src="../img/20221024/star-empty.png" width="34">
+                    <img class="half-filled-star display-none"  th:src="@{../../resources/img/20221024/star-half-filled.png}" src="../img/20221024/star-half-filled.png" width="34">
+                    <img class="filled-star display-none" th:src="@{../../resources/img/20221024/star-filled.png}" src="../img/20221024/star-filled.png" width="34">
+                    <img class="empty-star" th:src="@{../../resources/img/20221024/star-empty.png}" src="../img/20221024/star-empty.png" width="34">
+                    <img class="half-filled-star display-none" th:src="@{../../resources/img/20221024/star-half-filled.png}" src="../img/20221024/star-half-filled.png" width="34">
+                    <img class="filled-star display-none" th:src="@{../../resources/img/20221024/star-filled.png}" src="../img/20221024/star-filled.png" width="34">
+                    <img class="empty-star" th:src="@{../../resources/img/20221024/star-empty.png}" src="../img/20221024/star-empty.png" width="34">
+                    <img class="half-filled-star display-none" th:src="@{../../resources/img/20221024/star-half-filled.png}" src="../img/20221024/star-half-filled.png" width="34">
+                    <img class="filled-star display-none" th:src="@{../../resources/img/20221024/star-filled.png}" src="../img/20221024/star-filled.png" width="34">
+                    <img class="empty-star" th:src="@{../../resources/img/20221024/star-empty.png}" src="../img/20221024/star-empty.png" width="34">
+                    <img class="half-filled-star display-none" th:src="@{../../resources/img/20221024/star-half-filled.png}" src="../img/20221024/star-half-filled.png" width="34">
+                    <img class="filled-star display-none" th:src="@{../../resources/img/20221024/star-filled.png}" src="../img/20221024/star-filled.png" width="34">
+                    <img class="empty-star" th:src="@{../../resources/img/20221024/star-empty.png}" src="../img/20221024/star-empty.png" width="34">
+                    <img class="half-filled-star display-none" th:src="@{../../resources/img/20221024/star-half-filled.png}" src="../img/20221024/star-half-filled.png" width="34">
+                    <img class="filled-star display-none" th:src="@{../../resources/img/20221024/star-filled.png}" src="../img/20221024/star-filled.png" width="34">
+                </div>
+            </div>
+            <form class="visibility-hidden">
+                <textarea id="userComment" class="mt-15" placeholder="위염에 대한 유익한 정보 감사합니다!"></textarea>
+                <button class="mt-30 mb-30" type="submit" disabled>제출하기</button>
+            </form>
+        </article>
+    </section>
+    <script th:src="@{../../resources/js/swiper-bundle.min.js}" src="../js/swiper-bundle.min.js"></script>
+    <script th:src="@{../../resources/js/Customer-Journey.js}" src="../js/Customer-Journey.js"></script>
     <script>
-        try {
-            //swiper
-            const swiper = new Swiper(".swiper-container", {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                    bulletClass: 'swiper-my-bullet',
-                    bulletActiveClass: 'active'
-                }
-            });
+        const swiper = new Swiper(".swiper-container",{
+            loop: true,
+            pagination:{
+                el: '.swiper-pagination',
+                type: 'bullets',
+                bulletClass: 'swiper-my-bullet',
+                bulletActiveClass: 'active'
+            }
+        });
+        document.documentElement.style.setProperty('--vscrollwidth', `${window.innerWidth-document.documentElement.clientWidth}px`);
+        document.documentElement.style.setProperty('--1vw', `${Math.round(document.documentElement.clientWidth/100*10)/10}px`);
+        document.documentElement.style.setProperty('--1vh', `${Math.round(document.documentElement.clientHeight/100*10)/10}px`);
 
-            // customerJourney.createImageSlides('.image-slide-inner-zone');
-            customerJourney.loadElementsToAnimate();
-
-            //컴포넌트 이벤트 및 기본설정
-            EventProcessor.initSetting({
-                contentsId: '3A_004',  //콘텐츠id
-                linkInfoForInsurance: {
-                    //상품 링크 url
-                    url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                    //상품명
-                    name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                    //상품 이미지 url
-                    imgUrl: '/resources/v1//img/img-product-svg-child-care.svg',
-                    //상품 설명
-                    explain: '내 아이를 위한 금쪽같은 어린이보험',
-                    //심의필
-                    certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
-                },
-                linkInfoForService: {
-                    //부가서비스 링크 url
-                    url: 'https://www.kyobo.com/dgt/web/product/eduCare-service',
-                    //부가서비스명
-                    name: '교보에듀케어서비스',
-                    //부가서비스 이미지 url
-                    imgUrl: '/resources/v1/img/img-service-svg-edu-care.svg',
-                    //부가서비스 설명
-                    explain: '우리 아이 바른 성장 지킴이'
-                }
-            });
-        }
-        catch(error){
-            alert(error);
-            alert(error.stack);
-        }
+        customerJourney.loadElementsToAnimate();
+        customerJourney.addEventToStars();
+        customerJourney.addEventToTextArea();
     </script>
 </body>
 </html>

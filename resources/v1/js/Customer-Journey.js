@@ -120,7 +120,9 @@ const customerJourney=(function (){
     let playEndTime = Date.now();
     let tmp=0;
 
-    function loadElementsToAnimate(onScroll){
+    const callbackScrollProcessor = ()=>onScrollProcessor(true);
+
+   function loadElementsToAnimate(onScroll){
       const aniElems = [...document.querySelectorAll('*')].filter(elem=>{
          return elem.getAttributeNames().filter(attr=>attr.indexOf('data-animation')>-1)
              .length>0;
@@ -147,28 +149,12 @@ const customerJourney=(function (){
        }
        if(customFunctionList.length===0)
            initCustomFunctions();
-      elems.forEach(elem=>{
-        let animationInfos = extractAnimationInfos(elem);
-        for(let animationInfo of animationInfos) {
-            if (animationInfo.stylePropsBefore !== undefined)
-                animationInfo.stylePropsBefore.applyStyles();
 
-            setTimeout(() => {
-                elem.style.transitionDuration = animationInfo.transitionDuration;
-                elem.style.transitionProperty = animationInfo.props.filter(e => e != null && e.trim() !== '').toString();
-
-                if (animationInfo.stylePropsAfter !== undefined)
-                    animationInfo.stylePropsAfter.applyStyles();
-                if (animationInfo.addClassNm !== undefined)
-                    elem.classList.add(animationInfo.addClassNm);
-                if (animationInfo.removeClassNm !== undefined)
-                    elem.classList.remove(animationInfo.removeClassNm);
-            }, animationInfo.startMs);
-        }
-      });
+       reserveAnimation(elems);
    }
 
    function setElemsAniOnScroll(elems){
+       onScrollAnimationInfos=[];
        if(elems===undefined){
            animationElements={};
            elems = [...document.querySelectorAll('*')].filter(elem=>
@@ -178,6 +164,7 @@ const customerJourney=(function (){
        }
        if(customFunctionList.length===0)
            initCustomFunctions();
+
        elems.forEach(elem=>{
            let animationInfos = extractAnimationInfos(elem);
            for(let animationInfo of animationInfos) {
@@ -192,9 +179,53 @@ const customerJourney=(function (){
            }
        });
 
-       window.addEventListener('scroll',()=>onScrollProcessor(true));
+       window.removeEventListener('scroll',callbackScrollProcessor);
+       window.addEventListener('scroll',callbackScrollProcessor);
        onScrollProcessor(false);
        history.scrollRestoration='manual';
+   }
+
+   function setElemsAniOnResult(elems){
+       const button = document.querySelector('button#goNextBtn');
+       if(button===null)
+           return;
+
+       if(elems===undefined){
+           elems = [...document.querySelectorAll('*')].filter(elem=>
+               elem.getAttributeNames().filter(attr=>attr.toLowerCase().indexOf('data-animation-type')>-1).length>0
+               && elem.dataset.animationType==='onresult'
+           );
+       }
+       if(customFunctionList.length===0)
+           initCustomFunctions();
+
+       elems.forEach(elem=> {
+           elem.style.transitionProperty = '';
+           elem.style.transitionDuration = '';
+       })
+       reserveAnimation(elems);
+   }
+
+   function reserveAnimation(elems){
+       elems.forEach(elem=>{
+           let animationInfos = extractAnimationInfos(elem);
+           for(let animationInfo of animationInfos) {
+               if (animationInfo.stylePropsBefore !== undefined)
+                   animationInfo.stylePropsBefore.applyStyles();
+
+               setTimeout(() => {
+                   elem.style.transitionDuration = animationInfo.transitionDuration;
+                   elem.style.transitionProperty = animationInfo.props.filter(e => e != null && e.trim() !== '').toString();
+
+                   if (animationInfo.stylePropsAfter !== undefined)
+                       animationInfo.stylePropsAfter.applyStyles();
+                   if (animationInfo.addClassNm !== undefined)
+                       elem.classList.add(animationInfo.addClassNm);
+                   if (animationInfo.removeClassNm !== undefined)
+                       elem.classList.remove(animationInfo.removeClassNm);
+               }, animationInfo.startMs);
+           }
+       });
    }
 
    function onScrollProcessor(bLoop){
@@ -722,7 +753,7 @@ const customerJourney=(function (){
             triggerHook = parseFloat(slide.dataset.animationInfos.match(/trigger-hook\s*:.*?([\d\.]+)/)[1]);
         slide.dataset.animationInfos += `, scroll-duration: '${_100vh}'`;
     })
-    return {createImageSlides, loadElementsToAnimate, addEventToStars, addEventToTextArea, setElemsAniOnLoad, setElemsAniOnScroll, set100vh};
+    return {createImageSlides, loadElementsToAnimate, setElemsAniOnResult, addEventToStars, addEventToTextArea, setElemsAniOnLoad, setElemsAniOnScroll, set100vh};
 }());
 
 const EventProcessor = (function (){
@@ -774,8 +805,9 @@ const EventProcessor = (function (){
         setPropertiesForCss(); //css 전역변수 설정
         initSettingForReviewRadio(params.contentsId); //피드백라디오(좋아요/싫어요) 기본이벤트처리
         setAutoHideElements(); //gnb(헤더) 자동 숨기기 설정
-        initSettingForSubmitSurvey();
-        initSettingForBfCache();
+        initSettingForSubmitButton(); // 확인하기 버튼 이벤트 설정
+        initSettingForBfCache(); // 브라우저 뒤로가기 캐쉬 초기화
+        initSettingForBalanceGame(); //라디오버튼(밸런스게임) 클릭 처리
 
         //bottom-sheet 추천상품정보 설정
         const linkInfoForInsurance = params.linkInfoForInsurance;
@@ -798,6 +830,58 @@ const EventProcessor = (function (){
             setAutoBottomSheetEvent();
         else
             setBottomSheetEvent();
+    }
+
+    function initSettingForSubmitButton(){
+        initSettingForButtonEnable(); // 버튼 활성화 처리
+        initSettingForSubmitSurvey(); // 설문조사 결과 제출 및 가져오기
+        setGoNextAndFirstBtn(); // 확인하기 / 뒤로가기 버튼 처리
+    }
+
+    function initSettingForButtonEnable(){
+        //확인하기 버튼 활성화 처리
+        [...document.querySelectorAll('input[type="radio"][name="kyobolife-survey"]')].forEach(elem =>
+            elem.addEventListener('change', e => {
+                const confirm = document.querySelector('button#goNextBtn');
+                if (confirm !== null)
+                    document.querySelector('.footer-area button:disabled').disabled = false;
+            })
+        );
+    }
+
+    function initSettingForBalanceGame(){
+        //라디오버튼(밸런스게임) 클릭 처리
+        [...document.querySelectorAll('.balance-game input[name="kyobolife-survey"]')].forEach(input => {
+            input.addEventListener('change', () => {
+
+                if (document.querySelector('input[name="kyobolife-survey"]:checked').value === '01') {
+                    document.querySelector('#section01').classList.remove('display-none');
+                    document.querySelector('#section02').classList.add('display-none');
+                    window.setTimeout(() => {
+                        document.querySelector('#animation01').style.opacity = '';
+                        document.querySelector('#animation01').style.transform = '';
+                    }, 300);
+                } else {
+                    document.querySelector('#section01').classList.add('display-none');
+                    document.querySelector('#section02').classList.remove('display-none');
+                    window.setTimeout(() => {
+                        document.querySelector('#animation02').style.opacity = '';
+                        document.querySelector('#animation02').style.transform = '';
+                    }, 300);
+                }
+                document.querySelector('.footer-area').classList.add('display-none');
+                document.querySelector('#feedback-area').classList.remove('display-none');
+                document.documentElement.classList.remove('overflow-y-hidden');
+                document.querySelector('#survey-area').classList.add('shrink-height');
+
+                customerJourney.setElemsAniOnScroll();
+
+                //라디오 잠금
+                // [...document.querySelectorAll('input[name="kyobolife-survey"]')].forEach(input=>input.disabled=true);
+
+
+            });
+        });
     }
 
     function initSettingForSubmitSurvey(){
@@ -872,6 +956,21 @@ const EventProcessor = (function (){
     function setGoNextAndFirstBtn(callbackForNext, callbackForPrev){
         const goNextBtn = document.querySelector('#goNextBtn');
         const goFirstBtn = document.querySelector('#goFirstBtn');
+
+        // 확인하기버튼 callback
+        callbackForNext = callbackForNext || (() => {
+            const index = [...document.querySelectorAll('.survey-form input[type="radio"]')]
+                .findIndex(item => item === document.querySelector('.survey-form input[type="radio"]:checked'));
+            document.querySelectorAll('.li-item-result')[index].classList.add('active');
+            document.querySelectorAll('.li-item-result')[index].querySelector('small').classList.remove('fc-4');
+        });
+        // 돌아가기버튼 callback
+        callbackForPrev = callbackForPrev || (() => {
+            window.setTimeout(() => {
+                [...document.querySelectorAll('.survey-form li')].forEach(li => li.style.transform = '');
+                [...document.querySelectorAll('.li-item-result')].forEach(li => li.classList.remove('active'));
+            }, 0);
+        });
         setUserInLastPage(false);
 
         if(goNextBtn!==null){
@@ -881,6 +980,8 @@ const EventProcessor = (function (){
                 customerJourney.setElemsAniOnScroll();
                 document.documentElement.classList.remove('overflow-y-hidden');
                 setUserInLastPage(true);
+                //애니메이션
+                customerJourney.setElemsAniOnResult();
             });
         }
         if(goFirstBtn!==null){
@@ -898,9 +999,9 @@ const EventProcessor = (function (){
         }
     }
     function togglePageContents(){
-        [...document.querySelectorAll('[data-is-showing=true]')].forEach(elem=>elem.dataset.isShowing='processing');
-        [...document.querySelectorAll('[data-is-showing=false]')].forEach(elem=>elem.dataset.isShowing='true');
-        [...document.querySelectorAll('[data-is-showing=processing]')].forEach(elem=>elem.dataset.isShowing='false');
+        [...document.querySelectorAll('[data-is-not-result-page=true]')].forEach(elem=>elem.dataset.isNotResultPage='processing');
+        [...document.querySelectorAll('[data-is-not-result-page=false]')].forEach(elem=>elem.dataset.isNotResultPage='true');
+        [...document.querySelectorAll('[data-is-not-result-page=processing]')].forEach(elem=>elem.dataset.isNotResultPage='false');
     }
 
     function postSurveyInput(surveyResultTargets){

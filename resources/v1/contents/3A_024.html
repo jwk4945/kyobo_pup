@@ -7,22 +7,29 @@
     <link rel="stylesheet" type="text/css" href="/resources/v1/css/swiper-bundle.min.css">
     <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
     <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <title>어릴 때 살은 다 '키'로 간다? 방치하면 OO 갑니다.</title>
+    <title>통통한 우리 아이 괜찮을까?</title>
 </head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
 <body class="_3A_024 information-type type-a bg-1 fc-white">
+<!--gnb헤더 영역-->
 <nav class="bg-white">
     <a href="javascript:history.back()" class="go-back-btn">
         <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
     </a>
     <div class="fc-1">
-        “어릴 때 살은 다 키로 간다?” 방치하면 ‘킬로(kg)’ 갑니다.
+        통통한 우리 아이 괜찮을까?
     </div>
     <div></div>
 </nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
     <header>
         <article class="text-align-center">
             <div>
-                <span class="tag mb-15 opacity-0 fc-13"
+                <span class="tag mb-15 opacity-0"
                     data-animation-type="onload"
                     data-animation-infos="remove-class-nm: 'opacity-0',
                                            start-ms:'300',
@@ -56,18 +63,19 @@
                                            start-ms:'900',
                                            transition-props:'[opacity,transform]',
                                            transition-duration:'0.8s'">
-                    또래보다 통통한 내 아이, 과연 문제는 없울까?<br>
+                    또래보다 통통한 내 아이, 과연 문제는 없을까?<br>
                     방치하면 성인비만으로 이어집니다.
                 </div>
             </div>
-            <div class="main-banner-wrapper mt-25 mb-5"
+            <div class="main-banner-wrapper mt-25 mb-5 opacity-0"
                  data-animation-type="onload"
-                 data-animation-infos="style-bf-ani: 'transform:translateX(100vw);',
+                 data-animation-infos="remove-class-nm: 'opacity-0',
+                                       style-bf-ani: 'transform:translateX(100vw);',
                                        style-af-ani: 'transform:',
                                        start-ms:'300',
                                        transition-duration:'0.7s',
                                        transition-props:'[transform]'">
-                <img src="/resources/v1/img/3A_024_img-01.png" width="100%">
+                <img src="/resources/v1/img/3A_024_img-01.gif" width="100%">
                 <div class="mt-10">
                     <h3 class="fw-700 fc-2">국내 소아청소년 비만율 변화</h3>
                     <p class="mt-5 mb-0 fs-8 fc-4">[출처: MBC 다큐프라임]</p>
@@ -79,6 +87,7 @@
                     소아비만에 대해서<br>
                     알아볼게요.</h2>
                 <div class="animation-vertical-box"
+                     style="height: 0"
                      data-animation-type="onscroll"
                      data-animation-infos="style-bf-ani: 'height: 0px',
                                    style-af-ani: 'height: 100px',
@@ -113,7 +122,7 @@
             </div>
 
             <div class="text-align-right mt-25">
-                <img src="/resources/v1/img/3A_024_img-02.svg" width="200"
+                <img src="/resources/v1/img/3A_024_img-02.gif" width="200"
                      data-animation-type="onscroll"
                      data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
                                       style-af-ani: 'margin-right: 0px; opacity:1'">
@@ -179,7 +188,7 @@
                  data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                    style-af-ani: 'margin-left:0px; opacity:1'">
                 <h5 class="mt-5 mb-0 fw-700">네번째, 사회적 요인</h5>
-                <p class="mt-5 mb-0 fs-5">부서구화된 식습관, 방과 후 학업으로 신체활동 감소!</p>
+                <p class="mt-5 mb-0 fs-5">서구화된 식습관, 방과 후 학업으로 신체활동 감소!</p>
             </div>
             <div class="text-align-right mt-25">
                 <img src="/resources/v1/img/3A_024_img-06.svg" width="200"
@@ -267,7 +276,7 @@
     </section>
     <section data-animation-type="onscroll"
              data-animation-infos="style-bf-ani: 'background-color: #1B596E',
-                                       style-af-ani: 'background-color: #214252',
+                                       style-af-ani: 'background-color: #174c5e',
                                        scroll-duration: 300;">
         <article class="text-align-left">
             <div class="title-msg mt-10">
@@ -353,8 +362,8 @@
         </article>
     </section>
     <section data-animation-type="onscroll"
-             data-animation-infos="style-bf-ani: 'background-color: #214252',
-                                   style-af-ani: 'background-color: #1C3744',
+             data-animation-infos="style-bf-ani: 'background-color: #174c5e',
+                                   style-af-ani: 'background-color: #154656',
                                    scroll-duration: 300;">
         <article class="text-align-left">
             <div class="title-msg mt-10">
@@ -434,12 +443,6 @@
                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'
                    , scroll-duration: '100', trigger-hook: '0.8'">
                     <img src="/resources/v1/img/3A_024_img-10.svg" width="20px" height="20px" class="checkbox">
-                    하루에 몇 시간씩 컴퓨터 게임을 한다.</p>
-                <p class="mt-5 mb-0 fs-5"
-                   data-animation-type="onscroll"
-                   data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'
-                   , scroll-duration: '100', trigger-hook: '0.8'">
-                    <img src="/resources/v1/img/3A_024_img-10.svg" width="20px" height="20px" class="checkbox">
                     틈만 나면 바닥이나 소파에 누우려고 한다.</p>
                 <p class="mt-5 mb-0 fs-5"
                    data-animation-type="onscroll"
@@ -477,7 +480,7 @@
                     아이를 위한 습관 교정이 필요한 상황입니다.
                 </p>
                 <p class="mt-5 mb-0 fs-8">
-                    (출처 : <소리없이 아이를 망치는 질병 – 소아비만>(웅진지식하우스) / 건강보험심사평가원)
+                    (출처 : &lt;소리없이 아이를 망치는 질병 – 소아비만&gt;(웅진지식하우스) / 건강보험심사평가원)
                 </p>
             </div>
             <div class="text-align-right mt-25">
@@ -503,7 +506,7 @@
                      data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
                                       style-af-ani: 'transform: scale(1); opacity:1'">
 
-                <h1 class="fw-700 mt-5"
+                <h1 class="mt-5"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
                     소아비만을 겪었다면<br>
@@ -519,13 +522,13 @@
     <article class="text-align-center fc-white">
         <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
         <div class="feedback-btn-box mt-10 text-align-center">
-            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="01">
+            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
             <label class="feedback-btn" for="feedback-radio-01">
                 <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
                 <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
             </label>
             <div class="vertical-line mb-15"></div>
-            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="02">
+            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
             <label class="feedback-btn" for="feedback-radio-02">
                 <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
                 <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
@@ -533,46 +536,68 @@
         </div>
     </article>
 </section>
+
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="/resources/v1/img/loading-animation.json"
+                       background="transparent"
+                       style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
     <script src="/resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
     <script src="/resources/v1/js/Customer-Journey.js"></script>
     <script>
-        const swiper = new Swiper(".swiper-container",{
-            loop: true,
-            pagination:{
-                el: '.swiper-pagination',
-                type: 'bullets',
-                bulletClass: 'swiper-my-bullet',
-                bulletActiveClass: 'active'
-            }
-        });
+        try {
+            //swiper
+            const swiper = new Swiper(".swiper-container", {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    bulletClass: 'swiper-my-bullet',
+                    bulletActiveClass: 'active'
+                }
+            });
 
-        // customerJourney.createImageSlides('.image-slide-inner-zone');
-        customerJourney.loadElementsToAnimate();
+            // customerJourney.createImageSlides('.image-slide-inner-zone');
+            customerJourney.loadElementsToAnimate();
 
-        //컴포넌트 이벤트 및 기본설정
-        EventProcessor.initSetting({
-            contentsId : '3A_024',  //콘텐츠id
-            linkInfoForInsurance : {
-                //상품 링크 url
-                url : 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                //상품명
-                name : '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                //상품 이미지 url
-                imgUrl : '/resources/v1//img/img-product-svg-child-care.svg',
-                //상품 설명
-                explain : '내 아이를 위한 금쪽같은 어린이보험'
-            },
-            linkInfoForService : {
-                //부가서비스 링크 url
-                url : 'https://www.kyobo.com/dgt/web/product/eduCare-service',
-                //부가서비스명
-                name : '교보에듀케어서비스',
-                //부가서비스 이미지 url
-                imgUrl : '/resources/v1/img/img-service-svg-edu-care.svg',
-                //부가서비스 설명
-                explain : '우리 아이 바른 성장 지킴이'
-            }
-        });
+            //컴포넌트 이벤트 및 기본설정
+            EventProcessor.initSetting({
+                contentsId: '3A_024',  //콘텐츠id
+                linkInfoForInsurance: {
+                    //상품 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
+                    //상품명
+                    name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
+                    //상품 이미지 url
+                    imgUrl: '/resources/v1//img/img-product-svg-child-care.svg',
+                    //상품 설명
+                    explain: '내 아이를 위한 금쪽같은 어린이보험',
+                    //심의필
+                    certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
+                },
+                linkInfoForService: {
+                    //부가서비스 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/product/eduCare-service',
+                    //부가서비스명
+                    name: '교보에듀케어서비스',
+                    //부가서비스 이미지 url
+                    imgUrl: '/resources/v1/img/img-service-svg-edu-care.svg',
+                    //부가서비스 설명
+                    explain: '우리 아이 바른 성장 지킴이'
+                }
+            });
+        }
+        catch(error){
+            alert(error);
+            alert(error.stack);
+        }
     </script>
 </body>
 </html>

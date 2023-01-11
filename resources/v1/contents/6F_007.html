@@ -9,16 +9,23 @@
     <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
     <title>아이와 부인, 누가 더 걱정될까?</title>
 </head>
-<body class="_6F_007 survey-type bg-6">
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="balance-game _6F_007 survey-type bg-6">
+<!--gnb헤더 영역-->
 <nav class="bg-white">
     <a href="javascript:history.back()" class="go-back-btn">
         <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
     </a>
     <div>
-        사랑하는 부인이 임신을 한다면 아이와 부인, 누가 더 걱정될까요?
+        아이와 부인, 누가 더 걱정될까?
     </div>
     <div></div>
 </nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
     <div class="main-wrapper">
         <header>
             <div id="survey-area">
@@ -65,9 +72,10 @@
 
                 <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
                 <input type="radio" name="kyobolife-survey" value="02" id="answer-02">
-                <div class="main-banner-wrapper mt-30 mb-0"
+                <div class="main-banner-wrapper mt-30 mb-0 opacity-0"
                      data-animation-type="onload"
-                     data-animation-infos="style-bf-ani: 'transform:translateX(100vw);',
+                     data-animation-infos="remove-class-nm: 'opacity-0',
+                                   style-bf-ani: 'transform:translateX(100vw);',
                                    style-af-ani: 'transform:',
                                    start-ms:'300',
                                    transition-duration:'0.7s',
@@ -79,14 +87,14 @@
                                     <p class="fs-7 mt-0 mb-0">아이에게 선천성 질병이<br>
                                         있을까 걱정될 거야!</p>
                                     <h4 class="fw-700 mt-5 mb-20">아이 걱정</h4>
-                                    <img src="/resources/v1/img/6F_007_img-01.svg">
+                                    <img src="/resources/v1/img/6F_007_img-01.gif" width="100">
                                 </div>
                                 <div class="after">
                                     <h3 class="fw-700 mb-10">아이 걱정</h3>
-                                    <img src="/resources/v1/img/6F_007_img-01.svg">
-                                    <p class="mt-20 mb-0 fs-5 fc-1">
+                                    <img src="/resources/v1/img/6F_007_img-01.gif" width="100">
+                                    <h5 class="fw-700 mt-20 mb-0 fs-5 fc-1">
                                         아이가 걱정된다는 마음<br>충분히 이해해요.
-                                    </p>
+                                    </h5>
                                 </div>
                             </label>
                             <div class="center-img">
@@ -99,21 +107,21 @@
                                     <p class="fs-7 mt-0 mb-0">부인이 출산 중에 잘못될까<br>
                                         걱정될 거야!</p>
                                     <h4 class="fw-700 mt-5 mb-20">부인 걱정</h4>
-                                    <img src="/resources/v1/img/6F_007_img-03.svg">
+                                    <img src="/resources/v1/img/6F_007_img-03.gif" width="100">
                                 </div>
                                 <div class="after">
                                     <h3 class="fw-700 mb-10">부인 걱정</h3>
-                                    <img src="/resources/v1/img/6F_007_img-03.svg">
-                                    <p class="mt-20 mb-0 fs-5 fc-1">
+                                    <img src="/resources/v1/img/6F_007_img-03.gif" width="100">
+                                    <h5 class="fw-700 mt-20 mb-0 fs-5 fc-1">
                                         부인이 걱정된다는 마음<br>충분히 이해해요.
-                                    </p>
+                                    </h5>
                                 </div>
                             </label>
                         </div>
                     </div>
                 </div>
 
-                <div class="footer-area" data-is-showing="true">
+                <div class="footer-area" data-is-not-result-page="true">
                     <div class="speech-box fc-white fw-700">도대체 뭘 선택해야 할까?</div>
                 </div>
             </div>
@@ -248,13 +256,13 @@
             <article class="text-align-center fc-white">
                 <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
                 <div class="feedback-btn-box mt-10 text-align-center">
-                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="01">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
                     <label class="feedback-btn" for="feedback-radio-01">
                         <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
                         <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
                     </label>
                     <div class="vertical-line mb-15"></div>
-                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="02">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
                     <label class="feedback-btn" for="feedback-radio-02">
                         <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
                         <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
@@ -267,87 +275,68 @@
         <div class="header-bg-panel"></div>
     </div>
 
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="/resources/v1/img/loading-animation.json"
+                       background="transparent"
+                       style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
     <script src="/resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
     <script src="/resources/v1/js/Customer-Journey.js"></script>
     <script>
-        const swiper = new Swiper(".swiper-container",{
-            loop: true,
-            pagination:{
-                el: '.swiper-pagination',
-                type: 'bullets',
-                bulletClass: 'swiper-my-bullet',
-                bulletActiveClass: 'active'
-            }
-        });
-
-        // customerJourney.createImageSlides('.image-slide-inner-zone');
-        // customerJourney.loadElementsToAnimate();
-        customerJourney.setElemsAniOnLoad();
-
-        //컴포넌트 이벤트 및 기본설정
-        EventProcessor.initSetting({
-            contentsId : '6F_007',  //콘텐츠id
-            linkInfoForInsurance : {
-                //상품 링크 url
-                url : 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                //상품명
-                name : '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                //상품 이미지 url
-                imgUrl : '/resources/v1/img/img-product-svg-child-care.svg',
-                //상품 설명
-                explain : '내 아이를 위한 금쪽같은 어린이보험'
-            },
-            linkInfoForService : {
-                //부가서비스 링크 url
-                url : 'https://www.kyobo.com/dgt/web/product/healthChild-service',
-                //부가서비스명
-                name : '교보어린이헬스케어서비스',
-                //부가서비스 이미지 url
-                imgUrl : '/resources/v1/img/img-service-svg-child-healthcare.svg',
-                //부가서비스 설명
-                explain : '임신부터 출산, 육아까지 알찬 서비스'
-            }
-        });
-
-        //라디오버튼(밸런스게임) 클릭 처리
-        let alreadyShowed = false;
-        [...document.querySelectorAll('input[name="kyobolife-survey"]')].forEach(input=>{
-            input.addEventListener('change',()=>{
-                // [...document.querySelectorAll('.radio-btn-box .before, .radio-btn-box .after')].forEach(elem=>elem.classList.toggle('display-none'));
-                // EventProcessor.togglePageContents();
-                // if(alreadyShowed===false){
-                //     customerJourney.setElemsAniOnScroll();
-                //     alreadyShowed = true;
-                // }
-
-                if(document.querySelector('input[name="kyobolife-survey"]:checked').value==='01') {
-                    document.querySelector('#section01').classList.remove('display-none');
-                    document.querySelector('#section02').classList.add('display-none');
-                    window.setTimeout(()=> {
-                        document.querySelector('#animation01').style.opacity = '';
-                        document.querySelector('#animation01').style.transform = '';
-                    },300);
-                }else {
-                    document.querySelector('#section01').classList.add('display-none');
-                    document.querySelector('#section02').classList.remove('display-none');
-                    window.setTimeout(()=> {
-                        document.querySelector('#animation02').style.opacity = '';
-                        document.querySelector('#animation02').style.transform = '';
-                    },300);
+        try {
+            //swiper
+            const swiper = new Swiper(".swiper-container", {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    bulletClass: 'swiper-my-bullet',
+                    bulletActiveClass: 'active'
                 }
-                document.querySelector('.footer-area').classList.add('display-none');
-                document.querySelector('#feedback-area').classList.remove('display-none');
-                document.documentElement.classList.remove('overflow-y-hidden');
-                document.querySelector('#survey-area').classList.add('shrink-height');
-
-                customerJourney.setElemsAniOnScroll();
-
-                //라디오 잠금
-                // [...document.querySelectorAll('input[name="kyobolife-survey"]')].forEach(input=>input.disabled=true);
-
-
             });
-        });
+
+            // customerJourney.createImageSlides('.image-slide-inner-zone');
+            // customerJourney.loadElementsToAnimate();
+            customerJourney.setElemsAniOnLoad();
+
+            //컴포넌트 이벤트 및 기본설정
+            EventProcessor.initSetting({
+                contentsId: '6F_007',  //콘텐츠id
+                linkInfoForInsurance: {
+                    //상품 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
+                    //상품명
+                    name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
+                    //상품 이미지 url
+                    imgUrl: '/resources/v1/img/img-product-svg-child-care.svg',
+                    //상품 설명
+                    explain: '내 아이를 위한 금쪽같은 어린이보험',
+                    //심의필
+                    certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
+                },
+                linkInfoForService: {
+                    //부가서비스 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/product/healthChild-service',
+                    //부가서비스명
+                    name: '교보어린이헬스케어서비스',
+                    //부가서비스 이미지 url
+                    imgUrl: '/resources/v1/img/img-service-svg-child-healthcare.svg',
+                    //부가서비스 설명
+                    explain: '임신부터 출산, 육아까지 알찬 서비스'
+                }
+            });
+        }
+        catch(error){
+            alert(error);
+            alert(error.stack);
+        }
     </script>
 </body>
 </html>

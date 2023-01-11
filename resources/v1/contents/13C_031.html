@@ -7,18 +7,25 @@
     <link rel="stylesheet" type="text/css" href="/resources/v1/css/swiper-bundle.min.css">
     <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
     <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <title>당뇨환자, 음료 하나 고르는 것도 쉽지 않아요!</title>
+    <title>당뇨환자가 마실 수 있는 음료는?</title>
 </head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
 <body class="_13C_031 type-b bg-10">
+<!--gnb(헤더 - 뒤로가기)-->
     <nav class="bg-white fc-1">
         <a href="javascript:history.back()" class="go-back-btn">
             <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
         </a>
         <div>
-            당뇨환자, 음료 하나 고르는 것도 쉽지 않아요!
+            당뇨환자가 마실 수 있는 음료는?
         </div>
         <div></div>
     </nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
     <header>
         <article class="fc-white">
             <span class="tag opacity-0"
@@ -27,7 +34,7 @@
                                                start-ms:'300',
                                                transition-props:'[opacity]',
                                                transition-duration:'0.7s'">당뇨</span>
-            <p class="mt-10">
+            <div class="mt-10">
                 <h1 class="opacity-0"
                     data-animation-type="onload"
                     data-animation-infos="remove-class-nm: 'opacity-0',
@@ -46,8 +53,8 @@
                                                    transition-duration:'0.8s'">
                     음료 하나 고르는 것도 쉽지 않아요!
                 </h1>
-            </p>
-            <div class="opacity-0 mb-30"
+            </div>
+            <div class="mt-10 opacity-0 mb-30"
                  data-animation-type="onload"
                  data-animation-infos="remove-class-nm: 'opacity-0',
                                                style-bf-ani: 'transform:translateY(-400%);',
@@ -59,9 +66,10 @@
                         당뇨는 철저한 식단 관리가<br>중요한 생활습관병입니다.
                         </span>
             </div>
-            <div id="swiper-container" class="swiper-container"
+            <div id="swiper-container" class="swiper-container opacity-0"
                  data-animation-type="onload"
-                 data-animation-infos="style-bf-ani: 'transform:translateX(100%);',
+                 data-animation-infos="remove-class-nm: 'opacity-0',
+                                       style-bf-ani: 'transform:translateX(100%);',
                                        style-af-ani: 'transform:',
                                        start-ms:'300',
                                        transition-duration:'0.7s',
@@ -69,7 +77,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="main-banner-wrapper first-slide">
-                            <img src="/resources/v1/img/13C_031-img-01.svg" width="100%">
+                            <img src="/resources/v1/img/13C_031-img-01.gif" width="315px">
                             <div class="title" >
                                 <div class="half-line bg-black"></div>
                                 <div class="title-msg bg-white">
@@ -84,7 +92,7 @@
 
                     <div class="swiper-slide">
                         <div class="main-banner-wrapper">
-                            <img src="/resources/v1/img/13C_031-img-02.svg" width="160px">
+                            <img src="/resources/v1/img/13C_031-img-02.gif" width="160px">
                             <h3 class="mt-0 mb-0 section-no fw-700">01</h3>
                             <h3 class="fw-700 fc-2">커피! 괜찮습니다.<br>
                                 설탕만 조심해서 맛있게 드세요!
@@ -112,7 +120,7 @@
 
                     <div class="swiper-slide">
                         <div class="main-banner-wrapper">
-                            <img src="/resources/v1/img/13C_031-img-05.svg" width="160px">
+                            <img src="/resources/v1/img/13C_031-img-05.gif" width="160px">
                             <h3 class="mt-0 mb-0 section-no fw-700">02</h3>
                             <h3 class="fw-700 fc-2">탄산수! 괜찮습니다.<br>
                                 탄산음료 대신 시원하게 드세요!
@@ -176,9 +184,10 @@
 
                 <div class="animation-vertical-box"
                      data-animation-type="onscroll"
-                     data-animation-infos="style-bf-ani: 'height: 30px',
+                     data-animation-infos="style-bf-ani: 'height: 0px',
                                        style-af-ani: 'height: 150px',
-                                       scroll-duration: 100">
+                                       scroll-duration: 100',
+                                       trigger-hook: '0.7'">
                     <div class="animation-vertical"></div>
                 </div>
             </div>
@@ -186,7 +195,7 @@
     </header>
     <section class="display-none"
              data-animation-type="onscroll"
-             data-animation-infos="style-bf-ani: 'background-color:#7156A8;', style-af-ani: 'background-color:#5043A0;'">
+             data-animation-infos="style-bf-ani: 'background-color:#6a50c2;', style-af-ani: 'background-color:#5043A0;'">
         <article class="text-align-center fc-white">
             <p class="fs-3 mt-25"
                data-animation-type="onscroll"
@@ -220,13 +229,13 @@
         <article class="text-align-center fc-white">
             <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
             <div class="feedback-btn-box mt-10 text-align-center">
-                <input type="radio" name="feedback-radio" id="feedback-radio-01" value="01">
+                <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
                 <label class="feedback-btn" for="feedback-radio-01">
                     <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
                     <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
                 </label>
                 <div class="vertical-line mb-15"></div>
-                <input type="radio" name="feedback-radio" id="feedback-radio-02" value="02">
+                <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
                 <label class="feedback-btn" for="feedback-radio-02">
                     <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
                     <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
@@ -234,7 +243,20 @@
             </div>
         </article>
     </section>
+
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="/resources/v1/img/loading-animation.json"
+                       background="transparent"
+                       style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
     <script src="/resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
     <script src="/resources/v1/js/Customer-Journey.js"></script>
     <script>
         const swiper = new Swiper(".swiper-container",{
@@ -247,6 +269,7 @@
             }
         });
 
+        EventProcessor.setUserInLastPage(false);
         swiper.on('slideChange',swiper=>{
             //마지막 슬라이드 도착 시
             if(swiper.realIndex === swiper.slides.length-1) {
@@ -268,6 +291,7 @@
                     document.querySelector('#animation03').style.opacity='1';
                     document.querySelector('#animation03').style.transform='';
                 }, 600);
+                EventProcessor.setUserInLastPage(true);
                 customerJourney.setElemsAniOnScroll();
             }
             else{
@@ -281,6 +305,7 @@
                 document.querySelector('#animation02').style.transform='translateY(-40px)';
                 document.querySelector('#animation03').style.opacity='0';
                 document.querySelector('#animation03').style.transform='translateY(-80px)';
+                EventProcessor.setUserInLastPage(true);
             }
         })
 
@@ -297,7 +322,9 @@
                 //상품 이미지 url
                 imgUrl : '/resources/v1//img/img-product-svg-health-life.svg',
                 //상품 설명
-                explain : '부족한 보장을 꽉 채운 건강보험'
+                explain : '부족한 보장을 꽉 채운 건강보험',
+                //심의필
+                certificationMsg : '생명보험협회 심의필 제 2022-05466호 (2022-12-27 ~ 2023-12-26)'
             },
             linkInfoForService : {
                 //부가서비스 링크 url

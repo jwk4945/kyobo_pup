@@ -1,0 +1,168 @@
+/* font */
+@font-face {
+    font-family: 'Pretendard Variable';
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: url("PretendardVariable.woff2");
+}
+/* noto-sans-kr-100 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url('fonts/noto-sans-kr-v27-latin_korean-100.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('fonts/noto-sans-kr-v27-latin_korean-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/noto-sans-kr-v27-latin_korean-100.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/noto-sans-kr-v27-latin_korean-100.woff') format('woff'); /* Modern Browsers */
+}
+/* noto-sans-kr-300 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url('fonts/noto-sans-kr-v27-latin_korean-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('fonts/noto-sans-kr-v27-latin_korean-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/noto-sans-kr-v27-latin_korean-300.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/noto-sans-kr-v27-latin_korean-300.woff') format('woff'); /* Modern Browsers */
+}
+/* noto-sans-kr-regular - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/noto-sans-kr-v27-latin_korean-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('fonts/noto-sans-kr-v27-latin_korean-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/noto-sans-kr-v27-latin_korean-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/noto-sans-kr-v27-latin_korean-regular.woff') format('woff'); /* Modern Browsers */
+}
+/* noto-sans-kr-500 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/noto-sans-kr-v27-latin_korean-500.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('fonts/noto-sans-kr-v27-latin_korean-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/noto-sans-kr-v27-latin_korean-500.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/noto-sans-kr-v27-latin_korean-500.woff') format('woff'); /* Modern Browsers */
+}
+/* noto-sans-kr-700 - latin_korean */
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/noto-sans-kr-v27-latin_korean-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+    url('fonts/noto-sans-kr-v27-latin_korean-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('fonts/noto-sans-kr-v27-latin_korean-700.woff2') format('woff2'), /* Super Modern Browsers */
+    url('fonts/noto-sans-kr-v27-latin_korean-700.woff') format('woff'); /* Modern Browsers */
+}
+
+/* ==========================================================================
+    기본설정
+========================================================================== */
+/* reset */
+*           {margin:0; padding:0; box-sizing:border-box;}
+html        {height:100%;}
+
+td *, div *, li *, span *, p *  {vertical-align:middle;}
+ul, ol, li                      {list-style:none;}
+
+img, hr     {border:none;}
+img         {vertical-align:top; border:0px ;}
+strong      {font-weight:bold;}
+
+/* Link Style */
+:link       {text-decoration:none; color:inherit;}
+:visited    {text-decoration:none; color:inherit;}
+:active {text-decoration:none; color:inherit;}
+:hover      {text-decoration:none;}
+/* Table Style */
+table       {border-collapse:collapse;  border-spacing:0; width:100%;}
+table td img    {vertical-align:middle;}
+
+/* tag all font-size set */
+p,div,ul,li,dl,dt,dd,ol,a,em,strong,fieldset,textarea,input,select,span,table,th,td,address,cite,
+h1,h2,h3,h4,h5,h6 {color:inherit; font-family:"Noto Sans KR", sans-serif; font-size:inherit; line-height:inherit;}
+
+
+/* From Style */
+textarea    {border:1px solid #d3d0c9; padding:5px;}
+input       {vertical-align:middle; }
+input, textarea, select, button, label {vertical-align:middle;}
+button,
+select,
+textarea,
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="tel"],
+input[type="file"] {border-radius:0; margin:0; padding:0; border:0; outline:none; background:none; box-sizing:border-box;}
+button,
+textarea,
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="tel"],
+input[type="file"] {-webkit-appearance:none;}
+input[type="radio"],
+input[type="checkbox"] {margin:0; padding:0; width:13px; height:13px;}
+html,
+body,
+pre,
+button,
+select,
+textarea,
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="number"],
+input[type="tel"],
+input[type="file"],
+input[type="password"] {font:normal 14px/1.5 "Noto Sans KR", sans-serif; letter-spacing:0px;}
+button,
+input[type="button"],
+input[type="submit"] {cursor:pointer; overflow:visible;}
+button::-moz-focus-inner {padding:0; border:0;}
+input[type="date"],
+input[type="time"] {-webkit-appearance:none; -moz-appearance:none; border-radius:0;}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="date"]::-webkit-outer-spin-button {-webkit-appearance:none; margin:0;}
+[readonly],
+[disabled] {cursor:default;}
+[disabled] {cursor:default; opacity:1; -webkit-text-fill-color:inherit;}
+
+select {-webkit-appearance:none; -moz-appearance:none; appearance:none;}
+select::-ms-expand {display:none;}
+hr, caption {display:none;}
+legend      {position:absolute; height:0; font-size:0px; line-height:0; overflow:hidden; text-indent:-20000px; }
+address,cite,em {font-style:normal;}
+fieldset    {border:0; padding:0; }
+label       {cursor:pointer; margin:0;}
+
+.hide{display:none;}
+.blind{position:absolute;width:1px;height:1px;margin-left:-1px;overflow:hidden;color:transparent !important;border:0 none !important;background:transparent !important;}
+.ellipsis{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+.blur img{-webkit-filter:blur(6px);-moz-filter:blur(6px);filter:blur(6px);}
+
+html, body {min-height:100%;}
+
+a {color:inherit;}
+img {width:100%;}
