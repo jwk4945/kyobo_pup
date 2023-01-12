@@ -157,12 +157,10 @@ address,cite,em {font-style:normal;}
 fieldset    {border:0; padding:0; }
 label       {cursor:pointer; margin:0;}
 
-.hide{display:none;}
 .blind{position:absolute;width:1px;height:1px;margin-left:-1px;overflow:hidden;color:transparent !important;border:0 none !important;background:transparent !important;}
 .ellipsis{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
 .blur img{-webkit-filter:blur(6px);-moz-filter:blur(6px);filter:blur(6px);}
 
 html, body {min-height:100%;}
 
-a {color:inherit;}
-img {width:100%;}
+a {text-decoration: none;color:inherit;}

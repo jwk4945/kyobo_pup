@@ -374,7 +374,7 @@
 
         // customerJourney.createImageSlides('.image-slide-inner-zone');
         // customerJourney.loadElementsToAnimate();
-        customerJourney.setElemsAniOnLoad();
+        AnimationManager.setElemsAniOnLoad();
 
         document.querySelectorAll('.painted-bar')[0].style.width='24%';
         document.querySelectorAll('.painted-bar')[1].style.width='16%';
@@ -399,8 +399,8 @@
                 [...document.querySelectorAll('.footer-area>*')].forEach(e=>e.classList.toggle('display-none'));
                 [...document.querySelectorAll('section.display-none')].forEach(e=>e.classList.toggle('display-none'));
 
-                customerJourney.createImageSlides('.image-slide-inner-zone');
-                customerJourney.setElemsAniOnScroll();
+                AnimationManager.createImageSlides('.image-slide-inner-zone');
+                AnimationManager.setElemsAniOnScroll();
             }, 600);
             window.setTimeout(()=>document.querySelector('.footer-area .opacity-0').classList.toggle('opacity-0'), 600);
         })

@@ -67,7 +67,7 @@
                         당뇨는 철저한 식단 관리가<br>중요한 생활습관병입니다.
                         </span>
             </div>
-            <div id="swiper-container" class="swiper-container opacity-0"
+            <div id="swiper-container" class="swiper-container opacity-0 fact-check"
                  data-animation-type="onload"
                  data-animation-infos="remove-class-nm: 'opacity-0',
                                        style-bf-ani: 'transform:translateX(100%);',
@@ -170,14 +170,25 @@
                 <div class="swiper-pagination mt-10"></div>
             </div>
 
-            <div class="display-none" id="nextDiv">
+            <div data-is-not-result-page="false" id="nextDiv">
                 <div class="mb-30">
-                    <img class="mt-30 transition-all"
-                         src="/resources/v1/img/check-bg-white.svg" width="50px" id="animation01">
-                    <p class="mt-5 mb-5 transition-all" id="animation02">
+                    <img class="mt-30" src="/resources/v1/img/check-bg-white.svg" width="50px" id="animation01"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani:'transform:scale(3.3); opacity:0;',
+                                              style-af-ani:'transform:scale(1); opacity:1;',
+                                              start-ms:'100'">
+                    <p class="mt-5 mb-5" id="animation02"
+                       data-animation-type="onresult"
+                       data-animation-infos="style-bf-ani:'transform:translateY(-40px); opacity:0;',
+                                              style-af-ani:'transform:translateY(0px); opacity:1;',
+                                              start-ms:'300'">
                         대한민국 ‘국민병’이라는 당뇨,
                     </p>
-                    <h1 class="fw-700 transition-all" id="animation03">
+                    <h1 class="fw-700" id="animation03"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani:'transform:translateY(-80px); opacity:0;',
+                                              style-af-ani:'transform:translateY(0px); opacity:1;',
+                                              start-ms:'500'">
                         어느 날 갑자기<br>
                         발병하는 것이 아닙니다.
                     </h1>
@@ -194,7 +205,7 @@
             </div>
         </article>
     </header>
-    <section class="display-none"
+    <section data-is-not-result-page="false"
              data-animation-type="onscroll"
              data-animation-infos="style-bf-ani: 'background-color:#6a50c2;', style-af-ani: 'background-color:#5043A0;'">
         <article class="text-align-center fc-white">
@@ -226,7 +237,7 @@
         </article>
     </section>
     <!--콘텐츠 평가영역-->
-    <section id="feedback-area" class="bg-14 display-none">
+    <section id="feedback-area" data-is-not-result-page="false" class="bg-14">
         <article class="text-align-center fc-white">
             <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
             <div class="feedback-btn-box mt-10 text-align-center">
@@ -260,57 +271,8 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
     <script src="/resources/v1/js/Customer-Journey.js"></script>
     <script>
-        const swiper = new Swiper(".swiper-container",{
-            loop: false,
-            pagination:{
-                el: '.swiper-pagination',
-                type: 'bullets',
-                bulletClass: 'swiper-my-bullet',
-                bulletActiveClass: 'active',
-            }
-        });
-
-        EventProcessor.setUserInLastPage(false);
-        swiper.on('slideChange',swiper=>{
-            //마지막 슬라이드 도착 시
-            if(swiper.realIndex === swiper.slides.length-1) {
-                document.querySelector('#nextDiv').style.marginTop=`-${document.querySelector('.swiper-wrapper').clientHeight}px`;
-                [...document.querySelectorAll('.display-none')].forEach(elem => {
-                    elem.classList.add('displayed');
-                    elem.classList.remove('display-none');
-                });
-                document.querySelector('.swiper-pagination').classList.add('display-none');
-                window.setTimeout(()=> {
-                    document.querySelector('#animation01').style.opacity='1';
-                    document.querySelector('#animation01').style.transform='';
-                }, 100);
-                window.setTimeout(()=> {
-                    document.querySelector('#animation02').style.opacity='1';
-                    document.querySelector('#animation02').style.transform='';
-                }, 400);
-                window.setTimeout(()=> {
-                    document.querySelector('#animation03').style.opacity='1';
-                    document.querySelector('#animation03').style.transform='';
-                }, 600);
-                EventProcessor.setUserInLastPage(true);
-                customerJourney.setElemsAniOnScroll();
-            }
-            else{
-                [...document.querySelectorAll('.displayed')].forEach(elem => {
-                    elem.classList.add('display-none');
-                });
-                document.querySelector('.swiper-pagination').classList.remove('display-none');
-                document.querySelector('#animation01').style.opacity='0';
-                document.querySelector('#animation01').style.transform='scale(3.3)';
-                document.querySelector('#animation02').style.opacity='0';
-                document.querySelector('#animation02').style.transform='translateY(-40px)';
-                document.querySelector('#animation03').style.opacity='0';
-                document.querySelector('#animation03').style.transform='translateY(-80px)';
-                EventProcessor.setUserInLastPage(true);
-            }
-        })
-
-        customerJourney.setElemsAniOnLoad();
+        //onLoad animation 세팅
+        AnimationManager.loadElementsToAnimate();
 
         //컴포넌트 이벤트 및 기본설정
         EventProcessor.initSetting({

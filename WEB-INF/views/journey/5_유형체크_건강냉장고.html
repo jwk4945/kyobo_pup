@@ -306,7 +306,7 @@
 
         // customerJourney.createImageSlides('.image-slide-inner-zone');
         // customerJourney.loadElementsToAnimate();
-        customerJourney.setElemsAniOnLoad();
+        AnimationManager.setElemsAniOnLoad();
 
         document.querySelectorAll('.painted-bar')[0].style.width='24%';
         document.querySelectorAll('.painted-bar')[1].style.width='16%';
@@ -327,9 +327,9 @@
             document.querySelector('.result-'+value).classList.remove('display-none');
 
             document.querySelector('#recommend-area').classList.remove('display-none');
-            customerJourney.setElemsAniOnScroll();
-            customerJourney.addEventToStars();
-            customerJourney.addEventToTextArea();
+            AnimationManager.setElemsAniOnScroll();
+            AnimationManager.addEventToStars();
+            AnimationManager.addEventToTextArea();
         })
     </script>
 </body>

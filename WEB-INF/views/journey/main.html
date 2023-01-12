@@ -321,9 +321,9 @@
         document.documentElement.style.setProperty('--1vw', `${Math.round(document.documentElement.clientWidth/100*10)/10}px`);
         document.documentElement.style.setProperty('--1vh', `${Math.round(document.documentElement.clientHeight/100*10)/10}px`);
 
-        customerJourney.loadElementsToAnimate();
-        customerJourney.addEventToStars();
-        customerJourney.addEventToTextArea();
+        AnimationManager.loadElementsToAnimate();
+        AnimationManager.addEventToStars();
+        AnimationManager.addEventToTextArea();
     </script>
 </body>
 </html>

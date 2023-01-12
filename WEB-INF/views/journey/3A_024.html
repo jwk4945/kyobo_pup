@@ -554,19 +554,8 @@
     <script src="/resources/v1/js/Customer-Journey.js"></script>
     <script>
         try {
-            //swiper
-            const swiper = new Swiper(".swiper-container", {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                    bulletClass: 'swiper-my-bullet',
-                    bulletActiveClass: 'active'
-                }
-            });
-
-            // customerJourney.createImageSlides('.image-slide-inner-zone');
-            customerJourney.loadElementsToAnimate();
+            //애니메이션 설정 로딩
+            AnimationManager.loadElementsToAnimate();
 
             //컴포넌트 이벤트 및 기본설정
             EventProcessor.initSetting({

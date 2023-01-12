@@ -108,7 +108,7 @@ class Calculation {
     }
 };
 
-const customerJourney=(function (){
+const AnimationManager=(function (){
 
     let idxForTriggerElem = 1;
     let _100vh = document.documentElement.clientHeight;
@@ -186,10 +186,6 @@ const customerJourney=(function (){
    }
 
    function setElemsAniOnResult(elems){
-       const button = document.querySelector('button#goNextBtn');
-       if(button===null)
-           return;
-
        if(elems===undefined){
            elems = [...document.querySelectorAll('*')].filter(elem=>
                elem.getAttributeNames().filter(attr=>attr.toLowerCase().indexOf('data-animation-type')>-1).length>0
@@ -757,15 +753,10 @@ const customerJourney=(function (){
 }());
 
 const EventProcessor = (function (){
-    let alreadyShowed = false;
-    let orgTranslateY;
-    let orgTranslateX;
-    let transformedElem = document.body;
     let _isAutoBottomStyle=false;
     let _isLinkToInsurance;
     let didCallback=false;
-
-    let surveyResult;
+    let _didTogglePageContents=false;
 
     let insuranceUrl;
     let insuranceImg;
@@ -783,6 +774,8 @@ const EventProcessor = (function (){
     let _bannerHistorySeq;
 
     let _isUserInLastPage = true;
+    let _surveyRadiosSelector = 'input[type="radio"][name="kyobolife-survey"]';
+    let _nextButtonSelector = 'button#goNextBtn';
 
     function initSettingForBfCache() {
         window.addEventListener('pageshow', function(event) {
@@ -797,6 +790,7 @@ const EventProcessor = (function (){
         _searchKeyword = document.querySelector('#srch_kywr_name').value;
         //콘텐츠 아이디
         _contentsId = document.querySelector('#csjr_ctts_num').value;
+
         if(_contentsId==null || _contentsId==='')
             _contentsId = params.contentsId;
         _contentsId.replace('.html','');
@@ -805,9 +799,8 @@ const EventProcessor = (function (){
         setPropertiesForCss(); //css 전역변수 설정
         initSettingForReviewRadio(params.contentsId); //피드백라디오(좋아요/싫어요) 기본이벤트처리
         setAutoHideElements(); //gnb(헤더) 자동 숨기기 설정
-        initSettingForSubmitButton(); // 확인하기 버튼 이벤트 설정
+        getMethodForShowResult(params).call(this,params); //결과화면 처리함수 선택호출
         initSettingForBfCache(); // 브라우저 뒤로가기 캐쉬 초기화
-        initSettingForBalanceGame(); //라디오버튼(밸런스게임) 클릭 처리
 
         //bottom-sheet 추천상품정보 설정
         const linkInfoForInsurance = params.linkInfoForInsurance;
@@ -832,60 +825,94 @@ const EventProcessor = (function (){
             setBottomSheetEvent();
     }
 
-    function initSettingForSubmitButton(){
-        initSettingForButtonEnable(); // 버튼 활성화 처리
-        initSettingForSubmitSurvey(); // 설문조사 결과 제출 및 가져오기
+    function getMethodForShowResult({nextButtonSelector=_nextButtonSelector, surveyRadioSelector=_surveyRadiosSelector}){
+        //설문조사 라디오버튼 selector
+        _surveyRadiosSelector = surveyRadioSelector;
+
+        // 1. 확인하기 버튼이 있는 경우
+        _nextButtonSelector = nextButtonSelector;
+        if(document.querySelector(_nextButtonSelector)!==null)
+            return initSettingForSubmitButton;
+
+        //2.밸런스 게임인 경우 (선택 시 바로 결과페이지 등장)
+        else if(document.querySelector('.balance-game')!==null)
+            return initSettingForBalanceGame;
+
+        //3.팩트체크인 경우 (마지막 슬라이드 이후 결과페이지 등장)
+        else if(document.querySelector('.fact-check')!==null)
+            return initSettingForFactCheck;
+
+        //4.결과화면이 없는 경우 (일반 정보제공형)
+        else
+            return ()=>{};
+    }
+
+    function initSettingForSubmitButton({bPostSurveyInput=true,
+                                        forceEnableNextButton=false}){
+        initSettingForButtonEnable(forceEnableNextButton); // 버튼 활성화 처리
+        initSettingForSubmitSurvey(bPostSurveyInput); // 설문조사 결과 제출 및 가져오기
         setGoNextAndFirstBtn(); // 확인하기 / 뒤로가기 버튼 처리
     }
 
     function initSettingForButtonEnable(){
+        const confirm = document.querySelector(_nextButtonSelector);
+
         //확인하기 버튼 활성화 처리
-        [...document.querySelectorAll('input[type="radio"][name="kyobolife-survey"]')].forEach(elem =>
+        [...document.querySelectorAll(_surveyRadiosSelector)].forEach(elem =>
             elem.addEventListener('change', e => {
-                const confirm = document.querySelector('button#goNextBtn');
                 if (confirm !== null)
-                    document.querySelector('.footer-area button:disabled').disabled = false;
+                    confirm.disabled = false;
             })
         );
     }
 
     function initSettingForBalanceGame(){
-        //라디오버튼(밸런스게임) 클릭 처리
         [...document.querySelectorAll('.balance-game input[name="kyobolife-survey"]')].forEach(input => {
-            input.addEventListener('change', () => {
-
-                if (document.querySelector('input[name="kyobolife-survey"]:checked').value === '01') {
-                    document.querySelector('#section01').classList.remove('display-none');
-                    document.querySelector('#section02').classList.add('display-none');
-                    window.setTimeout(() => {
-                        document.querySelector('#animation01').style.opacity = '';
-                        document.querySelector('#animation01').style.transform = '';
-                    }, 300);
-                } else {
-                    document.querySelector('#section01').classList.add('display-none');
-                    document.querySelector('#section02').classList.remove('display-none');
-                    window.setTimeout(() => {
-                        document.querySelector('#animation02').style.opacity = '';
-                        document.querySelector('#animation02').style.transform = '';
-                    }, 300);
-                }
-                document.querySelector('.footer-area').classList.add('display-none');
-                document.querySelector('#feedback-area').classList.remove('display-none');
+            input.addEventListener('change', e => {
+                togglePageContents(true); // 뒤로가기가 없으므로 페이지 전환은 한번만(once)
+                AnimationManager.setElemsAniOnScroll();
                 document.documentElement.classList.remove('overflow-y-hidden');
+                AnimationManager.setElemsAniOnResult();
+                // 밸런스게임 라디오버튼 영역 높이 최소화(축소)
                 document.querySelector('#survey-area').classList.add('shrink-height');
-
-                customerJourney.setElemsAniOnScroll();
-
-                //라디오 잠금
-                // [...document.querySelectorAll('input[name="kyobolife-survey"]')].forEach(input=>input.disabled=true);
-
-
             });
         });
     }
 
-    function initSettingForSubmitSurvey(){
-        if(document.querySelector('.survey-form input[type="radio"][name="kyobolife-survey"]')===null)
+    function initSettingForFactCheck(){
+        const swiper = new Swiper(".swiper-container",{
+            loop: false,
+            pagination:{
+                el: '.swiper-pagination',
+                type: 'bullets',
+                bulletClass: 'swiper-my-bullet',
+                bulletActiveClass: 'active',
+            }
+        });
+
+        EventProcessor.setUserInLastPage(false);
+
+        swiper.on('slideChange',swiper=>{
+
+            if((swiper.realIndex === swiper.slides.length-1) //마지막 슬라이드 도착했거나
+              ||(swiper.realIndex === swiper.slides.length-2 && swiper.previousIndex === swiper.slides.length-1)) //마지막슬라이드에서 직전슬라이드로 돌아온 경우
+            {
+                togglePageContents();
+                EventProcessor.setUserInLastPage(true);
+                document.querySelector('.swiper-pagination').classList.toggle('display-none');
+                // 마지막 슬라이드
+                if(swiper.realIndex === swiper.slides.length-1) {
+                    document.querySelector('#nextDiv').style.marginTop = `-${document.querySelector('.swiper-wrapper').clientHeight}px`;
+                    AnimationManager.setElemsAniOnScroll();
+                    AnimationManager.setElemsAniOnResult();
+                }
+            }
+        })
+    }
+
+    function initSettingForSubmitSurvey(bPost=true){
+        if(bPost===false ||
+            document.querySelector('.survey-form input[type="radio"][name="kyobolife-survey"]')===null)
             return;
         const submitBtn = document.querySelector('button#goNextBtn');
         if(submitBtn===null)
@@ -959,6 +986,8 @@ const EventProcessor = (function (){
 
         // 확인하기버튼 callback
         callbackForNext = callbackForNext || (() => {
+            if(document.querySelector('.li-item-result')===null)
+                return;
             const index = [...document.querySelectorAll('.survey-form input[type="radio"]')]
                 .findIndex(item => item === document.querySelector('.survey-form input[type="radio"]:checked'));
             document.querySelectorAll('.li-item-result')[index].classList.add('active');
@@ -971,17 +1000,16 @@ const EventProcessor = (function (){
                 [...document.querySelectorAll('.li-item-result')].forEach(li => li.classList.remove('active'));
             }, 0);
         });
-        setUserInLastPage(false);
 
         if(goNextBtn!==null){
             goNextBtn.addEventListener('click',e=>{
                 togglePageContents();
                 callbackForNext();
-                customerJourney.setElemsAniOnScroll();
+                AnimationManager.setElemsAniOnScroll();
                 document.documentElement.classList.remove('overflow-y-hidden');
                 setUserInLastPage(true);
                 //애니메이션
-                customerJourney.setElemsAniOnResult();
+                AnimationManager.setElemsAniOnResult();
             });
         }
         if(goFirstBtn!==null){
@@ -998,10 +1026,29 @@ const EventProcessor = (function (){
             });
         }
     }
-    function togglePageContents(){
-        [...document.querySelectorAll('[data-is-not-result-page=true]')].forEach(elem=>elem.dataset.isNotResultPage='processing');
-        [...document.querySelectorAll('[data-is-not-result-page=false]')].forEach(elem=>elem.dataset.isNotResultPage='true');
-        [...document.querySelectorAll('[data-is-not-result-page=processing]')].forEach(elem=>elem.dataset.isNotResultPage='false');
+
+    function showSelectiveResult() {
+        if (document.querySelector("#selective-result-area") !== null) {
+            const radios = [...document.querySelectorAll(_surveyRadiosSelector)];
+            const checkedIndex = radios.findIndex(radio => radio === document.querySelector(`${_surveyRadiosSelector}:checked`));
+            [...document.querySelectorAll('#selective-result-area .selective-result')].forEach((result, idx) => {
+                if (idx === checkedIndex)
+                    result.classList.remove('display-none');
+                else
+                    result.classList.add('display-none');
+            })
+        }
+    }
+
+    function togglePageContents(bOnce=false){
+        if( (bOnce===true && _didTogglePageContents===false) || bOnce===false) {
+            [...document.querySelectorAll('[data-is-not-result-page=true]')].forEach(elem => elem.dataset.isNotResultPage = 'processing');
+            [...document.querySelectorAll('[data-is-not-result-page=false]')].forEach(elem => elem.dataset.isNotResultPage = 'true');
+            [...document.querySelectorAll('[data-is-not-result-page=processing]')].forEach(elem => elem.dataset.isNotResultPage = 'false');
+            _didTogglePageContents = true;
+        }
+
+        showSelectiveResult();
     }
 
     function postSurveyInput(surveyResultTargets){
@@ -1020,7 +1067,7 @@ const EventProcessor = (function (){
             checkedContents = checkedContents.replace(/\s\s/g,'').trim();
         const url = `/journey/form/contents-survey`;
         const sendData = {
-            srch_kywr_name: _searchKeyword // 교보문고 검색키웓,
+            srch_kywr_name: _searchKeyword // 교보문고 검색키워드,
             , csjr_ctts_num: _contentsId // 콘텐츠아이디
             , csjr_srvy_ansr_srmb: checkedIndex // 응답 라디오 순번
             , csjr_srvy_ansr_cntt: checkedContents // 응답 보기설문내용
@@ -1085,7 +1132,7 @@ const EventProcessor = (function (){
                 if(_isUserInLastPage && screenHeight*0.5 > triggerRect.top){
                     scrollToEndOfFeedbackArea(screenHeight, triggerRect);    // 화면을 피드백영역 하단으로 자동 스크롤
                     showBottomSheet(postBannerExposeInfo); // 바텀시트 등장
-                    //한번만 동작하도록 이벤츠해제
+                    //한번만 동작하도록 이벤트 해제
                     window.removeEventListener('scroll',handler);
                 }
             }
@@ -1473,9 +1520,9 @@ const EventProcessor = (function (){
         }
         _setPropertiesForCss();
         window.addEventListener('resize',_setPropertiesForCss);
-        window.addEventListener('resize',()=>customerJourney.set100vh(document.documentElement.clientHeight));
+        window.addEventListener('resize',()=>AnimationManager.set100vh(document.documentElement.clientHeight));
     }
     return {setGoNextAndFirstBtn, isAutoBottomStyle, setAutoBottomSheetEvent
         , setBottomSheetEvent, setPropertiesForCss, getResultOfSurvey, togglePageContents
-        , initSetting, setUserInLastPage, getUserKey}
+        , initSetting, setUserInLastPage}
 })();
