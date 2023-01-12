@@ -321,9 +321,9 @@ header article{
     position: absolute;
     left: 50%;
     top: 0;
-    height: 128vw;
-    width: 128vw;
-    transform: translateX(-50%) translateY(-55vw);
+    height: 480px;
+    width: 480px;
+    transform: translateX(-50%) translateY(-206px);
     border-radius: 50%;
 }
 ._6F_007 .header-bg-panel{
@@ -498,7 +498,8 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
 }
 .survey-type .survey-form .horizontal-ul>li{
     width: initial;
-    padding: 5px;
+    /* padding: 5px; */
+    margin: 5px;
     flex: 0 0 110px;
     filter: drop-shadow(0 5px 3px rgba(0,0,0,0.2));
 }

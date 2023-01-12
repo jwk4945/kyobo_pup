@@ -849,6 +849,7 @@ const EventProcessor = (function (){
 
     function initSettingForSubmitButton({bPostSurveyInput=true,
                                         forceEnableNextButton=false}){
+        EventProcessor.setUserInLastPage(false);
         initSettingForButtonEnable(forceEnableNextButton); // 버튼 활성화 처리
         initSettingForSubmitSurvey(bPostSurveyInput); // 설문조사 결과 제출 및 가져오기
         setGoNextAndFirstBtn(); // 확인하기 / 뒤로가기 버튼 처리
@@ -867,8 +868,12 @@ const EventProcessor = (function (){
     }
 
     function initSettingForBalanceGame(){
+        //첫 로딩 시점에는 결과페이지 아님
+        setUserInLastPage(false);
+
         [...document.querySelectorAll('.balance-game input[name="kyobolife-survey"]')].forEach(input => {
             input.addEventListener('change', e => {
+                setUserInLastPage(true);
                 togglePageContents(true); // 뒤로가기가 없으므로 페이지 전환은 한번만(once)
                 AnimationManager.setElemsAniOnScroll();
                 document.documentElement.classList.remove('overflow-y-hidden');
@@ -1006,7 +1011,7 @@ const EventProcessor = (function (){
                 togglePageContents();
                 callbackForNext();
                 AnimationManager.setElemsAniOnScroll();
-                document.documentElement.classList.remove('overflow-y-hidden');
+                // document.documentElement.classList.remove('overflow-y-hidden');
                 setUserInLastPage(true);
                 //애니메이션
                 AnimationManager.setElemsAniOnResult();
@@ -1021,7 +1026,7 @@ const EventProcessor = (function (){
 
                 if(callbackForPrev!==null)
                     callbackForPrev();
-                document.documentElement.classList.add('overflow-y-hidden');
+                // document.documentElement.classList.add('overflow-y-hidden');
                 setUserInLastPage(false);
             });
         }
