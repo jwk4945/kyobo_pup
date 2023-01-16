@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/swiper-bundle.min.css">
+    <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <title>아이와 부인, 누가 더 걱정될까?</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="balance-game _6F_007 survey-type bg-6">
+<!--gnb헤더 영역-->
+<nav class="bg-white">
+    <a href="javascript:history.back()" class="go-back-btn">
+        <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
+    </a>
+    <div>
+        아이와 부인, 누가 더 걱정될까?
+    </div>
+    <div></div>
+</nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+    <div class="main-wrapper">
+        <header>
+            <div id="survey-area">
+                <article class="fc-white">
+                    <span class="tag opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                               start-ms:'300',
+                                               transition-props:'[opacity]',
+                                               transition-duration:'0.7s'">자녀</span>
+                    <p class="mt-10">
+                        <h1 class="opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                               style-bf-ani: 'transform:translateY(-100%);',
+                                               style-af-ani: 'transform:',
+                                               start-ms:'500',
+                                               transition-props:'[opacity,transform]',
+                                               transition-duration:'0.8s'">사랑하는 부인이 임신을 한다면</h1>
+                        <h1 class="strong-underline opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                               style-bf-ani: 'transform:translateY(-250%);',
+                                               style-af-ani: 'transform:',
+                                               start-ms:'700',
+                                               transition-props:'[opacity,transform]',
+                                               transition-duration:'0.8s'">
+                            아이와 부인, 누가 더 걱정될까요?
+                        </h1>
+                    </p>
+                    <div class="opacity-0 mt-10"
+                         data-animation-type="onload"
+                         data-animation-infos="remove-class-nm: 'opacity-0',
+                                               style-bf-ani: 'transform:translateY(-400%);',
+                                               style-af-ani: 'transform:',
+                                               start-ms:'900',
+                                               transition-props:'[opacity,transform]',
+                                               transition-duration:'0.8s'">
+                        <span class="sub-tit">
+                        한 번쯤 해보는 생각,<br>밸런스 게임으로 알아보세요!
+                        </span>
+                    </div>
+                </article>
+
+                <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
+                <input type="radio" name="kyobolife-survey" value="02" id="answer-02">
+                <div class="main-banner-wrapper mt-30 mb-0 opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateX(100vw);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'300',
+                                        transition-duration:'0.7s',
+                                        transition-props:'[transform]'">
+                    <div class="radio-btn-box">
+                        <div class="text-align-center">
+                            <label for="answer-01">
+                                <div class="before">
+                                    <p class="fs-7 mt-0 mb-0">아이에게 선천성 질병이<br>
+                                        있을까 걱정될 거야!</p>
+                                    <h4 class="fw-700 mt-5 mb-20">아이 걱정</h4>
+                                    <img src="/resources/v1/img/6F_007_img-01.gif" width="100">
+                                </div>
+                                <div class="after">
+                                    <h3 class="fw-700 mb-10">아이 걱정</h3>
+                                    <img src="/resources/v1/img/6F_007_img-01.gif" width="100">
+                                    <h5 class="fw-700 mt-20 mb-0 fs-5 fc-1">
+                                        아이가 걱정된다는 마음<br>충분히 이해해요.
+                                    </h5>
+                                </div>
+                            </label>
+                            <div class="center-img">
+                                <img src="/resources/v1/img/6F_007_img-02.svg">
+                            </div>
+                        </div>
+                        <div class="text-align-center">
+                            <label for="answer-02">
+                                <div class="before">
+                                    <p class="fs-7 mt-0 mb-0">부인이 출산 중에 잘못될까<br>
+                                        걱정될 거야!</p>
+                                    <h4 class="fw-700 mt-5 mb-20">부인 걱정</h4>
+                                    <img src="/resources/v1/img/6F_007_img-03.gif" width="100">
+                                </div>
+                                <div class="after">
+                                    <h3 class="fw-700 mb-10">부인 걱정</h3>
+                                    <img src="/resources/v1/img/6F_007_img-03.gif" width="100">
+                                    <h5 class="fw-700 mt-20 mb-0 fs-5 fc-1">
+                                        부인이 걱정된다는 마음<br>충분히 이해해요.
+                                    </h5>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-area" data-is-not-result-page="true">
+                    <div class="speech-box fc-white fw-700">도대체 뭘 선택해야 할까?</div>
+                </div>
+            </div>
+        </header>
+
+        <!--선택적 결과 영역-->
+        <div id="selective-result-area" data-is-not-result-page="false">
+            <!--아이 걱정-->
+            <section id="section01" class="selective-result">
+                <article class="text-align-center fc-1 pt-26">
+                    <div class="text-align-left gap-20-inner">
+                        <h5 id="animation01" class="mt-0 mb-20 fs-5 fc-2 fw-500"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(100px); opacity:0;',
+                                                  style-af-ani: 'transform:translateX(0px); opacity:1;',
+                                                  start-ms: '300'">아이 울음소리는 줄어들고 있지만,<br>
+                            선천성 기형은 10년간 3배나 증가했어요.</h5>
+                        <img src="/resources/v1/img/6F_007_img-06.png" width="100%"
+                             data-animation-type="onscroll"
+                             data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    </div>
+                    <div class="mt-30 text-align-left gap-20-inner">
+                        <h5 class="mt-0 fs-5 fc-2"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            [10대 선천성기형질환 유병률]
+                        </h5>
+                        <p class="mt-5 mb-0 fs-13 fc-3"
+                           data-animation-type="onscroll"
+                           data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            2009~2010년 국내 7대 도시에서 출생한 40만 3천 250명 중
+                            건강보험 진료비 청구서에 선천성기형질환으로 분류된 아이들 분석한 결과입니다.</p>
+                        <img src="/resources/v1/img/6F_007_img-07.png" width="100%"
+                             data-animation-type="onscroll"
+                             data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    </div>
+
+                    <div class="card-box mt-30 bg-white text-align-left overflow-hidden">
+                        <h5 class="fw-700 fc-2"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            너무 걱정하지 마세요. 다 잘될 거예요~
+                        </h5>
+                        <p class="mt-5 mb-0 fs-13"
+                           data-animation-type="onscroll"
+                           data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            그래도 걱정된다면, 산모까지 함께 보장받을 수 있는<br>
+                            자녀보험을 준비하세요.
+                        </p>
+                        <div data-animation-type="onscroll"
+                             data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                            <h5 class="mt-20 fw-700">[체크포인트1]</h5>
+                            <p class="mt-5 mb-0 fs-13">
+                                아이의 선천성 질환을 보장받기 위해서는 임신 22주 안에 가입해야 합니다.<br>
+                                22주가 지나면 기형 여부를 알 수 있기 때문에 역선택을 우려한 보험회사가 인수를 하지 않습니다.
+                            </p>
+                            <h5 class="mt-10 fw-700">[체크포인트2]</h5>
+                            <p class="mt-5 mb-0 fs-13">
+                                산모의 출산 중 위험은 기존 성인보험에서는 보장하지 않습니다. 자녀보험을 통해 산모까지 함께 보장받으세요.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!--부인 걱정-->
+            <section id="section02" class="selective-result pb-0">
+                <article class="text-align-center fc-1 pt-26">
+                    <div class="text-align-left gap-20-inner">
+                        <h5 id="animation02" class="mt-0 mb-20 fs-5 fc-2 fw-500"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(100px); opacity:0',
+                                                  style-af-ani: 'transform:translateX(0px); opacity:1;',
+                                                  start-ms: '300'">
+                            출산하는 여성 10명 중 3명은 35세 이상 산모입니다.</h5>
+                        <img src="/resources/v1/img/6F_007_img-08.png" width="100%"
+                             data-animation-type="onscroll"
+                             data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    </div>
+                    <div class="mt-30 text-align-left gap-20-inner">
+                        <h5 class="mt-0 mb-0 fs-5 fc-2 fw-500"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            [임신중독증 환자 수(연평균 약 11% 증가)]
+                        </h5>
+                        <p class="mt-5 mb-20 fs-13 fc-3"
+                           data-animation-type="onscroll"
+                           data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            초산에 35세 이상 산모라면 임신중독증을 주의해야 합니다.<br>
+                            임신중독증은 산모 사망원인의 15%를 차지하고 있습니다.</p>
+                        <img src="/resources/v1/img/6F_007_img-09.png" width="100%"
+                             data-animation-type="onscroll"
+                             data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                    </div>
+
+                    <div class="card-box mt-30 bg-white text-align-left overflow-hidden">
+                        <h5 class="fw-700 fc-2"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            너무 걱정하지 마세요. 다 잘될 거예요~
+                        </h5>
+                        <p class="mt-5 mb-0"
+                           data-animation-type="onscroll"
+                           data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                           style-af-ani: 'margin-left:0px; opacity:1'">
+                            그래도 걱정된다면, 산모까지 함께 보장받을 수 있는<br>
+                            자녀보험을 준비하세요.
+                        </p>
+                        <div data-animation-type="onscroll"
+                             data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                            <h5 class="mt-20 fw-700">[체크포인트1]</h5>
+                            <p class="mt-5 mb-0 fs-13">
+                                아이의 선천성 질환을 보장받기 위해서는 임신 22주 안에 가입해야 합니다.<br>
+                                22주가 지나면 기형 여부를 알 수 있기 때문에 역선택을 우려한 보험회사가 인수를 하지 않습니다.
+                            </p>
+                            <h5 class="mt-10 fw-700">[체크포인트2]</h5>
+                            <p class="mt-5 mb-0 fs-13">
+                                산모의 출산 중 위험은 기존 성인보험에서는 보장하지 않습니다. 자녀보험을 통해 산모까지 함께 보장받으세요.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+        <!-- 콘텐츠 평가영역-->
+        <section id="feedback-area" data-is-not-result-page="false" class="bg-15">
+            <article class="text-align-center fc-white gap-20">
+                <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
+                <div class="feedback-btn-box mt-10 text-align-center">
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                        <label class="feedback-btn" for="feedback-radio-01">
+                            <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                            <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                        </label>
+                    </div>
+                    <div class="vertical-line mb-15"></div>
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                        <label class="feedback-btn" for="feedback-radio-02">
+                            <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                            <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                        </label>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- // 콘텐츠 평가영역-->
+
+        <!-- footer -->
+        <footer class="footer_wrapper">
+            <div class="footer_body">
+                <div class="logo_box">
+                    <a href="https://www.kyobobook.co.kr/" class="logo_link" onclick="ga360.GA_Event('click_공통_MO', '헤더', '', '교보문고', '');">
+                        <img src="https://contents.kyobobook.co.kr/resources/fo/images/common/mok/img_logo_kyobo_footer_mok@2x.png" alt="KYOBO 교보문고">
+                    </a>
+                    <button type="button" class="btn_more_body">
+                        <span class="text">사업자정보</span>
+                        <span class="ico_arw"></span>
+                    </button>
+                </div>
+                <address class="footer_info_box">
+                    <div class="info_text_multi">
+                        <span class="info_text">교보문고</span>
+                        <span class="gap">|</span>
+                        <span class="info_text">대표이사 : 안병현</span>
+                    </div>
+                    <span class="info_text">서울특별시 종로구 종로 1</span>
+                    <span class="info_text">사업자등록번호 : 102-81-11670</span>
+                    <span class="info_text"><b>대표전화 : 1544-1900</b></span>
+                    <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+                    <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+                    <a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1028111670" class="btn_footer_link" target="_blank">사업자정보확인</a>
+                    <a href="https://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=ink0911" target="_blank" class="btn_footer_link">구매안전서비스</a>
+                </address>
+                <div class="footer_menu_box">
+                    <ul class="footer_menu_list">
+                        <li class="footer_menu_item" style="">
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '로그인', '');" href="#" data-role="login">로그인</a>
+                        </li>    
+                        <li class="footer_menu_item" style="">
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '회원가입', '');" href="https://mmbr.kyobobook.co.kr/join">회원가입</a>
+                        </li>
+                        <li class="footer_menu_item">
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', 'APP다운', '');" href="https://mkyobo.page.link/?link=http://www.kyobobook.co.kr/&amp;apn=mok.android">APP 다운</a>
+                        </li>
+                        <li class="footer_menu_item">
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_PC', 'FNB', '', 'PC버전', '');" href="javascript:KbbJS.util.pcModeClick()">PC버전</a>
+                        </li>
+                    </ul>
+                    <ul class="footer_menu_list sub">
+                        <li class="footer_menu_item">
+                        
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '이용약관', '');" href="https://www.kyobobook.co.kr/contents/provision">이용약관</a>
+                        </li>
+                        <li class="footer_menu_item privacy">
+                        
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '개인정보처리방침', '');" href="https://www.kyobobook.co.kr/contents/privacy-policy">개인정보처리방침</a>
+                        </li>
+                        <li class="footer_menu_item">
+                        
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '청소년보호정책', '');" href="https://www.kyobobook.co.kr/contents/youth-policy">청소년보호정책</a>
+                        </li>
+                        <li class="footer_menu_item">
+                        
+                            <a class="footer_menu_link" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '협력사여러분', '');" href="https://www.kyobobook.co.kr/partners/chargeperson">협력사여러분</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="family_site_box">
+                    <div class="fold_box_wrap">
+                        <div class="fold_box type_select">
+                            <div class="fold_box_header">
+                                <span>Family Site</span>
+                                <button type="button" class="btn_fold"><span class="hidden">컨텐츠 열기</span></button>
+                            </div>
+                            <div class="fold_box_contents">
+                                <div class="fold_select_wrap">
+                                    <ul class="fold_select_list">
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.kyobo.com" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보생명', '');">교보생명</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.iprovest.com/index.jsp" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보증권', '');">교보증권</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="http://www.kico.co.kr/home;jsessionid=76EE714203E614AFEEE48256CAF2E341" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보정보통신', '');">교보정보통신</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.kyoborealco.co.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보리얼코', '');">교보리얼코</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="http://www.kyoboitm.co.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보악사자산운용', '');">교보악사자산운용</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.lifeplanet.co.kr/startmain/main.dev" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보라이프플래닛생명', '');">교보라이프플래닛생명</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.kcasonsa.co.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', 'KCA 손해사정', '');">KCA 손해사정</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.kcase.co.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', 'KCA 서비스', '');">KCA 서비스</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.kyobotrust.co.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보자산신탁주식회사', '');">교보자산신탁주식회사</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.daesan.or.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '대산문화재단', '');">대산문화재단</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.kbedu.or.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보교육재단', '');">교보교육재단</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="https://www.dsa.or.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '대산농촌재단', '');">대산농촌재단</a>
+                                        </li>
+                                        <li class="family_site_item">
+                                            <a class="family_site_link" target="_blank" href="http://www.kyoboacademy.co.kr/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '교보아카데미', '');">교보아카데미</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright_box">
+                    <div class="copyright">
+                        <span>@Kyobo Book Centre</span>
+                    </div>
+                    <div class="sns_share_box">
+                        <a class="btn_sns_share youtube" target="_blank" href="https://www.youtube.com/c/kbooknews" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '유튜브', '');"><span class="hidden">youtube 공유</span></a>
+                        <a class="btn_sns_share fb" target="_blank" href="https://www.facebook.com/kyobobookonline?orderClick=rwk" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '페이스북', '');"><span class="hidden">facebook 공유</span></a>
+                        <a class="btn_sns_share insta" target="_blank" href="https://www.instagram.com/kyobobook_online/" onclick="ga360.GA_Event('click_공통_MO', 'FNB', '', '인스타그램', '');"><span class="hidden">instagram 공유</span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 네이버 -->
+            <script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script> 
+            <script type="text/javascript"> 
+                if (!wcs_add) var wcs_add={};
+                wcs_add["wa"] = "s_3ee2e2b68e5f";
+                if (!_nasa) var _nasa={};
+                if(window.wcs){
+                    wcs.inflow();
+                    wcs_do(_nasa);
+                }
+            </script>
+            
+            <!-- 카카오 -->
+            <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+            <script type="text/javascript">
+                kakaoPixel('1830363100807970928').pageView('방문');
+            </script>
+        
+            <!-- 구글 -->    
+            <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-996822555"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+            
+                gtag('config', 'AW-996822555');
+            </script>
+        </footer>
+        <!-- //footer -->
+    </div>
+
+    
+    <div class="header-bg-panel-wrapper">
+        <div class="header-bg-panel"></div>
+    </div>
+
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="/resources/v1/img/loading-animation.json"
+                        background="transparent"
+                        style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
+    <script src="/resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+    <script src="/resources/v1/js/Customer-Journey.js"></script>
+    <script>
+        try {
+            //애니메이션 설정 로딩
+            AnimationManager.loadElementsToAnimate();
+
+            //컴포넌트 이벤트 및 기본설정
+            EventProcessor.initSetting({
+                contentsId: '6F_007',  //콘텐츠id
+                linkInfoForInsurance: {
+                    //상품 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
+                    //상품명
+                    name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
+                    //상품 이미지 url
+                    imgUrl: '/resources/v1/img/img-product-svg-child-care.svg',
+                    //상품 설명
+                    explain: '내 아이를 위한 금쪽같은 어린이보험',
+                    //심의필
+                    certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
+                },
+                linkInfoForService: {
+                    //부가서비스 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/product/healthChild-service',
+                    //부가서비스명
+                    name: '교보어린이헬스케어서비스',
+                    //부가서비스 이미지 url
+                    imgUrl: '/resources/v1/img/img-service-svg-child-healthcare.svg',
+                    //부가서비스 설명
+                    explain: '임신부터 출산, 육아까지 알찬 서비스'
+                },
+                bPostSurveyInput : false, // 설문조사 입력결과 전송여부 : false
+            });
+        }
+        catch(error){
+            alert(error);
+            alert(error.stack);
+        }
+    </script>
+</body>
+</html>

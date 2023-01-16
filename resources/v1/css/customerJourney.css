@@ -91,6 +91,15 @@ h5{font-size: 15px;}
 
 /* === font size === */
 .fs-0{font-size: 0;}
+.fs-22{font-size: 22px;}
+.fs-20{font-size: 20px;}
+.fs-18{font-size: 18px;}
+.fs-16{font-size: 16px;}
+.fs-15{font-size: 15px;}
+.fs-14{font-size: 14px;}
+.fs-13{font-size: 13px;}
+.fs-12{font-size: 12px;}
+
 .fs-1{font-size: 22px;}
 .fs-2{font-size: 20px;}
 .fs-3{font-size: 18px;}
@@ -137,6 +146,23 @@ h5{font-size: 15px;}
 .mb-70{margin-bottom: 70px;}
 .mb-100{margin-bottom: 100px;}
 
+.p-0{padding: 0 !important;}
+
+.pt-20{padding-top: 20px !important;}
+.pt-26{padding-top: 26px !important;}
+
+.pb-0{padding-bottom: 0 !important;}
+.pb-5{padding-bottom: 5px !important;}
+.pb-10{padding-bottom: 10px !important;}
+.pb-15{padding-bottom: 15px !important;}
+.pb-20{padding-bottom: 20px !important;}
+.pb-25{padding-bottom: 25px !important;}
+.pb-30{padding-bottom: 30px !important;}
+.pb-35{padding-bottom: 35px !important;}
+.pb-40{padding-bottom: 40px !important;}
+.pb-45{padding-bottom: 45px !important;}
+.pb-50{padding-bottom: 50px !important;}
+
 .pd-bt-0{padding-bottom: 0;}
 .pd-bt-5{padding-bottom: 5px !important;}
 .pd-bt-10{padding-bottom: 10px !important;}
@@ -167,6 +193,11 @@ h5{font-size: 15px;}
 /* === transform === */
 .left-hide{transform: translateX(-20px);}
 .scaleUp{transform: scale(3);}
+
+/* === ui style === */
+.sub-tit{line-height: 1.2;}
+.gap-20{padding-left: 20px;padding-right: 20px;}
+.gap-20-inner{padding-left: 5px;padding-right: 5px;}
 
 /* === body type === */
 body.type-a{color: white;}
@@ -281,7 +312,7 @@ header article{
 }
 .survey-type header article{
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
     flex: 0;
 }
 .survey-type .main-wrapper{
@@ -1245,7 +1276,7 @@ section .title-msg .section-no.center-style{
 }
 .feedback-btn-box{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .feedback-btn{
@@ -1260,8 +1291,8 @@ section .title-msg .section-no.center-style{
     height: 30px;
     opacity: .3;
     background-color: white;
-    margin-left: 30px;
-    margin-right: 30px;
+    /* margin-left: 30px;
+    margin-right: 30px; */
 }
 input[type='radio'][name='feedback-radio']{
     appearance: none;
@@ -1396,7 +1427,7 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
 }
 .checklist img{
     margin-right: 6px;
-    transform: translateY(6px);
+    /* transform: translateY(6px); */
 }
 
 .bull-list-chk{position: relative;padding-left: 30px;min-height: 24px;}

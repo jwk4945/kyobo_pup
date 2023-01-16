@@ -65,7 +65,7 @@
                                                start-ms:'900',
                                                transition-props:'[opacity,transform]',
                                                transition-duration:'0.8s'">
-                        <span>
+                        <span class="sub-tit">
                             당뇨병도 보험금을<br>
                             받을 수 있다는 것 아시나요?
                         </span>
@@ -91,7 +91,7 @@
                             <img src="/resources/v1/img/13G_029_img-speech-on.svg" width="0">
                             <div class="contents">
                                 <div class="text-align-center">
-                                    <small class="fc-4 mt-0 mb-4">01.</small>
+                                    <small class="fc-4 mt-0 mb-4">첫 번째</small>
                                     <p class="fc-2 mt-0 mb-0">공복혈당</p>
                                     <p class="fc-2 mt-0 mb-0 fw-700">132 mg/dL</p>
                                 </div>
@@ -119,7 +119,7 @@
                             <img src="/resources/v1/img/13G_029_img-speech-on.svg" width="0">
                             <div class="contents">
                                 <div class="text-align-center">
-                                    <small class="fc-4 mt-0 mb-4">02.</small>
+                                    <small class="fc-4 mt-0 mb-4">두 번째</small>
                                     <p class="fc-2 mt-0 mb-0">식후혈당</p>
                                     <p class="fc-2 mt-0 mb-0 fw-700">240 mg/dL</p>
                                 </div>
@@ -147,7 +147,7 @@
                             <img src="/resources/v1/img/13G_029_img-speech-on.svg" width="0">
                             <div class="contents">
                                 <div class="text-align-center">
-                                    <small class="fc-4 mt-0 mb-4">03.</small>
+                                    <small class="fc-4 mt-0 mb-4">세 번째</small>
                                     <p class="fc-2 mt-0 mb-0">당화혈색소</p>
                                     <p class="fc-2 mt-0 mb-0 fw-700">6.7 %</p>
                                 </div>
@@ -203,7 +203,7 @@
                               id="animation04"
                             data-animation-type="onresult"
                             data-animation-infos="style-bf-ani: 'transform:translateX(80px); opacity:0;',
-                                           style-af-ani: 'transform:translateX(0px); opacity:1;',
+                                           style-af-ani: 'transform:translateX(0px); opacity:0.2;',
                                            start-ms: '1000',
                                            transition-duration: '0.5s'">1</span>
                     <h1 class="fw-700 fc-1" id="animation05"
@@ -301,7 +301,7 @@
         </div>
     </section>
     <section data-is-not-result-page="false">
-        <div class="mt-30 pd-bt-30 text-align-center">
+        <div class="mt-30 pb-50 text-align-center">
             <img src="/resources/v1/img/check-bg-07.png" width="50"
                  data-animation-type="onscroll"
                  data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
@@ -324,17 +324,21 @@
         <article class="text-align-center fc-white">
             <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
             <div class="feedback-btn-box mt-10 text-align-center">
-                <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-                <label class="feedback-btn" for="feedback-radio-01">
-                    <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
-                    <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
-                </label>
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                    <label class="feedback-btn" for="feedback-radio-01">
+                        <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                    </label>
+                </div>
                 <div class="vertical-line mb-15"></div>
-                <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-                <label class="feedback-btn" for="feedback-radio-02">
-                    <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
-                    <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
-                </label>
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                    <label class="feedback-btn" for="feedback-radio-02">
+                        <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                    </label>
+                </div>
             </div>
         </article>
     </section>

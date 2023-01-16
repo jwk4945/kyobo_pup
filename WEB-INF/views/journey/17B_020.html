@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/v1/css/swiper-bundle.min.css">
     <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
     <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <title>운동을 시작했는데, 뱃살이 빠지지 않네요.</title>
+    <title>어떤 대출을 받아야 할까요?</title>
 </head>
 <script>
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
@@ -20,7 +20,7 @@
         <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
     </a>
     <div class="fc-1">
-        요즘 유난히 뱃살이 나와서 운동을 시작했어요.
+        어떤 대출을 받아야 할까요?
     </div>
     <div></div>
 </nav>
@@ -372,17 +372,21 @@
     <article class="text-align-center fc-white">
         <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
         <div class="feedback-btn-box mt-10 text-align-center">
-            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-            <label class="feedback-btn" for="feedback-radio-01">
-                <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
-                <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
-            </label>
+            <div class="feedback-btn-box-inner">
+                <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                <label class="feedback-btn" for="feedback-radio-01">
+                    <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                    <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                </label>
+            </div>
             <div class="vertical-line mb-15"></div>
-            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-            <label class="feedback-btn" for="feedback-radio-02">
-                <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
-                <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
-            </label>
+            <div class="feedback-btn-box-inner">
+                <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                <label class="feedback-btn" for="feedback-radio-02">
+                    <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                    <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                </label>
+            </div>
         </div>
     </article>
 </section>
@@ -404,19 +408,8 @@
     <script src="/resources/v1/js/Customer-Journey.js"></script>
     <script>
         try {
-            //swiper
-            const swiper = new Swiper(".swiper-container", {
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                    bulletClass: 'swiper-my-bullet',
-                    bulletActiveClass: 'active'
-                }
-            });
-
-            // customerJourney.createImageSlides('.image-slide-inner-zone');
-            customerJourney.loadElementsToAnimate();
+            //애니메이션 설정 로딩
+            AnimationManager.loadElementsToAnimate();
 
             //컴포넌트 이벤트 및 기본설정
             EventProcessor.initSetting({
