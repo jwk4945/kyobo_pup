@@ -199,6 +199,26 @@ h5{font-size: 15px;}
 .gap-20{padding-left: 20px;padding-right: 20px;}
 .gap-20-inner{padding-left: 5px;padding-right: 5px;}
 
+/* num list */
+.list-num{}
+.list-num .list-item{padding-left: 30px;min-height: 24px;position: relative;}
+.list-num .list-item::before{content: "";position: absolute;top: 0;left: 0;top: 0;left: 0;width: 24px;height: 24px;}
+.list-num .list-item.num-01::before{background: url(../img/ico-num-01.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-02::before{background: url(../img/ico-num-02.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-03::before{background: url(../img/ico-num-03.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-04::before{background: url(../img/ico-num-04.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-05::before{background: url(../img/ico-num-05.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-06::before{background: url(../img/ico-num-06.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-07::before{background: url(../img/ico-num-07.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-08::before{background: url(../img/ico-num-08.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-09::before{background: url(../img/ico-num-09.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-10::before{background: url(../img/ico-num-10.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-11::before{background: url(../img/ico-num-11.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-12::before{background: url(../img/ico-num-12.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-13::before{background: url(../img/ico-num-13.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-14::before{background: url(../img/ico-num-14.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-15::before{background: url(../img/ico-num-15.png) 0 0 no-repeat;background-size: contain;}
+
 /* === body type === */
 body.type-a{color: white;}
 body.type-a .bg-1{background: #4eabc7;}
@@ -528,7 +548,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
 .survey-type .survey-form .horizontal-ul>li{
     width: initial;
     /* padding: 5px; */
-    margin: 5px;
+    /* margin: 5px; */
     flex: 0 0 110px;
     filter: drop-shadow(0 5px 3px rgba(0,0,0,0.2));
 }
@@ -643,6 +663,7 @@ section:last-of-type article{
     font-weight: 700;
     display: inline-block;
     border-radius: 3px;
+    min-width: 60px;
 }
 ._6F_007 .tag,
 ._3A_024 .tag{
