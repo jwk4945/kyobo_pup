@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/swiper-bundle.min.css">
+    <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <title>타이틀 확인하고 붙이기</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_3C_033 fact-chk type-b bg-10">
+<!--gnb(헤더 - 뒤로가기)-->
+    <nav class="bg-white fc-1">
+        <a href="javascript:history.back()" class="go-back-btn">
+            <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg">
+        </a>
+        <div>
+            타이틀 확인하고 붙이기
+        </div>
+        <div></div>
+    </nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+    <header>
+        <article class="fc-white">
+            <span class="tag opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                                start-ms:'300',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.7s'">자녀</span>
+            <div class="mt-10">
+                <h1 class="opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-100%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'500',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">우리아이 유치원 입학 전,</h1>
+                <h1 class="strong-underline opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-250%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'700',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">
+                    알아둬야 할 건강상식!
+                </h1>
+            </div>
+            <div id="swiper-container" class="swiper-container opacity-0 fact-check mt-30"
+                data-animation-type="onload"
+                data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateX(100%);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'300',
+                                        transition-duration:'0.7s',
+                                        transition-props:'[transform]'">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper first-slide">
+                            <img src="/resources/v1/img/13C_031-img-01.gif" width="315px">
+                            <div class="title" >
+                                <div class="half-line bg-black"></div>
+                                <div class="title-msg bg-white">
+                                    <h3 class="fw-700 fc-2">
+                                        유치원에 입학하면<br>
+                                        사고나 감염성 질병에<br>
+                                        더 많이 노출된다?
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img src="/resources/v1/img/3C_033_img-01.png" width="160px">
+                            <h3 class="mt-0 mb-0 section-no fw-700 fs-40 fc-18">01</h3>
+                            <h3 class="fw-700 fc-2">울긋불긋,<br>
+                                물집이 잡히는 수족구병
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img class="mt-20" src="/resources/v1/img/3C_033_img-02.png" width="160px">
+                            <h3 class="fw-700 mt-10 fc-18">올바른 손 씻기 등 개인위생을 철저히!</h3>
+                            <p class="mt-5 fs-13 fc-2">
+                                수족구병은 손, 발 그리고 입안에 물집이 잡히는 병입니다.<br>
+                                주로 사람의 침, 가래, 콧물, 대변 등을 통해 전파됩니다.<br>
+                                수족구병은 예방백신이 개발되지 않았습니다.<br>
+                                올바른 손 씻기 등 개인위생에 신경 써야 합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img src="/resources/v1/img/3C_033_img-03.png" width="160px">
+                            <h3 class="mt-0 mb-0 section-no fw-700 fs-40 fc-18">02</h3>
+                            <h3 class="fw-700 fc-2">
+                                오돌토돌,<br>
+                                전염성이 강한 수두
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img class="mt-20" src="/resources/v1/img/3C_033_img-04.png" width="160px">
+                            <h3 class="fw-700 mt-10 fc-18">수두 백신접종으로 예방 가능</h3>
+                            <p class="mt-5 fs-13 fc-2">
+                                수두는 대상포진 바이러스로 생기는 전염성 질환입니다.<br>
+                                수두는 대상포진의 수포에서 나오는 액이나 감염자의 타액과<br>
+                                직접접촉으로 감염되며, 공기를 통해서도 전파될 수 있습니다.<br>
+                                수두는 백신접종으로 예방할 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img src="/resources/v1/img/3C_033_img-05.png" width="160px">
+                            <h3 class="mt-0 mb-0 section-no fw-700 fs-40 fc-18">03</h3>
+                            <h3 class="fw-700 fc-2">
+                                간질간질,<br>
+                                귀밑 침샘이 붓는 유행성이하선염
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img class="mt-20" src="/resources/v1/img/3C_033_img-06.png" width="160px">
+                            <h3 class="fw-700 mt-10 fc-18">흔히 볼거리로 알려져 있는 질병</h3>
+                            <p class="mt-5 fs-13 fc-2">
+                                발열, 두통, 근육통과 함께 귀밑 침샘(이하선)이 붓고,<br>
+                                통증을 느끼게 됩니다.<br>
+                                타액이나 감염된 비말핵과의 직접 접촉 또는 공기를<br>
+                                매개로도 전파됩니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img class="mt-20" src="/resources/v1/img/3C_033_img-07.png" width="160px">
+                            <p class="mt-10 fs-13 fc-2">
+                                생후 12~15개월과 4~5세에 2회<br>
+                                MMR(홍역, 유행성이하선염, 풍진) 예방접종을 받을 수 있습니다.
+                            </p>
+                            <p class="mt-5 fs-13 fc-2 fw-700 fc-18">
+                                만약 예방접종을 하지 않은 만 12세 이하 어린이는<br>
+                                가까운 보건소나 지정 의료기관에서<br>
+                                2회 모두 무료접종이 가능합니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img src="/resources/v1/img/3C_033_img-08.png" width="160px">
+                            <h3 class="mt-0 mb-0 section-no fw-700 fs-40 fc-18">04</h3>
+                            <h3 class="fw-700 fc-2">
+                                다시 급증하고 있는<br>
+                                학교 안전사고
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper">
+                            <img src="/resources/v1/img/3C_033_img-08.png" width="160px">
+                            <h3 class="mt-0 mb-0 section-no fw-700 fs-40 fc-18">04</h3>
+                            <h3 class="fw-700 fc-2">
+                                다시 급증하고 있는<br>
+                                학교 안전사고
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="main-banner-wrapper"></div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination mt-10"></div>
+            </div>
+
+            <div data-is-not-result-page="false" id="nextDiv" class="bg-gradient">
+                <div class="mb-30">
+                    <img class="mt-30" src="/resources/v1/img/check-bg-white.svg" width="50px" id="animation01"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani:'transform:scale(3.3); opacity:0;',
+                                            style-af-ani:'transform:scale(1); opacity:1;',
+                                            start-ms:'100'">
+                    <p class="mt-5 mb-5" id="animation02"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani:'transform:translateY(-40px); opacity:0;',
+                                            style-af-ani:'transform:translateY(0px); opacity:1;',
+                                            start-ms:'300'">
+                        어린이집이나 유치원 등 집단생활 시설에서
+                    </p>
+                    <h1 class="fw-700" id="animation03"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani:'transform:translateY(-80px); opacity:0;',
+                                            style-af-ani:'transform:translateY(0px); opacity:1;',
+                                            start-ms:'500'">
+                        한 아이가 전염성 질환에 걸리면<br>
+                        다른 아이도 쉽게 전염되는데요.
+                    </h1>
+                </div>
+
+                <div class="animation-vertical-box"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'height: 0px',
+                                        style-af-ani: 'height: 150px',
+                                        scroll-duration: 100',
+                                        trigger-hook: '0.7'">
+                    <div class="animation-vertical"></div>
+                </div>
+            </div>
+        </article>
+    </header>
+    <section data-is-not-result-page="false"
+            data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color:#6a50c2;', style-af-ani: 'background-color:#5043A0;'">
+        <article class="text-align-center fc-white">
+            <p class="fs-3 mt-25"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'transform:translateX(40px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                                        아이와 성인이 함께 앓는 질병의 경우,<br>
+                                        아이를 매개체로 각 가정의 모든 질병이<br>
+                                        모일 수 있습니다.<br>
+                                        시설과 가정에서 위생관리를 철저히 해야 하는<br>
+                                        이유입니다.
+            </p>
+            <img class="mt-20"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'transform:translateX(40px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'"
+                src="/resources/v1/img/3C_033_img-11.png" width="200">
+            <p class="fs-3 mt-30"
+            data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'transform:translateX(40px); opacity:0',
+                                    style-af-ani: 'transform:translateX(0px); opacity:1'">
+                                    유치원생의 경우 통제능력은 부족한 반면<br>
+                                    위험한 상황에는 더 많이 노출되기 때문에<br>
+                                    사고나 질병에 대비한 보험이 잘 가입되어 있는지 확인해보세요.
+            </p>
+            <img class="mt-20"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'transform:translateX(40px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'"
+                src="/resources/v1/img/3C_033_img-12.png" width="200">
+            <div class="mt-30">
+                <img src="/resources/v1/img/check-bg-white.svg" width="50px"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                        style-af-ani: 'transform: scale(1); opacity:1'">
+                <h1 data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    특히 <b class="va-top">감염성 질병</b>과 <b class="va-top">안전사고</b>에 대한<br>
+                    보장은 놓치지 말아야 합니다.
+                </h1>
+            </div>
+        </article>
+    </section>
+    <!--콘텐츠 평가영역-->
+    <section id="feedback-area" data-is-not-result-page="false" class="bg-14">
+        <article class="text-align-center fc-white">
+            <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
+            <div class="feedback-btn-box mt-10 text-align-center">
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                    <label class="feedback-btn" for="feedback-radio-01">
+                        <img src="/resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                    </label>
+                </div>
+                <div class="vertical-line mb-15"></div>
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                    <label class="feedback-btn" for="feedback-radio-02">
+                        <img src="/resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                    </label>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="/resources/v1/img/loading-animation.json"
+                        background="transparent"
+                        style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
+    <script src="/resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+    <script src="/resources/v1/js/Customer-Journey.js"></script>
+    <script>
+        //onLoad animation 세팅
+        AnimationManager.loadElementsToAnimate();
+
+        //컴포넌트 이벤트 및 기본설정
+        EventProcessor.initSetting({
+            contentsId : '3C_033',  //콘텐츠id
+            linkInfoForInsurance : {
+                //상품 링크 url
+                url : 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000881&evcode=DCJ_MO',
+                //상품명
+                name : '(무)교보내맘쏙건강보험(DM)',
+                //상품 이미지 url
+                imgUrl : '/resources/v1//img/img-product-svg-health-life.svg',
+                //상품 설명
+                explain : '부족한 보장을 꽉 채운 건강보험',
+                //심의필
+                certificationMsg : '생명보험협회 심의필 제 2022-05466호 (2022-12-27 ~ 2023-12-26)'
+            },
+            linkInfoForService : {
+                //부가서비스 링크 url
+                url : 'https://www.kyobo.com/dgt/web/product/healthBasic-service',
+                //부가서비스명
+                name : '교보헬스케어서비스Basic II',
+                //부가서비스 이미지 url
+                imgUrl : '/resources/v1/img/img-service-svg-healthcare-basic.svg',
+                //부가서비스 설명
+                explain : '꼭 필요한 것만 담은 똑똑한 건강가이드'
+            }
+        });
+    </script>
+</body>
+</html>

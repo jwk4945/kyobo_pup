@@ -37,6 +37,12 @@
     opacity: 1;
 }
 
+.swiper-wrapper .swiper-slide:last-child .main-banner-wrapper{
+    background: none no-repeat;
+    box-shadow: none;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
+    background-size: 13% auto;
+}
 
 /* 기본 스타일 값 */
 /* === html, body === */
@@ -62,8 +68,10 @@ h5{font-size: 15px;}
 .fc-7{color: #d95584 !important;}
 .fc-12{color: #2254c0 !important;}
 .fc-13{color: #91234a !important;}
-.fc-16{color: #555555;}
-.fc-17{color: #6C2A2A;}
+.fc-16{color: #555555 !important;}
+.fc-17{color: #6C2A2A !important;}
+.fc-18{color: #6a50c2 !important;}
+.fc-19{color: #8c1f46 !important;}
 
 /* === bg color === */
 .bg-white{background-color: white;}
@@ -100,6 +108,8 @@ h5{font-size: 15px;}
 .fs-13{font-size: 13px;}
 .fs-12{font-size: 12px;}
 
+.fs-40{font-size: 40px !important;}
+
 .fs-1{font-size: 22px;}
 .fs-2{font-size: 20px;}
 .fs-3{font-size: 18px;}
@@ -115,6 +125,8 @@ h5{font-size: 15px;}
 .fw-400{font-weight: 400;}
 .fw-500{font-weight: 500;}
 .fw-700{font-weight: 700;}
+
+b{font-weight: 700;}
 
 /* === margin, padding === */
 .mt-0{margin-top: 0px;}
@@ -177,6 +189,10 @@ h5{font-size: 15px;}
 
 /* === style === */
 .overflow-hidden{overflow: hidden;}
+
+.va-top{vertical-align: top;}
+.va-mid{vertical-align: middle;}
+.va-btm{vertical-align: bottom;}
 
 /* === width === */
 .width-0{width: 0 !important;}
@@ -599,6 +615,9 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
 ._6F_007 .footer-area img{
     height: 100%;
 }
+.survey-type .per{
+    padding-left: 5px;
+}
 .survey-type .footer-area.after{
     padding: 0 15px 40px;
     flex: 0;
@@ -615,9 +634,11 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     cursor: initial;
 }
 .survey-type .explanation-box{
-    background-color: white;
+    background-color: white
     padding: 20px;
     text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
 .card-section{
     margin-inline: 15px;
@@ -679,7 +700,7 @@ section:last-of-type article{
 ._3A_024 .tag{
     color: #166c78;
 }
-._13C_031 .tag{
+.fact-chk .tag{
     color: #412990;
 }
 .head-msg{
@@ -700,8 +721,8 @@ section:last-of-type article{
     flex: 1;
     font-size: 14px;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
 }
 ._2B_039 .main-banner-wrapper{
     padding: 32px 15px;
@@ -759,6 +780,19 @@ section:last-of-type article{
     right: 0;
     transform: translate(50%, -50%);
 }
+.balance-game .radio-btn-box>div.text-align-center .center-img img{width: 50px;}
+/* .balance-game .radio-btn-box>div.text-align-center .center-img img.ico-center{} */
+.balance-game .radio-btn-box>div.text-align-center .center-img img.ico-left{display: none;}
+.balance-game .radio-btn-box>div.text-align-center .center-img img.ico-right{display: none;}
+
+.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-center{display: none;}
+.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-left{display: none;}
+.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-right{display: block;}
+
+.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-center{display: none;}
+.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-left{display: block;}
+.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-right{display: none;}
+
 .balance-game .radio-btn-box label{
     padding: 30px 12px 27px;
     border-radius: 10px;
@@ -805,22 +839,23 @@ section:last-of-type article{
 .balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box label{
     padding-top: 15px;
 }
-._13C_031 article:first-of-type{
+.fact-chk article:first-of-type{
     padding-bottom: 75px;
 }
-._13C_031 .main-banner-wrapper{
-    padding: 50px 10px 22px;
-    height: 335px;
+.fact-chk .main-banner-wrapper{
+    padding: 40px 10px 35px;
+    height: 340px;
 }
-._13C_031 h3{
+.fact-chk h3{
     color: #b13e7d;
 }
-._13C_031 .main-banner-wrapper .section-no{
+.fact-chk .main-banner-wrapper .section-no{
     font-style: italic;
     font-size: 33px;
+    line-height: 1.2;
 }
 .type-b .swiper-slide .main-banner-wrapper img{
-    max-width: 380px;
+    max-width: 305px;
     margin: 0 auto;
 }
 .type-b .swiper-slide .main-banner-wrapper h1{
@@ -1282,7 +1317,7 @@ section .title-msg .section-no.center-style{
 ._7E_006 #feedback-area{
     background: #d95584;
 }
-._13C_031 #feedback-area{
+.fact-chk #feedback-area{
     background: #473c8d;
 }
 ._13G_029 #feedback-area{
