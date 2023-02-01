@@ -1202,7 +1202,7 @@ const EventProcessor = (function (){
 
     function createBottomSheet() {
         const linkInfos = getLinkInfos(); //링크정보 불러오기
-        const effectImgUrl = '/resources/v1/img/img-product-effect.gif';
+        const effectImgUrl = '../../../resources/v1/img/img-product-effect.gif';
 
         const bottomSheetWrapper = document.createElement('div');
         bottomSheetWrapper.setAttribute('class','bottom-sheet-wrapper hide');
@@ -1218,7 +1218,7 @@ const EventProcessor = (function (){
         closeBtnMsg.textContent = '닫기';
 
         const closeBtnImg = document.createElement('img');
-        closeBtnImg.setAttribute('src', '/resources/v1/img/ico-30-svg-close-w.svg');
+        closeBtnImg.setAttribute('src', '../../../resources/v1/img/ico-30-svg-close-w.svg');
 
         const bottomSheet = document.createElement('div');
         bottomSheet.setAttribute('class', 'bottom-sheet fc-1');
@@ -1227,7 +1227,7 @@ const EventProcessor = (function (){
         headline.setAttribute('class', 'headline');
 
         const ci = document.createElement('img');
-        ci.setAttribute('src','/resources/v1/img/img-ci-kyobo.png');
+        ci.setAttribute('src','../../../resources/v1/img/img-ci-kyobo.png');
         ci.setAttribute('width','80');
 
         const titleMsg = document.createElement('h4');
@@ -1279,7 +1279,7 @@ const EventProcessor = (function (){
         })
 
         const arrowImg = document.createElement('img');
-        arrowImg.setAttribute('src', '/resources/v1/img/ico-12-arrow-g.svg');
+        arrowImg.setAttribute('src', '../../../resources/v1/img/ico-12-arrow-g.svg');
 
         //닫기버튼 만들기
         closeBtn.appendChild(closeBtnMsg);
