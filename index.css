@@ -1,0 +1,33 @@
+@charset "utf-8";
+html{color: #333;}
+img{width: 100%;}
+.clear::after{content: "";display: block;clear: both;}
+body{width: 1200px;margin: 0 auto;}
+header{padding: 30px 0 15px;border-bottom: 1px solid #666;}
+header .ci{width: 100px;float: left;}
+header .tit{float: right;padding: 40px 0 0 30px;display: flex;align-items: flex-end;}
+header .tit h1{font-size: 20px;padding-left: 15px;}
+header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
+
+.cont{height: 500px;font-size: 14px;padding-top: 5px;}
+.cont .name{text-align: right;float: right;font-size: 12px;}
+
+.list_wrap{height: 1000px;}
+.list_wrap .list_top{position: sticky;top: 0;background: #dcdddd;}
+/* .list_wrap .list{background: #f0f0f0;height: 1000px;} */
+
+.col_wrap{display: flex;border-bottom: 1px solid #666;}
+.col_wrap .col{padding: 5px 10px;border-right: 1px solid #666;}
+.col_wrap.list_top .col{text-align: center;}
+.col_wrap .col:last-of-type{border-right: none;}
+.col_1{flex: 10%;text-align: center;}
+.col_2{flex: 30%;}
+.col_3{flex: 20%;}
+.col_4{flex: 20%;}
+.col_5{flex: 20%;}
+
+.bul_list{}
+.bul_list li{padding-left: 8px;position: relative;}
+.bul_list li::before{content: "";display: block;position: absolute;top: 10px;left: 0;width: 3px;height: 3px;border-radius: 50%;background: #666;}
+
+.banner{width: 200px;border-radius: 5px;overflow: hidden;margin-top: 10px;}
