@@ -15,7 +15,6 @@ header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
 .cont .name{text-align: right;float: right;font-size: 12px;}
 
 .list_wrap .list_top{z-index: 1;position: sticky;top: 0;background: #dcdddd;}
-/* .list_wrap .list{background: #f0f0f0;height: 1000px;} */
 
 .col_wrap{display: flex;border-bottom: 1px solid #666;}
 .col_wrap .col{padding: 5px 10px;border-right: 1px solid #666;}
@@ -29,10 +28,35 @@ header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
 
 .bul_list{}
 .bul_list li{padding-left: 8px;position: relative;}
-.bul_list li::before{content: "";display: block;position: absolute;top: 10px;left: 0;width: 3px;height: 3px;border-radius: 50%;background: #666;}
+.bul_list li::before{content: "";display: block;position: absolute;top: 8px;left: 0;width: 3px;height: 3px;border-radius: 50%;background: #666;}
 
 .banner{width: 200px;border-radius: 5px;overflow: hidden;margin-top: 10px;}
 
 .list_wrap .list .col_wrap{color: #999;}
 .list_wrap .list .col_wrap.done{color: #333;}
 .list_wrap .list .col_wrap.this{background: rgba(230, 245, 242, 0.571);}
+
+@media (max-width:540px){
+    body{width: 100%;overflow-x: hidden;}
+    header{padding: 15px;}
+    header .ci{width: 75px;float: right;}
+    header .tit{padding: 0;display: block;float: left;}
+    header .tit div{padding: 10px 0 0 0;font-size: 12px;}
+    header .tit h1{padding-left: 0;}
+
+    .cont{padding: 0 5px 50px;}
+    .cont_top{font-size: 12px;}
+
+    .list_wrap .list_top{display: none;}
+    .list_wrap .list{border-top: 1px solid #666;font-size: 12px;}
+
+    .col_wrap{display: block;border-left: 1px solid #666;}
+    .col_wrap .col:last-of-type{border-right: 1px solid #666;}
+    .col_wrap .col_1{background: #dcdddd;}
+    .col_wrap .col_3{position: relative;padding-left: 90px;}
+    .col_wrap .col_3::before{content: "컨텐츠 반영";position: absolute;top: 5px;left: 10px;}
+    .col_wrap .col_4{position: relative;padding-left: 90px;}
+    .col_wrap .col_4::before{content: "퍼블 작업 현황";position: absolute;top: 5px;left: 10px;}
+
+    .banner{margin: 10px auto 5px;width: 180px;}
+}

@@ -635,7 +635,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     cursor: initial;
 }
 .survey-type .explanation-box{
-    background-color: white
+    background-color: white;
     padding: 20px;
     text-align: left;
     border-radius: 5px;
@@ -725,7 +725,7 @@ section:last-of-type article{
     margin-left: 2.5px;
     margin-right: 2.5px;
 }
-._2B_039 .main-banner-wrapper{
+.information-type .main-banner-wrapper{
     padding: 32px 15px;
 }
 ._3A_024 .main-banner-wrapper{
@@ -1327,6 +1327,9 @@ section .title-msg .section-no.center-style{
 ._2B_039 #feedback-area{
     background: #6c2a2a;
 }
+._2B_061 #feedback-area{
+    background: #823333;
+}
 #feedback-area{
     padding-bottom: 350px;
     color: white;
@@ -1489,4 +1492,3 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
 
 .bull-list-chk{position: relative;padding-left: 30px;min-height: 24px;}
 .bull-list-chk::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/ico-bullet-check.svg) 0 0 no-repeat;background-size: contain;}
-
