@@ -401,7 +401,8 @@ header article{
 .survey-type .survey-form{
     font-size: 15px;
     flex: 1;
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
+    padding-bottom: 105px;
     overflow: hidden;
 }
 .survey-type .survey-form small{
@@ -569,6 +570,30 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     flex: 0 0 110px;
     filter: drop-shadow(0 5px 3px rgba(0,0,0,0.2));
 }
+/* ㅌㅌ */
+.survey-type .survey-form .horizontal-ul.col-2{
+    max-width: 540px;
+    margin: 0 auto ;
+}
+.survey-type .survey-form .horizontal-ul.col-2>li{
+    flex: 0 0 50%;
+}
+.survey-type .survey-form .horizontal-ul.col-2>li:first-child{
+    padding-right: 3px;
+    padding-left: 20px;
+}
+.survey-type .survey-form .horizontal-ul.col-2>li:last-child{
+    padding-left: 3px;
+    padding-right: 20px;
+}
+.survey-type .survey-form .horizontal-ul.col-2>li input + label>img{
+    width: 100%;
+}
+.survey-type .survey-form .horizontal-ul.col-2>li input + label>img+img{
+    width: 0;
+}
+.survey-type .survey-form .horizontal-ul.col-2 input[type='radio']:checked+.speech-box>img:last-of-type{width: 100%;}
+/* ㅌㅌ */
 .survey-type .survey-form .horizontal-ul>li label.speech-box{
     position: relative;
     background: none;
@@ -598,6 +623,10 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     border: 8px solid #e6e6e6;
 }
 .survey-type .footer-area{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 0 15px 35px;
     flex: 0;
     text-align: center;
