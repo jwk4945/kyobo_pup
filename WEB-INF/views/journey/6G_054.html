@@ -13,7 +13,7 @@
 <script>
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
-<body class="_13G_029 survey-type bg-6">
+<body class="_13G_029 survey-type bg-6 p-0">
     <!--gnb(헤더 - 뒤로가기)-->
     <nav class="bg-white">
         <a href="javascript:history.back()" class="go-back-btn">
@@ -27,7 +27,7 @@
     <!--서버로부터 전달받는 변수영역-->
     <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
     <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
-<div class="main-wrapper">
+<div class="main-wrapper" style="padding-top: 60px;">
     <header>
         <div id="survey-area" data-is-not-result-page="true">
             <article class="fc-white">
@@ -45,7 +45,7 @@
                                                style-af-ani: 'transform:',
                                                start-ms:'500',
                                                transition-props:'[opacity,transform]',
-                                               transition-duration:'0.8s'">2임신 중 유산확률이</h1>
+                                               transition-duration:'0.8s'">3임신 중 유산확률이</h1>
                 <h1 class="strong-underline opacity-0"
                     data-animation-type="onload"
                     data-animation-infos="remove-class-nm: 'opacity-0',
