@@ -401,8 +401,7 @@ header article{
 .survey-type .survey-form{
     font-size: 15px;
     flex: 1;
-    /* padding-bottom: 40px; */
-    padding-bottom: 105px;
+    padding-bottom: 40px;
     overflow: hidden;
 }
 .survey-type .survey-form small{
@@ -623,10 +622,6 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     border: 8px solid #e6e6e6;
 }
 .survey-type .footer-area{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     padding: 0 15px 35px;
     flex: 0;
     text-align: center;
