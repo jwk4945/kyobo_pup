@@ -362,8 +362,8 @@ header article{
 }
 .survey-type #survey-area{
     min-height: calc(var(--100vh-inner) - 60px);
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 .survey-type #survey-area.shrink-height{
     min-height: initial;
@@ -401,7 +401,8 @@ header article{
 .survey-type .survey-form{
     font-size: 15px;
     flex: 1;
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
+    padding-bottom: 105px;
     overflow: hidden;
 }
 .survey-type .survey-form small{
@@ -626,6 +627,10 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     flex: 0;
     text-align: center;
     overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 ._6F_007 .footer-area{
     padding: 0;
