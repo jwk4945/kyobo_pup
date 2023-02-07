@@ -130,19 +130,19 @@ h5{font-size: 15px;}
 b{font-weight: 700;}
 
 /* === margin, padding === */
-.mt-0{margin-top: 0px;}
-.mt-5{margin-top: 5px;}
-.mt-10{margin-top: 10px;}
-.mt-15{margin-top: 15px;}
-.mt-20{margin-top: 20px;}
-.mt-25{margin-top: 25px;}
-.mt-30{margin-top: 30px;}
-.mt-35{margin-top: 35px;}
-.mt-40{margin-top: 40px;}
-.mt-45{margin-top: 45px;}
-.mt-50{margin-top: 50px;}
-.mt-60{margin-top: 60px;}
-.mt-70{margin-top: 70px;}
+.mt-0{margin-top: 0px !important;}
+.mt-5{margin-top: 5px !important;}
+.mt-10{margin-top: 10px !important;}
+.mt-15{margin-top: 15px !important;}
+.mt-20{margin-top: 20px !important;}
+.mt-25{margin-top: 25px !important;}
+.mt-30{margin-top: 30px !important;}
+.mt-35{margin-top: 35px !important;}
+.mt-40{margin-top: 40px !important;}
+.mt-45{margin-top: 45px !important;}
+.mt-50{margin-top: 50px !important;}
+.mt-60{margin-top: 60px !important;}
+.mt-70{margin-top: 70px !important;}
 
 .mb-0{margin-bottom: 0px;}
 .mb-5{margin-bottom: 5px;}
@@ -163,6 +163,7 @@ b{font-weight: 700;}
 
 .pt-20{padding-top: 20px !important;}
 .pt-26{padding-top: 26px !important;}
+.pt-35{padding-top: 35px !important;}
 
 .pb-0{padding-bottom: 0 !important;}
 .pb-5{padding-bottom: 5px !important;}
@@ -570,30 +571,39 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     flex: 0 0 110px;
     filter: drop-shadow(0 5px 3px rgba(0,0,0,0.2));
 }
-/* ㅌㅌ */
 .survey-type .survey-form .horizontal-ul.col-2{
+    display: block;
     max-width: 540px;
-    margin: 0 auto ;
+    width: 100%;
+    background: red;
+    padding: 0 20px;
+}
+.survey-type .survey-form .horizontal-ul.col-2::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 .survey-type .survey-form .horizontal-ul.col-2>li{
-    flex: 0 0 50%;
+    width: calc(50% - 4px);
+    /* padding: 5px; */
+    /* margin: 5px; */
+    filter: drop-shadow(0 5px 3px rgba(0,0,0,0.2));
+    float: left;
 }
 .survey-type .survey-form .horizontal-ul.col-2>li:first-child{
-    padding-right: 3px;
-    padding-left: 20px;
+    margin-right: 4px;
 }
 .survey-type .survey-form .horizontal-ul.col-2>li:last-child{
-    padding-left: 3px;
-    padding-right: 20px;
+    margin-left: 4px;
 }
-.survey-type .survey-form .horizontal-ul.col-2>li input + label>img{
-    width: 100%;
+.survey-type .survey-form .horizontal-ul.col-2>li label{
+    margin: 0;
+    /* overflow: visible !important; */
 }
-.survey-type .survey-form .horizontal-ul.col-2>li input + label>img+img{
-    width: 0;
-}
-.survey-type .survey-form .horizontal-ul.col-2 input[type='radio']:checked+.speech-box>img:last-of-type{width: 100%;}
-/* ㅌㅌ */
+/* .survey-type .survey-form .horizontal-ul.col-2>li label>img{
+    width: 164px;
+    height: 240px;
+} */
 .survey-type .survey-form .horizontal-ul>li label.speech-box{
     position: relative;
     background: none;
@@ -1521,3 +1531,22 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
 
 .bull-list-chk{position: relative;padding-left: 30px;min-height: 24px;}
 .bull-list-chk::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/ico-bullet-check.svg) 0 0 no-repeat;background-size: contain;}
+
+/* 퀴즈형 */
+.horizontal-box{padding: 0 16.5px;max-width: 540px;margin: 0 auto;}
+.horizontal-box ul{display: flex;}
+.horizontal-box ul li{padding: 0 3.5px;flex: 1;filter: drop-shadow(0 5px 3px rgba(0,0,0,0.2));}
+.horizontal-box ul li .inner{position: relative;}
+.horizontal-box ul li .inner input{width: 0;height: 0;visibility: hidden;font-size: 0;position: absolute;top: 0;left: 0;text-indent: -9999px;}
+.horizontal-box ul li .inner{overflow: hidden;}
+.horizontal-box ul li .inner label {display: block;padding-bottom: 10px;}
+.horizontal-box ul li .inner label .box{position: relative;background: #fff;border-radius: 15px;padding: 20px 14px;height: 230px;box-sizing: border-box;text-align: center;}
+.horizontal-box ul li .inner label .box::after{content: "";display: block;position: absolute;bottom: -10px;left: 50%;transform: translate(-50%);width: 20px;height: 12px;background: url(../img/ico_bg_q_off.png) 0 0 no-repeat;background-size: contain;}
+.horizontal-box ul li .inner label .box .img-box{display: flex;justify-content: center;margin-top: 25px;}
+.horizontal-box ul li .inner label .box .img-box img{width: 80px;justify-content: center;}
+.horizontal-box ul li .inner label .box .radio-btn{margin: 20px auto 0;}
+
+.horizontal-box ul li .inner input:checked+label .box{border: 2px solid #cc3e70;padding: 18px 12px;}
+.horizontal-box ul li .inner input:checked+label .box::after{width: 20px;height: 12px;bottom: -12px;background: url(../img/ico_bg_q_on.png) 0 0 no-repeat;background-size: contain;}
+.horizontal-box ul li .inner input:checked+label .box .radio-btn{border: 7px solid #d95584;}
+
