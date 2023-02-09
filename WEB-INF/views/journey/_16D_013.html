@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/swiper-bundle.min.css">
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <title>타이틀은 정해지면 넣어요</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_2D_015 survey-type bg-6">
+<!--gnb헤더 영역-->
+<nav class="bg-white">
+    <a href="javascript:history.back()" class="go-back-btn">
+        <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
+    </a>
+    <div>
+        타이틀은 정해지면 넣어요
+    </div>
+    <div></div>
+</nav>
+    <!--서버로부터 전달받는 변수영역-->
+    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+    <div class="main-wrapper">
+        <header>
+            <div id="survey-area">
+                <article class="fc-white">
+                    <span class="tag opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                            start-ms:'300',
+                                            transition-props:'[opacity]',
+                                            transition-duration:'0.7s'">자기개발</span>
+                    <p class="mt-10">
+                        <h1 class="opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateY(-100%);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'500',
+                                                transition-props:'[opacity,transform]',
+                                                transition-duration:'0.8s'">이 돈으로 무엇을 하라고</h1>
+                        <h1 class="strong-underline opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateY(-250%);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'700',
+                                                transition-props:'[opacity,transform]',
+                                                transition-duration:'0.8s'">
+                            전하고 싶습니까?
+                        </h1>
+                    </p>
+                    <div class="opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-400%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'900',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">
+                        <span>
+                            친한 친구의 동생이 사업을 시작해 단기간에<br>
+                            30억을 벌었다고 합니다.
+                        </span>
+                    </div>
+                </article>
+
+                <form class="survey-form">
+                    <ul class="vertical-ul">
+                        <li class="fs-0"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-af-ani:'transform:translateX(-50%);',
+                                                start-ms:'0'">
+                            <div class="li-item opacity-0"
+                                data-animation-type="onload"
+                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateX(100vw);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'1000',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.5s'">
+                                <input type="radio" name="kyobolife-survey" value="1" id="answer-01">
+                                <label for="answer-01">
+                                    <div class="radio-btn bdc-5"></div>
+                                    <div class="fs-5 contents">
+                                        <small class="fc-4">여기서 멈출 수 없지!</small>
+                                        <div class="mt-5">계속 사업을 확장하라고 조언한다.</div>
+                                    </div>
+                                    <img src="../../../resources/v1/img/11D_028_img-01.png" width="50px">
+                                </label>
+                            </div>
+                            <div class="li-item-result-wrapper">
+                                <div class="li-item-result">
+                                    <div>
+                                        <small class="fc-4">미정</small>
+                                        <div>3월13일</div>
+                                        <div class="progress-bar mt-10">
+                                            <div class="painted-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-align-right">
+                                        <h1 class="display-inline-block result-ratio">-</h1>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fs-0"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-af-ani:'transform:translateX(-50%);',
+                                                start-ms:'300'">
+                            <div class="li-item opacity-0"
+                                data-animation-type="onload"
+                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateX(100vw);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'1500',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.5s'">
+                                <input type="radio" name="kyobolife-survey" value="2" id="answer-02">
+                                <label for="answer-02">
+                                    <div class="radio-btn bdc-5"></div>
+                                    <div class="fs-5 contents">
+                                        <small class="fc-4">부동산처럼 안정적인 투자처가 어딨어!</small>
+                                        <div class="mt-5 contents">번 돈으로 부동산 매입하라고 한다.</div>
+                                    </div>
+                                    <img src="../../../resources/v1/img/11D_028_img-02.png" width="50px">
+                                </label>
+                            </div>
+                            <div class="li-item-result-wrapper">
+                                <div class="li-item-result">
+                                    <div>
+                                        <small class="fc-4">미정</small>
+                                        <div>3월25일</div>
+                                        <div class="progress-bar mt-10">
+                                            <div class="painted-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-align-right">
+                                        <h1 class="display-inline-block result-ratio">-</h1>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+                <div class="footer-area pd-bt-35">
+                    <button type="submit" id="goNextBtn" class="bg-11 fs-4 fw-700" data-is-not-result-page="true" disabled>설문 확인하기</button>
+                    <div class="text-align-center" data-is-not-result-page="false">
+                        <h2 class="fw-700 mb-0 fc-1"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                                style-af-ani: 'transform:translateX(0px); opacity:1',
+                                                start-ms: '600'">
+                            대한민국 세금 해방일은<br>
+                            <span class="fc-12">4월5일</span> 입니다.
+                            <p class="fc-3 fs-5 mt-5">(2022년 기준, 자유연구원 발표)</p>
+                        </h2>
+                        <img src="../../../resources/v1/img/11D_028_img-04.png" width="300px" class="mt-20"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                                style-af-ani: 'transform:translateX(0px); opacity:1',
+                                                start-ms: '900'">
+                    </div>
+                    <div class="animation-vertical-box"
+                            style="height: 0"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'height: 0px',
+                                    style-af-ani: 'height: 100px',
+                                    scroll-duration: 100">
+                        <div class="animation-vertical"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1 -->
+        <section data-is-not-result-page="false"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'background-color: #f4f4f4',
+                                    style-af-ani: 'background-color: #E9ECF0',
+                                    scroll-duration: 300,
+                                    onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+            <article class="text-align-center fc-1">
+                <div class="title-msg mt-10">
+                <div class="section-no center-style fw-700 fc-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.5'">-1-</div>
+                    <h1 class="fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        세금해방일(Tax Freedom Day)은<br>
+                        어떻게 계산하나요?
+                    </h1>
+                </div>
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        ➊  대한민국 국민들이<br>
+                        부담하는 모든 세금의 합계액을 구합니다.
+                    </p>
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        ➋ 세금 합계액을 국민 순소득(NNI)으로 나누어<br>
+                        소득대비 세금 부담률을 계산합니다.
+                    </p>
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        ➌ 세금 부담률을 365일에 적용하여<br>
+                        세금해방일을 계산합니다.
+                    </p>
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/11D_028_img-05.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-left: 0px; opacity:1'">
+                </div>
+
+                <div class="mt-30"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                    <p class="mt-0 mb-0 fs-5 fc-16">
+                        예를 들어, 세금 부담률이 25.7%라면,<br>
+                        대한민국 국민들은 365일 중 25.7%에 해당하는 94일동안<br>
+                        일해서 번 돈은 모두 세금으로 낸다는 뜻이 됩니다.
+                    </p>
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        따라서 95일째 되는 날, 4월 5일이 대한민국 국민들의<br>
+                        세금해방일로 발표되는 것입니다.
+                    </p>
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/11D_028_img-06.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-left: 0px; opacity:1'">
+                </div>
+            </article>
+        </section>
+        <!-- // 1 -->
+
+        <!-- 2 -->
+        <section data-is-not-result-page="false"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'background-color: #E9ECF0',
+                                    style-af-ani: 'background-color: #E1E6EE',
+                                    scroll-duration: 300,
+                                onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+            <article class="text-align-center fc-1">
+                <div class="title-msg mt-10">
+                    <div class="section-no center-style fw-700 fc-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(-80px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:0.5'">-2-</div>
+                    <h1 class="fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                        세금해방일은 계속해서<br>
+                        늦춰지고 있습니다.
+                    </h1>
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/11D_028_img-07.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                    <p class="mt-30 mb-0 fs-5 fc-16">
+                        세금해방일이 늦어진다는 것은 소득에서<br>
+                        세금을 내는 비율이 계속 높아진다는 것을 의미합니다.
+                    </p>
+                </div>
+
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        대한민국 경제에서 민간보다는 정부가 차지하는<br>
+                        영향력이 커지는 것을 의미합니다.
+                    </p>
+                </div>
+            </article>
+        </section>
+        <!-- // 2 -->
+
+        <!-- 3 -->
+        <section data-is-not-result-page="false"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'background-color: #E1E6EE',
+                                    style-af-ani: 'background-color: #d6ddea',
+                                    scroll-duration: 300,
+                                onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+            <article class="text-align-center fc-1">
+                <div class="title-msg mt-10">
+                    <div class="section-no center-style fw-700 fc-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(-80px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:0.5'">-3-</div>
+                    <h1 class="fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                        나의 세금해방일은<br>
+                        언제 일까요?
+                    </h1>
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/11D_028_img-08.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                    <p class="mt-10 fs-12 fc-3">
+                        * 과세표준은 소득금액에서 필요비용과 각종 공제를 차감한 금액입니다.<br>
+                        근로소득자라면 연말정산신청서에서 확인할 수 있습니다.
+                    </p>
+                    <p class="mt-5 fs-12 fc-3">
+                        * 실효세율은 과세표준별 산출세액(주민세포함)을 %로 표시했습니다.
+                    </p>
+                </div>
+
+                <div class="mt-30">
+                    <img src="../../../resources/v1/img/11D_028_img-09.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+            </article>
+        </section>
+        <!-- // 3 -->
+
+        <!-- 4 -->
+        <section data-is-not-result-page="false"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'background-color: #d6ddea',
+                                    style-af-ani: 'background-color: #ccd6e6',
+                                    scroll-duration: 300,
+                                    onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+            <article class="text-align-center fc-1">
+                <div class="title-msg mt-10">
+                    <div class="section-no center-style fw-700 fc-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-80px); opacity:0',
+                                            style-af-ani: 'transform:translateX(0px); opacity:0.5'">-4-</div>
+                    <h1 class="fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                            style-af-ani: 'transform:translateX(0px); opacity:1'">
+                        모든 경제활동에는<br>
+                        세금이 따라옵니다.
+                    </h1>
+                </div>
+
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        대한민국의 세금해방일 4월 5일보다 개인의 세금해방일이
+                        더 빠른 것처럼 보이는 이유는 눈에 보이지 않는 세금 때문입니다.
+                    </p>
+
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        근로소득세나 양도소득세, 증여세처럼 직접 내는 세금도 있지만, 물건을 사면서 납부하는 부가가치세처럼 증권거래세, 개별소비세, 주세, 인지세 등 나도 모르게 납부하는 세금도 많습니다.
+                    </p>
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/11D_028_img-10.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                    <p class="mt-30 fs-18 fc-1 fw-700">
+                        모든 소득에는 세금이 있지만,<br>
+                        예외적으로 국가에서 세금을 부과하지 않는<br>
+                        경우도 있습니다.
+                    </p>
+                </div>
+
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                        style-af-ani: 'transform:translateX(0px); opacity:1'">
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        대표적인 경우가 연금보험입니다.<br>
+                        개인들의 노후준비를 촉진하기 위해 국가에서<br>
+                        세금혜택을 부여한 상품입니다.
+                    </p>
+
+                    <p class="mt-5 mb-0 fs-5 fc-16">
+                        연금보험에 가입한 후 5년 이상 납입하고,<br>
+                        10년 이상 유지하면 이자소득 전액에 대해 100%<br>
+                        비과세 혜택을 받을 수 있습니다.<br>
+                    </p>
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/11D_028_img-11.png" width="300"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/check-blue.png" width="50"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                        style-af-ani: 'transform: scale(1); opacity:1'">
+                    <p class="mt-5 mb-0 fs-5 fc-1"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-left: 0px; opacity:1'">
+                        <span class="fc-22 fw-700">
+                            단, 매월 150만원의 한도가<br>
+                            있다는 점도 기억하세요.
+                        </span>
+                    </p>
+                </div>
+            </article>
+        </section>
+        <!-- // 4 -->
+        
+        <!--콘텐츠 평가영역-->
+        <section id="feedback-area" data-is-not-result-page="false" class="bg-15">
+            <article class="text-align-center fc-white">
+                <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
+                <div class="feedback-btn-box mt-10 text-align-center">
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                        <label class="feedback-btn" for="feedback-radio-01">
+                            <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                            <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                        </label>
+                    </div>
+                    <div class="vertical-line mb-15"></div>
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                        <label class="feedback-btn" for="feedback-radio-02">
+                            <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                            <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                        </label>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="header-bg-panel-wrapper">
+        <div class="header-bg-panel bg-5"></div>
+    </div>
+
+    <!--돌아가기 버튼-->
+    <div class="bottom-fixed-area" data-is-not-result-page="false">
+        <button class="bg-white fc-5 fs-4 fw-700 bdc-5" id="goFirstBtn">다시 선택하기</button>
+    </div>
+
+    <!--로딩스크린-->
+    <div class="text-align-center loading-screen" data-is-playing-loading="false">
+        <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                        background="transparent"
+                        style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+        </lottie-player>
+        <div class="fc-2 fs-6 fw-500">
+            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+            이동중이에요!
+        </div>
+    </div>
+
+    <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+    <script src="../../../resources/v1/js/Customer-Journey.js"></script>
+    <script>
+        try {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+
+            //컴포넌트 이벤트 및 기본설정
+            EventProcessor.initSetting({
+                contentsId: '2D_015',  //콘텐츠id
+                linkInfoForInsurance: {
+                    //상품 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000938&evcode=DCJ_MO',
+                    //상품명
+                    name: '(무)교보시작해요저축보험',
+                    //상품 이미지 url
+                    imgUrl: '../../../resources/v1/img/img-product-svg-saving.svg',
+                    //상품 설명
+                    explain: '소액으로 차근차근 오늘부터 시작해요',
+                    //심의필
+                    certificationMsg: '생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)'
+                },
+                linkInfoForService: {
+                    //부가서비스 링크 url
+                    url: 'https://www.kyobo.com/dgt/web/customer/service/assets-management',
+                    //부가서비스명
+                    name: '자산관리서비스',
+                    //부가서비스 이미지 url
+                    imgUrl: '../../../resources/v1/img/img-service-svg-finance-manage.svg',
+                    //부가서비스 설명
+                    explain: '소중한 자산을 든든하게 관리해주는 서비스'
+                }
+            });
+        }
+        catch(error){
+            alert(error);
+            alert(error.stack);
+        }
+    </script>
+</body>
+</html>
