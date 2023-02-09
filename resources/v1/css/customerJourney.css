@@ -220,22 +220,40 @@ b{font-weight: 700;}
 /* num list */
 .list-num{}
 .list-num .list-item{padding-left: 30px;min-height: 24px;position: relative;}
-.list-num .list-item::before{content: "";position: absolute;top: 0;left: 0;top: 0;left: 0;width: 24px;height: 24px;}
-.list-num .list-item.num-01::before{background: url(../img/ico-num-01.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-02::before{background: url(../img/ico-num-02.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-03::before{background: url(../img/ico-num-03.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-04::before{background: url(../img/ico-num-04.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-05::before{background: url(../img/ico-num-05.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-06::before{background: url(../img/ico-num-06.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-07::before{background: url(../img/ico-num-07.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-08::before{background: url(../img/ico-num-08.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-09::before{background: url(../img/ico-num-09.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-10::before{background: url(../img/ico-num-10.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-11::before{background: url(../img/ico-num-11.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-12::before{background: url(../img/ico-num-12.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-13::before{background: url(../img/ico-num-13.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-14::before{background: url(../img/ico-num-14.png) 0 0 no-repeat;background-size: contain;}
-.list-num .list-item.num-15::before{background: url(../img/ico-num-15.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item::before{content: "";position: absolute;top: 0;left: 0;top: 0;left: 0;width: 24px;height: 24px;font-size: 0;text-indent: -9999em;}
+.list-num .list-item.num-01::before{content: "1";background: url(../img/ico-num-01.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-02::before{content: "2";background: url(../img/ico-num-02.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-03::before{content: "3";background: url(../img/ico-num-03.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-04::before{content: "4";background: url(../img/ico-num-04.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-05::before{content: "5";background: url(../img/ico-num-05.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-06::before{content: "6";background: url(../img/ico-num-06.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-07::before{content: "7";background: url(../img/ico-num-07.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-08::before{content: "8";background: url(../img/ico-num-08.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-09::before{content: "9";background: url(../img/ico-num-09.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-10::before{content: "10";background: url(../img/ico-num-10.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-11::before{content: "11";background: url(../img/ico-num-11.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-12::before{content: "12";background: url(../img/ico-num-12.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-13::before{content: "13";background: url(../img/ico-num-13.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-14::before{content: "14";background: url(../img/ico-num-14.png) 0 0 no-repeat;background-size: contain;}
+.list-num .list-item.num-15::before{content: "15";background: url(../img/ico-num-15.png) 0 0 no-repeat;background-size: contain;}
+
+.list-num.c555 .list-item{padding-left: 30px;min-height: 24px;position: relative;}
+.list-num.c555 .list-item::before{content: "";position: absolute;top: 0;left: 0;top: 0;left: 0;width: 24px;height: 24px;}
+.list-num.c555 .list-item.num-01::before{background: url(../img/ico-num-c555-01.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-02::before{background: url(../img/ico-num-c555-02.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-03::before{background: url(../img/ico-num-c555-03.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-04::before{background: url(../img/ico-num-c555-04.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-05::before{background: url(../img/ico-num-c555-05.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-06::before{background: url(../img/ico-num-c555-06.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-07::before{background: url(../img/ico-num-c555-07.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-08::before{background: url(../img/ico-num-c555-08.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-09::before{background: url(../img/ico-num-c555-09.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-10::before{background: url(../img/ico-num-c555-10.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-11::before{background: url(../img/ico-num-c555-11.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-12::before{background: url(../img/ico-num-c555-12.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-13::before{background: url(../img/ico-num-c555-13.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-14::before{background: url(../img/ico-num-c555-14.png) 0 0 no-repeat;background-size: contain;}
+.list-num.c555 .list-item.num-15::before{background: url(../img/ico-num-c555-15.png) 0 0 no-repeat;background-size: contain;}
 
 /* === body type === */
 body.type-a{color: white;}
@@ -1368,6 +1386,9 @@ section .title-msg .section-no.center-style{
 }
 ._2B_061 #feedback-area{
     background: #823333;
+}
+._5B_041 #feedback-area{
+    background: #6f322e;
 }
 #feedback-area{
     padding-bottom: 350px;
