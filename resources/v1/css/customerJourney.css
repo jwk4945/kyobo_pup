@@ -420,8 +420,7 @@ header article{
 .survey-type .survey-form{
     font-size: 15px;
     flex: 1;
-    /* padding-bottom: 40px; */
-    padding-bottom: 105px;
+    padding-bottom: 40px;
     overflow: hidden;
 }
 .survey-type .survey-form small{
