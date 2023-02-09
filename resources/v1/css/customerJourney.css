@@ -455,6 +455,26 @@ header article{
     min-height: 80px;
     box-sizing: border-box;
 }
+.survey-type .survey-form.survey-form2 li{
+    width: 100%;
+}
+.survey-type .survey-form.survey-form2 li label{
+    display: flex;
+    border-radius: 0;
+    background-color: initial;
+    padding: 0 0 10px;
+    cursor: pointer;
+    box-shadow: none;
+    /* align-items: center; */
+    /* max-width: 480px; */
+    margin: auto;
+    color: #222;
+    /* min-height: 80px; */
+    /* box-sizing: border-box; */
+}
+.survey-type .survey-form.survey-form2 .horizontal-box ul li .inner label .box{
+    width: 100%;
+}
 .survey-type .survey-form li .li-item-result{
     font-size: 13px;
 }
