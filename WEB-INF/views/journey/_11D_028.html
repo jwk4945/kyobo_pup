@@ -14,16 +14,16 @@
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
 <body class="_2D_015 survey-type bg-6">
-<!--gnb헤더 영역-->
-<nav class="bg-white">
-    <a href="javascript:history.back()" class="go-back-btn">
-        <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
-    </a>
-    <div>
-        대한민국의 세금 해방일은 언제 일까요?
-    </div>
-    <div></div>
-</nav>
+    <!--gnb(헤더 - 뒤로가기)-->
+    <nav class="bg-white">
+        <a href="javascript:history.back()" class="go-back-btn">
+            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
+        </a>
+        <div>
+            대한민국의 세금 해방일은 언제 일까요?
+        </div>
+        <div></div>
+    </nav>
     <!--서버로부터 전달받는 변수영역-->
     <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
     <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
@@ -230,10 +230,10 @@
                                     onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
             <article class="text-align-center fc-1">
                 <div class="title-msg mt-10">
-                <div class="section-no center-style fw-700 fc-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                        style-af-ani: 'margin-left:0px; opacity:0.5'">-1-</div>
+                    <div class="section-no center-style fw-700 fc-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                            style-af-ani: 'margin-left:0px; opacity:0.5'">-1-</div>
                     <h1 class="fw-700"
                         data-animation-type="onscroll"
                         data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
