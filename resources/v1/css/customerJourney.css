@@ -42,7 +42,7 @@
     background: none no-repeat;
     box-shadow: none;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
-    background-size: 13% auto;
+    background-size: 13% 100%;
 }
 
 /* 기본 스타일 값 */
