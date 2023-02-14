@@ -1597,5 +1597,5 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
     /* .fact-chk article:first-of-type{padding-bottom: 55px;}
     .fact-chk .main-banner-wrapper{height: 360px;}
     .fact-chk .swiper-slide{height: 360px;} */
-    .fact-chk .main-banner-wrapper{padding: 30px 10px 23px;}
+    .fact-chk .main-banner-wrapper{height: 350px;padding: 30px 10px 23px;background: pink;}
 }
