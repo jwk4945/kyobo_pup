@@ -1594,5 +1594,6 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
 
 @media (max-width:374px){
     /* 375이하 해상도 대응 */
+    .fact-chk article:first-of-type{padding-bottom: 55px;}
     .fact-chk .main-banner-wrapper{height: 360px;}
 }
