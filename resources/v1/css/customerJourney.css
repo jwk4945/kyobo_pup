@@ -1592,10 +1592,8 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
 .horizontal-box ul li .inner input:checked+label .box::after{width: 20px;height: 12px;bottom: -12px;background: url(../img/ico_bg_q_on.png) 0 0 no-repeat;background-size: contain;}
 .horizontal-box ul li .inner input:checked+label .box .radio-btn{border: 7px solid #d95584;}
 
-@media (max-width:375px){
+@media (max-width: 360px) {
     /* 375이하 해상도 대응 */
-    /* .fact-chk article:first-of-type{padding-bottom: 55px;}
     .fact-chk .main-banner-wrapper{height: 360px;}
-    .fact-chk .swiper-slide{height: 360px;} */
-    .fact-chk .main-banner-wrapper{height: 350px;padding: 30px 10px 23px;background: skyblue;}
 }
+
