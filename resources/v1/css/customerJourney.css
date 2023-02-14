@@ -1592,7 +1592,7 @@ input[type='radio'][name='feedback-radio']:checked+.feedback-btn{
 .horizontal-box ul li .inner input:checked+label .box::after{width: 20px;height: 12px;bottom: -12px;background: url(../img/ico_bg_q_on.png) 0 0 no-repeat;background-size: contain;}
 .horizontal-box ul li .inner input:checked+label .box .radio-btn{border: 7px solid #d95584;}
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     /* 375이하 해상도 대응 */
     .fact-chk .main-banner-wrapper{height: 360px;background: pink;}
 }
