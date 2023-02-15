@@ -935,7 +935,8 @@ const EventProcessor = (function (){
         let prevScrollY = 0;
         let firstScrollY;
         let prevScrolledDown = false;
-        const scrollYValue = 100;
+        // const scrollYValue = 100;
+        const scrollYValue = 50;
         const gnb = document.querySelector('nav');
         if(gnb===null)
             return;
