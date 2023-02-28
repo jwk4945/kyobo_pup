@@ -369,16 +369,30 @@ article{
     max-width: 540px;
     margin: auto;
 }
+/* header 태그 교체 */
 header article{
     padding-top: 25px;
 }
+.top-area article{
+    padding-top: 25px;
+}
+/* // header 태그 교체 */
+
 
 /* survey-type */
+/* header 태그 교체 */
 .survey-type header article{
     padding-top: 25px;
     padding-bottom: 30px;
     flex: 0;
 }
+.survey-type .top-area article{
+    padding-top: 25px;
+    padding-bottom: 30px;
+    flex: 0;
+}
+/* // header 태그 교체 */
+
 .survey-type .main-wrapper{
     position: absolute;
     left: 50%;
