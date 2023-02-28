@@ -1532,25 +1532,3 @@ const EventProcessor = (function (){
         , setBottomSheetEvent, setPropertiesForCss, getResultOfSurvey, togglePageContents
         , initSetting, setUserInLastPage}
 })();
-
-// 퍼블 테스트
-// func changeStatusBarBgColor(bgColor: UIColor?) {
-//     if #available(iOS 13.0, *) {
-//         let window = UIApplication.shared.windows.first
-//         let statusBarManager = window?.windowScene?.statusBarManager
-        
-//         let statusBarView = UIView(frame: statusBarManager?.statusBarFrame ?? .zero)
-//         statusBarView.backgroundColor = bgColor
-        
-//         window?.addSubview(statusBarView)
-//     } else {
-//         let statusBarView = UIApplication.shared.value(forKey: "statusBar") as? UIView
-//         statusBarView?.backgroundColor = bgColor
-//     }
-// }
-
-// override func viewWillAppear(_ animated: Bool) {
-//     super.viewWillAppear(animated)
-    
-//     changeStatusBarBgColor(bgColor: UIColor.red)
-// }
