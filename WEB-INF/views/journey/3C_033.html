@@ -15,20 +15,25 @@
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
 <body class="_3C_033 fact-chk type-b bg-10">
-<!--gnb(헤더 - 뒤로가기)-->
-    <nav class="bg-white fc-1">
-        <a href="javascript:history.back()" class="go-back-btn">
-            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
-        </a>
-        <div>
-            유치원에서 유의사항은?
-        </div>
-        <div></div>
-    </nav>
-    <!--서버로부터 전달받는 변수영역-->
-    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
-    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
-    <header>
+<!-- [S] header-->
+<nav class="bg-white fc-1">
+    <a href="javascript:history.back()" class="go-back-btn">
+        <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
+    </a>
+    <div>
+        유치원에서 유의사항은?
+    </div>
+    <div></div>
+</nav>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div class="cont-wrap">
+    <div class="top-area">
         <article class="fc-white">
             <span class="tag opacity-0"
                         data-animation-type="onload"
@@ -251,7 +256,7 @@
                 </div>
             </div>
         </article>
-    </header>
+    </div>
     <section data-is-not-result-page="false"
             data-animation-type="onscroll"
             data-animation-infos="style-bf-ani: 'background-color:#6a50c2;', style-af-ani: 'background-color:#5043A0;'">
@@ -321,51 +326,54 @@
             </div>
         </article>
     </section>
+</div>
+<!-- [E] cont -->
 
-    <!--로딩스크린-->
-    <div class="text-align-center loading-screen" data-is-playing-loading="false">
-        <lottie-player src="../../../resources/v1/img/loading-animation.json"
-                        background="transparent"
-                        style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
-        </lottie-player>
-        <div class="fc-2 fs-6 fw-500">
-            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
-            이동중이에요!
-        </div>
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
     </div>
-    <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
-    <script src="../../../resources/v1/js/Customer-Journey.js"></script>
-    <script>
-        //onLoad animation 세팅
-        AnimationManager.loadElementsToAnimate();
+</div>
 
-        //컴포넌트 이벤트 및 기본설정
-        EventProcessor.initSetting({
-            contentsId : '3C_033',  //콘텐츠id
-            linkInfoForInsurance: {
-                //상품 링크 url
-                url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                //상품명
-                name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                //상품 이미지 url
-                imgUrl: '../../../resources/v1//img/img-product-svg-child-care.svg',
-                //상품 설명
-                explain: '내 아이를 위한 금쪽같은 어린이보험',
-                //심의필
-                certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
-            },
-            linkInfoForService: {
-                //부가서비스 링크 url
-                url: 'https://www.kyobo.com/dgt/web/product/eduCare-service',
-                //부가서비스명
-                name: '교보에듀케어서비스',
-                //부가서비스 이미지 url
-                imgUrl: '../../../resources/v1/img/img-service-svg-edu-care.svg',
-                //부가서비스 설명
-                explain: '우리 아이 바른 성장 지킴이'
-            }
-        });
-    </script>
+<script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+<script src="../../../resources/v1/js/Customer-Journey.js"></script>
+<script>
+    //onLoad animation 세팅
+    AnimationManager.loadElementsToAnimate();
+
+    //컴포넌트 이벤트 및 기본설정
+    EventProcessor.initSetting({
+        contentsId : '3C_033',  //콘텐츠id
+        linkInfoForInsurance: {
+            //상품 링크 url
+            url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
+            //상품명
+            name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
+            //상품 이미지 url
+            imgUrl: '../../../resources/v1//img/img-product-svg-child-care.svg',
+            //상품 설명
+            explain: '내 아이를 위한 금쪽같은 어린이보험',
+            //심의필
+            certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
+        },
+        linkInfoForService: {
+            //부가서비스 링크 url
+            url: 'https://www.kyobo.com/dgt/web/product/eduCare-service',
+            //부가서비스명
+            name: '교보에듀케어서비스',
+            //부가서비스 이미지 url
+            imgUrl: '../../../resources/v1/img/img-service-svg-edu-care.svg',
+            //부가서비스 설명
+            explain: '우리 아이 바른 성장 지킴이'
+        }
+    });
+</script>
 </body>
 </html>
