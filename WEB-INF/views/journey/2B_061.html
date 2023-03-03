@@ -15,7 +15,7 @@
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
 <body class="_2B_061 information-type type-a bg-9 fc-white">
-<!--gnb헤더 영역-->
+<!-- [S] header-->
 <nav class="bg-white">
     <a href="javascript:history.back()" class="go-back-btn">
         <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
@@ -25,10 +25,15 @@
     </div>
     <div></div>
 </nav>
-    <!--서버로부터 전달받는 변수영역-->
-    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
-    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
-    <header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div class="cont-wrap">
+    <div class="top-area">
         <article class="text-align-center">
             <div>
                 <span class="tag mb-10 opacity-0 fc-13"
@@ -108,7 +113,7 @@
                 </div>
             </div> 
         </article>
-    </header>
+    </div>
     <section data-animation-type="onscroll"
             data-animation-infos="style-bf-ani: 'background-color: #c34c4c',
                                     style-af-ani: 'background-color: #c34c4c',
@@ -150,7 +155,7 @@
                 <div class="text-align-right mt-20">
                     <img src="../../../resources/v1/img/2B_061_img-02.gif" width="200"
                         data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                        data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
                                             style-af-ani: 'margin-right: 0px; opacity:1'">
                 </div>
             </div>
@@ -181,7 +186,7 @@
                 <div class="mt-20">
                     <img src="../../../resources/v1/img/2B_061_img-03.png" width="200"
                         data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                        data-animation-infos="style-bf-ani: 'margin-left: 50px; opacity:0',
                                     style-af-ani: 'margin-left: 0px; opacity:1'">
                 </div>
             </div>
@@ -255,7 +260,7 @@
                 <div class="text-align-center mt-25">
                     <img src="../../../resources/v1/img/2B_061_img-06.gif" width="200"
                         data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                        data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
                                         style-af-ani: 'margin-right: 0px; opacity:1'">
                 </div>
             </div>
@@ -278,7 +283,7 @@
                 <div class="mt-25 text-align-center">
                     <img src="../../../resources/v1/img/2B_061_img-07.png" width="200"
                         data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                        data-animation-infos="style-bf-ani: 'margin-left: 50px; opacity:0',
                                         style-af-ani: 'margin-left: 0px; opacity:1'">
                 </div>
             </div>
@@ -325,7 +330,7 @@
                 <div class="text-align-center mt-20">
                     <img src="../../../resources/v1/img/2B_061_img-08.gif" width="200"
                         data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                        data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
                                             style-af-ani: 'margin-right: 0px; opacity:1'">
                 </div>
             </div>
@@ -360,7 +365,7 @@
             <div class="mt-25 text-align-center">
                 <img src="../../../resources/v1/img/2B_061_img-09.png" width="200"
                     data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                    data-animation-infos="style-bf-ani: 'margin-left: 50px; opacity:0',
                                     style-af-ani: 'margin-left: 0px; opacity:1'">
             </div>
             <div class="mt-30 text-align-center fc-white">
@@ -379,30 +384,30 @@
             </div>
         </article>
     </section>
-
-<!--콘텐츠 평가영역-->
-<section id="feedback-area">
-    <article class="text-align-center fc-white">
-        <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
-        <div class="feedback-btn-box mt-10 text-align-center">
-            <div class="feedback-btn-box-inner">
-                <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-                <label class="feedback-btn" for="feedback-radio-01">
-                    <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
-                    <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
-                </label>
+    <!--콘텐츠 평가영역-->
+    <section id="feedback-area">
+        <article class="text-align-center fc-white">
+            <h3 class="fw-700 text-align-left fc-white">콘텐츠에 대해 평가해주세요.</h3>
+            <div class="feedback-btn-box mt-10 text-align-center">
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                    <label class="feedback-btn" for="feedback-radio-01">
+                        <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                    </label>
+                </div>
+                <div class="vertical-line mb-15"></div>
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                    <label class="feedback-btn" for="feedback-radio-02">
+                        <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                    </label>
+                </div>
             </div>
-            <div class="vertical-line mb-15"></div>
-            <div class="feedback-btn-box-inner">
-                <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-                <label class="feedback-btn" for="feedback-radio-02">
-                    <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
-                    <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
-                </label>
-            </div>
-        </div>
-    </article>
-</section>
+        </article>
+    </section>
+</div>
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">
@@ -416,45 +421,45 @@
     </div>
 </div>
 
-    <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
-    <script src="../../../resources/v1/js/Customer-Journey.js"></script>
-    <script>
-        try {
-            //애니메이션 설정 로딩
-            AnimationManager.loadElementsToAnimate();
+<script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+<script src="../../../resources/v1/js/Customer-Journey.js"></script>
+<script>
+    try {
+        //애니메이션 설정 로딩
+        AnimationManager.loadElementsToAnimate();
 
-            //컴포넌트 이벤트 및 기본설정
-            EventProcessor.initSetting({
-                contentsId: '2B_061',  //콘텐츠id
-                linkInfoForInsurance: {
-                    //상품 링크 url
-                    url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000938&evcode=DCJ_MO',
-                    //상품명
-                    name: '(무)교보시작해요저축보험',
-                    //상품 이미지 url
-                    imgUrl: '../../../resources/v1/img/img-product-svg-saving.svg',
-                    //상품 설명
-                    explain: '소액으로 차근차근 오늘부터 시작해요',
-                    //심의필
-                    certificationMsg: '생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)'
-                },
-                linkInfoForService: {
-                    //부가서비스 링크 url
-                    url: 'https://www.kyobo.com/dgt/web/customer/service/assets-management',
-                    //부가서비스명
-                    name: '자산관리서비스',
-                    //부가서비스 이미지 url
-                    imgUrl: '../../../resources/v1/img/img-service-svg-finance-manage.svg',
-                    //부가서비스 설명
-                    explain: '소중한 자산을 든든하게 관리해주는 서비스'
-                }
-            });
-        }
-        catch(error){
-            alert(error);
-            alert(error.stack);
-        }
-    </script>
+        //컴포넌트 이벤트 및 기본설정
+        EventProcessor.initSetting({
+            contentsId: '2B_061',  //콘텐츠id
+            linkInfoForInsurance: {
+                //상품 링크 url
+                url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000938&evcode=DCJ_MO',
+                //상품명
+                name: '(무)교보시작해요저축보험',
+                //상품 이미지 url
+                imgUrl: '../../../resources/v1/img/img-product-svg-saving.svg',
+                //상품 설명
+                explain: '소액으로 차근차근 오늘부터 시작해요',
+                //심의필
+                certificationMsg: '생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)'
+            },
+            linkInfoForService: {
+                //부가서비스 링크 url
+                url: 'https://www.kyobo.com/dgt/web/customer/service/assets-management',
+                //부가서비스명
+                name: '자산관리서비스',
+                //부가서비스 이미지 url
+                imgUrl: '../../../resources/v1/img/img-service-svg-finance-manage.svg',
+                //부가서비스 설명
+                explain: '소중한 자산을 든든하게 관리해주는 서비스'
+            }
+        });
+    }
+    catch(error){
+        alert(error);
+        alert(error.stack);
+    }
+</script>
 </body>
 </html>
