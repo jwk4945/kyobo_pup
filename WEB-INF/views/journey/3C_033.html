@@ -15,6 +15,12 @@
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
 <body class="_3C_033 fact-chk type-b bg-10">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
 <!-- [S] header-->
 <nav class="bg-white fc-1">
     <a href="javascript:history.back()" class="go-back-btn">
@@ -32,7 +38,7 @@
 <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
 
 <!-- [S] cont -->
-<div class="cont-wrap">
+<div id="cont-wrap">
     <div class="top-area">
         <article class="fc-white">
             <span class="tag opacity-0"

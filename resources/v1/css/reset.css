@@ -165,3 +165,4 @@ label       {cursor:pointer; margin:0;}
 html, body {min-height:100%;}
 
 a {text-decoration: none;color:inherit;}
+/* *:focus{border: 2px solid red;z-index: 100;} */

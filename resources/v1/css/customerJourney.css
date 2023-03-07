@@ -2,48 +2,11 @@
 /* ==========================================================================
     공통설정
 ========================================================================== */
-/* swiper */
-.full-slide.swiper-container{
-    position: absolute;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-}
-.swiper-wrapper{
-    width: 100%;
-}
-.swiper-slide{
-    display: flex;
-    justify-content: center;
-}
-.swiper-container.last-slide{
-    position: absolute;
-    left: 15px;
-    right: 15px;
-}
-.swiper-container .swiper-pagination{
-    display: block;
-    position: initial;
-}
-.swiper-my-bullet{
-    display: inline-block;
-    background: white;
-    opacity: 0.2;
-    width: 6px;
-    height: 6px;
-    margin: 0 5px 0 0;
-    border-radius: 50%;
-}
-.swiper-my-bullet.active{
-    opacity: 1;
-}
 
-.swiper-wrapper .swiper-slide:last-child .main-banner-wrapper{
-    background: none no-repeat;
-    box-shadow: none;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
-    background-size: 13% 100%;
-}
+/* skip-nav */
+.skip-nav a{z-index: 100;position:fixed; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:16px; padding:0 6px;width: 100%;text-align: center;}
+.skip-nav a:focus,
+.skip-nav a:active{top:0;}
 
 /* 기본 스타일 값 */
 /* === html, body === */
@@ -218,6 +181,49 @@ b{font-weight: 700;}
 .bottom-fixed-area{max-width: 540px;margin: 0 auto;}
 .gap-20{padding-left: 20px;padding-right: 20px;}
 .gap-20-inner{padding-left: 5px;padding-right: 5px;}
+
+/* swiper */
+.full-slide.swiper-container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.swiper-wrapper{
+    width: 100%;
+}
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+}
+.swiper-container.last-slide{
+    position: absolute;
+    left: 15px;
+    right: 15px;
+}
+.swiper-container .swiper-pagination{
+    display: block;
+    position: initial;
+}
+.swiper-my-bullet{
+    display: inline-block;
+    background: white;
+    opacity: 0.2;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px 0 0;
+    border-radius: 50%;
+}
+.swiper-my-bullet.active{
+    opacity: 1;
+}
+
+.swiper-wrapper .swiper-slide:last-child .main-banner-wrapper{
+    background: none no-repeat;
+    box-shadow: none;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
+    background-size: 13% 100%;
+}
 
 /* num list */
 .list-num{}
@@ -790,10 +796,7 @@ section:last-of-type article{
 ._3A_024 .tag{
     color: #166c78;
 }
-._2D_015 .tag{
-    color: #194078;
-}
-._7D_003 .tag{
+.type-d .tag{
     color: #194078;
 }
 ._3A_004 .tag,
