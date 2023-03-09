@@ -22,16 +22,18 @@
 <!-- [E] skip-nav -->
 
 <!-- [S] header-->
-<nav class="bg-white fc-1">
-    <a href="javascript:history.back()" class="go-back-btn">
-        <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
-    </a>
-    <div>
-        당뇨환자가 마실 수 있는 음료는?
-    </div>
-    <div></div>
-</nav>
-<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white fc-1">
+        <a href="javascript:history.back()" class="go-back-btn">
+            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
+        </a>
+        <div>
+            당뇨환자가 마실 수 있는 음료는?
+        </div>
+        <div></div>
+    </nav>
+</header>
+<!-- [E] header-->
 
 <!--서버로부터 전달받는 변수영역-->
 <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />

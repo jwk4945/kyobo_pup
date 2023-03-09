@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/swiper-bundle.min.css">
     <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
     <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <title>타이틀 확인하고 붙이기</title>
+    <title>혈당관리에 필요한 식단</title>
 </head>
 <script>
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
@@ -21,495 +21,517 @@
 </div>
 <!-- [E] skip-nav -->
 
-    <!--gnb(헤더 - 뒤로가기)-->
+<!-- [S] header-->
+<header id="header">
     <nav class="bg-white">
         <a href="javascript:history.back()" class="go-back-btn">
             <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
         </a>
         <div>
-            타이틀 확인하고 붙이기
+            혈당관리에 필요한 식단
         </div>
         <div></div>
     </nav>
-    <!--서버로부터 전달받는 변수영역-->
-    <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
-    <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
-<div class="main-wrapper">
-    <header>
-        <!-- [S] 로드화면 -->
-        <div id="survey-area" data-is-not-result-page="true">
-            <article class="fc-white">
-                    <span class="tag fc-13 opacity-0"
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div class="cont-wrap">
+    <div class="main-wrapper">
+        <div class="top-area">
+            <!-- [S] 로드화면 -->
+            <div id="survey-area" data-is-not-result-page="true">
+                <article class="fc-white">
+                        <span class="tag fc-13 opacity-0"
+                                data-animation-type="onload"
+                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                    start-ms:'300',
+                                                    transition-props:'[opacity]',
+                                                    transition-duration:'0.7s'">질병</span>
+                    <div class="mt-10">
+                        <h1 class="opacity-0"
                             data-animation-type="onload"
                             data-animation-infos="remove-class-nm: 'opacity-0',
-                                                start-ms:'300',
-                                                transition-props:'[opacity]',
-                                                transition-duration:'0.7s'">질병</span>
-                <div class="mt-10">
-                    <h1 class="opacity-0"
+                                                    style-bf-ani: 'transform:translateY(-100%);',
+                                                    style-af-ani: 'transform:',
+                                                    start-ms:'500',
+                                                    transition-props:'[opacity,transform]',
+                                                    transition-duration:'0.8s'">특효약 없는 당뇨병</h1>
+                        <h1 class="strong-underline opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                    style-bf-ani: 'transform:translateY(-250%);',
+                                                    style-af-ani: 'transform:',
+                                                    start-ms:'700',
+                                                    transition-props:'[opacity,transform]',
+                                                    transition-duration:'0.8s'">
+                            채식을 하면 나아질까요?
+                        </h1>
+                    </div>
+                    <div class="opacity-0 mt-10"
                         data-animation-type="onload"
                         data-animation-infos="remove-class-nm: 'opacity-0',
-                                                style-bf-ani: 'transform:translateY(-100%);',
+                                                style-bf-ani: 'transform:translateY(-400%);',
                                                 style-af-ani: 'transform:',
-                                                start-ms:'500',
-                                                transition-props:'[opacity,transform]',
-                                                transition-duration:'0.8s'">특효약 없는 당뇨병</h1>
-                    <h1 class="strong-underline opacity-0"
-                        data-animation-type="onload"
-                        data-animation-infos="remove-class-nm: 'opacity-0',
-                                                style-bf-ani: 'transform:translateY(-250%);',
-                                                style-af-ani: 'transform:',
-                                                start-ms:'700',
+                                                start-ms:'900',
                                                 transition-props:'[opacity,transform]',
                                                 transition-duration:'0.8s'">
-                        채식을 하면 나아질까요?
-                    </h1>
-                </div>
-                <div class="opacity-0 mt-10"
-                     data-animation-type="onload"
-                     data-animation-infos="remove-class-nm: 'opacity-0',
-                                               style-bf-ani: 'transform:translateY(-400%);',
-                                               style-af-ani: 'transform:',
-                                               start-ms:'900',
-                                               transition-props:'[opacity,transform]',
-                                               transition-duration:'0.8s'">
-                        <span class="sub-tit">
-                            혈당관리를 위해서는<br>
-                            적절한 운동과 식단 관리가 필수입니다.
-                        </span>
-                </div>
-            </article>
+                            <span class="sub-tit">
+                                혈당관리를 위해서는<br>
+                                적절한 운동과 식단 관리가 필수입니다.
+                            </span>
+                    </div>
+                </article>
 
-            <!-- <form class="survey-form"> -->
-            <form class="survey-form survey-form2">
-                <div class="horizontal-box">
-                    <ul>
-                        <li>
-                            <div class="inner" style="width: 0;"
-                                data-animation-type="onload"
-                                data-animation-infos="style-bf-ani: 'width:0;',
-                                                        style-af-ani: 'width:100%',
-                                                        start-ms:'1100', transition-duration:'0.6s'">
-                                <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
-                                <label for="answer-01"
-                                        data-animation-type="onload"
-                                        data-animation-infos="style-bf-ani: 'opacity:0;',
-                                                                style-af-ani: 'opacity:1;',
-                                                                start-ms:'1600', transition-duration:'0.7s'">
-                                    <div class="box">
-                                        <dl>
-                                            <dt class="fs-13 fc-4">당연히 혈당관리를 위해</dt>
-                                            <dd class="mt5 fs-15 fw-700">채식을 해야죠!</dd>
-                                        </dl>
-                                        <div class="img-box">
-                                            <img src="../../../resources/v1/img/13G_045_img-01.gif" alt="">
+                <!-- <form class="survey-form"> -->
+                <form class="survey-form survey-form2">
+                    <div class="horizontal-box">
+                        <ul>
+                            <li>
+                                <div class="inner" style="width: 0;"
+                                    data-animation-type="onload"
+                                    data-animation-infos="style-bf-ani: 'width:0;',
+                                                            style-af-ani: 'width:100%',
+                                                            start-ms:'1100', transition-duration:'0.6s'">
+                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
+                                    <label for="answer-01"
+                                            data-animation-type="onload"
+                                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                                    style-af-ani: 'opacity:1;',
+                                                                    start-ms:'1600', transition-duration:'0.7s'">
+                                        <div class="box">
+                                            <dl>
+                                                <dt class="fs-13 fc-4">당연히 혈당관리를 위해</dt>
+                                                <dd class="mt5 fs-15 fw-700">채식을 해야죠!</dd>
+                                            </dl>
+                                            <div class="img-box">
+                                                <img src="../../../resources/v1/img/13G_045_img-01.gif" alt="">
+                                            </div>
+                                            <div class="radio-btn"></div>
+                                        </div>  
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner" style="width: 0;"
+                                    data-animation-type="onload"
+                                    data-animation-infos="style-bf-ani: 'width:0;',
+                                                            style-af-ani: 'width:100%',
+                                                            start-ms:'1400', transition-duration:'0.6s'">
+                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-02">
+                                    <label for="answer-02"
+                                            data-animation-type="onload"
+                                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                                    style-af-ani: 'opacity:1',
+                                                                    start-ms:'1900', transition-duration:'0.7s'">
+                                        <div class="box">
+                                            <dl>
+                                                <dt class="fs-13 fc-4">채식 뿐만 아니라,</dt>
+                                                <dd class="mt5 fs-15 fw-700">고기도 챙겨 먹어야죠!</dd>
+                                            </dl>
+                                            <div class="img-box">
+                                                <img src="../../../resources/v1/img/13G_045_img-02.gif" alt="">
+                                            </div>
+                                            <div class="radio-btn"></div>
                                         </div>
-                                        <div class="radio-btn"></div>
-                                    </div>  
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="inner" style="width: 0;"
-                                data-animation-type="onload"
-                                data-animation-infos="style-bf-ani: 'width:0;',
-                                                        style-af-ani: 'width:100%',
-                                                        start-ms:'1400', transition-duration:'0.6s'">
-                                <input type="radio" name="kyobolife-survey" value="01" id="answer-02">
-                                <label for="answer-02"
-                                        data-animation-type="onload"
-                                        data-animation-infos="style-bf-ani: 'opacity:0;',
-                                                                style-af-ani: 'opacity:1',
-                                                                start-ms:'1900', transition-duration:'0.7s'">
-                                    <div class="box">
-                                        <dl>
-                                            <dt class="fs-13 fc-4">채식 뿐만 아니라,</dt>
-                                            <dd class="mt5 fs-15 fw-700">고기도 챙겨 먹어야죠!</dd>
-                                        </dl>
-                                        <div class="img-box">
-                                            <img src="../../../resources/v1/img/13G_045_img-02.gif" alt="">
-                                        </div>
-                                        <div class="radio-btn"></div>
-                                    </div>
-                                </label>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
-            </form>
-            <div class="footer-area">
-                <button type="submit" id="goNextBtn" class="bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
-            </div>
-        </div>
-        <!-- [E] 로드화면 -->
-
-        <!-- [S] 컨텐츠 화면 -->
-        <!-- s: 컨텐츠 상단 -->
-        <article id="result-area" class="text-align-center pb-30" data-is-not-result-page="false">
-            <div>
-                <div class="mt-5"
-                    data-animation-type="onresult"
-                    data-animation-infos="style-bf-ani: 'transform:translateY(-100%); opacity:0;',
-                                            style-af-ani: 'transform:translateY(0%); opacity:1;',
-                                            start-ms: '300',
-                                            transition-duration: '0.5s'">
-                    <h1 class="fc-white fw-700">정답은 ‘고기도 챙겨 먹어야죠!’ 입니다.</h1>
-                </div>
-                <p class="mt-10 mb-20 fc-white"
-                    data-animation-type="onresult"
-                    data-animation-infos="style-bf-ani: 'transform:translateY(-250%); opacity:0;',
-                                            style-af-ani: 'transform:translateY(0%); opacity:1;',
-                                            start-ms: '500',
-                                            transition-duration: '0.5s'">
-                                            물론 혈당관리에는 채식이 중요하지만,<br>
-                                            극단적 채식은 피해야 합니다.
-                </p>
-                <img src="../../../resources/v1/img/13G_045_img-03.gif" width="300"
-                    data-animation-type="onresult"
-                    data-animation-infos="style-bf-ani: 'transform:translateX(100vw); opacity:0;',
-                                        style-af-ani: 'transform:translateX(0vw); opacity:1;',
-                                        start-ms: '700',
-                                        transition-duration: '0.7s'">
-                <div class="mt-20 fc-3"
-                    data-animation-type="onresult"
-                    data-animation-infos="style-bf-ani: 'opacity:0;',
-                                            style-af-ani: 'opacity:1;',
-                                            start-ms: '500',
-                                            transition-duration: '0.8s'">
-                    <p>
-                        채식이 당뇨 유병률을 낮췄다는 연구들은<br>
-                        대부분 ‘채소 섭취량’에 초점이 맞춰져 있어서<br>
-                        채소를 많이 먹을수록 당뇨 위험이 줄었다는 것인데요,
-                    </p>
-                </div>
-                <div class="mt-5 fc-1 fs-15 fw-700"
-                    data-animation-type="onresult"
-                    data-animation-infos="style-bf-ani: 'opacity:0;',
-                                            style-af-ani: 'opacity:1;',
-                                            start-ms: '700',
-                                            transition-duration: '0.8s'">
-                    <p>
-                        이는 <span class="fc-13 va-top">"고기를 아예 먹지 않는 것이 좋다"</span>는<br>
-                        의미는 아닙니다.
-                    </p>
+                </form>
+                <div class="footer-area">
+                    <button type="submit" id="goNextBtn" class="bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
                 </div>
             </div>
-        </article>
-        <!-- e: 컨텐츠 상단 -->
-    </header>
+            <!-- [E] 로드화면 -->
 
-    <section data-is-not-result-page="false">
-        <div class="card-section"
-            data-animation-type="onscroll"
-            data-animation-infos="style-bf-ani: 'background-color:#f4f4f4;', style-af-ani: 'background-color:#ffffff;'">
-            <article class="text-align-left">
-                <div class="title-msg mt-30">
-                    <span class="section-no fw-700 fc-7"
-                        id="animation04"
+            <!-- [S] 컨텐츠 화면 -->
+            <!-- s: 컨텐츠 상단 -->
+            <article id="result-area" class="text-align-center pb-30" data-is-not-result-page="false">
+                <div>
+                    <div class="mt-5"
                         data-animation-type="onresult"
-                        data-animation-infos="style-bf-ani: 'transform:translateX(80px); opacity:0;',
-                                            style-af-ani: 'transform:translateX(0px); opacity:0.2;',
-                                            start-ms: '1000',
-                                            transition-duration: '0.5s'">1</span>
-                    <h1 class="fw-700 fc-1" id="animation05"
-                        data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'transform:translateX(80px); opacity:0;',
-                                            style-af-ani: 'transform:translateX(0px); opacity:1;',
-                                            start-ms: '1100',
-                                            transition-duration: '0.5s'">
-                                            채식했더니 당뇨 유병률이<br>
-                                            낮아졌다는 주장도 있습니다!
-                    </h1>
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-100%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '300',
+                                                transition-duration: '0.5s'">
+                        <h1 class="fc-white fw-700">정답은 ‘고기도 챙겨 먹어야죠!’ 입니다.</h1>
+                    </div>
+                    <p class="mt-10 mb-20 fc-white"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-250%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '500',
+                                                transition-duration: '0.5s'">
+                                                물론 혈당관리에는 채식이 중요하지만,<br>
+                                                극단적 채식은 피해야 합니다.
+                    </p>
+                    <img src="../../../resources/v1/img/13G_045_img-03.gif" width="300"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateX(100vw); opacity:0;',
+                                            style-af-ani: 'transform:translateX(0vw); opacity:1;',
+                                            start-ms: '700',
+                                            transition-duration: '0.7s'">
+                    <div class="mt-20 fc-3"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                style-af-ani: 'opacity:1;',
+                                                start-ms: '500',
+                                                transition-duration: '0.8s'">
+                        <p>
+                            채식이 당뇨 유병률을 낮췄다는 연구들은<br>
+                            대부분 ‘채소 섭취량’에 초점이 맞춰져 있어서<br>
+                            채소를 많이 먹을수록 당뇨 위험이 줄었다는 것인데요,
+                        </p>
+                    </div>
+                    <div class="mt-5 fc-1 fs-15 fw-700"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                style-af-ani: 'opacity:1;',
+                                                start-ms: '700',
+                                                transition-duration: '0.8s'">
+                        <p>
+                            이는 <span class="fc-13 va-top">"고기를 아예 먹지 않는 것이 좋다"</span>는<br>
+                            의미는 아닙니다.
+                        </p>
+                    </div>
                 </div>
-                <div class="fc-3"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                        style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="mt-5 mb-0 fs-5">미국영양학회에 기재된 바에 따르면 채식을 한 사람의 당뇨병 유병률은 채식하지 않은 사람보다 49% 낮았습니다.</p>
-                </div>
+            </article>
+            <!-- e: 컨텐츠 상단 -->
+        </div>
 
-                <div class="mt-25 text-align-center">
-                    <img src="../../../resources/v1/img/13G_045_img-04.png" width="200"
-                        data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                </div>
-            </article>
-            <article class="text-align-left">
-                <div class="title-msg mt-30">
-                    <span class="section-no fw-700 fc-7"
+        <section data-is-not-result-page="false">
+            <div class="card-section"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'background-color:#f4f4f4;', style-af-ani: 'background-color:#ffffff;'">
+                <article class="text-align-left">
+                    <div class="title-msg mt-30">
+                        <span class="section-no fw-700 fc-7"
+                            id="animation04"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(80px); opacity:0;',
+                                                style-af-ani: 'transform:translateX(0px); opacity:0.2;',
+                                                start-ms: '1000',
+                                                transition-duration: '0.5s'">1</span>
+                        <h1 class="fw-700 fc-1" id="animation05"
                             data-animation-type="onscroll"
-                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                                style-af-ani: 'margin-left:0px; opacity:0.2'">2</span>
-                    <h1 class="fw-700 fc-1"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(80px); opacity:0;',
+                                                style-af-ani: 'transform:translateX(0px); opacity:1;',
+                                                start-ms: '1100',
+                                                transition-duration: '0.5s'">
+                                                채식했더니 당뇨 유병률이<br>
+                                                낮아졌다는 주장도 있습니다!
+                        </h1>
+                    </div>
+                    <div class="fc-3"
                         data-animation-type="onscroll"
                         data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                             style-af-ani: 'margin-left:0px; opacity:1'">
-                                            그러나 식물성 식품이 오히려<br>
-                                            혈당을 높일 수 있다는 연구 결과도<br>
-                                            있습니다.
-                    </h1>
-                </div>
-                <div class="fc-3"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="mt-5 mb-0 fs-5">영국 하트퍼드셔대 연구에 따르면 채식이 오히려 당뇨병을 유발하고, 심장병 위험까지 높인다고 합니다.</p>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 mb-0 fs-5">식물성 대체품에 함유된 전분이 몸 속에 들어가면 설탕으로 분해되는데, 채식을 하면 이를 과하게 섭취하게 되어 혈당 건강에 안 좋기 때문입니다.</p>
-                </div>
-                <div class="mt-20 text-align-center">
-                    <img src="../../../resources/v1/img/13G_045_img-05.png" width="200"
-                        data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                </div>
-            </article>
-            <article class="text-align-left">
-                <div class="title-msg mt-30">
-                    <span class="section-no fw-700 fc-7"
+                        <p class="mt-5 mb-0 fs-5">미국영양학회에 기재된 바에 따르면 채식을 한 사람의 당뇨병 유병률은 채식하지 않은 사람보다 49% 낮았습니다.</p>
+                    </div>
+
+                    <div class="mt-25 text-align-center">
+                        <img src="../../../resources/v1/img/13G_045_img-04.png" width="200"
                             data-animation-type="onscroll"
-                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                                style-af-ani: 'margin-left:0px; opacity:0.2'">3</span>
-                    <h1 class="fw-700 fc-1"
-                        data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                                            의사 선생님이 권하는<br>
-                                            당뇨 환자 식사요법 알려드리겠습니다.
-                    </h1>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-5">당뇨 환자의 건강한 혈당 관리를 위해서는 고기를 드셔야 합니다.</p>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-5">특히 양질의 단백질, 즉 살코기나 생선을 곁들인 채소 위주의 식단이 당뇨 환자에게 가장 좋습니다.</p>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-5">규칙적으로 적당한 양의 식사를 하는 것이 혈당 관리를 비롯해 신체 전반의 건강에 도움이 됩니다.</p>
-                </div>
-                <div class="mt-20 text-align-center">
-                    <img src="../../../resources/v1/img/13G_045_img-06.png" width="200"
-                        alt=""
-                        data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                </div>
-            </article>
-            <article class="text-align-left">
-                <div class="title-msg mt-30">
+                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    </div>
+                </article>
+                <article class="text-align-left">
+                    <div class="title-msg mt-30">
                         <span class="section-no fw-700 fc-7"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                                    style-af-ani: 'margin-left:0px; opacity:0.2'">4</span>
-                    <h1 class="fw-700 fc-1"
+                                                    style-af-ani: 'margin-left:0px; opacity:0.2'">2</span>
+                        <h1 class="fw-700 fc-1"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                                                그러나 식물성 식품이 오히려<br>
+                                                혈당을 높일 수 있다는 연구 결과도<br>
+                                                있습니다.
+                        </h1>
+                    </div>
+                    <div class="fc-3"
                         data-animation-type="onscroll"
                         data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                                            당뇨 환자들은<br>
-                                            당뇨 식단이 어렵다고 말합니다.
-                    </h1>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-5">실제 당뇨 환자의 혈당 조절률은 24.5%에 그치고 있습니다.</p>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-5">특히, 식단 관리는 당뇨 환자들에게 필수임에도 불구하고, 당뇨 환자의 76.2%는 불균형한 식사를 하고 있습니다.</p>
-                </div>
-                <div class="mt-20 text-align-center">
-                    <img src="../../../resources/v1/img/13G_045_img-07.png" width="200"
-                        alt=""
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="mt-5 mb-0 fs-5">영국 하트퍼드셔대 연구에 따르면 채식이 오히려 당뇨병을 유발하고, 심장병 위험까지 높인다고 합니다.</p>
+                    </div>
+                    <div class="mt-5"
                         data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-5">단답형으로 똑떨어지게 무엇을 먹고, 먹지 말아야 하는지 알면 좋겠지만 당뇨병의 식사요법은 그렇게 이분법적으로 나눌 수 없습니다.</p>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fs-5 fc-3">그래서 실제 환자들은 당뇨병 식단이 복잡하다는 편견을 지닌 경우가 많습니다.</p>
-                </div>
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                    <p class="fc-3 fs-12 text-align-right">
-                        [출처 :  2020 국민건강통계 (대상: 당뇨 환자 1,117명),<br>
-                        삼성서울병원 당뇨병 센터 (대상: 당뇨 환자 1,466명)]
-                    </p>
-                </div>
-            </article>
-            <article class="text-align-left">
-                <div class="title-msg mt-30">
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 mb-0 fs-5">식물성 대체품에 함유된 전분이 몸 속에 들어가면 설탕으로 분해되는데, 채식을 하면 이를 과하게 섭취하게 되어 혈당 건강에 안 좋기 때문입니다.</p>
+                    </div>
+                    <div class="mt-20 text-align-center">
+                        <img src="../../../resources/v1/img/13G_045_img-05.png" width="200"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    </div>
+                </article>
+                <article class="text-align-left">
+                    <div class="title-msg mt-30">
                         <span class="section-no fw-700 fc-7"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
-                                                    style-af-ani: 'margin-left:0px; opacity:0.2'">5</span>
-                    <h1 class="fw-700 fc-1"
+                                                    style-af-ani: 'margin-left:0px; opacity:0.2'">3</span>
+                        <h1 class="fw-700 fc-1"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                                                그렇다면 당뇨 환자는<br>
+                                                어떤 식단을 해야 할까요?
+                        </h1>
+                    </div>
+                    <div class="mt-5"
                         data-animation-type="onscroll"
                         data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
-                                            style-af-ani: 'margin-left:0px; opacity:1'">
-                                            의사 선생님이 권하는<br>
-                                            당뇨 환자 식사요법 알려드리겠습니다.
-                    </h1>
-                </div>
-                <div class="mt-20"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'opacity:0',
-                                            style-af-ani: 'opacity:1'">
-                    <p class="fs-18 fc-13 fw-700">당뇨 환자 식사요법의 기본원칙</p>
-                </div>
-                <div class="mt-20 list-num c555">
-                    <div data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
-                        class="list-item num-01">
-                        <p class="mt-0 mb-0 fs-5">별도의 대출심사가 없어 즉시 신청 및 상환이 가능합니다.</p>
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-5">당뇨 환자의 건강한 혈당 관리를 위해서는 고기를 드셔야 합니다.</p>
                     </div>
-                    <div data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
-                        class="list-item num-02">
-                        <p class="mt-5 mb-0 fs-5">언제 갚더라도 중도상환수수료가 없습니다.</p>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-5">특히 양질의 단백질, 즉 살코기나 생선을 곁들인 채소 위주의 식단이 당뇨 환자에게 가장 좋습니다.</p>
                     </div>
-                    <div data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
-                        class="list-item num-03">
-                        <p class="mt-5 mb-0 fs-5">별도의 구비서류가 필요 없습니다.</p>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-5">규칙적으로 적당한 양의 식사를 하는 것이 혈당 관리를 비롯해 신체 전반의 건강에 도움이 됩니다.</p>
                     </div>
-                    <div data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
-                        class="list-item num-04">
-                        <p class="mt-5 mb-0 fs-5">상환이 지연되더라도 신용등급에 영향이 없습니다.</p>
+                    <div class="mt-20 text-align-center">
+                        <img src="../../../resources/v1/img/13G_045_img-06.png" width="200"
+                            alt=""
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
                     </div>
-                    <div data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
-                        class="list-item num-05">
-                        <p class="mt-5 mb-0 fs-5">긴급자금이 필요할 때 보험계약을 해약하지 않고 계속 유지할 수 있습니다.</p>
+                </article>
+                <article class="text-align-left">
+                    <div class="title-msg mt-30">
+                            <span class="section-no fw-700 fc-7"
+                                    data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                                        style-af-ani: 'margin-left:0px; opacity:0.2'">4</span>
+                        <h1 class="fw-700 fc-1"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                                                당뇨 환자들은<br>
+                                                당뇨 식단이 어렵다고 말합니다.
+                        </h1>
                     </div>
-                </div>
-                
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'opacity:0',
-                                            style-af-ani: 'opacity:1'">
-                    <p class="fc-3 fs-12 text-align-right">
-                        [출처 : 대한당뇨병학회]
-                    </p>
-                </div>
-                <div class="mt-20"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'opacity:0',
-                                            style-af-ani: 'opacity:1'">
-                    <p class="fw-700 fs-18">
-                        특별한 게 없어 보이시나요?<br>
-                        당뇨식은 건강식이기 때문입니다.
-                    </p>
-                </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-5">실제 당뇨 환자의 혈당 조절률은 24.5%에 그치고 있습니다.</p>
+                    </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-12">
+                            [출처 :  2020 국민건강통계 (대상: 당뇨 환자 1,117명)]
+                        </p>
+                    </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-5">특히, 식단 관리는 당뇨 환자들에게 필수임에도 불구하고, 당뇨 환자의 76.2%는 불균형한 식사를 하고 있습니다.</p>
+                    </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-12">
+                            [출처 : 삼성서울병원 당뇨병 센터 (대상: 당뇨 환자 1,466명)]
+                        </p>
+                    </div>
+                    <div class="mt-20 text-align-center">
+                        <img src="../../../resources/v1/img/13G_045_img-07.png" width="200"
+                            alt=""
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fc-3 fs-5">단답형으로 똑떨어지게 무엇을 먹고, 먹지 말아야 하는지 알면 좋겠지만 당뇨병의 식사요법은 그렇게 이분법적으로 나눌 수 없습니다.</p>
+                    </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                        <p class="fs-5 fc-3">그래서 실제 환자들은 당뇨병 식단이 복잡하다는 편견을 지닌 경우가 많습니다.</p>
+                    </div>
+                </article>
+                <article class="text-align-left">
+                    <div class="title-msg mt-30">
+                            <span class="section-no fw-700 fc-7"
+                                    data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                                        style-af-ani: 'margin-left:0px; opacity:0.2'">5</span>
+                        <h1 class="fw-700 fc-1"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                style-af-ani: 'margin-left:0px; opacity:1'">
+                                                의사 선생님이 권하는<br>
+                                                당뇨 환자 식사요법 알려드리겠습니다.
+                        </h1>
+                    </div>
+                    <div class="mt-20"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0',
+                                                style-af-ani: 'opacity:1'">
+                        <p class="fs-18 fc-13 fw-700">당뇨 환자 식사요법의 기본원칙</p>
+                    </div>
+                    <div class="mt-20 list-num c555">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-01">
+                            <p class="mt-0 mb-0 fs-5">일정한 시간에 알맞은 음식을 규칙적으로 먹습니다.</p>
+                        </div>
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-02">
+                            <p class="mt-5 mb-0 fs-5">설탕이나 꿀 등 단순당의 섭취를 주의합니다.</p>
+                        </div>
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-03">
+                            <p class="mt-5 mb-0 fs-5">식이 섬유소를 충분히 섭취합니다.</p>
+                        </div>
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-04">
+                            <p class="mt-5 mb-0 fs-5">지방을 적절히 섭취하되 콜레스테롤의 섭취는 제한합니다.</p>
+                        </div>
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-05">
+                            <p class="mt-5 mb-0 fs-5">염분 섭취를 줄입니다.</p>
+                        </div>
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-06">
+                            <p class="mt-5 mb-0 fs-5">음주는 피하는 것이 좋습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0',
+                                                style-af-ani: 'opacity:1'">
+                        <p class="fc-3 fs-12 text-align-right">
+                            [출처 : 대한당뇨병학회]
+                        </p>
+                    </div>
+                    <div class="mt-20"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0',
+                                                style-af-ani: 'opacity:1'">
+                        <p class="fw-700 fs-18">
+                            특별한 게 없어 보이시나요?<br>
+                            당뇨식은 건강식이기 때문입니다.
+                        </p>
+                    </div>
 
-                <div class="mt-5"
-                    data-animation-type="onscroll"
-                    data-animation-infos="style-bf-ani: 'opacity:0',
-                                            style-af-ani: 'opacity:1'">
-                    <p class="mt-10">
-                        일상생활에서 식이요법과 운동요법으로 잘 관리하며 평생 안고 가야 하는 질병이 바로 당뇨입니다.
-                    </p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <section data-is-not-result-page="false">
-        <div class="mt-30 text-align-center">
-            <img src="../../../resources/v1/img/13G_045_img-08.gif" width="300"
-                alt=""
-                data-animation-type="onscroll"
-                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-        </div>
-        <div class="mt-30 pb-50 text-align-center">
-            <img src="../../../resources/v1/img/check-bg-07.png" width="50"
-                data-animation-type="onscroll"
-                data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
-                                    style-af-ani: 'transform: scale(1); opacity:1'">
-            <p class="fs-16 mt-0 mb-0"
-                data-animation-type="onscroll"
-                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                철저한 예방과 적절한 치료로<br>
-                건강한 삶을 유지할 수 있도록
-            </p>
-            <h1 class="fc-13 fw-700 mt-5"
-                data-animation-type="onscroll"
-                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                경제적인 준비도 고려해 보세요.
-            </h1>
-        </div>
-    </section>
-
-    <!-- s: 콘텐츠 평가영역-->
-    <section id="feedback-area" data-is-not-result-page="false" class="bg-14">
-        <article class="text-align-center fc-white">
-            <div class="fw-700 text-align-left fc-white fs-18">콘텐츠에 대해 평가해주세요.</div>
-            <div class="feedback-btn-box mt-10 text-align-center">
-                <div class="feedback-btn-box-inner">
-                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-                    <label class="feedback-btn" for="feedback-radio-01">
-                        <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
-                        <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
-                    </label>
-                </div>
-                <div class="vertical-line mb-15"></div>
-                <div class="feedback-btn-box-inner">
-                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-                    <label class="feedback-btn" for="feedback-radio-02">
-                        <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
-                        <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
-                    </label>
-                </div>
+                    <div class="mt-5"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0',
+                                                style-af-ani: 'opacity:1'">
+                        <p class="mt-10">
+                            일상생활에서 식이요법과 운동요법으로 잘 관리하며 평생 안고 가야 하는 질병이 바로 당뇨입니다.
+                        </p>
+                    </div>
+                </article>
             </div>
-        </article>
-    </section>
-</div>
-<!-- 상단 패널 -->
-<div class="header-bg-panel-wrapper">
-    <div class="header-bg-panel bg-7"></div>
-</div>
-<!-- 다시 선택하기 버튼 -->
-<div class="bottom-fixed-area" data-is-not-result-page="false">
-    <button class="bg-white fc-7 fs-4 fw-700 bdc-7" id="goFirstBtn" onclick="location.reload();">다시 선택하기</button>
-</div>
-<!-- [E] 컨텐츠 화면 -->
+        </section>
 
-    <!--로딩스크린-->
-    <div class="text-align-center loading-screen" data-is-playing-loading="false">
-        <lottie-player src="../../../resources/v1/img/loading-animation.json"
-                        background="transparent"
-                        style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
-        </lottie-player>
-        <div class="fc-2 fs-6 fw-500">
-            고객님에게 맞는 <b>교보생명</b> 상품으로<br>
-            이동중이에요!
-        </div>
+        <section data-is-not-result-page="false">
+            <div class="mt-30 text-align-center">
+                <img src="../../../resources/v1/img/13G_045_img-08.gif" width="300"
+                    alt=""
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+            </div>
+            <div class="mt-30 pb-50 text-align-center">
+                <img src="../../../resources/v1/img/check-bg-07.png" width="50"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                        style-af-ani: 'transform: scale(1); opacity:1'">
+                <p class="fs-16 mt-0 mb-0"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    철저한 예방과 적절한 치료로<br>
+                    건강한 삶을 유지할 수 있도록
+                </p>
+                <h1 class="fc-13 fw-700 mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    경제적인 준비도 고려해 보세요.
+                </h1>
+            </div>
+        </section>
+
+        <!-- s: 콘텐츠 평가영역-->
+        <section id="feedback-area" data-is-not-result-page="false" class="bg-14">
+            <article class="text-align-center fc-white">
+                <div class="fw-700 text-align-left fc-white fs-18">콘텐츠에 대해 평가해주세요.</div>
+                <div class="feedback-btn-box mt-10 text-align-center">
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                        <label class="feedback-btn" for="feedback-radio-01">
+                            <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                            <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                        </label>
+                    </div>
+                    <div class="vertical-line mb-15"></div>
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                        <label class="feedback-btn" for="feedback-radio-02">
+                            <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                            <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                        </label>
+                    </div>
+                </div>
+            </article>
+        </section>
     </div>
+    <!-- 상단 패널 -->
+    <div class="top-bg-panel-wrapper">
+        <div class="top-bg-panel bg-7"></div>
+    </div>
+    <!-- 다시 선택하기 버튼 -->
+    <div class="bottom-fixed-area" data-is-not-result-page="false">
+        <button class="bg-white fc-7 fs-4 fw-700 bdc-7" id="goFirstBtn" onclick="location.reload();">다시 선택하기</button>
+    </div>
+    <!-- [E] 컨텐츠 화면 -->
+</div>
+<!-- [E] cont -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
+    </div>
+</div>
+
 <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
 <script src="../../../resources/v1/js/Customer-Journey.js"></script>

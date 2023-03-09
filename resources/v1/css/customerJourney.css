@@ -276,24 +276,51 @@ body.type-c{color:white;background: #7156A8;}
 
 main {overflow-x: hidden;}
 
-/* === nav === */
-nav{
-position: fixed;
-z-index: 10;
-background-color: white;
-font-size: 18px;
-font-weight: 500;
-top: 0;
-left: 0;
-right: 0;
-height: 60px;
-padding: 0 8px;
-display: flex;
-flex-direction: row;
-align-items: center;
-transition: transform 0.4s;
+/* === header nav === */
+header{
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    /* font-size: 18px; */
+    /* font-weight: 500; */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    /* padding: 0 8px; */
+    /* display: flex;
+    flex-direction: row;
+    align-items: center; */
+    transition: transform 0.4s;
 }
-nav.hide{
+header nav{
+    /* position: fixed; */
+    /* z-index: 10; */
+    /* background-color: white; */
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    height: 60px;
+    padding: 0 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* transition: transform 0.4s; */
+    }
+header nav h1{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 30px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
+    flex: 1;
+    }
+/* nav.hide{
+    transform: translateY(-100%);
+} */
+header.hide{
     transform: translateY(-100%);
 }
 nav > *:first-child, nav > *:last-child{
@@ -304,7 +331,10 @@ nav > .go-back-btn > img{
     width: 40px;
     height: 40px;
 }
+/* 페이지 타이틀 삭제 예정 */
 nav > *:nth-child(2){
+    font-size: 18px;
+    font-weight: 500;
     padding: 0 30px;
     text-align: center;
     text-overflow: ellipsis;
@@ -312,6 +342,7 @@ nav > *:nth-child(2){
     overflow-x: hidden;
     flex: 1;
 }
+/* // 페이지 타이틀 삭제 예정 */
 textarea{
     display: block;
     padding: 10px;
@@ -376,9 +407,9 @@ article{
     margin: auto;
 }
 /* header 태그 교체 */
-header article{
+/* header article{
     padding-top: 25px;
-}
+} */
 .top-area article{
     padding-top: 25px;
 }
@@ -387,11 +418,11 @@ header article{
 
 /* survey-type */
 /* header 태그 교체 */
-.survey-type header article{
+/* .survey-type header article{
     padding-top: 25px;
     padding-bottom: 30px;
     flex: 0;
-}
+} */
 .survey-type .top-area article{
     padding-top: 25px;
     padding-bottom: 30px;
@@ -424,13 +455,13 @@ header article{
 .survey-type #survey-area.display-none{
     display: none;
 }
-.survey-type .header-bg-panel-wrapper{
+.survey-type .top-bg-panel-wrapper{
     position: relative;
     z-index: 1;
     width: 100%;
     height: calc(100vh - 60px);
 }
-.survey-type .header-bg-panel{
+.survey-type .top-bg-panel{
     position: absolute;
     left: 50%;
     top: 0;
@@ -439,7 +470,7 @@ header article{
     transform: translateX(-50%) translateY(-206px);
     border-radius: 50%;
 }
-._6F_007 .header-bg-panel{
+._6F_007 .top-bg-panel{
     background: #33b4c7;
 }
 .survey-type section article{

@@ -926,9 +926,57 @@ const EventProcessor = (function (){
         submitBtn.addEventListener('click', e=>postSurveyInput());
     }
 
+    // nav >> header
+    // function setAutoHideElements(hideTargets){
+    //     hideTargets = hideTargets || [
+    //         document.querySelector('nav'),
+    //         document.querySelector('#goFirstBtn')
+    //     ];
+    //     let isShowing = true;
+    //     let prevScrollY = 0;
+    //     let firstScrollY;
+    //     let prevScrolledDown = false;
+    //     // const scrollYValue = 100;
+    //     const scrollYValue = 50;
+    //     const gnb = document.querySelector('nav');
+    //     if(gnb===null)
+    //         return;
+
+    //     window.addEventListener('scroll',e=>{
+    //         let isScrollingDown = window.scrollY>prevScrollY;
+    //         //화면 스크롤이 가장 위인 경우, 위로 스크롤하면 바로 등장
+    //         if(!isScrollingDown && window.scrollY===0) {
+    //             for(let target of hideTargets) {
+    //                 if(target!==null && target.classList.contains('hide'))
+    //                     target.elem.classList.remove('hide');
+    //             }
+    //         }
+    //         else if(isShowing && isScrollingDown || !isShowing && !isScrollingDown){
+    //             let hasChangedDirection = isScrollingDown^prevScrolledDown;
+    //             prevScrolledDown = isScrollingDown;
+    //             if(hasChangedDirection){
+    //                 firstScrollY = window.scrollY;
+    //                 return;
+    //             }
+    //             if(Math.abs(window.scrollY-firstScrollY)>scrollYValue){
+    //                 isShowing = !isShowing;
+    //                 for(let target of hideTargets) {
+    //                     if(target!==null) {
+    //                         if (isShowing)
+    //                             target.classList.remove('hide');
+    //                         else
+    //                             target.classList.add('hide');
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         prevScrollY = window.scrollY;
+    //     });
+    // }
+
     function setAutoHideElements(hideTargets){
         hideTargets = hideTargets || [
-            document.querySelector('nav'),
+            document.querySelector('header'),
             document.querySelector('#goFirstBtn')
         ];
         let isShowing = true;
@@ -936,8 +984,8 @@ const EventProcessor = (function (){
         let firstScrollY;
         let prevScrolledDown = false;
         // const scrollYValue = 100;
-        const scrollYValue = 50;
-        const gnb = document.querySelector('nav');
+        const scrollYValue = 30;
+        const gnb = document.querySelector('header');
         if(gnb===null)
             return;
 
@@ -972,6 +1020,8 @@ const EventProcessor = (function (){
             prevScrollY = window.scrollY;
         });
     }
+    // nav >> header
+
     function createUserKey(){
         let userKey = getLocalStorage('user-key', true);
         if(userKey===null && _contentsId!==undefined) {
@@ -1018,9 +1068,26 @@ const EventProcessor = (function (){
                 AnimationManager.setElemsAniOnResult();
             });
         }
+
+
+        // if(goFirstBtn!==null){
+        //     goFirstBtn.addEventListener('click',e=>{
+        //         const gnb = document.querySelector('nav');
+        //         if(gnb!==null)
+        //             gnb.classList.remove('hide');
+        //         togglePageContents();
+
+        //         if(callbackForPrev!==null)
+        //             callbackForPrev();
+        //         // document.documentElement.classList.add('overflow-y-hidden');
+        //         setUserInLastPage(false);
+        //     });
+        // }
+
+        // nav >> header
         if(goFirstBtn!==null){
             goFirstBtn.addEventListener('click',e=>{
-                const gnb = document.querySelector('nav');
+                const gnb = document.querySelector('header');
                 if(gnb!==null)
                     gnb.classList.remove('hide');
                 togglePageContents();
@@ -1031,6 +1098,7 @@ const EventProcessor = (function (){
                 setUserInLastPage(false);
             });
         }
+        // // nav >> header
     }
 
     function showSelectiveResult() {
