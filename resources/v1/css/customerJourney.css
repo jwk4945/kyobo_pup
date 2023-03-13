@@ -316,6 +316,7 @@ header nav h1{
     white-space: nowrap;
     overflow-x: hidden;
     flex: 1;
+    color: #000;
     }
 /* nav.hide{
     transform: translateY(-100%);
@@ -332,7 +333,7 @@ nav > .go-back-btn > img{
     height: 40px;
 }
 /* 페이지 타이틀 삭제 예정 */
-nav > *:nth-child(2){
+/* nav > *:nth-child(2){
     font-size: 18px;
     font-weight: 500;
     padding: 0 30px;
@@ -341,7 +342,7 @@ nav > *:nth-child(2){
     white-space: nowrap;
     overflow-x: hidden;
     flex: 1;
-}
+} */
 /* // 페이지 타이틀 삭제 예정 */
 textarea{
     display: block;
@@ -446,7 +447,7 @@ article{
 .survey-type #survey-area.shrink-height{
     min-height: initial;
 }
-._6F_007 #survey-area{
+.balance-type #survey-area{
     overflow-x: hidden;
 }
 .survey-type #result-area{
@@ -470,7 +471,7 @@ article{
     transform: translateX(-50%) translateY(-206px);
     border-radius: 50%;
 }
-._6F_007 .top-bg-panel{
+.balance-type .top-bg-panel{
     background: #33b4c7;
 }
 .survey-type section article{
@@ -553,24 +554,45 @@ article{
     padding: 10px;
     padding-left: 15px;
 }
-.survey-type .survey-form input[type='radio']
-,._6F_007 input[type='radio']{
+/* 코드정리중 */
+/* .survey-type .survey-form input[type='radio']
+,.balance-type input[type='radio']{
     appearance: none;
     width: 0;
     height: 0;
     margin: 0;
     box-sizing: border-box;
 }
-._6F_007 .card-box{
+.balance-type .card-box{
     padding: 20px;
     color: #555;
     border-radius: 5px;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
     border: solid 1px #eee;
 }
-._6F_007 .card-box h5{
+.balance-type .card-box h5{
+    color: #00798b;
+} */
+
+.survey-type .survey-form input[type='radio']
+,.balance-type input[type='radio']{
+    appearance: none;
+    width: 0;
+    height: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.balance-type .card-box{
+    padding: 20px;
+    color: #555;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #eee;
+}
+.balance-type .card-box h5{
     color: #00798b;
 }
+/* // 코드정리중 */
 .radio-btn{
     width: 24px;
     height: 24px;
@@ -585,7 +607,7 @@ article{
     flex: 1;
     padding-left: 5px;
 }
-._6F_007 .speech-box{
+.balance-type .speech-box{
     background-image: url('../img/6F_007_img-04.svg');
     background-repeat: round;
     background-size: contain;
@@ -738,7 +760,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     left: 0;
     width: 100%; */
 }
-._6F_007 .footer-area{
+.balance-type .footer-area{
     padding: 0;
     flex: 1 0 100px;
     background: url('../img/6F_007_img-05.svg');
@@ -748,7 +770,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     margin-bottom: 15px;
     max-height: 180px;
 }
-._6F_007 .footer-area img{
+.balance-type .footer-area img{
     height: 100%;
 }
 .survey-type .per{
@@ -823,7 +845,7 @@ section:last-of-type article{
     border-radius: 3px;
     min-width: 60px;
 }
-._6F_007 .tag,
+.balance-type .tag,
 ._3A_024 .tag{
     color: #166c78;
 }
@@ -1436,7 +1458,7 @@ section .title-msg .section-no.center-style{
 ._6B_019 #feedback-area{
     background: #6c2a2a;
 }
-._6F_007 #feedback-area{
+.balance-type #feedback-area{
     background: #33b4c7;
 }
 ._3A_004 #feedback-area{
