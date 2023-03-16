@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/swiper-bundle.min.css">
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+
+    <style>
+        html, body {position: relative;height: 100%;}
+        body {background: #eee;color: #000;margin: 0;padding: 0;}
+    
+        .swiper{width: 100%;height: 100%;display: flex;justify-content: center;position: relative;}
+        .swiper-wrapper{transform: translate3d(0px, 0px, 0px) !important;}
+        .swiper-slide{text-align: center;font-size: 18px;background: #fff;align-items: center;height: 200px;}
+        .swiper-slide.card{flex: 0 0 45%;transition: .5s;}
+        .swiper-slide.card.first{margin-right: 5%;}
+        .swiper-slide.card.last{margin-left: 5%;}
+        .icon{z-index: 1;width: 50px !important;height: 50px !important;font-size: 0;position: absolute;top: 50px;left: 50%;transform: translateX(-50%);background: #000;}
+
+        .swiper-slide.first.swiper-slide-active{flex: 0 0 60%;transition: .5s;}
+        .swiper-slide.last.swiper-slide-next{flex: 0 0 30%;transition: .5s;}
+
+        .swiper-slide.last.swiper-slide-active{flex: 0 0 60%;transition: .5s;}
+        .swiper-slide.first.swiper-slide-prev{flex: 0 0 30%;transition: .5s;}
+
+        /* .swiper-slide img {display: block;width: 100%;height: 100%;object-fit: cover;} */
+    </style>
+</head>
+<body>
+    <div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide card first" id="first" style="background: pink;">Slide 1</div>
+                <div class="icon">icon</div>
+                <div class="swiper-slide card last" style="background: skyblue;">Slide 2</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 화면 로드시 디폴트
+        $(document).ready(function(){
+            $('.first').removeClass('swiper-slide-active');
+            $('.last').removeClass('swiper-slide-next');
+        });
+        // // 화면 로드시 디폴트
+
+        // icon 클릭시
+        $('.icon').each(function(){
+            $(this).on('click', function(){
+                $(this).addClass('center');
+                $('.first').removeClass('swiper-slide-active').removeClass('swiper-slide-prev');
+                $('.last').removeClass('swiper-slide-active').removeClass('swiper-slide-next');
+            })
+        });
+        // // icon 클릭시
+
+        // .card 클릭시
+        $('.card').on('click', function(){
+            if($(this).hasClass('swiper-slide-active')){
+                $('.icon').removeClass('center');
+            } else {
+                $('.icon').removeClass('center');
+                $(this).addClass('swiper-slide-active');
+                $(this).removeClass('swiper-slide-next').removeClass('swiper-slide-prev');
+                $(this).siblings('.card').removeClass('swiper-slide-active');
+
+                if($(this).siblings('.card').hasClass('first')){
+                    $('.first').addClass('swiper-slide-prev');
+                } else if($(this).siblings('.card').hasClass('last')){
+                    $('.last').addClass('swiper-slide-next');
+                }
+            }
+        })
+        // // .card 클릭시
+
+        if($('.card').hasClass('swiper-slide-active')){
+            $('.icon').removeClass('center');
+        }
+
+        // swiper
+        var swiper = new Swiper(".mySwiper", {
+            grabCursor: true,
+            on: {
+                slideChangeTransitionStart: function () {
+                    $('.icon').removeClass('center');
+                }
+            },
+            on: {
+                sliderMove: function () {
+                    $('.icon').removeClass('center');
+                }
+            }
+        });
+        // // swiper
+    </script>
+</body>
+</html>

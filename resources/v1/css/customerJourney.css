@@ -36,6 +36,7 @@ h5{font-size: 15px;}
 .fc-17{color: #6C2A2A !important;}
 .fc-18{color: #6a50c2 !important;}
 .fc-19{color: #8c1f46 !important;}
+.fc-20{color: #105e69 !important;}
 
 /* === bg color === */
 .bg-white{background-color: white;}
@@ -589,7 +590,10 @@ article{
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
     border: solid 1px #eee;
 }
-.balance-type .card-box h5{
+/* .balance-type .card-box h5{
+    color: #00798b;
+} */
+.balance-type .card-box dt{
     color: #00798b;
 }
 /* // 코드정리중 */
@@ -939,13 +943,13 @@ section:last-of-type article{
 .balance-game .radio-btn-box>div.text-align-center .center-img img.ico-left{display: none;}
 .balance-game .radio-btn-box>div.text-align-center .center-img img.ico-right{display: none;}
 
-.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-center{display: none;}
-.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-left{display: none;}
-.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-right{display: block;}
+.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box div.text-align-center .center-img img.ico-center{display: none;}
+.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box div.text-align-center .center-img img.ico-left{display: none;}
+.balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box div.text-align-center .center-img img.ico-right{display: block;}
 
-.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-center{display: none;}
-.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-left{display: block;}
-.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box>div.text-align-center .center-img img.ico-right{display: none;}
+.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box div.text-align-center .center-img img.ico-center{display: none;}
+.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box div.text-align-center .center-img img.ico-left{display: block;}
+.balance-game #answer-01:checked~.main-banner-wrapper .radio-btn-box div.text-align-center .center-img img.ico-right{display: none;}
 
 .balance-game .radio-btn-box label{
     padding: 30px 12px 27px;
@@ -962,6 +966,7 @@ section:last-of-type article{
 .balance-game .radio-btn-box label .after{
     display: none;
 }
+
 .balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box>*:first-child{
     flex: 0 0 50px;
 }
