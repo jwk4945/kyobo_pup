@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function (){
     // 교보문고 메인 - 홈
     $('#link_home').attr('href', 'https://www.kyobobook.co.kr/');
     // 교보문고 메인
@@ -19,4 +19,8 @@ $(document).ready(function(){
     $('#link-youth').attr('href', 'https://www.kyobobook.co.kr/contents/youth-policy');
     //협력사이러분
     $('#link_chargeperson').attr('href', 'https://www.kyobobook.co.kr/partners/chargeperson');
+    // 사업자 정보 확인
+    $('#link_companyInfo').attr('href', 'https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1028111670&apv_perm_no=');
+    // 구매안전서비스
+    $('#link_paySafe').attr('href', 'https://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=ink0911');
 });
