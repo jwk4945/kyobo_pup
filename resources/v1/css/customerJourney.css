@@ -1072,8 +1072,8 @@ section .title-msg .section-no.center-style{
 .btm-wrap .btm-area .pd-area dl dd.certificationMsg{margin-top: 4px;font-size: 11px;color: #999;}
 .btm-wrap .btm-area .pd-area .ico-arw{flex: 0 0 30px;width: 30px;height: 30px;background: url(../img/icon/ico-arw_pd.png) 0 0 no-repeat;background-size: contain;}
 
-/* .dimmed{display: none !important;}
-.bottom-sheet-wrapper{display: none !important;} */
+.dimmed{display: none !important;}
+.bottom-sheet-wrapper{display: none !important;}
 
 .dimmed{background: #000;position: fixed;z-index: 15;left: 0;right: 0;top: 0;bottom: 0;opacity: 0.6;}
 .bottom-sheet-wrapper{
