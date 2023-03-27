@@ -995,7 +995,7 @@ const EventProcessor = (function (){
             if(!isScrollingDown && window.scrollY===0) {
                 for(let target of hideTargets) {
                     if(target!==null && target.classList.contains('hide'))
-                        target.elem.classList.remove('hide');
+                        target.classList.remove('hide');
                 }
             }
             else if(isShowing && isScrollingDown || !isShowing && !isScrollingDown){
