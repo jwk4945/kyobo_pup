@@ -65,8 +65,8 @@ h5{font-size: 15px;}
 .bg-btm-gray{background-color: #f7f7f7 !important;}
 
 /* === border color === */
-.bdc-5{border: 1px solid #2f65b3 !important;}
-.bdc-7{border: 1px solid #d95584 !important;}
+.bdc-5{border-color: #2f65b3 !important;}
+.bdc-7{border-color: #d95584 !important;}
 
 /* === font size === */
 .fs-0{font-size: 0 !important;}
@@ -292,7 +292,7 @@ header nav #link_home img{display: inline-block;font-size: 0;width: 26px;height:
 .btn_more_body.active .ico_arw{background-size: 20px 20px;background-image: url(../../v1/img/icon/btn_more.png);background-position: center;background-repeat: no-repeat;}
 .btn_more_body .ico_arw{background-size: 20px 20px;background-image: url(../../v1/img/icon/btn_more_on.png);background-position: center;background-repeat: no-repeat;}
 
-textarea{`display: block;padding: 10px;width: 100%;height: 100px;box-sizing: border-box;font-family: inherit;font-size: 15px;line-height: 1.4;border: none;border-radius: 8px;}
+textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: border-box;font-family: inherit;font-size: 15px;line-height: 1.4;border: none;border-radius: 8px;}
 .com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 40px;background: #45b8Fb;color: white;cursor: pointer;}
 .com-btn:disabled{color: #fff;background-color: #999;cursor: initial;}
 

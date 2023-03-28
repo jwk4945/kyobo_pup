@@ -16,11 +16,7 @@ $(document).ready(function (){
     // 개인정보처리방침
     $('#link_privacy').attr('href', 'https://www.kyobobook.co.kr/contents/privacy-policy');
     // 청소년보호정책
-    $('#link-youth').attr('href', 'https://www.kyobobook.co.kr/contents/youth-policy');
+    $('#link_youth').attr('href', 'https://www.kyobobook.co.kr/contents/youth-policy');
     //협력사이러분
     $('#link_chargeperson').attr('href', 'https://www.kyobobook.co.kr/partners/chargeperson');
-    // 사업자 정보 확인
-    $('#link_companyInfo').attr('href', 'https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1028111670&apv_perm_no=');
-    // 구매안전서비스
-    $('#link_paySafe').attr('href', 'https://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=ink0911');
 });
