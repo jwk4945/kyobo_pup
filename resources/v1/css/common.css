@@ -2,6 +2,7 @@
 /* ==========================================================================
     공통설정
 ========================================================================== */
+/* *:focus{border: 2px solid red;} */
 
 /* skip-nav */
 .skip-nav a{z-index: 100;position:fixed; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:16px; padding:0 6px;width: 100%;text-align: center;}
@@ -65,8 +66,8 @@ h5{font-size: 15px;}
 .bg-btm-gray{background-color: #f7f7f7 !important;}
 
 /* === border color === */
-.bdc-5{border-color: #2f65b3 !important;}
-.bdc-7{border-color: #d95584 !important;}
+/* .bdc-5{border: 1px solid #2f65b3 !important;}
+.bdc-7{border: 1px solid #d95584 !important;} */
 
 /* === font size === */
 .fs-0{font-size: 0 !important;}
@@ -232,6 +233,8 @@ b{font-weight: 700 !important;}
 /* chk list */
 .bull-list-chk{position: relative;padding-left: 30px;min-height: 24px;}
 .bull-list-chk::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/ico-bullet-check.svg) 0 0 no-repeat;background-size: contain;}
+.bull-list-chk.c555{position: relative;padding-left: 20px;min-height: 24px;color: #555;line-height: 1.4;}
+.bull-list-chk.c555::before{content: "";position: absolute;top: 4px;left: 0;width: 16px;height: 16px;background: url(../img/icon/ico-bullet-check-blk.png) 0 0 no-repeat;background-size: contain;}
 
 /* === body type === */
 body.type-a{color: white;}
@@ -293,8 +296,14 @@ header nav #link_home img{display: inline-block;font-size: 0;width: 26px;height:
 .btn_more_body .ico_arw{background-size: 20px 20px;background-image: url(../../v1/img/icon/btn_more_on.png);background-position: center;background-repeat: no-repeat;}
 
 textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: border-box;font-family: inherit;font-size: 15px;line-height: 1.4;border: none;border-radius: 8px;}
-.com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 40px;background: #45b8Fb;color: white;cursor: pointer;}
+
+/* brn */
+.com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 50px;background: #222;color: white;cursor: pointer;}
+.type-d .com-btn{background: #17478c;}
+
+/* disabled 케이스는 마지막줄에 고정 */
 .com-btn:disabled{color: #fff;background-color: #999;cursor: initial;}
+/* // disabled 케이스는 마지막줄에 고정 */
 
 .transition-opacity{transition: opacity 0.5s;}
 .transition-width{transition: width 0.5s;}
@@ -310,4 +319,41 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 
 /* tag */
 .tag{background: white;padding: 2px 10px;font-size: 0.81em;font-weight: 700;display: inline-block;border-radius: 3px;min-width: 60px;}
+
+/* 페이지 하단영역 */
+.btm-wrap #feedback-area{}
+.btm-wrap.bg-btm-gray #feedback-area{color: #fff;}
+
+#feedback-area{padding: 5px 15px 5px 20px;border-bottom-left-radius: 15px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
+#feedback-area .feedback-inner{display: flex;justify-content: space-between;align-items: center;}
+#feedback-area .feedback-inner .feedback-txt{font-size: 16px;font-weight: 700;}
+
+#feedback-area .feedback-inner .feedback-btn-box{position: relative;width: 110px;display: flex;justify-content: space-between;align-items: center;}
+#feedback-area .feedback-inner .feedback-btn-box::before{content: "";display: block;position: absolute;top: 20px;left: 55px;width: 1px;height: 10px;background: #fff;opacity: 0.3;}
+#feedback-area .feedback-inner .feedback-btn-box .feedback-btn{display: inline-block;width: 50px;height: 50px;opacity: 1;cursor: pointer;font-size: 0;}
+#feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']{appearance: none;width: 0;margin: 0;}
+#feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn{opacity: 1;}
+
+.btm-wrap.bg-btm-gray #feedback-area.bg-f4f4f4{color: #222;}
+#feedback-area.bg-f4f4f4{background: #f4f4f4;position: relative;}
+#feedback-area.bg-f4f4f4::before{content: "";display: block;width: calc(100% - 40px);height: 1px;background: #ddd;position: absolute;top: 0;left: 20px;}
+
+#feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box .feedback-btn.good{display: inline-block;width: 50px;height: 50px;opacity: 1;cursor: pointer;font-size: 0;background: url(../img/icon/ico-feedback-good_gray.png) 0 0 no-repeat;background-size: contain;}
+#feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box .feedback-btn.bad{display: inline-block;width: 50px;height: 50px;opacity: 1;cursor: pointer;font-size: 0;background: url(../img/icon/ico-feedback-bad_gray.png) 0 0 no-repeat;background-size: contain;}
+
+.type-d #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.good{background: url(../img/icon/ico-feedback-good_blue.png) 0 0 no-repeat;background-size: contain;}
+.type-d #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.bad{background: url(../img/icon/ico-feedback-bad_blue.png) 0 0 no-repeat;background-size: contain;}
+
+#feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box::before{content: "";display: block;position: absolute;top: 20px;left: 55px;width: 1px;height: 10px;background: #000;opacity: 0.3;}
+
+.btm-wrap .btm-area{padding: 30px 20px 50px;}
+.btm-wrap.bg-btm-gray .btm-area{color: #222;}
+.btm-wrap .btm-area .explain{font-size: 18px;font-weight: 700;}
+.btm-wrap .btm-area .pd-area{display: flex;align-items: center;justify-content: space-between;margin-top: 10px;padding: 20px 10px 18px 20px;border-radius: 10px;box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);border: solid 1px #ddd;background-color: #fff;}
+.btm-wrap .btm-area .pd-area .ci{width: 60px;flex: 0 0 60px;}
+.btm-wrap .btm-area .pd-area .ci>img{width: 100%;}
+.btm-wrap .btm-area .pd-area dl{padding-left: 15px;}
+.btm-wrap .btm-area .pd-area dl dt{font-size: 15px;font-weight: 700;}
+.btm-wrap .btm-area .pd-area dl dd.certificationMsg{margin-top: 4px;font-size: 11px;color: #999;}
+.btm-wrap .btm-area .pd-area .ico-arw{flex: 0 0 30px;width: 30px;height: 30px;background: url(../img/icon/ico-arw_pd.png) 0 0 no-repeat;background-size: contain;}
 

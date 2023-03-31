@@ -819,10 +819,10 @@ const EventProcessor = (function (){
         //Bottom-sheet 생성
         createBottomSheet();
         // bottom-sheet 등장 자동/수동 설정
-        // if(isAutoBottomStyle())
-        //     setAutoBottomSheetEvent();
-        // else
-        //     setBottomSheetEvent();
+        if(isAutoBottomStyle())
+            setAutoBottomSheetEvent();
+        else
+            setBottomSheetEvent();
     }
 
     function getMethodForShowResult({nextButtonSelector=_nextButtonSelector, surveyRadioSelector=_surveyRadiosSelector}){
