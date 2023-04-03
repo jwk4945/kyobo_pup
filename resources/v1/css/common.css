@@ -64,6 +64,8 @@ h5{font-size: 15px;}
 .bg-6c2a2a{background-color: #6C2A2A !important;}
 
 .bg-btm-gray{background-color: #f7f7f7 !important;}
+.bg-btm-pink{background-color: #d95584 !important;}
+.bg-btm-blue{background-color: #2254c0 !important;}
 
 /* === border color === */
 /* .bdc-5{border: 1px solid #2f65b3 !important;}
@@ -167,6 +169,11 @@ b{font-weight: 700 !important;}
 .va-top{vertical-align: top;}
 .va-mid{vertical-align: middle;}
 .va-btm{vertical-align: bottom;}
+
+/* fleat */
+.fl{float: left;}
+.fr{float: right;}
+.clear::after{content: "";display: block;clear: both;}
 
 /* === width === */
 .width-0{width: 0 !important;}
@@ -325,7 +332,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .btm-wrap.bg-btm-gray #feedback-area{color: #fff;}
 
 #feedback-area{padding: 5px 15px 5px 20px;border-bottom-left-radius: 15px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
-#feedback-area .feedback-inner{display: flex;justify-content: space-between;align-items: center;}
+#feedback-area .feedback-inner{display: flex;justify-content: space-between;align-items: center;max-width: 540px;margin: auto;}
 #feedback-area .feedback-inner .feedback-txt{font-size: 16px;font-weight: 700;}
 
 #feedback-area .feedback-inner .feedback-btn-box{position: relative;width: 110px;display: flex;justify-content: space-between;align-items: center;}
@@ -334,7 +341,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 #feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']{appearance: none;width: 0;margin: 0;}
 #feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn{opacity: 1;}
 
-.btm-wrap.bg-btm-gray #feedback-area.bg-f4f4f4{color: #222;}
+.btm-wrap #feedback-area.bg-f4f4f4{color: #222;}
 #feedback-area.bg-f4f4f4{background: #f4f4f4;position: relative;}
 #feedback-area.bg-f4f4f4::before{content: "";display: block;width: calc(100% - 40px);height: 1px;background: #ddd;position: absolute;top: 0;left: 20px;}
 
@@ -344,13 +351,17 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .type-d #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.good{background: url(../img/icon/ico-feedback-good_blue.png) 0 0 no-repeat;background-size: contain;}
 .type-d #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.bad{background: url(../img/icon/ico-feedback-bad_blue.png) 0 0 no-repeat;background-size: contain;}
 
+.type-g #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.good{background: url(../img/icon/ico-feedback-good_pink.png) 0 0 no-repeat;background-size: contain;}
+.type-g #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.bad{background: url(../img/icon/ico-feedback-bad_pink.png) 0 0 no-repeat;background-size: contain;}
+
 #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box::before{content: "";display: block;position: absolute;top: 20px;left: 55px;width: 1px;height: 10px;background: #000;opacity: 0.3;}
 
-.btm-wrap .btm-area{padding: 30px 20px 50px;}
-.btm-wrap.bg-btm-gray .btm-area{color: #222;}
-.btm-wrap .btm-area .explain{font-size: 18px;font-weight: 700;}
+.btm-wrap .btm-area{padding: 30px 20px 50px;max-width: 540px;margin: auto;}
+.btm-wrap.bg-btm-gray .btm-area{color: #222;font-size: 18px;}
+.btm-wrap.bg-btm-pink .btm-area .explain, .btm-wrap.bg-btm-blue .btm-area .explain{color: #fff;font-weight: 700;font-size: 18px;}
+.btm-wrap .btm-area .explain{}
 .btm-wrap .btm-area .pd-area{display: flex;align-items: center;justify-content: space-between;margin-top: 10px;padding: 20px 10px 18px 20px;border-radius: 10px;box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);border: solid 1px #ddd;background-color: #fff;}
-.btm-wrap .btm-area .pd-area .ci{width: 60px;flex: 0 0 60px;}
+.btm-wrap .btm-area .pd-area .ci{width: 60px;}
 .btm-wrap .btm-area .pd-area .ci>img{width: 100%;}
 .btm-wrap .btm-area .pd-area dl{padding-left: 15px;}
 .btm-wrap .btm-area .pd-area dl dt{font-size: 15px;font-weight: 700;}

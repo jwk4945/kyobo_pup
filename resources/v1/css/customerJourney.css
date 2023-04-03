@@ -461,12 +461,16 @@ input[type='radio']:checked+* .radio-btn.bdc-5{
     border-radius: 5px;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
 }
+.card-section-wrap{
+    padding: 0 15px;
+}
 .card-section{
-    margin-inline: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
     background: white;
     padding: 30px 20px;
+    margin: auto;
+    max-width: 540px;
 }
 
 section article{padding-top: 75px;overflow: hidden;}
@@ -1108,7 +1112,7 @@ section .title-msg .section-no.center-style{
 ._3A_024 #feedback-area{background: #133f4e;}
 ._7D_003 #feedback-area{background: #2f65b3;}
 ._7E_006 #feedback-area{background: #d95584;}
-._13G_029 #feedback-area{background: #d95584;}
+/* ._13G_029 #feedback-area{background: #d95584;} */
 /* ._2B_039 #feedback-area{background: #6c2a2a;} */
 ._2B_061 #feedback-area{background: #823333;}
 ._5B_041 #feedback-area{background: #823333;}
