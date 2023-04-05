@@ -863,19 +863,19 @@ section:last-of-type{
     height: 0;
     opacity: 0;
 }
-.type-a .cards-box-wrap{
+.type-a .cards-box-wrap, .type-b .cards-box-wrap{
     width: 300px;
     margin: 0 auto;
     font-size: 13px;
 }
-.type-a .cards-box-wrap img{
+.type-a .cards-box-wrap img, .type-b .cards-box-wrap img{
     width: 100%;
 }
-.type-a .cards-box{
+.type-a .cards-box, .type-b .cards-box{
     display: flex;
     flex-direction: row;
 }
-.type-a .cards-box>div{
+.type-a .cards-box>div, .type-b .cards-box>div{
     flex: 1 0 85px;
     display: flex;
     flex-direction: column;
