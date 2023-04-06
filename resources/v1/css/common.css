@@ -63,6 +63,7 @@ h5{font-size: 15px;}
 .bg-ad4444{background-color: #ad4444 !important;}
 .bg-6c2a2a{background-color: #6C2A2A !important;}
 .bg-823333{background-color: #823333 !important;}
+.bg-562222{background-color: #562222 !important;}
 
 .bg-btm-gray{background-color: #f7f7f7 !important;}
 .bg-btm-pink{background-color: #d95584 !important;}
@@ -194,11 +195,23 @@ b{font-weight: 700 !important;}
 .left-hide{transform: translateX(-20px);}
 .scaleUp{transform: scale(3);}
 
+/* === text-align === */
+.text-align-right{text-align: right;}
+.text-align-left{text-align: left;}
+.text-align-center{text-align: center;}
+
 /* === ui style === */
 .sub-tit{line-height: 1.2;}
 .bottom-fixed-area{max-width: 540px;margin: 0 auto;}
 .gap-20{padding-left: 20px;padding-right: 20px;}
 .gap-20-inner{padding-left: 5px;padding-right: 5px;}
+
+/* underline */
+.underline{text-decoration: underline;}
+.strong-underline{line-height: 1.4;background: linear-gradient(0deg,rgba(0,0,0,0.2) 40%,transparent 20%);padding: 0 10px;display: inline-block;font-weight: 700;}
+
+/* dim */
+.dimmed{background: #000;position: fixed;z-index: 15;left: 0;right: 0;top: 0;bottom: 0;opacity: 0.6;}
 
 /* num list */
 .list-num{}
