@@ -25,7 +25,7 @@
 .balance-type #survey-area{overflow-x: hidden;}
 .balance-type .top-bg-panel{background: #33b4c7;}
 .survey-type section article{padding-top: 50px;}
-.survey-type .survey-form{₩font-size: 15px;₩flex: 1;₩padding-bottom: 40px;₩overflow: hidden;}
+.survey-type .survey-form{font-size: 15px;flex: 1;padding-bottom: 40px;overflow: hidden;}
 .survey-type .survey-form small{font-size: 13px;}
 .survey-type .survey-form li{white-space: nowrap;display: flex;width: 200%;transition: transform 0.4s;}
 ._7E_006 .survey-form li{width: 100%;}
