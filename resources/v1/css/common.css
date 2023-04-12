@@ -65,6 +65,8 @@ h5{font-size: 15px;}
 .bg-823333{background-color: #823333 !important;}
 .bg-562222{background-color: #562222 !important;}
 
+.bg-154656{background: #154656;}
+
 .bg-btm-gray{background-color: #f7f7f7 !important;}
 .bg-btm-pink{background-color: #d95584 !important;}
 .bg-btm-blue{background-color: #2254c0 !important;}
@@ -152,6 +154,7 @@ b{font-weight: 700 !important;}
 .pb-40{padding-bottom: 40px !important;}
 .pb-45{padding-bottom: 45px !important;}
 .pb-50{padding-bottom: 50px !important;}
+.pb-70{padding-bottom: 70px !important;}
 
 .pd-bt-0{padding-bottom: 0;}
 .pd-bt-5{padding-bottom: 5px !important;}
@@ -256,6 +259,17 @@ b{font-weight: 700 !important;}
 .bull-list-chk::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/ico-bullet-check.svg) 0 0 no-repeat;background-size: contain;}
 .bull-list-chk.c555{position: relative;padding-left: 20px;min-height: 24px;color: #555;line-height: 1.4;}
 .bull-list-chk.c555::before{content: "";position: absolute;top: 4px;left: 0;width: 16px;height: 16px;background: url(../img/icon/ico-bullet-check-blk.png) 0 0 no-repeat;background-size: contain;}
+
+/* over-img-box */
+.over-img-box{width: calc(100% + 30px);margin-left: -15px;}
+/* .over-img-box ul{height: 100px;width: 100%;position: relative;}
+.over-img-box ul li{position: absolute;top: 0;width: 100px;height: 100px;}
+.over-img-box ul li:nth-child(1){left: -20px;}
+.over-img-box ul li:nth-child(2){left: calc(25% - 5px);}
+.over-img-box ul li:nth-child(3){right: calc(25% - 5px);}
+.over-img-box ul li:nth-child(4){right: -20px;} */
+.over-img-box ul{width: calc(100% + 40px);margin-left: -20px;display: flex;justify-content: space-between;}
+.over-img-box ul li{width: 100px;height: 100px;}
 
 /* === body type === */
 body.type-a{color: white;}
@@ -383,5 +397,5 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .btm-wrap .btm-area .pd-area .ico-arw{flex: 0 0 30px;width: 30px;height: 30px;background: url(../img/icon/ico-arw_pd.png) 0 0 no-repeat;background-size: contain;}
 
 /* 삼품 border-color */
-.btm-wrap .btm-area .pd-area{border-color: #d95555;}
-
+.information-type.type-a .btm-wrap .btm-area .pd-area{border-color: #27809e;}
+.information-type.type-b .btm-wrap .btm-area .pd-area{border-color: #d95555;}

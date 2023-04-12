@@ -248,6 +248,9 @@ section:last-of-type{padding-bottom: 50px;}
 .footer-banner-link{font-size: 13px;display: flex;justify-content: center;align-items: center;padding: 15px 0 5px;border-top: 1px solid rgba(0,0,0,0.1);}
 .footer-banner-link>.link-img{display: inline-block;margin-left: 5px;width: 6px;height: 12px;background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="100%" y2="50.5%" stroke="rgb(108,108,108)" stroke-width="1.5" /><line x1="0" y1="100%" x2="100%" y2="49.5%" stroke="rgb(108,108,108)" stroke-width="1.5" /></svg>');}
 
+.type-a .cards-box-wrap.col-4{width: calc(100% + 60px);margin-left: -30px;}
+.type-a .col-4 .cards-box>div, .type-b .cards-box>div{padding: 0;}
+
 .second-section{padding-top: 85px;}
 section .title-msg{position: relative;}
 
