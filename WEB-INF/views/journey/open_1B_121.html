@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/customerJourney.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/swiper-bundle.min.css">
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <title>어떤 고등학교가 잘 맞을까요?</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_3B_048 information-type type-b fc-white">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <a href="javascript:history.back()" class="go-back-btn">
+            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+        </a>
+        <h1>
+            어떤 고등학교가 잘 맞을까요?
+        </h1>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap" class="bg-9">
+    <div class="top-area">
+        <article class="text-align-center">
+            <div>
+                <span class="tag mb-10 opacity-0 fc-13"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                        start-ms:'300',
+                                        transition-props:'[opacity]',
+                                        transition-duration:'0.7s'">자녀</span>
+                <div>
+                    <div class="fw-400 fs-22 opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateY(-100%);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'500',
+                                        transition-props:'[opacity,transform]',
+                                        transition-duration:'0.8s'">초보 중등맘을 위한</div>
+                    <div class="fw-700 fs-22 strong-underline mb-10 opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-250%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'700',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">5가지 고교 유형</div>
+                </div>
+                <div class="opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateY(-400%);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'900',
+                                        transition-props:'[opacity,transform]',
+                                        transition-duration:'0.8s'">
+                                        우리 아이는<br>
+                                        어떤 학교가 잘 맞을까요?
+                </div>
+            </div>
+            <div class="main-banner-wrapper center-type mt-25 mb-5 opacity-0"
+                data-animation-type="onload"
+                data-animation-infos="remove-class-nm: 'opacity-0',
+                                    style-bf-ani: 'transform:translateX(100vw);',
+                                    style-af-ani: 'transform:',
+                                    start-ms:'300',
+                                    transition-duration:'0.7s',
+                                    transition-props:'[transform]'">
+                <div class="banner-inner">
+                    <img src="../../../resources/v1/img/1B_121/1B_121_01.png" class="width-100" alt="우리 아이는 어떤 학교가 잘 맞을까요? 대표 이미지">
+                    <div class="mt-10">
+                        <h3 class="fw-700">
+                            우리나라 고등학교의 유형
+                        </h3>
+                        <p class="mt-9 fs-14">
+                            일반고, 특수목적고, 특성화고, 자율고, 기타학교 등<br>
+                            5가지 고등학교 유형이 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-40">
+                <div class="fs-22 fw-700 mb-20" 
+                    data-animation-type="onload"
+                    data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1', start-ms: '1000', transition-duration: '1s';">
+                    목표하는 고교 유형에 따라<br>
+                    다르게 로드맵을<br>
+                    준비해야 합니다.
+                </div>
+                <div class="animation-vertical-box"
+                    style="height: 0"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'height: 0px',
+                                    style-af-ani: 'height: 100px',
+                                    scroll-duration: 100">
+                    <div class="animation-vertical"></div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #d95555',
+                                    style-af-ani: 'background-color: #c34c4c',
+                                    scroll-duration: 300,
+                                onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                            style-af-ani: 'margin-left:0px; opacity:0.2'">Intro</span>
+                <div class="fw-700 fs-22"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        진로에 결정적인 ‘고등학교 선택’ 📒
+                </div>
+            </div>
+            <p class="mt-5 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    고교 입학을 앞둔 중3 학생 및 학부모들은 고등학교 선택에 많은 고민을 합니다.
+            </p>
+            <p class="mt-5 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    학생들의 흥미와 적성에 맞는 고등학교 진학도 중요하지만, 고등학교 진학이 대입의 성패에서 진로까지도 영향을 미치기 때문에 신중하게 됩니다.
+            </p>
+            <p class="mt-5 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    특히 초보 중등 학부모의 경우에는 고등학교 유형별 특징을 숙지하고 대입 전형 간의 유·불리점에 대해 이해하는 것이 우선 입니다.
+            </p>
+            <div class="text-align-center mt-20">
+                <img src="../../../resources/v1/img/1B_121/1B_121_02.png" width="300"
+                    alt="고등학교 유형별 특징 대표 이미지"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'margin-left: 50px; opacity:0',
+                                    style-af-ani: 'margin-left: 0px; opacity:1'">
+            </div>
+            <p class="mt-30 fs-18 fw-700"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                                    우리나라의 고등학교 유형은<br>
+                                    일반고, 특목고, 자율고, 특성화고 그리고<br>
+                                    기타학교로 구분됩니다.
+            </p>
+            <p class="mt-5 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                                    각 유형별 특징과 지원시기에 대해 알아보겠습니다.
+            </p>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #c34c4c',
+                                    style-af-ani: 'background-color: #ad4444',
+                                    scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">1</span>
+                <div class="fw-700 fs-22"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        일반고등학교 🏫
+                </div>
+            </div>
+            <p class="mt-5 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    특정분야가 아닌 다양한 분야에 걸쳐 일반적 교육을 실시하는 학교입니다.
+            </p>
+            <div class="mt-20">
+                <div class="bull-list-chk fs-18 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    특징
+                    <p class="mt-5 fs-15 fw-400">지역별로 컴퓨터로 추첨하는 방법으로 학생들을 선발하기 때문이 성적이 상위권부터 하위권까지 고르게 분포될 확률이 높습니다.</p>
+                    <p class="mt-5 fs-15 fw-400">따라서 특목고나 자사고에 비해 내신성적 관리가 수월하고 교내활동에 대한 부담이 적다는 장점이 있습니다.</p>
+                    <p class="mt-5 fs-15 fw-400">다만 특성화된 프로그램이 다른 유형의 고등학교에 비해 부족할 수 있다는 단점이 있습니다.</p>
+                </div>
+                <div class="bull-list-chk fs-18 fw-700 mt-20"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    지원시기
+                    <p class="mt-5 fs-15 fw-400">후기 고등학교에 해당하며, 11월 중반부터 모집을 시작합니다.</p>
+                </div>
+            </div>
+            <div class="text-align-center mt-20">
+                <img src="../../../resources/v1/img/1B_121/1B_121_03.png" width="300" alt="일반고등학교 대표 이미지"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
+                                        style-af-ani: 'margin-right: 0px; opacity:1'">
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #ad4444',
+                                    style-af-ani: 'background-color: #983b3b',
+                                    scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">2</span>
+                <div class="fs-22 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        특수목적고등학교 🏫
+                </div>
+            </div>
+            <div>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        특수분야의 전문적인 교육을 목적으로 설립된 고등학교입니다.
+                </p>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        과학고, 외고, 국제고, 예술&체육고, 마이스터고가 해당됩니다.
+                </p>
+                <div class="mt-20">
+                    <div class="bull-list-chk fs-18 fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                        특징
+                        <p class="mt-5 fs-15 fw-400">일반고와 달리 교육과정 중 일정 비율 이상 전문교과를 이수해야 합니다.</p>
+                        <p class="mt-5 fs-15 fw-400">학생부종합전형, 논술전형 등 대입에 유리하다는 장점이 있습니다.</p>
+                        <p class="mt-5 fs-15 fw-400">하지만 내신 관리가 다소 어렵다는 단점이 있습니다.</p>
+                    </div>
+                    <div class="bull-list-chk fs-18 fw-700 mt-20"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                        선발조건
+                        <p class="mt-5 fs-15 fw-400">학생기록부, 교원추천서, 면접, 실기시험 등의 사항을 반영해 선발합니다.</p>
+                    </div>
+                </div>
+                <div class="text-align-center mt-20">
+                    <img src="../../../resources/v1/img/1B_121/1B_121_04.png" width="300"
+                        alt="특수목적고등학교 대표 이미지"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: 50px; opacity:0',
+                                        style-af-ani: 'margin-left: 0px; opacity:1'">
+                </div>
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #983b3b',
+                                style-af-ani: 'background-color: #823333',
+                                scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">3</span>
+                <div class="fw-700 fs-22"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        자율고등학교 🏫
+                </div>
+            </div>
+            <p class="mt-5 mb-0 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    교육과정을 자율적으로 운영해 학교마다 다양하고 특화된 양질의 교육 프로그램을 운영합니다.
+            </p>
+            <p class="mt-5 mb-0 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    크게 자율형 사립고(자사고)와 자율형 공립고(자 공고)로 구분됩니다.
+            </p>
+            <div class="mt-20">
+                <div class="bull-list-chk fs-18 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    특징
+                    <p class="mt-5 fs-15 fw-400">수시 전형과 정시를 함께 준비할 수 있다는 장점이 있습니다.</p>
+                    <p class="mt-5 fs-15 fw-400">하지만 특목고와 마찬가지로 내신관리에 부담이 있을 수 있다는 단점이 있습니다.</p>
+                </div>
+                <div class="bull-list-chk fs-18 fw-700 mt-20"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    선발조건
+                    <p class="mt-5 fs-15 fw-400">자사고는 학교생활기록부, 교원추천서, 면접, 실시시험 등 학생의 자기주도학습능력을 평가해 선발합니다.</p>
+                    <p class="mt-5 fs-15 fw-400">반 면 자공고는 지역에 따라 추첨 배정을 하거나 내신성 적 등으로 선발하기도 합니다.</p>
+                </div>
+            </div>
+            <div class="text-align-center mt-20">
+                <img src="../../../resources/v1/img/1B_121/1B_121_05.png" width="300"
+                    alt="자율고등학교 대표 이미지"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
+                                        style-af-ani: 'margin-right: 0px; opacity:1'">
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #823333',
+                                style-af-ani: 'background-color: #6c2a2a',
+                                scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">4</span>
+                <div class="fw-700 fs-22"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        특성화고등학교 🏫
+                </div>
+            </div>
+            <p class="mt-5 mb-0 fs-5"
+            data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                style-af-ani: 'margin-left:0px; opacity:1'">
+                                특정 분야의 인재와 전문 직업인 양성을 목적으로 직업교육을 운영하는 고등학교입니다.
+            </p>
+            <div class="mt-20">
+                <div class="bull-list-chk fs-18 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    특징
+                    <p class="mt-5 fs-15 fw-400">국어, 수학, 영어 등 일반적인 학과목 외에 농산업, 공업, 수산 해운 등 다양한 직업전문교육을 받을 수 있습니다.</p>
+                </div>
+                <div class="bull-list-chk fs-18 fw-700 mt-20"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    선발조건
+                    <p class="mt-5 fs-15 fw-400">내신성적, 면접, 실기 등의 과정을 통해 학생을 선발합니다.</p>
+                </div>
+            </div>
+            <div class="text-align-center mt-20">
+                <img src="../../../resources/v1/img/1B_121/1B_121_06.png"
+                    alt="특성화고등학교 대표 이미지"
+                    class="width-100"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'margin-left: 50px; opacity:0',
+                                        style-af-ani: 'margin-left: 0px; opacity:1'">
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #6c2a2a',
+                        style-af-ani: 'background-color: #482220',
+                        scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">5</span>
+                <div class="fw-700 fs-22"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        기타학교 🏫
+                </div>
+            </div>
+            <p class="mt-5 mb-0 fs-5"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                    영재학교가 해당합니다.
+            </p>
+            <div class="mt-20">
+                <div class="bull-list-chk fs-18 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    특징
+                    <p class="mt-5 fs-15 fw-400">영재교육 진흥법의 적용을 받아 학생이 원하는 과목을 수강하는 방식으로 운영됩니다.</p>
+                    <p class="mt-5 fs-15 fw-400">논문을 작성하거나 대 학 연계 연구활동을 해야 합니다.</p>
+                </div>
+            </div>
+            <div class="text-align-center mt-20">
+                <img src="../../../resources/v1/img/1B_121/1B_121_07.png" width="300"
+                    alt="기타학교 대표 이미지"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
+                                        style-af-ani: 'margin-right: 0px; opacity:1'">
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+    data-animation-infos="style-bf-ani: 'background-color: #482220',
+                        style-af-ani: 'background-color: #351a19',
+                        scroll-duration: 300;">
+        <article class="text-align-left pb-0">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">TIP</span>
+                <div class="fw-700 fs-22"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        전형별 지원 일정 ⏱
+                </div>
+            </div>
+            <div class="text-align-center mt-20">
+                <img src="../../../resources/v1/img/1B_121/1B_121_08.png"
+                    alt="전형병 지원 일정 전기고, 후기고 / 4월 영재학교, 8월 과학고, 9월 예숭,체육고, 10월 마이스터고, 11월 특성화고, 12월 일반고, 자사고, 외국어고, 국제고" width="300"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'margin-right: 50px; opacity:0',
+                                        style-af-ani: 'margin-right: 0px; opacity:1'">
+            </div>
+            <div class="mt-30 text-align-center fc-white">
+                <img src="../../../resources/v1/img/check-bg-white.svg" width="50"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                        style-af-ani: 'transform: scale(1); opacity:1'">
+                <div class="fs-16 mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    고등학교 유형별 특징을 이해하고,<br>
+                    학생에게 맞는 학교를 선택하고 준비해야 합니다.
+                </div>
+                <div class="fs-16 mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    그리고 학업적, 인성적, 진로적 성장을 이루려면
+                </div>
+                <div class="fs-22 fw-700 mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    건강한 체력이 뒷받침되도록<br>
+                    학부모의 관심이 필요합니다.
+                </div>
+            </div>
+        </article>
+    </section>
+    <!--콘텐츠 평가영역-->
+    <div class="bg-btm-gray btm-wrap">
+        <section id="feedback-area" class="bg-241312">
+            <div class="feedback-inner">
+                <div class="feedback-txt">콘텐츠가 유익했어요!</div>
+                <div class="feedback-btn-box">
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="feedback-radio-01">
+                        <label class="feedback-btn" for="feedback-radio-01">
+                            <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
+                        </label>
+                    </div>
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                        <label class="feedback-btn" for="feedback-radio-02">
+                            <img src="../../../resources/v1/img/icon/ico-feedback-bad.png" width="50">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="btm-area">
+            <p class="explain">소액으로 차근차근 오늘부터 시작해요!</p>
+            <a href="#!">
+                <div class="pd-area">
+                    <div class="clear">
+                        <div class="ci fl">
+                            <img src="../../../resources/v1/img/icon/img-ci-pd.png" alt="KYOBO 교보생영">
+                        </div>
+                        <dl class="fl">
+                            <dt class="name">(무)교보시작해요저축보험</dt>
+                            <dd class="certificationMsg">
+                                <div class="certificationMsg-txt">생명보험협회 심의필 제 2022-05463호</div>
+                                <div class="certificationMsg-date">(2022-12-27 ~ 2023-12-26)</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="ico-arw"></div>
+                </div>
+            </a>
+        </section>
+    </div>
+</div>
+<!-- [E] cont -->
+
+<!-- [S] footer -->
+<footer class="footer_wrapper">
+    <div class="footer_body">
+        <div class="logo_box">
+            <a id="link_home" class="logo_link">
+                    <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+            </a>
+            <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+        </div>
+        
+        <address class="footer_info_box">
+            <div class="info_text_multi">
+                <span class="info_text">교보문고</span>
+                <span class="gap">|</span>
+                <span class="info_text">대표이사 : 안병현</span>
+            </div>
+            <span class="info_text">서울특별시 종로구 종로 1</span>
+            <span class="info_text">사업자등록번호 : 102-81-11670</span>
+            <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+            <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+            <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+        </address>
+        
+        <div class="footer_menu_box">
+            <ul class="footer_menu_list">
+                <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+            </ul>
+            <ul class="footer_menu_list sub">
+                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- [E] footer -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
+    </div>
+</div>
+
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<!-- <script src="../../../resources/v1/js/Customer-Journey.js"></script> -->
+<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+<script>
+    try {
+        // animation setting
+        AnimationManager.loadElementsToAnimate();
+
+        //컴포넌트 이벤트 및 기본설정
+        EventProcessor.initSetting({
+            contentsId: '14B_036',  //콘텐츠id
+            linkInfoForInsurance: {
+                //상품 링크 url
+                url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000938&evcode=DCJ_MO',
+                //상품명
+                name: '(무)교보시작해요저축보험',
+                //상품 이미지 url
+                imgUrl: '../../../resources/v1/img/img-product-svg-saving.svg',
+                //상품 설명
+                explain: '소액으로 차근차근 오늘부터 시작해요',
+                //심의필
+                certificationMsg: '생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)'
+            },
+            linkInfoForService: {
+                //부가서비스 링크 url
+                url: 'https://www.kyobo.com/dgt/web/customer/service/assets-management',
+                //부가서비스명
+                name: '자산관리서비스',
+                //부가서비스 이미지 url
+                imgUrl: '../../../resources/v1/img/img-service-svg-finance-manage.svg',
+                //부가서비스 설명
+                explain: '소중한 자산을 든든하게 관리해주는 서비스'
+            }
+        });
+    }
+    catch(error){
+        alert(error);
+        alert(error.stack);
+    }
+</script>
+</body>
+</html>
+
+<!-- [컨텐츠 오픈 히스토리] -->
+<!-- 230518 확대오픈 -->
+<!-- [ // 컨텐츠 오픈 히스토리] -->
