@@ -12,11 +12,8 @@ export const EventProcessor = (function (){
     let insuranceName;
     let insuranceExplain;
     let insuranceCertificationMsg;
-    let serviceUrl;
-    let serviceImg;
-    let serviceName;
-    let serviceExplain;
-
+    let insurancePeriod;
+    
     let _searchKeyword;
     let _contentsId;
     let _userKey;
@@ -61,6 +58,7 @@ export const EventProcessor = (function (){
         insuranceName = linkInfoForInsurance.name;
         insuranceExplain = linkInfoForInsurance.explain;
         insuranceCertificationMsg = linkInfoForInsurance.certificationMsg;
+        insurancePeriod = linkInfoForInsurance.period;
 
         // 2023.04.26 확대오픈 시 service 제외 
         // const linkInfoForService = params.linkInfoForService;
@@ -481,8 +479,9 @@ export const EventProcessor = (function (){
         linkName = insuranceName;
         linkExplain = insuranceExplain;
         certificationMsg = insuranceCertificationMsg;
+        period = insurancePeriod; 
         
-        return {linkUrl, linkImg, linkName, linkExplain, certificationMsg};
+        return {linkUrl, linkImg, linkName, linkExplain, certificationMsg, period};
     }
 
     function handleScrollLock(bLock) {
@@ -776,7 +775,7 @@ function render(info) {
                                             <dt class="name">${ info.name }</dt>
                                             <dd class="certificationMsg">
                                                 <div class="certificationMsg-txt">${ info.certificationMsg }</div>
-                                                <div class="certificationMsg-date">(2022-12-27 ~ 2023-12-26)</div>
+                                                <div class="certificationMsg-date">${ info.period }</div>
                                             </dd>
                                         </dl>
                                     </div>

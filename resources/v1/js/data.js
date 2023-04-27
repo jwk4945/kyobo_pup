@@ -7,7 +7,8 @@ export default
       name: "",
       imgUrl: "#",
       explain: "",
-      certificationMsg: ""
+      certificationMsg: "",
+      period: ""
       }
     },
     {
@@ -17,7 +18,8 @@ export default
       name: "(무)교보시작해요저축보험",
       imgUrl: "../../../resources/v1/img/img-product-svg-saving.svg",
       explain: "소액으로 차근차근 오늘부터 시작해요",
-      certificationMsg: "생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)"
+      certificationMsg: "생명보험협회 심의필 제 2022-05463호",
+      period: "(2022-12-27 ~ 2023-12-26)"
       }
     },
     {
@@ -27,7 +29,8 @@ export default
       name: "(무)교보시작해요저축보험",
       imgUrl: "../../../resources/v1/img/icon/img-ci-pd.png",
       explain: "소액으로 차근차근 오늘부터 시작해요",
-      certificationMsg: "생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)"
+      certificationMsg: "생명보험협회 심의필 제 2022-05463호",
+      period: '(2022-12-27 ~ 2023-12-26)'
       }
     },
     {
@@ -42,7 +45,8 @@ export default
         //상품 설명
         explain: '내 아이를 위한 금쪽같은 어린이보험',
         //심의필
-        certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
+        certificationMsg: '생명보험협회 심의필 제 2022-05464호',
+        period: "(2022-12-27 ~ 2023-12-26)"
       }
     }
 ]
