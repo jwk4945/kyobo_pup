@@ -11,11 +11,21 @@ export default
       }
     },
     {
-      contentsId: ["2D_091", "1B_121"],
+      contentsId: ["2D_091"],
       linkInfoForInsurance: {
       url: "itms-apps://itunes.apple.com/id1673246058",
       name: "(무)교보시작해요저축보험",
       imgUrl: "../../../resources/v1/img/img-product-svg-saving.svg",
+      explain: "소액으로 차근차근 오늘부터 시작해요",
+      certificationMsg: "생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)"
+      }
+    },
+    {
+      contentsId: "1B_121",
+      linkInfoForInsurance: {
+      url: "#!",
+      name: "(무)교보시작해요저축보험",
+      imgUrl: "../../../resources/v1/img/icon/img-ci-pd.png",
       explain: "소액으로 차근차근 오늘부터 시작해요",
       certificationMsg: "생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)"
       }
