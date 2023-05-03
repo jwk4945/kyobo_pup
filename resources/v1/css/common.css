@@ -65,6 +65,7 @@ h5{font-size: 15px;}
 .bg-823333{background-color: #823333 !important;}
 .bg-562222{background-color: #562222 !important;}
 .bg-241312{background-color: #241312 !important;}
+.bg-54409b{background-color: #54409b !important;}
 
 .bg-154656{background: #154656;}
 
@@ -400,3 +401,4 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 /* 삼품 border-color */
 .information-type.type-a .btm-wrap .btm-area .pd-area{border-color: #27809e;}
 .information-type.type-b .btm-wrap .btm-area .pd-area{border-color: #d95555;}
+.fact-chk.type-c .btm-wrap .btm-area .pd-area{border-color: #7659d8;}

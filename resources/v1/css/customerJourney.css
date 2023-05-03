@@ -192,9 +192,13 @@ section:last-of-type{padding-bottom: 50px;}
 
 /* fact-chk */
 .fact-chk article:first-of-type{padding-bottom: 75px;}
-.fact-chk .main-banner-wrapper{padding: 40px 10px 23px;height: 340px;}
+.fact-chk .main-banner-wrapper{padding: 30px 10px 23px;height: 340px;}
 .fact-chk h3{color: #b13e7d;}
-.fact-chk .main-banner-wrapper .section-no{font-style: italic;font-size: 33px;line-height: 1.2;}
+.fact-chk .main-banner-wrapper .section-no{font-style: italic;font-size: 30px;line-height: 1.2;}
+.fact-chk .swiper-slide .first-slide.main-banner-wrapper img{display: inline-block;margin: 0 auto;}
+.type-c .swiper-slide .main-banner-wrapper img{max-width: 305px;margin: 0 auto;}
+.type-c .swiper-slide .main-banner-wrapper h1{font-size: 40px;font-style: italic;color: #6a50c2;}
+
 .type-b .swiper-slide .main-banner-wrapper img{max-width: 305px;margin: 0 auto;}
 .type-b .swiper-slide .main-banner-wrapper h1{font-size: 40px;font-style: italic;color: #6a50c2;}
 .swiper-slide .first-slide{display: flex;flex-direction: column;}
