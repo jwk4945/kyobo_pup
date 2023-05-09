@@ -261,6 +261,11 @@ b{font-weight: 700 !important;}
 .bull-list-chk::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/ico-bullet-check.svg) 0 0 no-repeat;background-size: contain;}
 .bull-list-chk.c555{position: relative;padding-left: 20px;min-height: 24px;color: #555;line-height: 1.4;}
 .bull-list-chk.c555::before{content: "";position: absolute;top: 4px;left: 0;width: 16px;height: 16px;background: url(../img/icon/ico-bullet-check-blk.png) 0 0 no-repeat;background-size: contain;}
+/* .bull-list-chk.pink{position: relative;padding-left: 20px;min-height: 24px;color: #555;line-height: 1.4;} */
+.bull-list-chk.pink{color: #555;}
+.bull-list-chk.pink::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/icon/ico-bullet-check-pink.png) 0 0 no-repeat;background-size: contain;}
+/* .bull-list-chk.pink{color: #555;}
+.bull-list-chk.pink::before{content: "";position: absolute;top: 0;left: 0;width: 24px;height: 24px;background: url(../img/icon/ico-bullet-check-pink.png) 0 0 no-repeat;background-size: contain;} */
 
 /* over-img-box */
 .over-img-box{width: calc(100% + 30px);margin-left: -15px;}
