@@ -19,20 +19,20 @@ $(document).ready(function (){
             $('html').removeClass('lock');
         } else{
             $(this).addClass('active');
-            $('#popShare').addClass('active');
+            $('#popShare').addClass('active'); 
             $('.dim').addClass('active');
             $('html').addClass('lock');
         }
     });
 
-    $('#popShare').on('click', function(){
-        if($(this).hasClass('active')){
-            $(this).removeClass('active');
+    $('#popShare > .btn_dialog_close').on('click', function(){
+        if($('#popShare').hasClass('active')){
+            $('#popShare').removeClass('active');
             $('#link_share').removeClass('active');
             $('.dim').removeClass('active');
             $('html').removeClass('lock');
         } else{
-            $(this).addClass('active');
+            $('#popShare').addClass('active');
             $('#link_share').addClass('active');
             $('.dim').addClass('active');
             $('html').addClass('lock');
