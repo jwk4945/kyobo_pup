@@ -10,6 +10,7 @@
 /* 10: header */
 /* 20: dim */
 /* 40: 공유하기 팝업(#popShare) */
+/* 60: URL이 복사되었습니다. 토스트 메세지(.toast_wrap) */
 
 /* skip-nav */
 .skip-nav a{z-index: 100;position:fixed; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:16px; padding:0 6px;width: 100%;text-align: center;}

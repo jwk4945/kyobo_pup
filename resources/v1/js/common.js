@@ -38,5 +38,13 @@ $(document).ready(function (){
             $('html').addClass('lock');
         }
     });
+
+    // URL공유 토스트 팝업
+    $('.btn_share_link').on('click', function(){
+        $('.toast_wrap_share').addClass('on');
+        setTimeout(function(){
+            $('.toast_wrap_share').removeClass('on');
+        }, 4500);
+    });
     // //SNS 공유하기
 });
