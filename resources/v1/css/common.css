@@ -4,6 +4,13 @@
 ========================================================================== */
 /* *:focus{border: 2px solid red;} */
 
+/* z-index */
+/* 1: .top-bg-panel-wrapper */
+/* 2: bg패널있는 경우의 .main-wrapper */
+/* 10: header */
+/* 20: dim */
+/* 40: 공유하기 팝업(#popShare) */
+
 /* skip-nav */
 .skip-nav a{z-index: 100;position:fixed; top:-30px; left:0; background:#000; height:30px; line-height:30px; color:#fff; font-size:16px; padding:0 6px;width: 100%;text-align: center;}
 .skip-nav a:focus,
@@ -292,12 +299,14 @@ main {overflow-x: hidden;}
 /* === header nav === */
 header{position: fixed;z-index: 10;background-color: white;top: 0;left: 0;right: 0;height: 60px;transition: transform 0.4s;}
 header nav{height: 60px;padding: 0 8px;display: flex;flex-direction: row;align-items: center;}
-header nav h1{font-size: 18px;font-weight: 500;padding: 0 30px;text-align: center;text-overflow: ellipsis;white-space: nowrap;overflow-x: hidden;flex: 1;color: #000;}
+header nav h1{font-size: 18px;font-weight: 500;padding: 0 40px 0 0;text-align: center;text-overflow: ellipsis;white-space: nowrap;overflow-x: hidden;flex: 1;color: #000;}
 header.hide{transform: translateY(-100%);}
 nav > *:first-child, nav > *:last-child{flex: 0 1 40px;font-size: 0;}
 nav > .go-back-btn > img{width: 40px;height: 40px;}
 header nav #link_home{display: flex;justify-content: center;align-items: center;font-size: 0;width: 40px;height: 40px;}
 header nav #link_home img{display: inline-block;font-size: 0;width: 26px;height: 26px;}
+header nav #link_share{display: flex;justify-content: center;align-items: center;font-size: 0;width: 40px;height: 40px;}
+header nav #link_share img{display: inline-block;font-size: 0;width: 26px;height: 26px;}
 
 /* === footer === */
 .footer_wrapper {background-color: #fff;color: #000;}

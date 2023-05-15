@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff">
-    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/common.css">
-    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/customerJourney.css">
-    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/swiper-bundle.min.css">
     <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
     <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
 
     <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
     <script src="../../../resources/v1/js/common.js"></script>
@@ -30,16 +27,25 @@
 <!-- [S] header-->
 <header id="header">
     <nav class="bg-white">
-        <a href="javascript:history.back()" class="go-back-btn">
-            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
-        </a>
-        <h1>
-            부모님에게 하는 착한 거짓말
-        </h1>
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
         <div>
             <a id="link_home">
                 <span class="blind">홈으로</span>
                 <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1>
+            부모님에게 하는 착한 거짓말
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
             </a>
         </div> 
     </nav>
@@ -186,16 +192,16 @@
                             data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
                                                     style-af-ani: 'transform:translateX(0px); opacity:1',
                                                     start-ms: '600'">
-                                                    "어르신, 여기에서 기다리면<br>
-                                                    <span class="fc-12 va-top">집으로 가는 버스</span>가 올 거예요."
+                            "어르신, 여기에서 기다리면<br>
+                            <span class="fc-12 va-top">집으로 가는 버스</span>가 올 거예요."
                         </div>
                         <div class="fc-3 text-align-center"
                             data-animation-type="onresult"
                             data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
                                                     style-af-ani: 'transform:translateX(0px); opacity:1',
                                                     start-ms: '900'">
-                                                    하지만 그 정류장은<br>
-                                                    버스가 오지 않는 가짜 정류장입니다.
+                            하지만 그 정류장은<br>
+                            버스가 오지 않는 가짜 정류장입니다.
                         </div>
                         <div class="mt-20">
                             <img src="../../../resources/v1/img/14G_038/14G_038_03.png" alt="집으로 가는 버스가 올거예요. 대표 이미지" width="300px"
@@ -223,8 +229,8 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                                         style-af-ani: 'margin-left:0px; opacity:1'">
-                                                        치매 노인들이<br>
-                                                        자주 하는 말이 있습니다.
+                                    치매 노인들이<br>
+                                    자주 하는 말이 있습니다.
                                 </div>
                             </div>
 
@@ -232,13 +238,13 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                                    “집에서 아이들이 기다리고 있으니 돌아가야 한다.”라며 자꾸 밖으로 나가려고 한다는 것입니다.
+                                “집에서 아이들이 기다리고 있으니 돌아가야 한다.”라며 자꾸 밖으로 나가려고 한다는 것입니다.
                             </div>
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                                    이때 억지로 말리지 않고 “저기 버스정류장이 있어요.”라며 가짜 정류장으로 안내합니다.
+                                이때 억지로 말리지 않고 “저기 버스정류장이 있어요.”라며 가짜 정류장으로 안내합니다.
                             </div>
                             
                             <div class="img-box text-align-center mt-20"
@@ -252,13 +258,13 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    치매 노인은 집으로 갈 수 있다고 생각하며 버스를 기다리다가 왜 버스를 타려고 했는지 잊어버리곤 합니다.
+                                치매 노인은 집으로 갈 수 있다고 생각하며 버스를 기다리다가 왜 버스를 타려고 했는지 잊어버리곤 합니다.
                             </div>
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    이때 요양시설 직원이 “버스가 늦네요, 커피 한잔하세요”라며 안전하게 시설로 모시고 돌아옵니다.
+                                이때 요양시설 직원이 “버스가 늦네요, 커피 한잔하세요”라며 안전하게 시설로 모시고 돌아옵니다.
                             </div>
                             
                             <div class="img-box text-align-center mt-20"
@@ -279,8 +285,8 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'opacity:0',
                                                         style-af-ani: 'opacity:1'">
-                                                        치매는더이상<br>
-                                                        다른 가족의 일이 아닙니다.
+                                    치매는더이상<br>
+                                    다른 가족의 일이 아닙니다.
                                 </div>
                             </div>
 
@@ -288,7 +294,7 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    치매는 80세 이상 노인 4명 중 1명이 걸리는 흔한 질병이 되었습니다.
+                                치매는 80세 이상 노인 4명 중 1명이 걸리는 흔한 질병이 되었습니다.
                             </div>
 
                             <div class="img-box text-align-center mt-20"
@@ -309,8 +315,8 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'opacity:0',
                                                         style-af-ani: 'opacity:1'">
-                                                        치매환자 가족들을 위한<br>
-                                                        조언입니다.
+                                    치매환자 가족들을 위한<br>
+                                    조언입니다.
                                 </div>
                             </div>
 
@@ -318,56 +324,56 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    [고대안암병원 신경과 박건우 교수]
+                                [고대안암병원 신경과 박건우 교수]
                             </div>
 
                             <div class="mt-20 fc-12 fw-700"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    첫 번째, 친인척과 지인들에게 알리고 도움을 받으세요.
+                                첫 번째, 친인척과 지인들에게 알리고 도움을 받으세요.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    감정을 배제하고 객관적으로 소통하세요.
+                                감정을 배제하고 객관적으로 소통하세요.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    오랜 간병을 위해서는 보호자의 휴식과 스트레스 관리가 무엇보다 중요합니다.
+                                오랜 간병을 위해서는 보호자의 휴식과 스트레스 관리가 무엇보다 중요합니다.
                             </div>
 
                             <div class="mt-20 fc-12 fw-700"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    두 번째, 오래된 기억에 의존하는 치매환자의 특성상 집안 구조는 가급적 바꾸지 않는 것이 좋습니다.
+                                두 번째, 오래된 기억에 의존하는 치매환자의 특성상 집안 구조는 가급적 바꾸지 않는 것이 좋습니다.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    대신 위험한 구조물은 치우고 화장실 스위치 등은 자동으로 바꾸는 것이 좋습니다.
+                                대신 위험한 구조물은 치우고 화장실 스위치 등은 자동으로 바꾸는 것이 좋습니다.
                             </div>
 
                             <div class="mt-20 fc-12 fw-700"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    세 번째, 간병기간이 길어질수록 비용부담이 문제가 됩니다.
+                                세 번째, 간병기간이 길어질수록 비용부담이 문제가 됩니다.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    환자 간병에 사용 가능한 가족의 보유자산을 확인할 필요가 있습니다.
+                                환자 간병에 사용 가능한 가족의 보유자산을 확인할 필요가 있습니다.
                             </div>
 
                             <div class="img-box text-align-center mt-20"
@@ -388,8 +394,8 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'opacity:0',
                                                         style-af-ani: 'opacity:1'">
-                                                        우리 가족은 치매보험금을<br>
-                                                        받을 수 있는지 확인해 보세요.
+                                    우리 가족은 치매보험금을<br>
+                                    받을 수 있는지 확인해 보세요.
                                 </div>
                             </div>
 
@@ -397,14 +403,14 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    치매보험에서 CDR 2점 이하의 경증 치매도 보장하는지 체크해 보세요.
+                                치매보험에서 CDR 2점 이하의 경증 치매도 보장하는지 체크해 보세요.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                                    치매보험은 CDR척도 등에 의해 치매로 진단받은 후 90일간 그 상태가 지속되어 진단 확정 시 보험금을 지급(일시지급 또는 분할지급)하는 상품입니다.
+                                치매보험은 CDR척도 등에 의해 치매로 진단받은 후 90일간 그 상태가 지속되어 진단 확정 시 보험금을 지급(일시지급 또는 분할지급)하는 상품입니다.
                             </div>
 
                             <div class="mt-20 clear"
@@ -449,13 +455,13 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
                                                     style-af-ani: 'margin-left: 0px; opacity:1'">
-                                                    <span class="fc-12 fs-22 fw-700">
-                                                        치매는 본인은 물론 가족들까지<br>
-                                                        큰 슬픔과 고통에 빠뜨리는 질병입니다.
-                                                    </span>
-                                                    <br>
-                                                    치매환자 못지않게 보호자 및 가족 구성원의<br>
-                                                    행복도 중요하다는 것을 잊지 마세요.
+                                <span class="fc-12 fs-22 fw-700">
+                                    치매는 본인은 물론 가족들까지<br>
+                                    큰 슬픔과 고통에 빠뜨리는 질병입니다.
+                                </span>
+                                <br>
+                                치매환자 못지않게 보호자 및 가족 구성원의<br>
+                                행복도 중요하다는 것을 잊지 마세요.
                                 
                             </p>
                         </div>
@@ -485,7 +491,6 @@
                             </div>
                         </div>
                     </section>
-                    
                     <div id="output"></div>
                 </div>
             </div>
@@ -538,6 +543,54 @@
     </div>
 </div>
 <!-- [E] cont -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link">http://www.kyobobook.co.kr/ev</span>
+			<button type="button" class="btn_share_link">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- [E] 공유하기 팝업 -->
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">

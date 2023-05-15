@@ -1,0 +1,27 @@
+@charset "utf-8";
+body.lock{overflow: hidden;height: 100vh;}
+html.lock{overflow: hidden;height: 100vh;}
+
+/* 공유하기 팝업 */
+.dim{z-index: 20;display: none;position: fixed;top: 0;left: 0;min-width: 100%;min-height: 100%;width: 100vw;height: 100vh;background: #000;opacity: 0.5;}
+.dim.active{display: block;}
+
+#popShare.active{display: block;}
+#popShare{z-index: 40;display: none;position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;border-radius: 16px 16px 0 0;}
+#popShare .dialog_header{border-bottom: 1px solid #eaeaea;padding: 18px 54px 19px;text-align: center;}
+#popShare .dialog_header .dialog_title{font-size: 18px;line-height: 28px;letter-spacing: -0.01em;font-weight: 500;display: block;overflow: hidden;max-width: 100%;height: auto;max-height: none;-webkit-box-orient: inherit;-webkit-line-clamp: inherit;text-overflow: ellipsis;white-space: nowrap;}
+#popShare .btn_dialog_close{display: inline-block;vertical-align: top; position: absolute;top: 15px;right: 18px;width: 30px;height: 30px;padding: 3px;}
+#popShare .btn_dialog_close .ico_dialog_close{display: block;width: 24px;height: 24px;background-size: 24px 24px;background: url(../img/icon/btn_close_popShare.png) 0 0 no-repeat;background-size: contain;}
+#popShare .dialog_contents{padding: 24px 20px 14px;}
+#popShare .dialog_contents ul.sns_share_list{}
+#popShare .dialog_contents ul.sns_share_list::after{content: "";display: block;clear: both;}
+#popShare .dialog_contents ul.sns_share_list li{float: left;width: 25%;}
+#popShare .dialog_contents ul.sns_share_list li .ico_sns{display: block;width: 53px;height: 53px;margin: 0 auto;}
+#popShare .dialog_contents ul.sns_share_list li .ico_sns.kakao{background: url(../img/icon/ico_share_kakao.png) 0 0 no-repeat;background-size: contain;}
+#popShare .dialog_contents ul.sns_share_list li .ico_sns.facebook{background: url(../img/icon/ico_share_facebook.png) 0 0 no-repeat;background-size: contain;}
+#popShare .dialog_contents ul.sns_share_list li .ico_sns.message{background: url(../img/icon/ico_share_message.png) 0 0 no-repeat;background-size: contain;}
+#popShare .dialog_contents ul.sns_share_list li .sns_text{display: block;margin-top: 6px;font-size: 13px;line-height: 19px;letter-spacing: -0.01em;text-align: center;}
+#popShare .dialog_footer{padding: 20px 20px 30px;}
+#popShare .dialog_footer .sns_share_link_box{display: flex;width: 100%;height: 50px;border: 1px solid #ccc;border-radius: 6px;line-height: 48px;}
+#popShare .dialog_footer .sns_share_link_box .sns_share_link{flex: 2;height: 100%;padding: 0 46px 0 12px;font-size: 14px;letter-spacing: -0.01em;line-height: 49px;color: #767676;overflow: hidden;}
+#popShare .dialog_footer .sns_share_link_box .btn_share_link{flex: 1;height: 100%;letter-spacing: -0.01em;line-height: 49px;color: #000;border-left: 1px solid #ccc;border-radius: 0;text-align: center;}
