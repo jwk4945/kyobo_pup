@@ -26,7 +26,6 @@ html.lock{overflow: hidden;height: 100vh;}
 #popShare .dialog_footer .sns_share_link_box .btn_share_link{flex: 1;height: 100%;letter-spacing: -0.01em;line-height: 49px;color: #000;border-left: 1px solid #ccc;border-radius: 0;text-align: center;}
 
 /* URL공유 토스트 팝업 */
-/* .toast_wrap_share{z-index: 60;display: none;position: fixed;left: 50%;bottom: 36px;width: calc(100% - 40px);max-width: 335px;transform: translateX(-50%);transition: top 0.23s, bottom 0.23s;font-size: 0;} */
-.toast_wrap_share{z-index: 60;height: 0;overflow: hidden;position: fixed;left: 50%;bottom: 36px;width: calc(100% - 40px);max-width: 335px;transform: translateX(-50%);transition: all 0.4s;font-size: 0;}
-.toast_wrap_share.on{height: 50px;}
+.toast_wrap_share{z-index: 60;height: 0;opacity: 0;overflow: hidden;position: fixed;left: 50%;bottom: 36px;width: calc(100% - 40px);max-width: 335px;transform: translateX(-50%);transition: all 0.4s;font-size: 0;}
+.toast_wrap_share.on{height: 50px;opacity: 1;}
 .toast_wrap_share .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;min-height: 50px;padding: 15px 30px 11px;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 14px;line-height: 22px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
