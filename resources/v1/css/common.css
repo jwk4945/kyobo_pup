@@ -68,7 +68,14 @@ h5{font-size: 15px;}
 .bg-16{background-color: #555555 !important;}
 .bg-17{background-color: #6C2A2A !important;}
 
+.bg-cd5050{background-color: #cd5050 !important;}
+.bg-c34c4c{background-color: #c34c4c !important;}
+.bg-b84848{background-color: #b84848 !important;}
+.bg-983b3b{background-color: #983b3b !important;}
 .bg-ad4444{background-color: #ad4444 !important;}
+.bg-a23f3f{background-color: #a23f3f !important;}
+.bg-983b3b{background-color: #983b3b !important;}
+.bg-8d3737{background-color: #8d3737 !important;}
 .bg-6c2a2a{background-color: #6C2A2A !important;}
 .bg-823333{background-color: #823333 !important;}
 .bg-562222{background-color: #562222 !important;}
@@ -300,7 +307,7 @@ main {overflow-x: hidden;}
 /* === header nav === */
 header{position: fixed;z-index: 10;background-color: white;top: 0;left: 0;right: 0;height: 60px;transition: transform 0.4s;}
 header nav{height: 60px;padding: 0 8px;display: flex;flex-direction: row;align-items: center;}
-header nav h1{font-size: 18px;font-weight: 500;padding: 0 40px 0 0;text-align: center;text-overflow: ellipsis;white-space: nowrap;overflow-x: hidden;flex: 1;color: #000;}
+header nav h1{font-size: 18px;font-weight: 500;padding: 0 20px 0 0;text-align: center;text-overflow: ellipsis;white-space: nowrap;overflow-x: hidden;flex: 1;color: #000;}
 header.hide{transform: translateY(-100%);}
 nav > *:first-child, nav > *:last-child{flex: 0 1 40px;font-size: 0;}
 nav > .go-back-btn > img{width: 40px;height: 40px;}
