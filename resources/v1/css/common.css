@@ -410,7 +410,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 
 #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box::before{content: "";display: block;position: absolute;top: 20px;left: 55px;width: 1px;height: 10px;background: #000;opacity: 0.3;}
 
-.btm-wrap .btm-area{padding: 30px 20px 50px;max-width: 540px;margin: auto;}
+.btm-wrap .btm-area{padding: 30px 20px 20px;max-width: 540px;margin: auto;}
 .btm-wrap.bg-btm-gray .btm-area{color: #222;font-size: 18px;}
 .btm-wrap.bg-btm-pink .btm-area .explain, .btm-wrap.bg-btm-blue .btm-area .explain{color: #fff;font-weight: 700;font-size: 18px;}
 .btm-wrap .btm-area .explain{font-weight: 700;}
@@ -426,3 +426,32 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .information-type.type-a .btm-wrap .btm-area .pd-area{border-color: #27809e;}
 .information-type.type-b .btm-wrap .btm-area .pd-area{border-color: #d95555;}
 .fact-chk.type-c .btm-wrap .btm-area .pd-area{border-color: #7659d8;}
+
+/* 개인전보 제3자 제공 동의, 마케팅 수신동의 */
+.agree-area{padding: 0 20px 15px;}
+.agree-area label{display: inline-block;font-size: 0;height: 40px;position: relative;padding-left: 35px;}
+.agree-area label input{width: 0;height: 0;opacity: 0;}
+.agree-area label span{color: #222;font-size: 15px;line-height: 40px;}
+.agree-area label input:checked + i + span{color: #222;font-weight: 700;}
+
+.agree-area .all-agree-box{padding-bottom: 5px;border-bottom: 1px solid #ddd;}
+.agree-area .all-agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-all.png) 0 0 no-repeat;background-size: contain;}
+.agree-area .all-agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on.png) 0 0 no-repeat;background-size: contain;}
+.agree-area .all-agree-box label span{font-size: 16px;}
+
+.agree-area .agree-box{display: flex;justify-content: space-between;}
+.agree-area .agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk.png) 0 0 no-repeat;background-size: contain;}
+.agree-area .agree-box label input:checked + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-on.png) 0 0 no-repeat;background-size: contain;}
+.agree-area .agree-box a{line-height: 40px;color: #222;text-decoration: underline;font-size: 12px;}
+
+/* white */
+.agree-area.white label span{color: #fff;}
+.agree-area.white label input:checked + i + span{color: #fff;}
+
+.agree-area.white .all-agree-box label input + i{background: url(../img/icon/ico-chkwt-all.png) 0 0 no-repeat;background-size: contain;}
+.agree-area.white .all-agree-box label input:checked + i{background: url(../img/icon/ico-chkwt-all-on.png) 0 0 no-repeat;background-size: contain;}
+
+.agree-area.white .agree-box label input + i{background: url(../img/icon/ico-chkwt.png) 0 0 no-repeat;background-size: contain;}
+.agree-area.white .agree-box label input:checked + i{background: url(../img/icon/ico-chkwt-on.png) 0 0 no-repeat;background-size: contain;}
+.agree-area.white .agree-box a{color: #fff;}
+

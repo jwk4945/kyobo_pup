@@ -410,8 +410,9 @@
                     </article>
                 </section>
 
-                <!--콘텐츠 평가영역-->
+                <!-- s: 컨텐츠 하단 영역-->
                 <div class="bg-btm-blue btm-wrap" data-is-not-result-page="false">
+                    <!-- 평가영역 -->
                     <section id="feedback-area" class="bg-f4f4f4">
                         <div class="feedback-inner">
                             <div class="feedback-txt">콘텐츠가 유익했어요!</div>
@@ -433,8 +434,32 @@
                             </div>
                         </div>
                     </section>
+
+                    <!-- 상품영역 -->
                     <div id="output"></div>
+
+                    <!-- 동의 영역 -->
+                    <div class="agree-area white">
+                        <div class="all-agree-box">
+                            <label for="chk-all" class="check-style-all">
+                                <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
+                            </label>
+                        </div>
+                        <div class="agree-box mt-10">
+                            <label for="chk-agr1" class="check-style-agr">
+                                <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                            </label>
+                            <a href="javascript:void(0);">보기</a>
+                        </div>
+                        <div class="agree-box">
+                            <label for="chk-agr2" class="check-style-agr">
+                                <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                            </label>
+                            <a href="javascript:void(0);">보기</a>
+                        </div>
+                    </div>
                 </div>
+                <!-- e: 컨텐츠 하단 영역-->
             </div>
         </div>
 

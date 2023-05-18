@@ -48,3 +48,34 @@ $(document).ready(function (){
     });
     // //SNS 공유하기
 });
+
+// 동의영역 전체 선택
+function chkall() {
+	if($("#chk-all").is(':checked')) {
+		$("input[name=typ-all]").prop("checked", true);
+	} else {
+		$("input[name=typ-all]").prop("checked", false);
+	}
+}
+
+$(document).on("click", "input:checkbox[name=typ-all]", function(e) {
+	
+	var chks = document.getElementsByName("typ-all");
+	var chksChecked = 0;
+	
+	for(var i=0; i<chks.length; i++) {
+		var cbox = chks[i];
+		
+		if(cbox.checked) {
+			chksChecked++;
+		}
+	}
+	
+	if(chks.length == chksChecked){
+		$("#chk-all").prop("checked", true);
+	}else{
+		$("#chk-all").prop("checked",false);
+	}
+	
+});
+// // 동의영역 전체 선택
