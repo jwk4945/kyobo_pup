@@ -1,5 +1,13 @@
 import { AnimationManager } from "./open_AnimationManager.js";
+import { config } from "./config.js";
 import data from "./data.js";
+
+/**
+ * 모듈 변수
+ * 
+ */
+let info = null; 
+let ua = null;
 
 export const EventProcessor = (function (){
     let _isAutoBottomStyle=false;
@@ -22,6 +30,7 @@ export const EventProcessor = (function (){
     let _isUserInLastPage = true;
     let _surveyRadiosSelector = 'input[type="radio"][name="kyobolife-survey"]';
     let _nextButtonSelector = 'button#goNextBtn';
+
 
     function initSettingForBfCache() {
         window.addEventListener('pageshow', function(event) {
@@ -737,7 +746,47 @@ export const EventProcessor = (function (){
         , initSetting, setUserInLastPage, postReview, getLocalStorage, setLocalStorage}
 })();
 
+/** sns 공유하기  */
 
+const shareKakao = (shareUrl) => {
+    
+    Kakao.init( config.kakao.apiKey.prod );
+
+    const title = document.title; 
+    const desc = document.querySelector("meta[property='og:description']").getAttribute("content");    
+    
+    Kakao.Share.createDefaultButton({
+        container: '#ka-share-btn',
+        objectType: 'feed',
+        content: {
+          title: title, 
+          description: desc, 
+          imageUrl: 'https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png',
+          link: {
+            // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+            mobileWebUrl: shareUrl,
+            webUrl: shareUrl,
+          },
+        },
+        buttons: [
+          {
+            title: '모바일 교보문고',
+            link: {
+              mobileWebUrl: shareUrl,
+              webUrl: shareUrl,
+            },
+          },
+        ],
+      });    
+}
+
+const shareFacebook = (shareUrl) => {
+    window.open("https://www.facebook.com/sharer/sharer.php?u=" + shareUrl);
+}
+
+
+
+/** render */
 function setCheckedValue(radios, value) {
     console.log(radios)
     console.log(value)
@@ -757,25 +806,26 @@ function findByfileName(fileName) {
     return data[0]; 
 }
 
-function render(info) {
+
+function render(renderInfo) {
     // 보험 상품 info template literal
-    console.log(info)
+    console.log(renderInfo)
 
     // const data = { name: 'test name', explain: 'test explain' };
     const template = `
                         <section class="btm-area">
-                            <p class="explain">${ info.explain }</p>
-                            <a href=${ info.url }>
+                            <p class="explain">${ renderInfo.explain }</p>
+                            <a href=${ renderInfo.url }>
                                 <div class="pd-area">
                                     <div class="clear">
                                         <div class="ci fl">
-                                            <img src=${ info.imgUrl } alt="KYOBO 교보생명">
+                                            <img src="../../../resources/v1/img/icon/img-ci-pd.png" alt="KYOBO 교보생명">
                                         </div>
                                         <dl class="fl">
-                                            <dt class="name">${ info.name }</dt>
+                                            <dt class="name">${ renderInfo.name }</dt>
                                             <dd class="certificationMsg">
-                                                <div class="certificationMsg-txt">${ info.certificationMsg }</div>
-                                                <div class="certificationMsg-date">${ info.period }</div>
+                                                <div class="certificationMsg-txt">${ renderInfo.certificationMsg }</div>
+                                                <div class="certificationMsg-date">${ renderInfo.period }</div>
                                             </dd>
                                         </dl>
                                     </div>
@@ -789,9 +839,29 @@ function render(info) {
 
 }
 
+
+const checkUserAgent = () => {
+
+    // userAgent 분기(문고는 백엔드에서 처리하고 있음. 임시로 프론트에서 처리하도록 작성함)
+    ua = {
+        device: {
+            isMobile: true,
+            isMobileApp: false,
+            isIOS: true,
+            isAndroid: false,
+            isMSIE: false,
+            isMac: false, 
+        }
+    };    
+
+        
+}
+
+
+
 window.addEventListener('load', function() {
     console.log('window onLoad');
-
+    
     const url = window.location.href; 
     const fileNameWithQuery = url.split('/').pop();
     const fileNameWithoutKeyword = fileNameWithQuery.split('?')[0];
@@ -802,28 +872,28 @@ window.addEventListener('load', function() {
     const fileName = fileNameWithoutPrefix.replace('.html', '');
 
     // find By fileName
-    const info = findByfileName(fileName);
+    info = findByfileName(fileName);
     render(info.linkInfoForInsurance);
-
+    
     EventProcessor.initSetting(fileName, info);
+
 })
 
 
-document.addEventListener('DOMContentLoaded', function() {    
-    
+document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded');
 
+    // userAgent set
+    checkUserAgent();
+    
+    
+
+    // 컨텐츠 평가(좋아요/싫어요) 저장 값 set
     const radios = document.querySelectorAll('input[name="feedback-radio"][type="radio"]');
     const localCheckedValue = EventProcessor.getLocalStorage('feedback-value');
-
-    // console.log(localCheckedValue);
-
     
-
-    // 기본값 설정
     // setCheckedValue(radios, localCheckedValue);
     
-    // change 이벤트 리스너 바인딩
     radios.forEach(radio => {
         radio.addEventListener('change', e => {
             console.log('change');
@@ -836,6 +906,37 @@ document.addEventListener('DOMContentLoaded', function() {
     //     event.preventDefault(); // 기본 이벤트 중단
     //     window.location.href = ""; 
     // });
+      
+
+    // 공유하기
+    const currentUrl = window.location.href; 
+
+    // Kakao 
+    shareKakao(currentUrl); 
+
+    // Facebook 
+    document.getElementById('fb-share-btn').addEventListener('click', () => {
+        shareFacebook(currentUrl); 
+    });
+
+    // url 복사
+    const copyUrl = document.getElementById('url-copy-span');
+    copyUrl.innerText = currentUrl; 
+
+
+    document.getElementById('url-copy-btn').addEventListener('click', () => {
+        navigator.clipboard.writeText(currentUrl);
+    });
+
+    // sms 
+    const shareSms = document.getElementById('msg-share-btn');    
+
+    document.getElementById('msg-share-btn').addEventListener('click', (e) => {
+        console.log('msg test')
+        e.preventDefault();
+        
+        shareSms.href = ua.device.isAndroid ? "sms:?body=thisisamsgtest" : "sms:&body=thisisamsgtest";
+    });
     
 
   });

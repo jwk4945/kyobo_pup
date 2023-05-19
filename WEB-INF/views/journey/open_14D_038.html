@@ -12,6 +12,13 @@
     <script src="../../../resources/v1/js/common.js"></script>
     <script src="../../../resources/v1/js/link.js"></script>
 
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="부모님에게 하는 착한 거짓말"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+
     <title>부모님에게 하는 착한 거짓말</title>
 </head>
 <script>
@@ -562,19 +569,19 @@
 	<div class="dialog_contents">
 		<ul class="sns_share_list">
 			<li class="list_item">
-				<a href="javascript:void(0)" class="btn_sns_share">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
 					<span class="ico_sns kakao"></span>
 					<span class="sns_text">카카오톡</span>
 				</a>
 			</li>
 			<li class="list_item">
-				<a href="javascript:void(0)" class="btn_sns_share">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
 					<span class="ico_sns facebook"></span>
 					<span class="sns_text">페이스북</span>
 				</a>
 			</li>
 			<li class="list_item">
-				<a href="javascript:void(0)" class="btn_sns_share">
+				<a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
 					<span class="ico_sns message"></span>
 					<span class="sns_text">메세지</span>
 				</a>
@@ -585,8 +592,8 @@
 	<!-- dialog_footer -->
 	<div class="dialog_footer">
 		<div class="sns_share_link_box">
-			<span class="sns_share_link">http://www.kyobobook.co.kr/ev</span>
-			<button type="button" class="btn_share_link">URL 복사</button>
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
 		</div>
 	</div>
 	<!-- //dialog_footer -->
@@ -611,47 +618,18 @@
 
 <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
 
-<!-- <script src="../../../resources/v1/js/Customer-Journey.js"></script> -->
-<!-- <script src="../../../resources/v1/js/open_EventProcessor.js" type="module"></script> -->
-<!-- <script src="../../../resources/v1/js/open_AnimationManager.js" type="module"></script> -->
 <script type="module">
     import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
     import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
     
     try {
         window.onload = function() {
-
             // animation setting
             AnimationManager.loadElementsToAnimate();
-
-            //컴포넌트 이벤트 및 기본설정
-        //     EventProcessor.initSetting({
-        //         contentsId: '2D_091',  //콘텐츠id
-        //         linkInfoForInsurance: {
-        //             //상품 링크 url
-        //             // url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000938&evcode=DCJ_MO',
-        //             url: 'itms-apps://itunes.apple.com/id1673246058',
-        //             //상품명
-        //             name: '(무)교보시작해요저축보험',
-        //             //상품 이미지 url
-        //             imgUrl: '../../../resources/v1/img/img-product-svg-saving.svg',
-        //             //상품 설명
-        //             explain: '소액으로 차근차근 오늘부터 시작해요',
-        //             //심의필
-        //             certificationMsg: '생명보험협회 심의필 제 2022-05463호 (2022-12-27 ~ 2023-12-26)'
-        //         },
-        //         linkInfoForService: {
-        //             //부가서비스 링크 url
-        //             url: 'https://www.kyobo.com/dgt/web/customer/service/assets-management',
-        //             //부가서비스명
-        //             name: '자산관리서비스',
-        //             //부가서비스 이미지 url
-        //             imgUrl: '../../../resources/v1/img/img-service-svg-finance-manage.svg',
-        //             //부가서비스 설명
-        //             explain: '소중한 자산을 든든하게 관리해주는 서비스'
-        //         }
-        //     });
         }
     }
     catch(error){
