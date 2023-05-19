@@ -935,7 +935,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('msg test')
         e.preventDefault();
         
-        shareSms.href = ua.device.isAndroid ? "sms:?body=thisisamsgtest" : "sms:&body=thisisamsgtest";
+        location.href = ua.device.isAndroid ? "sms:?body=" : "sms:&body=" + currentUrl;
     });
     
 
