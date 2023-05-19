@@ -31,9 +31,3 @@ html.lock{overflow: hidden;height: 100vh;}
 .toast_wrap_share .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;min-height: 50px;padding: 15px 30px 11px;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 14px;line-height: 22px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
 
 /* 팝업 */
-.pop-area{z-index: 40;position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;background: pink;}
-/* .pop-area .pop-inner{min-width: 100%;} */
-.pop-area .pop-inner .pop-header{width: 100%;height: 60px;background: #000;color: #fff;}
-.pop-area .pop-inner .pop-cont{font-size: 20px;height: calc(100vh - 60px);overflow-y: scroll; padding: 20px 20px 90px;}
-.pop-area .pop-inner .pop-footer{position: absolute;bottom: 0;left: 0;width: 100%;background: #ddd;min-height: 100px;}
-.pop-area .pop-inner .pop-footer .btn{margin: 20px;height: 50px; background: blue;}
