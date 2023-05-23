@@ -923,7 +923,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyUrl = document.getElementById('url-copy-span');
     copyUrl.innerText = currentUrl; 
 
-
     document.getElementById('url-copy-btn').addEventListener('click', () => {
         navigator.clipboard.writeText(currentUrl);
     });
@@ -935,7 +934,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('msg test')
         e.preventDefault();
         
-        location.href = ua.device.isAndroid ? "sms:?body=" : "sms:&body=" + currentUrl;
+        location.href = (ua.device.isAndroid ? "sms:?body=" : "sms:&body=") + currentUrl;
     });
     
 
