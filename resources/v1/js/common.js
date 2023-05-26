@@ -47,6 +47,19 @@ $(document).ready(function (){
         }, 4500);
     });
     // //SNS 공유하기
+
+    // ios, android
+    var appHidden = function() { 
+		var agent = navigator.userAgent;
+		agent = agent.toLowerCase();
+		
+		if (agent.indexOf("ipod") != -1 || agent.indexOf("iphone") != -1 || agent.indexOf("ipad") != -1) { // iOS일때
+        $('body').addClass('ios');
+    } else { // iOS가 아닐때
+        $('body').addClass('android');
+		}
+    }; appHidden();
+    // // ios, android
 });
 
 // 동의영역 전체 선택
@@ -79,3 +92,21 @@ $(document).on("click", "input:checkbox[name=typ-all]", function(e) {
 	
 });
 // // 동의영역 전체 선택
+
+// 약관팝업 노출
+function popOpen(id) {
+    var $lyAcive = $('#' + id);
+    $('html').addClass('lock');
+
+    $lyAcive.show();
+    $lyAcive.addClass('open');
+}
+
+function popClose(id) {
+    var $lyAcive = $('#' + id);
+    $('html').removeClass('lock');
+
+    $lyAcive.hide();
+    $lyAcive.removeClass('open');
+}
+// // 약관팝업 노출

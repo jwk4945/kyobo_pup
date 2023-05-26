@@ -30,4 +30,51 @@ html.lock{overflow: hidden;height: 100vh;}
 .toast_wrap_share.on{height: 50px;opacity: 1;}
 .toast_wrap_share .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;min-height: 50px;padding: 15px 30px 11px;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 14px;line-height: 22px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
 
-/* 팝업 */
+/* 약관 팝업 */
+.pop-area{z-index: 40;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: #fff;overflow: hidden;color: #222;}
+.pop-area .pop-inner{height: 100vh;overflow: hidden;}
+.pop-area .pop-inner .pop-header{position: absolute;top: 0;left: 0;width: 100%;height: 60px;background: rgba(255, 255, 255, 0.95);box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);color: #000;line-height: 60px;text-align: center;font-size: 18px;font-weight: 500px;}
+.pop-area .pop-inner .pop-header .btn-close{position: absolute;top: 10px;right: 14px;width: 40px;height: 40px;}
+.pop-area .pop-inner .pop-header .btn-close img{width: 100%;height: 100%;}
+.pop-area .pop-inner .pop-cont{font-size: 20px;height: 100%;overflow-y: scroll; padding: 80px 20px 90px;}
+.pop-area .pop-footer{width: 100%;height: auto;position: absolute;bottom: 0;left: 0;padding: 0 20px 0;}
+.pop-area .pop-footer .btn-box{padding-bottom: 20px;background: #fff;}
+
+/* ios,android  */
+.ios .pop-area .pop-footer .btn-box{padding-bottom: 44px;}
+.ios .pop-area .pop-inner .pop-cont{padding: 80px 20px 114px;}
+.android .pop-area .pop-footer .btn-box{padding-bottom: 20px;}
+.android .pop-area .pop-inner .pop-cont{padding: 80px 20px 90px;}
+
+.pop-area .pop-footer .btn-box{width: 100%;display: flex;justify-content: space-between;}
+.pop-area .pop-footer .btn-box .btn{width: calc(50% - 2.5px);height: 50px;background: #555;border-radius: 5px;line-height: 50px;color: #fff;text-align: center;font-size: 15px;font-weight: 700;}
+.type-a .pop-area .pop-footer .btn-box .btn.agree{background: #27809e;}
+.type-b .pop-area .pop-footer .btn-box .btn.agree{background: #d95555;}
+.type-c .pop-area .pop-footer .btn-box .btn.agree{background: #7659d8;}
+.type-d .pop-area .pop-footer .btn-box .btn.agree{background: #2254c0;}
+.type-e .pop-area .pop-footer .btn-box .btn.agree{background: #d95584;}
+.type-f .pop-area .pop-footer .btn-box .btn.agree{background: #33b4c7;}
+
+.pop-area .dl-box{font-size: 13px;}
+.pop-area .dl-box dl{padding-left: 7px;position: relative;}
+.pop-area .dl-box dl::before{content: "";position: absolute;top: 9px;left: 0;width: 2px;height: 2px;border-radius: 50%;background-color: #777;}
+.pop-area .dl-box dt{color: #555;}
+.pop-area .dl-box dd{color: #222;font-weight: 500;}
+
+.pop-area .gray-box{padding: 15px 20px;border-radius: 5px;border: solid 1px #eee;background-color: #f7f7f7;}
+.pop-area .gray-box dt{font-size: 13px;font-weight: 700;}
+.pop-area .gray-box dd{margin-top: 4px;font-size: 12px;color: #555;}
+
+.pop-area .chk-area{}
+.pop-area .chk-area::after{content: "";display: block;clear: both;}
+.pop-area .chk-area .agree-box{float: left;}
+.pop-area .chk-area .agree-box + .agree-box{margin-left: 45px;}
+.pop-area .chk-area label{display: inline-block;font-size: 0;height: 40px;position: relative;padding-left: 35px;}
+.pop-area .chk-area label input{width: 0;height: 0;opacity: 0;}
+.pop-area .chk-area label span{color: #222;font-size: 15px;line-height: 40px;}
+.pop-area .chk-area label input:checked + i + span{color: #222;font-weight: 500;}
+
+.pop-area .chk-area .agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-all.png) 0 0 no-repeat;background-size: contain;}
+.pop-area .chk-area .agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on.png) 0 0 no-repeat;background-size: contain;}
+.pop-area .chk-area .agree-box label span{font-size: 16px;}
+/* // 약관 팝업 */
