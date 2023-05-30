@@ -69,7 +69,7 @@ export const EventProcessor = (function (){
         insuranceCertificationMsg = linkInfoForInsurance.certificationMsg;
         insurancePeriod = linkInfoForInsurance.period;
 
-        // 2023.04.26 확대오픈 시 service 제외 
+        // 2023.04.26 확대오픈 시 서비스 제외 
         // const linkInfoForService = params.linkInfoForService;
         // serviceUrl = linkInfoForService.url;
         // serviceImg = linkInfoForService.imgUrl;
@@ -285,11 +285,21 @@ export const EventProcessor = (function (){
     function createUserKey(){
         let userKey = getLocalStorage('user-key', true);
         if(userKey===null && _contentsId!==undefined) {
-            const currDate = new Date();
-            userKey = currDate.toLocaleDateString("ko-KR").replace(/[\s\.]/g,'');
-            userKey += currDate.toLocaleTimeString("en-GB").replace(/[\:]/g,'');
-            userKey += '-';
-            userKey += Date.now().toString(36);
+            const now = new Date();
+            // userKey = currDate.toLocaleDateString("ko-KR").replace(/[\s\.]/g,'');
+            // userKey += currDate.toLocaleTimeString("en-GB").replace(/[\:]/g,'');
+            // userKey += '-';
+            // userKey += Date.now().toString(36);
+
+            const yyyy = now.getFullYear();
+            const MM = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed, so add 1
+            const dd = String(now.getDate()).padStart(2, '0');
+            const HH = String(now.getHours()).padStart(2, '0');
+            const mm = String(now.getMinutes()).padStart(2, '0');
+            const ss = String(now.getSeconds()).padStart(2, '0');
+
+            userKey = `${yyyy}${MM}${dd}${HH}${mm}${ss}` + '-' + Date.now().toString(36);;
+            
         }
         if(userKey!==null){
             setLocalStorage('user-key',userKey, 14, true);
@@ -747,16 +757,15 @@ export const EventProcessor = (function (){
 })();
 
 /** sns 공유하기  */
-
 const shareKakao = (shareUrl) => {
     
     Kakao.init( config.kakao.apiKey.prod );
 
     const title = document.title; 
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");    
-    
-    Kakao.Share.createDefaultButton({
-        container: '#ka-share-btn',
+        
+    Kakao.Share.sendDefault({
+        // container: '#ka-share-btn',
         objectType: 'feed',
         content: {
           title: title, 
@@ -784,7 +793,9 @@ const shareFacebook = (shareUrl) => {
     window.open("https://www.facebook.com/sharer/sharer.php?u=" + shareUrl);
 }
 
-
+const shareSms = (shareUrl) => {
+    location.href = (ua.device.isAndroid ? "sms:?body=" : "sms:&body=") + shareUrl;
+}
 
 /** render */
 function setCheckedValue(radios, value) {
@@ -841,7 +852,6 @@ function render(renderInfo) {
 
 
 const checkUserAgent = () => {
-
     // userAgent 분기(문고는 백엔드에서 처리하고 있음. 임시로 프론트에서 처리하도록 작성함)
     ua = {
         device: {
@@ -852,16 +862,37 @@ const checkUserAgent = () => {
             isMSIE: false,
             isMac: false, 
         }
-    };    
-
-        
+    };
 }
 
+function initialize(shareUrl) {
+    console.log('initialize');
 
+    // userAgent set
+    checkUserAgent();
 
+    const copyUrl = document.getElementById('url-copy-span');
+    copyUrl.innerText = shareUrl; 
+}
+
+function handleShareButtonClick(event, url) {    
+    if (event.target.innerHTML === '카카오톡') {
+        shareKakao(url); 
+    } else if (event.target.innerHTML === '페이스북') {
+        shareFacebook(url);
+    } else if (event.target.innerHTML === '메세지') {
+        // event.preventDefault();
+        shareSms(url); 
+    } else if (event.target.innerHTML === 'URL 복사') {
+        navigator.clipboard.writeText(url);
+    }
+}
+
+// 1. EventProcessor.initSetting -> 기존 컨텐츠 init setting... 임시로 load 이벤트로 분리 
+// 2. initialize -> 확대오픈/정식오픈 add 컨텐츠 init setting... DomContentLoaded에 정의. 
 window.addEventListener('load', function() {
     console.log('window onLoad');
-    
+        
     const url = window.location.href; 
     const fileNameWithQuery = url.split('/').pop();
     const fileNameWithoutKeyword = fileNameWithQuery.split('?')[0];
@@ -876,16 +907,11 @@ window.addEventListener('load', function() {
     render(info.linkInfoForInsurance);
     
     EventProcessor.initSetting(fileName, info);
-
-})
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded');
-
-    // userAgent set
-    checkUserAgent();
-    
+    console.log('DOMContentLoaded');    
     
 
     // 컨텐츠 평가(좋아요/싫어요) 저장 값 set
@@ -911,32 +937,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 공유하기
     const currentUrl = window.location.href; 
 
-    // Kakao 
-    shareKakao(currentUrl); 
+    document.addEventListener('click', e => {
+        e.stopPropagation(); 
+        handleShareButtonClick(e, currentUrl); 
+    });    
 
-    // Facebook 
-    document.getElementById('fb-share-btn').addEventListener('click', () => {
-        shareFacebook(currentUrl); 
-    });
-
-    // url 복사
-    const copyUrl = document.getElementById('url-copy-span');
-    copyUrl.innerText = currentUrl; 
-
-    document.getElementById('url-copy-btn').addEventListener('click', () => {
-        navigator.clipboard.writeText(currentUrl);
-    });
-
-    // sms 
-    const shareSms = document.getElementById('msg-share-btn');    
-
-    document.getElementById('msg-share-btn').addEventListener('click', (e) => {
-        console.log('msg test')
-        e.preventDefault();
-        
-        location.href = (ua.device.isAndroid ? "sms:?body=" : "sms:&body=") + currentUrl;
-    });
     
+    initialize(currentUrl);
 
   });
 

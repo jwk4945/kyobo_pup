@@ -12,6 +12,13 @@
     <script src="../../../resources/v1/js/common.js"></script>
     <script src="../../../resources/v1/js/link.js"></script>
 
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="어떤 고등학교가 잘 맞을까요?"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+
     <title>어떤 고등학교가 잘 맞을까요?</title>
 </head>
 <script>
@@ -88,6 +95,7 @@
                                         어떤 학교가 잘 맞을까요?
                 </div>
             </div>
+
             <div class="main-banner-wrapper center-type mt-25 mb-5 opacity-0"
                 data-animation-type="onload"
                 data-animation-infos="remove-class-nm: 'opacity-0',
@@ -697,8 +705,11 @@
 
 <!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<!-- <script src="../../../resources/v1/js/Customer-Journey.js"></script> -->
-<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
+
+
 <script type="module">
     import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
     import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
