@@ -35,7 +35,7 @@ html.lock{overflow: hidden;height: 100vh;}
 .pop-area{z-index: 40;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: #fff;overflow: hidden;color: #222;}
 /* .pop-area .pop-inner{height: 100vh;overflow: hidden;} */
 .pop-area .pop-inner{height: var(--100vh-inner);overflow: hidden;}
-.pop-area .pop-inner .pop-header{position: absolute;top: 0;left: 0;width: 100%;height: 60px;background: rgba(255, 255, 255, 0.95);box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);color: #000;line-height: 60px;text-align: center;font-size: 18px;font-weight: 500px;}
+.pop-area .pop-inner .pop-header{z-index: 41;position: absolute;top: 0;left: 0;width: 100%;height: 60px;background: rgba(255, 255, 255, 0.95);box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);color: #000;line-height: 60px;text-align: center;font-size: 18px;font-weight: 500px;}
 .pop-area .pop-inner .pop-header .btn-close{position: absolute;top: 10px;right: 14px;width: 40px;height: 40px;}
 .pop-area .pop-inner .pop-header .btn-close img{width: 100%;height: 100%;}
 .pop-area .pop-inner .pop-cont{font-size: 20px;height: 100%;overflow-y: scroll; padding: 80px 20px 90px;}
