@@ -43,7 +43,7 @@ html.lock{overflow: hidden;height: 100vh;}
 .pop-area .pop-footer .btn-box{padding-bottom: 20px;background: #fff;}
 
 /* ios,android  */
-.ios .pop-area .pop-footer .btn-box{padding-bottom: 44px;}
+.ios .pop-area .pop-footer .btn-box{padding-bottom: 34px;}
 .ios .pop-area .pop-inner .pop-cont{padding: 80px 20px 114px;}
 .android .pop-area .pop-footer .btn-box{padding-bottom: 20px;}
 .android .pop-area .pop-inner .pop-cont{padding: 80px 20px 90px;}
