@@ -34,16 +34,25 @@
 <!-- [S] header-->
 <header id="header">
     <nav class="bg-white">
-        <a href="javascript:history.back()" class="go-back-btn">
-            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
-        </a>
-        <h1>
-            어떤 고등학교가 잘 맞을까요?
-        </h1>
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
         <div>
             <a id="link_home">
                 <span class="blind">홈으로</span>
                 <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1>
+            어떤 고등학교가 잘 맞을까요?
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
             </a>
         </div>
     </nav>
@@ -582,6 +591,58 @@
 </footer>
 <!-- [E] footer -->
 
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
 <!-- [S] pop -->
 <!-- s: 개인정보 제3자 제공동의 팝업 -->
 <div id="personalPop" class="pop-area" style="display: none;">
@@ -705,11 +766,15 @@
 
 <!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<<<<<<< HEAD
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
   integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
 
 
+=======
+<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+>>>>>>> 0734afb (공통 작업중)
 <script type="module">
     import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
     import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
@@ -727,7 +792,3 @@
 </script>
 </body>
 </html>
-
-<!-- [컨텐츠 오픈 히스토리] -->
-<!-- 230518 확대오픈 -->
-<!-- [ // 컨텐츠 오픈 히스토리] -->

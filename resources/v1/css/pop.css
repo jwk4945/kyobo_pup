@@ -6,7 +6,7 @@ html.lock{overflow: hidden;height: 100vh;}
 .dim.active{display: block;}
 
 #popShare.active{display: block;}
-#popShare{z-index: 40;display: none;position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;border-radius: 16px 16px 0 0;}
+#popShare{z-index: 40;display: none;position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;border-radius: 16px 16px 0 0;color: #000;}
 #popShare .dialog_header{border-bottom: 1px solid #eaeaea;padding: 18px 54px 19px;text-align: center;}
 #popShare .dialog_header .dialog_title{font-size: 18px;line-height: 28px;letter-spacing: -0.01em;font-weight: 500;display: block;overflow: hidden;max-width: 100%;height: auto;max-height: none;-webkit-box-orient: inherit;-webkit-line-clamp: inherit;text-overflow: ellipsis;white-space: nowrap;}
 #popShare .btn_dialog_close{display: inline-block;vertical-align: top; position: absolute;top: 15px;right: 18px;width: 30px;height: 30px;padding: 3px;}

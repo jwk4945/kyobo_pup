@@ -27,16 +27,25 @@
 <!-- [S] header-->
 <header id="header">
     <nav class="bg-white">
-        <a href="javascript:history.back()" class="go-back-btn">
-            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
-        </a>
-        <h1>
-            여성 암 1위 '유방암'
-        </h1>
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
         <div>
             <a id="link_home">
                 <span class="blind">홈으로</span>
                 <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1>
+            여성 암 1위 '유방암'
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
             </a>
         </div>
     </nav>
@@ -568,39 +577,16 @@
 
 <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<!-- <script src="../../../resources/v1/js/Customer-Journey.js"></script> -->
 <script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
-<script>
-    try {
-        //애니메이션 설정 로딩
-        AnimationManager.loadElementsToAnimate();
+<script type="module">
+    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
 
-        //컴포넌트 이벤트 및 기본설정
-        EventProcessor.initSetting({
-            contentsId: '17A_034',  //콘텐츠id
-            linkInfoForInsurance: {
-                //상품 링크 url
-                url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                //상품명
-                name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                //상품 이미지 url
-                imgUrl: '../../../resources/v1//img/img-product-svg-child-care.svg',
-                //상품 설명
-                explain: '내 아이를 위한 금쪽같은 어린이보험',
-                //심의필
-                certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
-            },
-            linkInfoForService: {
-                //부가서비스 링크 url
-                url: 'https://www.kyobo.com/dgt/web/product/eduCare-service',
-                //부가서비스명
-                name: '교보에듀케어서비스',
-                //부가서비스 이미지 url
-                imgUrl: '../../../resources/v1/img/img-service-svg-edu-care.svg',
-                //부가서비스 설명
-                explain: '우리 아이 바른 성장 지킴이'
-            }
-        });
+    try {
+        window.onload = function() {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+        }
     }
     catch(error){
         alert(error);

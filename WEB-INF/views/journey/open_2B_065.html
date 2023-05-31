@@ -27,18 +27,27 @@
 <!-- [S] header-->
 <header id="header">
     <nav class="bg-white">
-        <a href="javascript:history.back()" class="go-back-btn">
-            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
-        </a>
-        <h1>
-            청년 목돈 만들기
-        </h1>
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
         <div>
             <a id="link_home">
                 <span class="blind">홈으로</span>
                 <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
             </a>
-        </div>
+        </div> 
+        <h1>
+            청년 목돈 만들기
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div> 
     </nav>
 </header>
 <!-- [E] header-->
@@ -366,8 +375,9 @@
             </div>
         </article>
     </section>
-    <!--콘텐츠 평가영역-->
+    <!-- s: 컨텐츠 하단 영역-->
     <div class="bg-btm-gray btm-wrap">
+        <!-- 평가여역 -->
         <section id="feedback-area" class="bg-6c2a2a">
             <div class="feedback-inner">
                 <div class="feedback-txt">콘텐츠가 유익했어요!</div>
@@ -387,29 +397,86 @@
                 </div>
             </div>
         </section>
-        <section class="btm-area">
-            <p class="explain">소액으로 차근차근 오늘부터 시작해요!</p>
-            <a href="#!">
-                <div class="pd-area">
-                    <div class="clear">
-                        <div class="ci fl">
-                            <img src="../../../resources/v1/img/icon/img-ci-pd.png" alt="KYOBO 교보생영">
-                        </div>
-                        <dl class="fl">
-                            <dt class="name">(무)교보시작해요저축보험</dt>
-                            <dd class="certificationMsg">
-                                <div class="certificationMsg-txt">생명보험협회 심의필 제 2022-05463호</div>
-                                <div class="certificationMsg-date">(2022-12-27 ~ 2023-12-26)</div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="ico-arw"></div>
-                </div>
-            </a>
-        </section>
+        
+        <!-- 상품영역 -->
+        <div id="output"></div>
+
+        <!-- 동의 영역 -->
+        <div class="agree-area">
+            <div class="all-agree-box">
+                <label for="chk-all" class="check-style-all">
+                    <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
+                </label>
+            </div>
+            <div class="agree-box mt-10">
+                <label for="chk-agr1" class="check-style-agr">
+                    <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+            </div>
+            <div class="agree-box">
+                <label for="chk-agr2" class="check-style-agr">
+                    <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+            </div>
+        </div>
     </div>
+    <!-- e: 컨텐츠 하단 영역-->
 </div>
 <!-- [E] cont -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
 
 <!-- [S] footer -->
 <footer class="footer_wrapper">
@@ -466,39 +533,16 @@
 
 <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<!-- <script src="../../../resources/v1/js/Customer-Journey.js"></script> -->
 <script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
-<script>
-    try {
-        //애니메이션 설정 로딩
-        AnimationManager.loadElementsToAnimate();
+<script type="module">
+    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
 
-        //컴포넌트 이벤트 및 기본설정
-        EventProcessor.initSetting({
-            contentsId: '6B_014',  //콘텐츠id
-            linkInfoForInsurance: {
-                //상품 링크 url
-                url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                //상품명
-                name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                //상품 이미지 url
-                imgUrl: '../../../resources/v1/img/img-product-svg-child-care.svg',
-                //상품 설명
-                explain: '내 아이를 위한 금쪽같은 어린이보험',
-                //심의필
-                certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
-            },
-            linkInfoForService: {
-                //부가서비스 링크 url
-                url: 'https://www.kyobo.com/dgt/web/product/healthChild-service',
-                //부가서비스명
-                name: '교보어린이헬스케어서비스',
-                //부가서비스 이미지 url
-                imgUrl: '../../../resources/v1/img/img-service-svg-child-healthcare.svg',
-                //부가서비스 설명
-                explain: '임신부터 출산, 육아까지 알찬 서비스'
-            }
-        });
+    try {
+        window.onload = function() {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+        }
     }
     catch(error){
         alert(error);
