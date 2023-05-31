@@ -885,6 +885,18 @@ function handleShareButtonClick(event, url) {
         shareSms(url); 
     } else if (event.target.innerHTML === 'URL 복사') {
         navigator.clipboard.writeText(url);
+    } else if (event.target.innerHTML === '더보기') {
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: 'test text',
+                url: url,
+            })
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+        } else {
+            console.log('Web Share API not supported');
+        }
     }
 }
 
