@@ -876,16 +876,16 @@ function initialize(shareUrl) {
 }
 
 function handleShareButtonClick(event, url) {    
-    if (event.target.innerHTML === '카카오톡') {
+    if (event.target.parentElement.id === 'ka-share-btn') {
         shareKakao(url); 
-    } else if (event.target.innerHTML === '페이스북') {
+    } else if (event.target.parentElement.id === 'fb-share-btn') {
         shareFacebook(url);
-    } else if (event.target.innerHTML === '메세지') {
+    } else if (event.target.parentElement.id === 'msg-share-btn') {
         // event.preventDefault();
         shareSms(url); 
     } else if (event.target.innerHTML === 'URL 복사') {
         navigator.clipboard.writeText(url);
-    } else if (event.target.innerHTML === '더보기') {
+    } else if (event.target.parentElement.id === 'more-share-btn') {
         if (navigator.share) {
             navigator.share({
                 title: document.title,
