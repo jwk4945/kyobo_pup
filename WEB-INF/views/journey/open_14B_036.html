@@ -428,8 +428,9 @@
             </div>
         </article>
     </section>
-    <!--콘텐츠 평가영역-->
+    <!-- s: 컨텐츠 하단 영역-->
     <div class="bg-btm-gray btm-wrap">
+        <!-- 평가영역 -->
         <section id="feedback-area" class="bg-562222">
             <div class="feedback-inner">
                 <div class="feedback-txt">콘텐츠가 유익했어요!</div>
@@ -449,27 +450,32 @@
                 </div>
             </div>
         </section>
-        <section class="btm-area">
-            <p class="explain">소액으로 차근차근 오늘부터 시작해요!</p>
-            <a href="#!">
-                <div class="pd-area">
-                    <div class="clear">
-                        <div class="ci fl">
-                            <img src="../../../resources/v1/img/icon/img-ci-pd.png" alt="KYOBO 교보생영">
-                        </div>
-                        <dl class="fl">
-                            <dt class="name">(무)교보시작해요저축보험</dt>
-                            <dd class="certificationMsg">
-                                <div class="certificationMsg-txt">생명보험협회 심의필 제 2022-05463호</div>
-                                <div class="certificationMsg-date">(2022-12-27 ~ 2023-12-26)</div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="ico-arw"></div>
-                </div>
-            </a>
-        </section>
+        
+        <!-- 상품영역 -->
+        <div id="output"></div>
+
+        <!-- 동의 영역 -->
+        <div class="agree-area">
+            <div class="all-agree-box">
+                <label for="chk-all" class="check-style-all">
+                    <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
+                </label>
+            </div>
+            <div class="agree-box mt-10">
+                <label for="chk-agr1" class="check-style-agr">
+                    <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);">보기</a>
+            </div>
+            <div class="agree-box">
+                <label for="chk-agr2" class="check-style-agr">
+                    <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);">보기</a>
+            </div>
+        </div>
     </div>
+    <!-- e: 컨텐츠 하단 영역-->
 </div>
 <!-- [E] cont -->
 
