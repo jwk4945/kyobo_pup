@@ -885,7 +885,7 @@ function handleShareButtonClick(event, url) {
         shareSms(url); 
     } else if (event.target.innerHTML === 'URL 복사') {
         navigator.clipboard.writeText(url);
-    } else if (event.target.parentElement.id === 'os-share-btn') {
+    } else if (event.target.parentElement.id === 'more-share-btn') {
         if (navigator.share) {
             navigator.share({
                 title: document.title,
