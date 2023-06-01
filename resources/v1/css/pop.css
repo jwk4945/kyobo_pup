@@ -19,6 +19,7 @@ html.lock{overflow: hidden;height: 100vh;}
 #popShare .dialog_contents ul.sns_share_list li .ico_sns.kakao{background: url(../img/icon/ico_share_kakao.png) 0 0 no-repeat;background-size: contain;}
 #popShare .dialog_contents ul.sns_share_list li .ico_sns.facebook{background: url(../img/icon/ico_share_facebook.png) 0 0 no-repeat;background-size: contain;}
 #popShare .dialog_contents ul.sns_share_list li .ico_sns.message{background: url(../img/icon/ico_share_message.png) 0 0 no-repeat;background-size: contain;}
+#popShare .dialog_contents ul.sns_share_list li .ico_sns.more{background: url(../img/icon/ico_share_more.png) 0 0 no-repeat;background-size: contain;}
 #popShare .dialog_contents ul.sns_share_list li .sns_text{display: block;margin-top: 6px;font-size: 13px;line-height: 19px;letter-spacing: -0.01em;text-align: center;}
 #popShare .dialog_footer{padding: 20px 20px 30px;}
 #popShare .dialog_footer .sns_share_link_box{display: flex;width: 100%;height: 50px;border: 1px solid #ccc;border-radius: 6px;line-height: 48px;}
