@@ -20,8 +20,9 @@ header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
 .col_wrap .col{padding: 5px 10px;border-right: 1px solid #666;}
 .col_wrap.list_top .col{text-align: center;}
 .col_wrap .col:last-of-type{border-right: none;}
-.col_1{flex: 10%;text-align: center;}
-.col_2{flex: 30%;}
+.num{display: flex;flex: 4%;align-items: center;justify-content: center;}
+.col_1{flex: 8%;text-align: center;}
+.col_2{flex: 28%;}
 .col_3{flex: 20%;}
 .col_4{flex: 20%;}
 .col_5{flex: 20%;}
