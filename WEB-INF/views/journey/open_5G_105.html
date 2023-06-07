@@ -411,7 +411,9 @@
             </div>
         </section>
 
+        <!-- s: 컨텐츠 하단 영역-->
         <div class="bg-btm-pink btm-wrap" data-is-not-result-page="false">
+            <!-- 평가영역 -->
             <section id="feedback-area" class="bg-f4f4f4">
                 <div class="feedback-inner">
                     <div class="feedback-txt">콘텐츠가 유익했어요!</div>
@@ -431,27 +433,33 @@
                     </div>
                 </div>
             </section>
-            <section class="btm-area">
-                <p class="explain">부족한 보장을 꽉 채운 건강보험</p>
-                <a href="#!">
-                    <div class="pd-area">
-                        <div class="clear">
-                            <div class="ci fl">
-                                <img src="../../../resources/v1/img/icon/img-ci-pd.png" alt="KYOBO 교보생영">
-                            </div>
-                            <dl class="fl">
-                                <dt class="name">(무)교보시작해요저축보험</dt>
-                                <dd class="certificationMsg">
-                                    <div class="certificationMsg-txt">생명보험협회 심의필 제 2022-05463호</div>
-                                    <div class="certificationMsg-date">(2022-12-27 ~ 2023-12-26)</div>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="ico-arw"></div>
-                    </div>
-                </a>
-            </section>
+
+            <!-- 상품영역 -->
+            <div id="output"></div>
+
+            <!-- 동의 영역 -->
+            <div class="agree-area white">
+                <div class="all-agree-box">
+                    <label for="chk-all" class="check-style-all">
+                        <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
+                    </label>
+                </div>
+                <div class="agree-box mt-10">
+                    <label for="chk-agr1" class="check-style-agr">
+                        <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                    </label>
+                    <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+                </div>
+                <div class="agree-box">
+                    <label for="chk-agr2" class="check-style-agr">
+                        <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                    </label>
+                    <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+                </div>
+            </div>
         </div>
+        <!-- e: 컨텐츠 하단 영역-->
+        
         <!-- [S] footer -->
         <footer class="footer_wrapper" data-is-not-result-page="false">
             <div class="footer_body">
@@ -505,6 +513,173 @@
 </div>
 <!-- [E] cont -->
 
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
+<!-- [S] pop -->
+<!-- s: 개인정보 제3자 제공동의 팝업 -->
+<div id="personalPop" class="pop-area" style="display: none;">
+    <div class="pop-inner">
+        <div class="pop-header">
+            개인정보 제3자 제공 동의 (선택)
+            <a href="javascript:void(0);" class="btn-close" onclick="popClose('personalPop');">
+                <img src="../../../resources/v1/img/icon/ico-close-pop.png" alt="닫기">
+            </a>
+        </div>
+        <div class="pop-cont">
+            <div>
+                <p class="fs-15 fc-1">교보생명 보험 상품 서비스 이용을 위한</p>
+                <p class="fs-20 fc-1 fw-700">제3자 정보제공 동의 안내</p>
+            </div>
+            <div class="dl-box mt-20">
+                <dl>
+                    <dt>제공 받는 자</dt>
+                    <dd>교보생명보험(주)</dd>
+                </dl>
+            </div>
+            <div class="dl-box mt-10">
+                <dl>
+                    <dt>제공 목적</dt>
+                    <dd>교보문고 이용 고객 행태 자료 분석 및 보험 상품·서비스 소개</dd>
+                </dl>
+            </div>
+            <div class="dl-box mt-10">
+                <dl>
+                    <dt>제공 항목</dt>
+                    <dd>교보문고ID, 이름, 휴대전화번호, 성별, 생년월일, 본인확인(CI), 이메일, 교보문고 회원번호, 최근 2년 월별 통합포인트(적립, 차감, 잔여), 최근 2년 월별 구매도서 데이터(인터넷 중분류, 도서명, 구입권수, 구입액) , 교보문고 이용행동(입력 검색어, 퍼널 별 최종 단계, 교보생명 배너 클릭 여부, 노출 콘텐츠 ID, 콘텐츠 평가)</dd>
+                </dl>
+            </div>
+            <div class="dl-box mt-10">
+                <dl>
+                    <dt>보유 및 이용 기간</dt>
+                    <dd>동의 철회 시까지 (단, 관계법령에 따름)</dd>
+                </dl>
+            </div>
+            <div class="gray-box mt-40">
+                <dl>
+                    <dt>동의를 거부하는 경우에 대한 안내</dt>
+                    <dd>본 동의를 거부하실 수 있으나, 거부하는 경우에는 교보생명보험(주) 보험·서비스 소개 제공이 제한될 수 있습니다.</dd>
+                </dl>
+            </div>
+            <div class="gray-box mt-5">
+                <dl>
+                    <dt>동의 철회를 위한 안내</dt>
+                    <dd>본 동의를 하시더라도 당사 고객센터(1544-1900)를 통해 동의를 철회하실 수 있습니다.</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="pop-footer">
+            <div class="btn-box">      
+                <a href="javascript:void(0);" class="btn" onclick="popClose('personalPop');">동의안함</a>
+                <a href="javascript:void(0);" class="btn agree">동의</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- e: 개인정보 제3자 제공동의 팝업 -->
+
+<!-- s: 마케팅 수신 동의 팝업 -->
+<div id="marketPop" class="pop-area" style="display: none;">
+    <div class="pop-inner">
+        <div class="pop-header">
+            마케팅 수신 동의 (선택)
+            <a href="javascript:void(0);" class="btn-close" onclick="popClose('marketPop');">
+                <img src="../../../resources/v1/img/icon/ico-close-pop.png" alt="닫기">
+            </a>
+        </div>
+        <div class="pop-cont">
+            <div>
+                <p class="fs-15 fc-1 fw-500">교보생명보험(주) 보험 상품·서비스 소개 등 다양한 정보를 제공합니다.</p>
+                <p class="fs-15 fc-1 fw-500 mt-5">고객은 수신 동의 철회를 통하여 언제든지 수신을 거부할 수 있습니다.</p>
+            </div>
+            <div class="fs-15 fc-1 fw-700 mt-15">
+                이에 동의하시겠습니까?
+            </div>
+            <div class="chk-area mt-15">
+                <div class="agree-box">
+                    <label for="chk-sms">
+                        <input type="checkbox" name="" id="chk-sms"><i></i><span>SMS(메신저 등)</span>
+                    </label>
+                </div>
+                <div class="agree-box">
+                    <label for="chk-mail">
+                        <input type="checkbox" name="" id="chk-mail"><i></i><span>이메일</span>
+                    </label>
+                </div>
+            </div>
+            <div class="gray-box mt-50">
+                <dl>
+                    <dt>동의 철회를 위한 안내</dt>
+                    <dd>본 동의를 하시더라도 당사 고객센터(1544-1900)를 통해 동의를 철회하실 수 있습니다.</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="pop-footer">
+            <div class="btn-box">
+                <a href="javascript:void(0);" class="btn" onclick="popClose('marketPop');">동의안함</a>
+                <a href="javascript:void(0);" class="btn agree">동의</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- e: 마케팅 수신 동의 팝업 -->
+<!-- [E] pop -->
+
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">
     <lottie-player src="../../../resources/v1/img/loading-animation.json"
@@ -519,39 +694,23 @@
 
 <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<!-- <script src="../../../resources/v1/js/Customer-Journey.js"></script> -->
-<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
-<script>
-    //애니메이션 설정 로딩
-    AnimationManager.loadElementsToAnimate();
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
+<script type="module">
+    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
 
-    //컴포넌트 이벤트 및 기본설정
-    EventProcessor.initSetting({
-        contentsId : '5G_105',  //콘텐츠id
-        linkInfoForInsurance : {
-            //상품 링크 url
-            url : 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000881&evcode=DCJ_MO',
-            //상품명
-            name : '(무)교보내맘쏙건강보험(DM)',
-            //상품 이미지 url
-            imgUrl : '../../../resources/v1//img/img-product-svg-health-life.svg',
-            //상품 설명
-            explain : '부족한 보장을 꽉 채운 건강보험',
-            //심의필
-            certificationMsg : '생명보험협회 심의필 제 2022-05466호 (2022-12-27 ~ 2023-12-26)'
-        },
-        linkInfoForService : {
-            //부가서비스 링크 url
-            url : 'https://www.kyobo.com/dgt/web/product/healthBasic-service',
-            //부가서비스명
-            name : '교보헬스케어서비스Basic II',
-            //부가서비스 이미지 url
-            imgUrl : '../../../resources/v1/img/img-service-svg-healthcare-basic.svg',
-            //부가서비스 설명
-            explain : '꼭 필요한 것만 담은 똑똑한 건강가이드'
-        },
-        bPostSurveyInput : false // 설문조사 입력결과 전송여부 : false
-    });
+    try {
+        window.onload = function() {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+        }
+    }
+    catch(error){
+        alert(error);
+        alert(error.stack);
+    }
 </script>
 </body>
 </html>
