@@ -107,3 +107,8 @@ export class Calculation {
                 : values.pop() // All done!
     }
 };
+
+
+export class share {
+    
+};

@@ -1601,6 +1601,7 @@ const EventProcessor = (function (){
             //     radio.checked = true;
         // });
     }
+
     function getUserKey(){
         return _userKey;
     }
@@ -1620,6 +1621,16 @@ const EventProcessor = (function (){
         , initSetting, setUserInLastPage, postReview, getLocalStorage, setLocalStorage}
 })();
 
+
+function setCheckedValue(radios, value) {
+    radios.forEach(radio => {
+        if (radio.value === value) {
+            radio.checked = true; 
+        }
+    })
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {    
     
     console.log('DOMContentLoaded');
@@ -1628,17 +1639,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const localCheckedValue = EventProcessor.getLocalStorage('feedback-value');
 
     // 기본값 설정
-    radios.forEach(radio => {
-        if(radio.value===localCheckedValue)
-            radio.checked = true;
-    });
+    setCheckedValue(radios, localCheckedValue);
     
     // change 이벤트 리스너 바인딩
     radios.forEach(radio => {
         radio.addEventListener('change', e => {
             console.log('change');
             // EventProcessor.postReview(e.target.value);
-            EventProcessor.setLocalStorage('feedback-value', e.target.value, 14);//2주만 보관
+            EventProcessor.setLocalStorage('feedback-value', e.target.value, 14); //2주만 보관
         });
     });
 
