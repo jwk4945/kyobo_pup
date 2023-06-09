@@ -52,6 +52,38 @@ a{cursor: pointer;display: inline-block;font-size: inherit;}
 .fr{float: right;}
 .clear::after{content: "";display: block;clear: both;}
 
+/* font-size */
+h1{font-size: 22px;}
+h2{font-size: 20px;}
+.fs_22{font-size: 22px !important;}
+.fs_20{font-size: 20px !important;}
+.fs_18{font-size: 18px !important;}
+.fs_15{font-size: 15px !important;}
+.fs_13{font-size: 13px !important;}
+
+/* font-weight */
+.fw_700{font-weight: 700 !important;}
+.fw_500{font-weight: 500 !important;}
+.fw_400{font-weight: 400 !important;}
+
+/* font-color */
+.fc_fff{color: #fff !important;}
+.fc_000{color: #000 !important;}
+.fc_222{color: #222 !important;}
+.fc_555{color: #555 !important;}
+.fc_777{color: #777 !important;}
+.fc_ccc{color: #ccc !important;}
+.fc_eee{color: #eee !important;}
+.fc_f7f7f7{color: #f7f7f7 !important;}
+
+
+
+
+
+
+
+
+
 
 
 

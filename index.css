@@ -2,6 +2,7 @@
 html{color: #333;}
 img{width: 100%;}
 a{display: inline-block;cursor:pointer;}
+
 .clear::after{content: "";display: block;clear: both;}
 body{width: 1200px;margin: 0 auto;}
 header{padding: 30px 0 15px;border-bottom: 1px solid #666;}
@@ -9,6 +10,10 @@ header .ci{width: 100px;float: left;}
 header .tit{float: right;padding: 40px 0 0 30px;display: flex;align-items: flex-end;}
 header .tit h1{font-size: 20px;padding-left: 15px;}
 header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
+
+.tab-btn{display: flex;}
+.tab-btn li{cursor: pointer;margin: 5px; padding: 10px 5px;flex: 1;text-align: center;background: #eee;}
+.tab-btn li.on{border: 1px solid #222;background: #ddd;}
 
 .cont{font-size: 14px;padding-bottom: 50px;}
 .cont_top{padding: 5px 0;}
