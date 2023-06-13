@@ -1023,26 +1023,6 @@
     </div>
 </body>
 <script>
-//     function tab() {
-// 	$('.tabArea').each(function () {
-// 		var $tabName = $(this);
-// 		var $tabBtn = $tabName.find('.tabBtn');
-// 		var $tabCont = $tabName.find('.tabCont');
-// 		$tabCont.hide();
-// 		$tabBtn.eq(0).addClass('on');
-// 		$tabCont.eq(0).show();
-// 		$tabBtn.on('click', function () {
-// 			var $activeBtn = $(this);
-// 			$activeBtn.closest('.tabArea').find('.tabBtn').removeClass('on');
-// 			$activeBtn.addClass('on');
-// 			$activeBtn.closest('.tabArea').find('.tabCont').hide();
-// 			var activeTab = $activeBtn.attr('data-tab');
-// 			$('#' + activeTab).show();
-// 		});
-// 	});
-// }
-// tab(); // 탭
-
 $(document).ready(function(){
     $('.tabArea').each(function () {
 		var $tabName = $(this);

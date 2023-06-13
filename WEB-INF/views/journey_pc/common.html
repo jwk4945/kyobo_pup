@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
-    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-
     <link rel="stylesheet" href="../../../resources/v1/css/import_pc.css">
 
     <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
     <script src="../../../resources/v1/js/link_pc.js"></script>
 
     <title>pc 공통영역</title>
 </head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
 <body>
     <!-- [S] skip-nav -->
     <div class="skip_nav">
@@ -22,7 +22,7 @@
     </div>
     <!-- [E] skip-nav -->
 
-    <div class="wrap">
+    <div class="wrap type_a">
         <!-- s: header -->
         <header id="header">
             <div class="header_inner">
@@ -59,9 +59,29 @@
         <!-- s: container -->
         <div id="container">
             <div class="content">
-                <div style="width: 100%;height: 1000px;background: #eee;font-size: 30px;padding: 50px;">
-                    content-area
-                </div>
+                <ul>
+                    <li class="first">
+                        <section class="section">
+                            <div class="con opacity-0"
+                                data-animation-type="onload"
+                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                    start-ms:'300',
+                                                    transition-props:'[opacity]',
+                                                    transition-duration:'0.7s'">
+                                <div class="frag">
+                                    <span>질병</span>
+                                </div>
+                            </div>
+                        </section>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
         <!-- e: container -->
@@ -99,5 +119,9 @@
     <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+    <script>
+        //애니메이션 설정 로딩
+        AnimationManager.loadElementsToAnimate();
+    </script>
 </body>
 </html>

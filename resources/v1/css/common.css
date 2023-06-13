@@ -257,7 +257,6 @@ b{font-weight: 700 !important;}
 .list-num .list-item.num-15::before{content: "15";background: url(../img/ico-num-15.png) 0 0 no-repeat;background-size: contain;}
 
 .list-num.c555 .list-item{padding-left: 30px;min-height: 24px;position: relative;}
-.list-num.c555 .list-item::before{content: "";position: absolute;top: 0;left: 0;top: 0;left: 0;width: 24px;height: 24px;}
 .list-num.c555 .list-item.num-01::before{background: url(../img/ico-num-c555-01.png) 0 0 no-repeat;background-size: contain;}
 .list-num.c555 .list-item.num-02::before{background: url(../img/ico-num-c555-02.png) 0 0 no-repeat;background-size: contain;}
 .list-num.c555 .list-item.num-03::before{background: url(../img/ico-num-c555-03.png) 0 0 no-repeat;background-size: contain;}
@@ -359,15 +358,24 @@ header nav #link_share img{display: inline-block;font-size: 0;width: 26px;height
 
 textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: border-box;font-family: inherit;font-size: 15px;line-height: 1.4;border: none;border-radius: 8px;}
 
-/* brn */
+/* btn */
 .com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 50px;background: #222;color: white;cursor: pointer;}
 .type-d .com-btn{background: #17478c;}
+
+.confirm-btn-box{padding: 20px 20px 80px;}
+.confirm-btn-box .confirm-btn{display: inline-block; width: 100%;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);}
+.type-a .confirm-btn-box .confirm-btn{background: #27809e;}
+.type-b .confirm-btn-box .confirm-btn{background: #d95555;}
+.type-c .confirm-btn-box .confirm-btn{background: #7659d8;}
+.type-d .confirm-btn-box .confirm-btn{background: #fff;color: #1a4194;}
+.type-e .confirm-btn-box .confirm-btn{background: #fff;color: #d95584;}
+.type-f .confirm-btn-box .confirm-btn{background: #fff;color: #258d9d;}
 
 /* disabled 케이스는 마지막줄에 고정 */
 .com-btn:disabled{color: #fff;background-color: #999;cursor: initial;}
 /* // disabled 케이스는 마지막줄에 고정 */
 
-.transition-opacity{transition: opacity 0.5s;}
+.transition-opacity{transition: opacity 0.5s;}                                                                                               
 .transition-width{transition: width 0.5s;}
 .transition-all{transition: all 0.5s;}
 .overflow-y-hidden{overflow-y: hidden;overscroll-behavior: none;touch-action: none;}
@@ -429,7 +437,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .fact-chk.type-c .btm-wrap .btm-area .pd-area{border-color: #7659d8;}
 
 /* 개인전보 제3자 제공 동의, 마케팅 수신동의 */
-.agree-area{padding: 0 20px 15px;}
+.agree-area{padding: 0 20px;}
 .agree-area label{display: inline-block;font-size: 0;height: 40px;position: relative;padding-left: 35px;}
 .agree-area label input{width: 0;height: 0;opacity: 0;}
 .agree-area label span{color: #222;font-size: 15px;line-height: 40px;}
@@ -445,7 +453,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .agree-area .agree-box label input:checked + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-on.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .agree-box a{line-height: 40px;color: #222;text-decoration: underline;font-size: 12px;}
 
-/* white */
+/* 동의 영역 white */
 .agree-area.white label span{color: #fff;}
 .agree-area.white label input:checked + i + span{color: #fff;}
 
