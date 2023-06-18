@@ -1,12 +1,12 @@
 import { AnimationManager } from "./open_AnimationManager.js";
-import { config } from "./config.js";
-import data from "./data.js";
+import globalConfig from "./config.js";
+import appData from "./data.js";
 
 /**
  * 모듈 변수
  * 
  */
-let info = null; 
+let info = null;
 let ua = null;
 
 export const EventProcessor = (function (){
@@ -41,6 +41,7 @@ export const EventProcessor = (function (){
     }
 
     function initSetting(fileName, params){
+        console.log('initSetting... ');
         //교보문고 검색어
         _searchKeyword = document.querySelector('#srch_kywr_name').value;
         //콘텐츠 아이디
@@ -53,9 +54,10 @@ export const EventProcessor = (function (){
             _contentsId = fileName;
         }
 
+
         _userKey = createUserKey(); //user key 생성
         setPropertiesForCss(); //css 전역변수 설정
-        initSettingForReviewRadio(fileName); //피드백라디오(좋아요/싫어요) 기본이벤트처리
+        // initSettingForReviewRadio(fileName); //피드백라디오(좋아요/싫어요) 기본이벤트처리
         setAutoHideElements(); //gnb(헤더) 자동 숨기기 설정
         getMethodForShowResult(params).call(this,params); //결과화면 처리함수 선택호출
         initSettingForBfCache(); // 브라우저 뒤로가기 캐쉬 초기화
@@ -298,14 +300,16 @@ export const EventProcessor = (function (){
             const mm = String(now.getMinutes()).padStart(2, '0');
             const ss = String(now.getSeconds()).padStart(2, '0');
 
-            userKey = `${yyyy}${MM}${dd}${HH}${mm}${ss}` + '-' + Date.now().toString(36);;
-            
+            userKey = `${yyyy}${MM}${dd}${HH}${mm}${ss}` + '-' + Date.now().toString(36);            
         }
+
         if(userKey!==null){
             setLocalStorage('user-key',userKey, 14, true);
         }
+
         return userKey;
     }
+
     function setGoNextAndFirstBtn(callbackForNext, callbackForPrev){
         const goNextBtn = document.querySelector('#goNextBtn');
         const goFirstBtn = document.querySelector('#goFirstBtn');
@@ -617,7 +621,7 @@ export const EventProcessor = (function (){
             .catch(()=>callback(testData))
     }
 
-    function postData(url,data, callback){
+    function postData(url, postData, callback){
         let options = {
             method: 'POST', // *GET, POST, PUT, DELETE 등
             mode: 'cors', // no-cors, *cors, same-origin
@@ -629,7 +633,7 @@ export const EventProcessor = (function (){
             },
             redirect: 'follow', // manual, *follow, error
             referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-            body: JSON.stringify(data), // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
+            body: JSON.stringify(postData), // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
         };
 
         // console.log(url);
@@ -647,7 +651,7 @@ export const EventProcessor = (function (){
                 }
                 return res.json();
             })
-            .then(data => callback(data))
+            .then(cb => callback(cb))
             .catch(error => callback(error))
     }
 
@@ -665,7 +669,7 @@ export const EventProcessor = (function (){
     function removeLocalStorage(key, isGlobal=false){
         if(isGlobal){
             localStorage.removeItem(key);
-        }else {
+        } else {
             let localData = localStorage.getItem(_contentsId);
             if (!isJsonString(localData) || localData===null)
                 localData={};
@@ -686,21 +690,24 @@ export const EventProcessor = (function (){
     }
 
     function setLocalStorage(key, value, period, isGlobal=false) {
-        const expiry = new Date(Date.now() + (period * 24 * 3600 * 1000))
-            .toLocaleDateString().replace(/\s/g, '');
+        
+        const expiry = new Date(Date.now() + (period * 24 * 3600 * 1000)).toLocaleDateString().replace(/\s/g, '');
         const inputData = {
             value: value,
             expiry: expiry
         };
         let localData;
-        if(isGlobal){
+
+        if(isGlobal) {
             localData = inputData;
-        }else {
+        } else {
             localData = localStorage.getItem(_contentsId);
             localData = (localData === null ? {} : JSON.parse(localData));
             localData[key] = inputData;
         }
+        
         localStorage.setItem(isGlobal? key:_contentsId, JSON.stringify(localData));
+
     }
 
     function getLocalStorage(key,isGlobal=false) {
@@ -725,6 +732,7 @@ export const EventProcessor = (function (){
     }
 
     function initSettingForReviewRadio(contentsId, radios){
+        console.log('initSettingForReviewRadio....', contentsId, radios);
         _contentsId = contentsId;
         radios = radios||document.querySelectorAll('input[name="feedback-radio"][type="radio"]');
         if(radios.length===0)
@@ -737,6 +745,7 @@ export const EventProcessor = (function (){
                 radio.checked = true;
         });
     }
+
     function getUserKey(){
         return _userKey;
     }
@@ -759,7 +768,7 @@ export const EventProcessor = (function (){
 /** sns 공유하기  */
 const shareKakao = (shareUrl) => {
     
-    Kakao.init( config.kakao.apiKey.prod );
+    Kakao.init( globalConfig.kakao.apiKey.prod );
 
     const title = document.title; 
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");    
@@ -798,9 +807,10 @@ const shareSms = (shareUrl) => {
 }
 
 /** render */
-function setCheckedValue(radios, value) {
-    console.log(radios)
-    console.log(value)
+function setCheckedValue(radios, value) {    
+    console.log(radios[0].value); 
+    console.log(radios[1].value); 
+
     radios.forEach(radio => {
         if (radio.value === value) {
             radio.checked = true; 
@@ -809,19 +819,17 @@ function setCheckedValue(radios, value) {
 }
 
 function findByfileName(fileName) {    
-    for (let obj of data) {
+    for (let obj of appData) {
         if (obj.contentsId && obj.contentsId.includes(fileName)) {
             return obj; 
         }
     }
-    return data[0]; 
+    return appData[0]; 
 }
 
 
 function render(renderInfo) {
     // 보험 상품 info template literal
-    console.log(renderInfo)
-
     // const data = { name: 'test name', explain: 'test explain' };
     const template = `
                         <section class="btm-area">
@@ -855,19 +863,17 @@ const checkUserAgent = () => {
     // userAgent 분기(문고는 백엔드에서 처리하고 있음. 임시로 프론트에서 처리하도록 작성함)
     ua = {
         device: {
-            isMobile: true,
-            isMobileApp: false,
-            isIOS: true,
-            isAndroid: false,
-            isMSIE: false,
-            isMac: false, 
+            isMobile: /*[[${session.isMobile}]]*/ true,
+            isMobileApp: /*[[${session.isMobileApp}]]*/ false,
+            isIOS: /*[[${session.isIOS}]]*/ true,
+            isAndroid: /*[[${session.isAndroid}]]*/ false,
+            isMSIE: /*[[${session.isMSIE}]]*/ false,
+            isMac: /*[[${session.isMac}]]*/ false, 
         }
     };
 }
 
 function initialize(shareUrl) {
-    console.log('initialize');
-
     // userAgent set
     checkUserAgent();
 
@@ -918,6 +924,7 @@ window.addEventListener('load', function() {
     info = findByfileName(fileName);
     render(info.linkInfoForInsurance);
     
+    
     EventProcessor.initSetting(fileName, info);
 });
 
@@ -930,7 +937,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const radios = document.querySelectorAll('input[name="feedback-radio"][type="radio"]');
     const localCheckedValue = EventProcessor.getLocalStorage('feedback-value');
     
-    // setCheckedValue(radios, localCheckedValue);
+    setCheckedValue(radios, localCheckedValue);
     
     radios.forEach(radio => {
         radio.addEventListener('change', e => {

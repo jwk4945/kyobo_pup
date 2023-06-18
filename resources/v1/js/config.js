@@ -10,7 +10,7 @@
  * 
  * kakao, facebook, ... 
  */
-const config = {
+export default {
     kakao: {
       apiKey: {
         dev: '64a4eaa97d671ef76cb10a775fd56461',
@@ -23,6 +23,4 @@ const config = {
         prod: ''
       }
     }
-  };
-  
-  export { config };
+}
