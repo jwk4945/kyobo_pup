@@ -239,6 +239,7 @@ b{font-weight: 700 !important;}
 /* num list */
 .list-num{}
 .list-num .list-item{padding-left: 30px;min-height: 24px;position: relative;}
+.list-num .list-item + .list-item{margin-top: 5px;}
 .list-num .list-item::before{content: "";position: absolute;top: 0;left: 0;top: 0;left: 0;width: 24px;height: 24px;font-size: 0;text-indent: -9999em;}
 .list-num .list-item.num-01::before{content: "1";background: url(../img/ico-num-01.png) 0 0 no-repeat;background-size: contain;}
 .list-num .list-item.num-02::before{content: "2";background: url(../img/ico-num-02.png) 0 0 no-repeat;background-size: contain;}
