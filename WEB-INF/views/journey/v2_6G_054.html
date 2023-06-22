@@ -12,12 +12,12 @@
     <script src="../../../resources/v1/js/common.js"></script>
     <script src="../../../resources/v1/js/link.js"></script>
 
-    <title>임신 중 검진 꿀팁</title>
+    <title>유산확률 높은 주수</title>
 </head>
 <script>
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
-<body class="_13G_029 survey-type bg-6">
+<body class="_6G_054 survey-type type-g bg-6">
 <!-- [S] skip-nav -->
 <div class="skip-nav">
     <a href="#cont-wrap">본문 바로가기</a>
@@ -27,13 +27,21 @@
 <!-- [S] header-->
 <header id="header">
     <nav class="bg-white">
-        <a href="javascript:history.back()" class="go-back-btn">
-            <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg">
-        </a>
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
         <h1>
-            임신 중 검진 꿀팁
+            유산확률 높은 주수
         </h1>
-        <div></div>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
     </nav>
 </header>
 <!-- [E] header-->
@@ -43,9 +51,10 @@
 <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
 
 <!-- [S] cont -->
-<div class="cont-wrap">
+<div id="cont-wrap">
     <div class="main-wrapper">
         <div class="top-area">
+            <!-- [S] 로드화면 -->
             <div id="survey-area" data-is-not-result-page="true">
                 <article class="fc-white">
                     <span class="tag fc-13 opacity-0"
@@ -146,12 +155,15 @@
                             </li>
                         </ul>
                     </div>
-
                 </form>
                 <div class="footer-area">
                     <button type="submit" id="goNextBtn" class="com-btn bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
                 </div>
             </div>
+            <!-- [E] 로드화면 -->
+
+            <!-- [S] 컨텐츠 화면 -->
+            <!-- s: 컨텐츠 상단 -->
             <article id="result-area" class="text-align-center pb-30" data-is-not-result-page="false">
                 <div>
                     <div class="fc-white mt-5"
@@ -221,9 +233,10 @@
                                         transition-duration: '0.8s'">
                 </div>
             </article>
+            <!-- e: 컨텐츠 상단 -->
         </div>
 
-        <section data-is-not-result-page="false">
+        <section class="card-section-wrap" data-is-not-result-page="false">
             <div class="card-section"
                 data-animation-type="onscroll"
                 data-animation-infos="style-bf-ani: 'background-color:#f4f4f4;', style-af-ani: 'background-color:#ffffff;'">
@@ -389,6 +402,7 @@
                 </article>
             </div>
         </section>
+
         <section data-is-not-result-page="false">
             <div class="mt-30 text-align-center">
                 <img src="../../../resources/v1/img/6G_054_img-09.gif" width="300"
@@ -396,7 +410,7 @@
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
             </div>
-            <div class="mt-30 pb-50 text-align-center">
+            <div class="mt-30 text-align-center">
                 <img src="../../../resources/v1/img/check-bg-07.png" width="50"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
@@ -414,33 +428,38 @@
             </div>
         </section>
 
-    <!--콘텐츠 평가영역-->
-        <section id="feedback-area" data-is-not-result-page="false" class="bg-14">
-            <article class="text-align-center fc-white">
-                <div class="fw-700 text-align-left fc-white fs-18">콘텐츠에 대해 평가해주세요.</div>
-                <div class="feedback-btn-box mt-10 text-align-center">
-                    <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-                        <label class="feedback-btn" for="feedback-radio-01">
-                            <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
-                            <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
-                        </label>
-                    </div>
-                    <div class="vertical-line mb-15"></div>
-                    <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-                        <label class="feedback-btn" for="feedback-radio-02">
-                            <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
-                            <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
-                        </label>
+        <!-- s: 컨텐츠 하단 영역-->
+        <div class="bg-btm-pink btm-wrap" data-is-not-result-page="false">
+            <!-- 평가영역 -->
+            <section id="feedback-area" class="bg-f4f4f4">
+                <div class="feedback-inner">
+                    <div class="feedback-txt">콘텐츠가 유익했어요!</div>
+                    <div class="feedback-btn-box">
+                        <div class="feedback-btn-box-inner">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                            <label class="feedback-btn good" for="feedback-radio-01">
+                                <span class="blind">좋아요</span>
+                            </label>
+                        </div>
+                        <div class="feedback-btn-box-inner">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                            <label class="feedback-btn bad" for="feedback-radio-02">
+                                <span class="blind">별로에요</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </article>
-        </section>
+            </section>
+            <!-- 상품영역 -->
+            <div id="output"></div>
+        </div>
+        <!-- e: 컨텐츠 하단 영역-->
     </div>
+    <!-- 상단 패널 -->
     <div class="top-bg-panel-wrapper">
         <div class="top-bg-panel bg-7"></div>
     </div>
+    <!-- [E] 컨텐츠 화면 -->
 </div>
 <!-- [E] cont -->
 
@@ -456,41 +475,17 @@
     </div>
 </div>
 
-<script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="../../../resources/v1/js/Customer-Journey.js"></script>
-<script>
-    try {
-        //애니메이션 설정 로딩
-        AnimationManager.loadElementsToAnimate();
+<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+<script type="module">
+    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
 
-        //컴포넌트 이벤트 및 기본설정
-        EventProcessor.initSetting({
-            contentsId: '6G_054',  //콘텐츠id
-            linkInfoForInsurance: {
-                //상품 링크 url
-                url: 'https://www.kyobo.com/dgt/web/dtp/insurance-detail?isPdtCd=1000948&evcode=DCJ_MO',
-                //상품명
-                name: '(무)교보금쪽같은내아이보험(갱신형)Ⅱ[DM]',
-                //상품 이미지 url
-                imgUrl: '../../../resources/v1/img/img-product-svg-child-care.svg',
-                //상품 설명
-                explain: '내 아이를 위한 금쪽같은 어린이보험',
-                //심의필
-                certificationMsg: '생명보험협회 심의필 제 2022-05464호 (2022-12-27 ~ 2023-12-26)'
-            },
-            linkInfoForService: {
-                //부가서비스 링크 url
-                url: 'https://www.kyobo.com/dgt/web/product/healthChild-service',
-                //부가서비스명
-                name: '교보어린이헬스케어서비스',
-                //부가서비스 이미지 url
-                imgUrl: '../../../resources/v1/img/img-service-svg-child-healthcare.svg',
-                //부가서비스 설명
-                explain: '임신부터 출산, 육아까지 알찬 서비스'
-            },
-            bPostSurveyInput : false, // 설문조사 입력결과 전송여부 : false
-        });
+    try {
+        window.onload = function() {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+        }
     }
     catch(error){
         alert(error);
