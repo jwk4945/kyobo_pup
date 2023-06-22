@@ -191,7 +191,6 @@ section:last-of-type{padding-bottom: 50px;}
 .balance-game #answer-02:checked~.main-banner-wrapper .radio-btn-box label{padding-top: 15px;}
 
 /* fact-chk */
-.fact-chk article:first-of-type{padding-bottom: 75px;}
 .fact-chk .main-banner-wrapper{padding: 30px 10px 23px;height: 340px;}
 .fact-chk h3{color: #b13e7d;}
 .fact-chk .main-banner-wrapper .section-no{font-style: italic;font-size: 30px;line-height: 1.2;}
@@ -341,7 +340,7 @@ section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;t
 #goFirstBtn.hide{
     display: none;
 }
-.fact-chk #feedback-area{background: #473c8d;}
+.fact-chk #feedback-area{background: #514096;}
 .balance-type #feedback-area{background: #33b4c7;}
 
 /* 삭제 예정 */

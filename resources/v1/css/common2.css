@@ -420,7 +420,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 
 #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box::before{content: "";display: block;position: absolute;top: 20px;left: 55px;width: 1px;height: 10px;background: #000;opacity: 0.3;}
 
-.btm-wrap .btm-area{padding: 30px 20px 20px;max-width: 540px;margin: auto;}
+.btm-wrap .btm-area{padding: 30px 20px 100px;max-width: 540px;margin: auto;}
 .btm-wrap.bg-btm-gray .btm-area{color: #222;font-size: 18px;}
 .btm-wrap.bg-btm-pink .btm-area .explain, .btm-wrap.bg-btm-blue .btm-area .explain{color: #fff;font-weight: 700;font-size: 18px;}
 .btm-wrap .btm-area .explain{font-weight: 700;}
