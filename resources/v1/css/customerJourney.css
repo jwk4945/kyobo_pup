@@ -10,7 +10,6 @@
 .swiper-my-bullet.active{opacity: 1;}
 .swiper-wrapper .swiper-slide:last-child .main-banner-wrapper{background: none no-repeat;box-shadow: none;background-image: linear-gradient(to right, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));background-size: 13% 100%;}
 
-
 .survey-type .top-area article{padding-top: 25px;padding-bottom: 30px;flex: 0;}
 .survey-type .top-area article.inner{padding-top: 0;padding-bottom: 10px;}
 .survey-type .top-area article.inner .inner-cont{padding: 55px 20px 30px;border-radius: 5px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);border: solid 1px #eee;background-color: #fff;}
