@@ -38,6 +38,7 @@
 .survey-type .survey-form li .li-item-result small{font-size: 11px;}
 .survey-type .survey-form li .li-item-result.active{font-weight: 700;color: #fff;background-color: #2254c0;padding-left: 20px;}
 .survey-type .survey-form li .li-item-result.active small{font-weight: 400;}
+.survey-type .survey-form li .li-item-result > div > div{letter-spacing: -0.5px;}
 .survey-type .survey-form li label{padding: 10px;padding-left: 15px;}
 
 .survey-type .survey-form input[type='radio']
