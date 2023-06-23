@@ -27,6 +27,7 @@
 .survey-type section article{padding-top: 50px;}
 .survey-type .survey-form{font-size: 15px;flex: 1;padding-bottom: 40px;overflow: hidden;}
 .survey-type .survey-form small{font-size: 13px;}
+.survey-type .survey-form small + div{font-weight: 500;}
 .survey-type .survey-form li{white-space: nowrap;display: flex;width: 200%;transition: transform 0.4s;}
 ._7E_006 .survey-form li{width: 100%;}
 .survey-type .survey-form li .li-item, .survey-type .survey-form li .li-item-result-wrapper {padding: 0 20px 5px;display: inline-block;width: 100%;box-sizing: border-box;}
