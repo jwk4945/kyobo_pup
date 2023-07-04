@@ -335,10 +335,20 @@ section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;t
     padding-left: 20px;
     padding-right: 20px;
 }
+.btn-re-wrap{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
 #goFirstBtn{
-    height: 50px;
-    margin-bottom: 35px;
-    box-shadow: 1px 2px 2px #00000033;
+    width: 160px;
+    height: 40px;
+    padding: 8px 20px;
+    border-radius: 25px;
+    background-color: #91234a;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
 }
 #goFirstBtn.hide{
     display: none;

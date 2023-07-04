@@ -365,7 +365,7 @@ textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: bord
 .com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 50px;background: #222;color: white;cursor: pointer;}
 .type-d .com-btn{background: #17478c;}
 
-.confirm-btn-box{padding: 15px 20px 0;}
+.confirm-btn-box{padding: 15px 20px 0;font-weight: 700;}
 .confirm-btn-box .confirm-btn{display: inline-block; width: 100%;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);}
 .type-a .confirm-btn-box .confirm-btn{background: #27809e;}
 .type-b .confirm-btn-box .confirm-btn{background: #d95555;}
@@ -373,6 +373,9 @@ textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: bord
 .type-d .confirm-btn-box .confirm-btn{background: #fff;color: #1a4194;}
 .type-e .confirm-btn-box .confirm-btn{background: #fff;color: #d95584;}
 .type-f .confirm-btn-box .confirm-btn{background: #fff;color: #258d9d;}
+.type-g .confirm-btn-box .confirm-btn{background: #fff;color: #a93d64;}
+
+.type-g .btm-wrap{padding-bottom: 58px;}
 
 /* disabled 케이스는 마지막줄에 고정 */
 .com-btn:disabled{color: #fff;background-color: #999;cursor: initial;}

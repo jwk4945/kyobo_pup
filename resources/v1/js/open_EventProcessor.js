@@ -239,7 +239,7 @@ export const EventProcessor = (function (){
     function setAutoHideElements(hideTargets){
         hideTargets = hideTargets || [
             document.querySelector('header'),
-            document.querySelector('#goFirstBtn')
+            // document.querySelector('#goFirstBtn')
         ];
         let isShowing = true;
         let prevScrollY = 0;
