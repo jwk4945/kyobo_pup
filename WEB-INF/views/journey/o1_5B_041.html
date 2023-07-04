@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="어떤 고등학교가 잘 맞을까요?"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+
+    <title>바디프로필의 열풍</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_5B_041 information-type type-b fc-white">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1>
+            바디프로필의 열풍
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap" class="bg-9">
+    <div class="top-area">
+        <article class="text-align-center">
+            <div>
+                <span class="tag mb-10 opacity-0 fc-13"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                        start-ms:'300',
+                                        transition-props:'[opacity]',
+                                        transition-duration:'0.7s'">건강관리</span>
+                <div>
+                    <div class="fs-22 fw-400 opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-100%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'500',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">젊고 아름다운 날의 기록,</div>
+                    <div class="fs-22 fw-700 strong-underline mb-10 opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-250%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'700',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">
+                                            ‘2030 바디프로필 열풍’
+                    </div>
+                </div>
+                <div class="opacity-0"
+                    data-animation-type="onload"
+                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateY(-400%);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'900',
+                                        transition-props:'[opacity,transform]',
+                                        transition-duration:'0.8s'">
+                                        잘 관리된 몸도 경쟁력이자<br>
+                                        소중한 자산이 되고 있습니다.
+                </div>
+            </div>
+            <div class="main-banner-wrapper center-type mt-25 mb-5 opacity-0"
+                data-animation-type="onload"
+                data-animation-infos="remove-class-nm: 'opacity-0',
+                                    style-bf-ani: 'transform:translateX(100vw);',
+                                    style-af-ani: 'transform:',
+                                    start-ms:'300',
+                                    transition-duration:'0.7s',
+                                    transition-props:'[transform]'">
+                <div class="banner-inner">
+                    <img src="../../../resources/v1/img/5B_041_img-01.gif" class="width-100">
+                    <div class="mt-10">
+                        <div class="fs-18 fw-700">바디프로필(Body Profile)이란?</div>
+                        <p class="mt-9">
+                            고강도 운동 및 식단관리 등을 통해 몸을 만든 뒤<br>
+                            전문 스튜디오에서 사진 촬영하는 것을 말합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-40">
+                <div class="fs-20 fw-700 mb-20">
+                    그렇다면,<br>
+                    왜 바디프로필에 열광하는지<br>
+                    알아볼게요.
+                </div>
+                <div class="animation-vertical-box"
+                    style="height: 0"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'height: 0px',
+                                        style-af-ani: 'height: 100px',
+                                        scroll-duration: 100">
+                    <div class="animation-vertical"></div>
+                </div>
+            </div> 
+        </article>
+    </div>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #c34c4c',
+                                    style-af-ani: 'background-color: #c34c4c',
+                                    scroll-duration: 300,
+                                onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">1</span>
+                <div class="fs-22 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        바디프로필은 활력이 넘치는 건강과<br>
+                                        철저한 자기관리의 상징입니다. 💪
+                </div>
+                <div class="mt-20 ">
+                    <div data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0;', 
+                                            style-af-ani: 'margin-left:0px; opacity:1';"
+                        class="list-item num-01">
+                        <p class="mt-0 mb-0 fs-18 fw-700">가치증명</p>
+                    </div>
+                </div>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        자신에 대한 표현 욕구가 남다른 MZ 세대의 특성이 SNS의 파급력과 만나며 열풍이 불기 시작했습니다.
+                </p>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        성취감과 기록을 위해 열심히 만든 나의 몸을 과시하고 싶은 마음이 반영된 것으로 보입니다.
+                </p>
+                <div class="text-align-right mt-25">
+                    <img src="../../../resources/v1/img/5B_041_img-02.png" width="200"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+                <div class="mt-20 list-num">
+                    <div data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                            style-af-ani: 'opacity:1';"
+                        class="list-item num-02">
+                        <p class="mt-0 mb-0 fs-18 fw-700">헬시 플레저</p>
+                    </div>
+                </div>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                                        Healthy(건강한)와 Pleasure(기쁨)가 합쳐진 단어로, 건강을 즐겁게 관리한다는 의미입니다.
+                </p>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                                        여기에 코로나19 장기화로 실내에서 할 수 있는 홈트레이닝 및 건강 관리 등에 대해 높아진 관심도 관련 열풍을 가속화했습니다.
+                </p>
+                <div class="mt-25">
+                    <img src="../../../resources/v1/img/5B_041_img-03.png" width="200"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                                    style-af-ani: 'margin-left: 0px; opacity:1'">
+                </div>
+                <div class="mt-20 list-num">
+                    <div data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                            style-af-ani: 'opacity:1';"
+                        class="list-item num-03">
+                        <p class="mt-0 mb-0 fs-18 fw-700">다이어트</p>
+                    </div>
+                </div>
+                <p class="mt-5 mb-0 fs-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                                        살을 빼려는데 바디프로필 촬영이라는 목표를 가지고 하면 꾸준히 운동할 수 있고 식단 관리 성공 확률도 높을 것 같아서 도전하기도 합니다.
+                </p>
+                <div class="text-align-right mt-25">
+                    <img src="../../../resources/v1/img/5B_041_img-04.gif" width="200"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #c34c4c',
+                                    style-af-ani: 'background-color: #ad4444',
+                                    scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">2</span>
+                <div class="fs-22 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        하지만 바디프로필 촬영에는<br>
+                                        여러 부작용이 있습니다. 😰
+                </div>
+            </div>
+            <div class="mt-20 list-num">
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0;', 
+                                        style-af-ani: 'margin-left:0px; opacity:1';"
+                    class="list-item num-01">
+                    <p class="mt-0 mb-0 fs-18 fw-700">단기간, 극단적인 체지방 감소로 인한 부작용</p>
+                </div>
+            </div>
+            <div>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    <span class="fw-700 va-top">첫 번째,</span> 체지방률이 감소하면 폭식증으로 이어지기 쉽습니다.
+                </p>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    식욕 억제 호르몬인 렙틴이 주로 지방 세포에서 분비되기 때문입니다.
+                </p>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    또 근육에서는 식욕을 촉진하는 호르몬이 나오기 때문에 식욕이 왕성해집니다.
+                </p>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    <span class="fw-700 va-top">두 번째,</span> 무월경 증상이 나타날 수도 있습니다.
+                </p>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    지방은 여성 호르몬 재료이기도 한데, 지방이 22~29% 이하로 떨어지면 생리불순, 무월경 증상이 나타날 수도 있습니다.
+                </p>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                    <span class="fw-700 va-top">세 번째,</span> 에스트로겐 분비량이 줄어들면 골밀도가 떨어져 골다공증이 생길 수도 있습니다.
+                </p>
+                <div class="mt-25">
+                    <img src="../../../resources/v1/img/5B_041_img-05.png" width="200"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                                    style-af-ani: 'margin-left: 0px; opacity:1'">
+                </div>
+            </div>
+            <div class="mt-20 list-num">
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                        style-af-ani: 'opacity:1';"
+                    class="list-item num-02">
+                    <p class="mt-0 mb-0 fs-18 fw-700">식단 조절로 신체적 후유증 유발</p>
+                </div>
+            </div>
+            <div data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                <p class="mt-5">
+                    <span class="fw-700 va-top">첫 번째,</span> 탄수화물이 줄어들면 뇌로 가는 포도당이 줄어 집중력이 감소하고, 두통, 무기력증, 피로 등이 생기게 됩니다.
+                </p>
+                <p class="mt-5">
+                    <span class="fw-700 va-top">두 번째,</span> 나트륨이 부족한 상태에서 운동하면 혈중 나트륨 수치가 급격히 낮아져 근육수축이나 발작을 유발할 수 있습니다
+                </p>
+                <p class="mt-5">
+                    <span class="fw-700 va-top">세 번째,</span> 영양소 불균형은 탈모를 유발하는 대표적인 원인입니다.
+                </p>
+                <div class="text-align-right mt-25">
+                    <img src="../../../resources/v1/img/5B_041_img-06.gif" width="200"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-right: getOffsetLeftFromParent(px); opacity:0',
+                                            style-af-ani: 'margin-right: 0px; opacity:1'">
+                </div>
+            </div>
+            <div class="mt-20 list-num">
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                        style-af-ani: 'opacity:1';"
+                    class="list-item num-03">
+                    <p class="mt-0 mb-0 fs-18 fw-700">정신적 부작용</p>
+                </div>
+            </div>
+            <div data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                <p class="mt-5">
+                    다이어트 강박과 섭식장애, 그리고 촬영 날짜가 다가올수록 초조함에 시달리기도 합니다.
+                </p>
+            </div>
+            <div class="mt-25">
+                    <img src="../../../resources/v1/img/5B_041_img-07.png" width="200"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
+                                    style-af-ani: 'margin-left: 0px; opacity:1'">
+                </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+            data-animation-infos="style-bf-ani: 'background-color: #ad4444',
+                                    style-af-ani: 'background-color: #983b3b',
+                                    scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:80px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:0.2'">3</span>
+                <div class="fs-22 fw-700"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        바디프로필 촬영이 아닌<br>
+                                        건강해지는 과정 자체를 목표로<br>
+                                        만들어 보세요. 🙌
+                </div>
+            </div>
+            <div>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        건강한 운동 습관을 기르기 위한 하나의 과정이라는 것을 인지해야합니다.
+                </p>
+            </div>
+            <div class="mt-20 list-num">
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0;', 
+                                        style-af-ani: 'margin-left:0px; opacity:1';"
+                    class="list-item num-01">
+                    <p class="mt-0 mb-0 fs-18 fw-700">극단적인 식단 자제</p>
+                </div>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        균형 잡힌 식단 진행으로 건강에 무리가지 않게 진행해야 합니다.
+                </p>
+            </div>
+            <div class="mt-10 list-num">
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0;', 
+                                        style-af-ani: 'margin-left:0px; opacity:1';"
+                    class="list-item num-02">
+                    <p class="mt-0 mb-0 fs-18 fw-700">나만의 루틴 만들기</p>
+                </div>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        스트레칭 후 물 한잔 마시기 등 나만의 루틴을 통해 건강하게 바디프로필 준비에 힘써야 합니다.
+                </p>
+            </div>
+            <div class="mt-10 list-num">
+                <div data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0;', 
+                                        style-af-ani: 'margin-left:0px; opacity:1';"
+                    class="list-item num-03">
+                    <p class="mt-0 mb-0 fs-18 fw-700">운동기록을 담은 일지 작성</p>
+                </div>
+                <p class="mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:150px; opacity:0',
+                                        style-af-ani: 'margin-left:0px; opacity:1'">
+                                        성공&실패 원인을 분석할 수 있도록 운동기록을 작성합니다.
+                </p>
+            </div>
+            <div class="mt-20 text-align-center">
+                <img src="../../../resources/v1/img/5B_041_img-08.gif" width="200"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                style-af-ani: 'opacity:1'">
+            </div>
+            <div class="mt-30 text-align-center fc-white">
+                <img src="../../../resources/v1/img/check-bg-white.svg" width="50"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                        style-af-ani: 'transform: scale(1); opacity:1'">
+
+                <div class="fs-22 mt-5 fs-16"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    촬영 날짜에 대한 강박으로<br>
+                    몸 컨디션을 고려하지 않은 과도한 운동은<br>
+                    인대 손상, 관절 손상을 야기할 수도 있습니다.<br>
+                    <div class="fw-700 fs-22 mt-5">
+                        이에 대한 경제적인 준비도<br>
+                        함께 고려해 보세요.
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!--콘텐츠 평가영역-->
+    <section id="feedback-area">
+        <article class="text-align-center fc-white">
+            <div class="fw-700 text-align-left fc-white fs-18">콘텐츠에 대해 평가해주세요.</div>
+            <div class="feedback-btn-box mt-10 text-align-center">
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                    <label class="feedback-btn" for="feedback-radio-01">
+                        <img src="../../../resources/v1/img/ico-60-feedback-good-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">완전 좋았어요!</div>
+                    </label>
+                </div>
+                <div class="vertical-line mb-15"></div>
+                <div class="feedback-btn-box-inner">
+                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                    <label class="feedback-btn" for="feedback-radio-02">
+                        <img src="../../../resources/v1/img/ico-60-feedback-bad-active.svg" width="60">
+                        <div class="feedback-msg mt-10 fw-700">그저 그랬어요...</div>
+                    </label>
+                </div>
+            </div>
+        </article>
+    </section>
+</div>
+<!-- [E] cont -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
+    </div>
+</div>
+
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
+
+<script type="module">
+    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+
+    try {
+        window.onload = function() {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+        }
+    }
+    catch(error){
+        alert(error);
+        alert(error.stack);
+    }
+</script>
+</body>
+</html>
