@@ -108,6 +108,8 @@ class Calculation {
     }
 };
 
+var ga_scroll = false;
+
 const AnimationManager=(function (){
 
     let idxForTriggerElem = 1;
@@ -247,6 +249,19 @@ const AnimationManager=(function (){
        if(bLoop && Date.now()<playEndTime)
            requestAnimationFrame(()=>onScrollProcessor(true));
 
+       // https://doishalf.tistory.com/25 참고
+       var current = Math.floor((window.scrollY / (document.body.clientHeight - window.innerHeight)) * 100);
+       if (current >= 50 && !ga_scroll) {
+           console.log(current + '%');
+           // GA 이벤트
+           var event_name = document.getElementById('event_name').value;
+           var ep_button_area = document.getElementById('ep_button_area').value;
+           var ep_button_area2 = '스크롤';
+           var ep_button_name = '50%';
+
+           // ga360.GA_Event(event_name, ep_button_area, ep_button_area2, ep_button_name);
+           ga_scroll = true;
+       }
 
        function getAnimatedDigitValue(animationsInfo, propNm, progress){
            const {stylePropsBefore, stylePropsAfter} = animationsInfo;
@@ -926,66 +941,17 @@ const EventProcessor = (function (){
         submitBtn.addEventListener('click', e=>postSurveyInput());
     }
 
-    // nav >> header
-    // function setAutoHideElements(hideTargets){
-    //     hideTargets = hideTargets || [
-    //         document.querySelector('nav'),
-    //         document.querySelector('#goFirstBtn')
-    //     ];
-    //     let isShowing = true;
-    //     let prevScrollY = 0;
-    //     let firstScrollY;
-    //     let prevScrolledDown = false;
-    //     // const scrollYValue = 100;
-    //     const scrollYValue = 50;
-    //     const gnb = document.querySelector('nav');
-    //     if(gnb===null)
-    //         return;
-
-    //     window.addEventListener('scroll',e=>{
-    //         let isScrollingDown = window.scrollY>prevScrollY;
-    //         //화면 스크롤이 가장 위인 경우, 위로 스크롤하면 바로 등장
-    //         if(!isScrollingDown && window.scrollY===0) {
-    //             for(let target of hideTargets) {
-    //                 if(target!==null && target.classList.contains('hide'))
-    //                     target.elem.classList.remove('hide');
-    //             }
-    //         }
-    //         else if(isShowing && isScrollingDown || !isShowing && !isScrollingDown){
-    //             let hasChangedDirection = isScrollingDown^prevScrolledDown;
-    //             prevScrolledDown = isScrollingDown;
-    //             if(hasChangedDirection){
-    //                 firstScrollY = window.scrollY;
-    //                 return;
-    //             }
-    //             if(Math.abs(window.scrollY-firstScrollY)>scrollYValue){
-    //                 isShowing = !isShowing;
-    //                 for(let target of hideTargets) {
-    //                     if(target!==null) {
-    //                         if (isShowing)
-    //                             target.classList.remove('hide');
-    //                         else
-    //                             target.classList.add('hide');
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //         prevScrollY = window.scrollY;
-    //     });
-    // }
-
     function setAutoHideElements(hideTargets){
         hideTargets = hideTargets || [
-            document.querySelector('header'),
+            document.querySelector('nav'),
             document.querySelector('#goFirstBtn')
         ];
         let isShowing = true;
         let prevScrollY = 0;
         let firstScrollY;
         let prevScrolledDown = false;
-        // const scrollYValue = 100;
-        const scrollYValue = 30;
-        const gnb = document.querySelector('header');
+        const scrollYValue = 50;
+        const gnb = document.querySelector('nav');
         if(gnb===null)
             return;
 
@@ -995,7 +961,7 @@ const EventProcessor = (function (){
             if(!isScrollingDown && window.scrollY===0) {
                 for(let target of hideTargets) {
                     if(target!==null && target.classList.contains('hide'))
-                        target.classList.remove('hide');
+                        target.elem.classList.remove('hide');
                 }
             }
             else if(isShowing && isScrollingDown || !isShowing && !isScrollingDown){
@@ -1020,8 +986,6 @@ const EventProcessor = (function (){
             prevScrollY = window.scrollY;
         });
     }
-    // nav >> header
-
     function createUserKey(){
         let userKey = getLocalStorage('user-key', true);
         if(userKey===null && _contentsId!==undefined) {
@@ -1068,26 +1032,9 @@ const EventProcessor = (function (){
                 AnimationManager.setElemsAniOnResult();
             });
         }
-
-
-        // if(goFirstBtn!==null){
-        //     goFirstBtn.addEventListener('click',e=>{
-        //         const gnb = document.querySelector('nav');
-        //         if(gnb!==null)
-        //             gnb.classList.remove('hide');
-        //         togglePageContents();
-
-        //         if(callbackForPrev!==null)
-        //             callbackForPrev();
-        //         // document.documentElement.classList.add('overflow-y-hidden');
-        //         setUserInLastPage(false);
-        //     });
-        // }
-
-        // nav >> header
         if(goFirstBtn!==null){
             goFirstBtn.addEventListener('click',e=>{
-                const gnb = document.querySelector('header');
+                const gnb = document.querySelector('nav');
                 if(gnb!==null)
                     gnb.classList.remove('hide');
                 togglePageContents();
@@ -1098,7 +1045,6 @@ const EventProcessor = (function (){
                 setUserInLastPage(false);
             });
         }
-        // // nav >> header
     }
 
     function showSelectiveResult() {
@@ -1170,6 +1116,16 @@ const EventProcessor = (function (){
             console.log(result);
             _bannerHistorySeq = result.csjr_ctts_advr_expr_srmb;
         })
+
+        // // GA 레이어팝업노출
+        // var gaVirtual = {};
+        // gaVirtual.event_name = document.getElementById('event_name').value;
+        // gaVirtual.ep_button_area = document.getElementById('ep_button_area').value;
+        // gaVirtual.ep_button_area2 = document.getElementById('ep_button_area2').value;
+        // gaVirtual.ep_button_name = '레이어팝업노출';
+        // gaVirtual.ep_click_variable = _isAutoBottomStyle ? '노출방식_자동노출' : '노출방식_수동노출';
+        //
+        // ga360.GA_Virtual(gaVirtual);
     }
 
     function postBannerClickInfo(href, callback) {
@@ -1189,6 +1145,14 @@ const EventProcessor = (function (){
             if(callback!==undefined)
                 callback();
         })
+
+        // GA 더알아보기
+        var event_name = document.getElementById('event_name').value;
+        var ep_button_area = document.getElementById('ep_button_area').value;
+        var ep_button_area2 = document.getElementById('ep_button_area2').value;
+        var ep_click_variable = _isLinkToInsurance ? '상품_' : '부가서비스_' + sendData.bnnr_expr_cmdt_name;
+
+        ga360.GA_Event(event_name, ep_button_area, ep_button_area2, '더알아보기',ep_click_variable);
     }
 
     function setAutoBottomSheetEvent(){
@@ -1336,7 +1300,7 @@ const EventProcessor = (function (){
 
         const kyoboLink = document.createElement('a');
         kyoboLink.setAttribute('href', linkInfos.linkUrl);
-        kyoboLink.setAttribute('class', 'text-align-center fw-700 fs-6 mt-20 fc-2')
+        kyoboLink.setAttribute('class', 'text-align-center fw-700 fs-6 mt-20 fc-2 kyobo-link')
         kyoboLink.textContent = '더 알아보기';
         kyoboLink.addEventListener('click',e=>{
             e.preventDefault();
@@ -1414,6 +1378,16 @@ const EventProcessor = (function (){
             callBackFunc();
             didCallback=true;
         }
+
+        // GA 레이어팝업노출
+        var gaVirtual = {};
+        gaVirtual.event_name = document.getElementById('event_name').value;
+        gaVirtual.ep_button_area = document.getElementById('ep_button_area').value;
+        gaVirtual.ep_button_area2 = document.getElementById('ep_button_area2').value;
+        gaVirtual.ep_button_name = '레이어팝업노출';
+        gaVirtual.ep_click_variable = _isAutoBottomStyle ? '노출방식_자동노출' : '노출방식_수동노출';
+
+        ga360.GA_Virtual(gaVirtual);
     }
     function closeBottomSheet(){
         if(document.querySelector(".bottom-sheet-wrapper")===null)
