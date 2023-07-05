@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff">
-    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
-    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import2.css">
+    <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/import2.css">
 
-    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
-    <script src="../../../resources/v1/js/common.js"></script>
-    <script src="../../../resources/v1/js/link.js"></script>
+    <script src="/resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="/resources/v1/js/common.js"></script>
+    <script src="/resources/v1/js/link.js"></script>
+
+    <script src="/resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="/resources/v1/js/ga-utils.js"></script>
 
     <title>유산확률 높은 주수</title>
 </head>
@@ -18,9 +21,12 @@
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
 <body class="_6G_054 survey-type type-g bg-6">
+<!--GA 파라미터-->
+<input type="hidden" id="event_name" value="DBS_캠페인_MO" />
+<input type="hidden" id="ep_button_area" value="자녀_태아&신생아_임신검사_상세" />
 <!-- [S] skip-nav -->
 <div class="skip-nav">
-    <a href="#cont-wrap">본문 바로가기</a>1시간
+    <a href="#cont-wrap">본문 바로가기</a>
 </div>
 <!-- [E] skip-nav -->
 
@@ -30,7 +36,7 @@
         <div class="link_back">
             <a href="javascript:history.back()" class="go-back-btn">
                 <span class="blind">뒤로가기</span>
-                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+                <img src="/resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
             </a>
         </div>
         <h1>
@@ -39,7 +45,7 @@
         <div>
             <a id="link_home">
                 <span class="blind">홈으로</span>
-                <img src="../../../resources/v1/img/ico-home.png" alt="홈으로 버튼">
+                <img src="/resources/v1/img/ico-home.png" alt="홈으로 버튼">
             </a>
         </div> 
     </nav>
@@ -109,7 +115,9 @@
                                     data-animation-infos="style-bf-ani: 'width:0;',
                                                             style-af-ani: 'width:100%',
                                                             start-ms:'1100', transition-duration:'0.7s'">
-                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
+                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01"
+                                           onclick="ga360.GA_Event('DBS_캠페인_MO', '자녀_태아&신생아_임신검사_메인', '퀴즈선택', '퀴즈항목_임신12이전');"
+                                           data-sv="입덧이 시작되는 임신 12주 이전">
                                     <label for="answer-01"
                                             data-animation-type="onload"
                                             data-animation-infos="style-bf-ani: 'opacity:0;',
@@ -121,7 +129,7 @@
                                                 <dd class="mt5 fs-15 fw-700">임신 12주 이전</dd>
                                             </dl>
                                             <div class="img-box">
-                                                <img src="../../../resources/v1/img/6G_054_img-01.gif" alt="">
+                                                <img src="/resources/v1/img/6G_054_img-01.gif" alt="">
                                             </div>
                                             <div class="radio-btn"></div>
                                         </div>
@@ -134,7 +142,9 @@
                                     data-animation-infos="style-bf-ani: 'width:0;',
                                                             style-af-ani: 'width:100%',
                                                             start-ms:'1400', transition-duration:'0.7s'">
-                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-02">
+                                    <input type="radio" name="kyobolife-survey" value="02" id="answer-02"
+                                           onclick="ga360.GA_Event('DBS_캠페인_MO', '자녀_태아&신생아_임신검사_메인', '퀴즈선택', '퀴즈항목_임신13~20주');"
+                                           data-sv="교감이 가능한 임신 13~20주">
                                     <label for="answer-02"
                                             data-animation-type="onload"
                                             data-animation-infos="style-bf-ani: 'opacity:0;',
@@ -146,7 +156,7 @@
                                                 <dd class="mt5 fs-15 fw-700">임신 13~20주</dd>
                                             </dl>
                                             <div class="img-box">
-                                                <img src="../../../resources/v1/img/6G_054_img-02.gif" alt="">
+                                                <img src="/resources/v1/img/6G_054_img-02.gif" alt="">
                                             </div>
                                             <div class="radio-btn"></div>
                                         </div>
@@ -183,7 +193,7 @@
                                                 태아는 중추 신경계, 심장과 같은  중요한 기관부터 발달하며,<br>
                                                 이때 염색체 이상이나 선천적 결함으로 인해 유산의 85%가 '임신 12주 이전'에 발생하게 됩니다.
                     </p>
-                    <img src="../../../resources/v1/img/6G_054_img-03.gif" width="300"
+                    <img src="/resources/v1/img/6G_054_img-03.gif" width="300"
                         data-animation-type="onresult"
                         data-animation-infos="style-bf-ani: 'transform:translateX(100vw); opacity:0;',
                                             style-af-ani: 'transform:translateX(0vw); opacity:1;',
@@ -213,18 +223,18 @@
                         </p>
                     </div>
                     <div class="mt-30 fc-1 fs-20 fw-700"
-                        data-animation-type="onresult"
-                        data-animation-infos="style-bf-ani: 'opacity:0;',
-                                                style-af-ani: 'opacity:1;',
-                                                start-ms: '700',
-                                                transition-duration: '0.8s'">
+                    data-animation-type="onresult"
+                    data-animation-infos="style-bf-ani: 'opacity:0;',
+                                            style-af-ani: 'opacity:1;',
+                                            start-ms: '700',
+                                            transition-duration: '0.8s'">
                         <p>
                             그렇다면<br>
                             ‘임산부가 알아야 할 임신 주수별 검진’에<br>
                             대해 살펴볼까요?
                         </p>
                     </div>
-                    <img src="../../../resources/v1/img/6G_054_img-04.png" width="300" class="mt-20"
+                    <img src="/resources/v1/img/6G_054_img-04.png" width="300" class="mt-20"
                     alt="임신 11주~13주:1차 기형아 검진, 임신 15주~20주:2차 기형아 검진, 임신 24주~28주:임신성당뇨검사, 임신 전 기간:혈압검사"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'opacity:0;',
@@ -267,7 +277,7 @@
                     </div>
 
                     <div class="mt-25 text-align-center">
-                        <img src="../../../resources/v1/img/6G_054_img-05.png" width="200"
+                        <img src="/resources/v1/img/6G_054_img-05.png" width="200"
                             data-animation-type="onscroll"
                             data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
                     </div>
@@ -293,7 +303,7 @@
                         <p class="mt-5 mb-0 fs-5">2차 기형아 검진은 통합 선별 검사(integrated test)라고 부르며, 1차 검진에서 채취한 혈액 검사와 2차 검진에서 채취한 혈액 검사를 종합적으로 분석하여 염색체 이상을 선별합니다.</p>
                     </div>
                     <div class="mt-20 text-align-center">
-                        <img src="../../../resources/v1/img/6G_054_img-06.png" width="200"
+                        <img src="/resources/v1/img/6G_054_img-06.png" width="200"
                             data-animation-type="onscroll"
                             data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
                     </div>
@@ -331,7 +341,7 @@
                         <p class="mt-5 mb-0 fs-5">난산의 위험도 증가하고, 분만 후에도 당뇨병이 생길 가능성이 높습니다.</p>
                     </div>
                     <div class="mt-20 text-align-center">
-                        <img src="../../../resources/v1/img/6G_054_img-07.png" width="200"
+                        <img src="/resources/v1/img/6G_054_img-07.png" width="200"
                             alt=""
                             data-animation-type="onscroll"
                             data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
@@ -376,7 +386,7 @@
                         <p class="mt-5 mb-0 fs-5">또한, 자간전증을 치료하는 근본적인 방법은 분만이기에 조산으로 이어질 수도 있습니다.</p>
                     </div>
                     <div class="mt-20 text-align-center">
-                        <img src="../../../resources/v1/img/6G_054_img-08.png" width="200"
+                        <img src="/resources/v1/img/6G_054_img-08.png" width="200"
                             alt=""
                             data-animation-type="onscroll"
                             data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
@@ -405,13 +415,13 @@
 
         <section data-is-not-result-page="false">
             <div class="mt-30 text-align-center">
-                <img src="../../../resources/v1/img/6G_054_img-09.gif" width="300"
+                <img src="/resources/v1/img/6G_054_img-09.gif" width="300"
                     alt=""
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
             </div>
             <div class="mt-30 text-align-center">
-                <img src="../../../resources/v1/img/check-bg-07.png" width="50"
+                <img src="/resources/v1/img/check-bg-07.png" width="50"
                     data-animation-type="onscroll"
                     data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
                                         style-af-ani: 'transform: scale(1); opacity:1'">
@@ -436,13 +446,15 @@
                     <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                     <div class="feedback-btn-box">
                         <div class="feedback-btn-box-inner">
-                            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001"
+                                   onclick="ga360.GA_Event('DBS_캠페인_MO', '자녀_태아&신생아_임신검사_상세', '콘텐츠평가', '버튼명_좋아요');">
                             <label class="feedback-btn good" for="feedback-radio-01">
                                 <span class="blind">좋아요</span>
                             </label>
                         </div>
                         <div class="feedback-btn-box-inner">
-                            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002"
+                                   onclick="ga360.GA_Event('DBS_캠페인_MO', '자녀_태아&신생아_임신검사_상세', '콘텐츠평가', '버튼명_싫어요');">
                             <label class="feedback-btn bad" for="feedback-radio-02">
                                 <span class="blind">별로에요</span>
                             </label>
@@ -465,7 +477,7 @@
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">
-    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+    <lottie-player src="/resources/v1/img/loading-animation.json"
                     background="transparent"
                     style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
     </lottie-player>
@@ -476,16 +488,13 @@
 </div>
 
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
 <script type="module">
-    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
-    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+    import { AnimationManager } from "/resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "/resources/v1/js/open_EventProcessor.js";
 
     try {
-        window.onload = function() {
-            // animation setting
-            AnimationManager.loadElementsToAnimate();
-        }
+        // animation setting
+        AnimationManager.loadElementsToAnimate();
     }
     catch(error){
         alert(error);
