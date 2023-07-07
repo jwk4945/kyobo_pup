@@ -24,7 +24,7 @@
 <script>
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
-<body class="_2B_039 information-type type-a fc-white">
+<body class="_2B_039 information-type type-b fc-white">
 <!-- [S] skip-nav -->
 <div class="skip-nav">
     <a href="#cont-wrap">본문 바로가기</a>
@@ -338,29 +338,31 @@
                     data-animation-infos="style-bf-ani: 'transform: translateX(80px); opacity: 0;',
                                             style-af-ani: 'transform: translateX(0px); opacity: 1;'">
                     이런 분들 주목하세요!</h2>
-                <div class="cards-box mt-20">
-                    <div data-animation-type="onscroll"
-                            data-animation-infos="style-bf-ani: 'opacity:0; transform: translateX(getOffsetFromLeftEdge(px, *-1.5))',
-                                                style-af-ani: 'opacity:1; transform: translateX(0px)'">
-                        <div>
-                            <img src="../../../resources/v1/img/2B_039_img-09.svg">
+                <div class="cards-box-wrap">
+                    <div class="cards-box mt-20">
+                        <div data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'opacity:0; transform: translateX(getOffsetFromLeftEdge(px, *-1.5))',
+                                                    style-af-ani: 'opacity:1; transform: translateX(0px)'">
+                            <div>
+                                <img src="../../../resources/v1/img/2B_039_img-09.svg">
+                            </div>
+                            <span class="text-align-center mt-15">신용도가 낮아 일반 금융회사로부터 대출을 받는 데 제약이 있는 경우</span>
                         </div>
-                        <span class="text-align-center mt-15">신용도가 낮아 일반 금융회사로부터 대출을 받는 데 제약이 있는 경우</span>
-                    </div>
-                    <div data-animation-type="onscroll"
-                        data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
-                        <div>
-                            <img src="../../../resources/v1/img/2B_039_img-10.svg">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                            <div>
+                                <img src="../../../resources/v1/img/2B_039_img-10.svg">
+                            </div>
+                            <span class="text-align-center mt-15">긴급하게 단기자금이 필요할 경우</span>
                         </div>
-                        <span class="text-align-center mt-15">긴급하게 단기자금이 필요할 경우</span>
-                    </div>
-                    <div data-animation-type="onscroll"
-                            data-animation-infos="style-bf-ani: 'opacity:0; transform: translateX(getOffsetFromRightEdge(px, *1.5))',
-                                                style-af-ani: 'opacity:1; transform: translateX(0px)'">
-                        <div>
-                            <img src="../../../resources/v1/img/2B_039_img-11.svg">
+                        <div data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'opacity:0; transform: translateX(getOffsetFromRightEdge(px, *1.5))',
+                                                    style-af-ani: 'opacity:1; transform: translateX(0px)'">
+                            <div>
+                                <img src="../../../resources/v1/img/2B_039_img-11.svg">
+                            </div>
+                            <span class="text-align-center mt-15">대출 상환 시점이 불명확해서 중도상환수수료 등이 부담되는 경우</span>
                         </div>
-                        <span class="text-align-center mt-15">대출 상환 시점이 불명확해서 중도상환수수료 등이 부담되는 경우</span>
                     </div>
                 </div>
             </div>
@@ -435,9 +437,10 @@
             </div>
         </article>
     </section>
-    <!--콘텐츠 평가영역-->
+    <!-- s: 컨텐츠 하단 영역-->
     <div class="bg-btm-gray btm-wrap">
-        <section id="feedback-area" class="bg-6c2a2a">
+        <!-- 평가영역 -->
+        <section id="feedback-area" class="bg-17">
             <div class="feedback-inner">
                 <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                 <div class="feedback-btn-box">
@@ -456,25 +459,37 @@
                 </div>
             </div>
         </section>
-        <section class="btm-area">
-            <p class="explain">소액으로 차근차근 오늘부터 시작해요!</p>
-            <a href="#!">
-                <div class="pd-area">
-                    <div class="ci">
-                        <img src="../../../resources/v1/img/icon/img-ci-pd.png" alt="KYOBO 교보생영">
-                    </div>
-                    <dl>
-                        <dt class="name">(무)교보시작해요저축보험</dt>
-                        <dd class="certificationMsg">
-                            <div class="certificationMsg-txt">생명보험협회 심의필 제 2022-05463호</div>
-                            <div class="certificationMsg-date">(2022-12-27 ~ 2023-12-26)</div>
-                        </dd>
-                    </dl>
-                    <div class="ico-arw"></div>
-                </div>
+        
+        <!-- 상품영역 -->
+        <div id="output"></div>
+
+        <!-- 동의 영역 -->
+        <div class="agree-area">
+            <div class="all-agree-box">
+                <label for="chk-all" class="check-style-all">
+                    <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
+                </label>
+            </div>
+            <div class="agree-box">
+                <label for="chk-agr1" class="check-style-agr">
+                    <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+            </div>
+            <div class="agree-box">
+                <label for="chk-agr2" class="check-style-agr">
+                    <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+            </div>
+        </div>
+        <div class="confirm-btn-box">
+            <a href="#!" class="confirm-btn">
+                확인하기
             </a>
-        </section>
+        </div>
     </div>
+    <!-- e: 컨텐츠 하단 영역-->
 </div>
 <!-- [E] cont -->
 
@@ -482,8 +497,8 @@
 <footer class="footer_wrapper">
     <div class="footer_body">
         <div class="logo_box">
-            <a href="#" class="logo_link">
-                <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+            <a id="link_home" class="logo_link">
+                    <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
             </a>
             <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
         </div>
@@ -499,25 +514,83 @@
             <span class="info_text"><b>대표전화 : 1544-9000</b></span>
             <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
             <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
-            <a href="#" id="link_companyInfo" class="btn_footer_link">사업자정보확인</a>
-            <a href="#" id="link_paySafe" class="btn_footer_link">구매안전서비스</a>
+            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
         </address>
         
         <div class="footer_menu_box">
             <ul class="footer_menu_list">
-                <li class="footer_menu_item"><a href="#" class="footer_menu_link">로그인</a></li>
-                <li class="footer_menu_item"><a href="#" class="footer_menu_link">회원가입</a></li>
+                <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
             </ul>
             <ul class="footer_menu_list sub">
-                <li class="footer_menu_item"><a href="#" class="footer_menu_link">이용약관</a></li>
-                <li class="footer_menu_item privacy"><a href="#" class="footer_menu_link">개인정보처리방침</a></li>
-                <li class="footer_menu_item"><a href="#" class="footer_menu_link">청소년보호정책</a></li>
-                <li class="footer_menu_item"><a href="#" class="footer_menu_link">협력사여러분</a></li>
+                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
             </ul>
         </div>
     </div>
 </footer>
 <!-- [E] footer -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+                <a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">

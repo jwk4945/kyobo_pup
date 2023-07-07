@@ -163,6 +163,7 @@ b{font-weight: 700 !important;}
 .pt-26{padding-top: 26px !important;}
 .pt-30{padding-top: 30px !important;}
 .pt-35{padding-top: 35px !important;}
+.pt-50{padding-top: 50px !important;}
 .pt-75{padding-top: 75px !important;}
 
 .pb-0{padding-bottom: 0 !important;}
@@ -399,6 +400,23 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 /* 페이지 하단영역 */
 .btm-wrap{padding-bottom: 80px;}
 .btm-wrap.bg-btm-gray #feedback-area{color: #fff;}
+
+/* 평가 영역 */
+/* .type-a #feedback-area{background: #174c5e;}
+.type-b #feedback-area{background: #6C2A2A;}
+.type-c #feedback-area{background: #514096;}
+.type-d #feedback-area{background: #000;}
+.type-f #feedback-area{background: #33b4c7;} */
+
+/* 삭제 예정 */
+._6B_019 #feedback-area{background: #6c2a2a;}
+/* ._3A_004 #feedback-area{background: #174c5e;} */
+._3A_024 #feedback-area{background: #133f4e;}
+/* ._7D_003 #feedback-area{background: #2f65b3;} */
+._7E_006 #feedback-area{background: #d95584;}
+._2B_061 #feedback-area{background: #823333;}
+._5B_041 #feedback-area{background: #823333;}
+/* 삭제 예정 */
 
 #feedback-area{padding: 5px 15px 5px 20px;border-bottom-left-radius: 15px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
 #feedback-area .feedback-inner{display: flex;justify-content: space-between;align-items: center;max-width: 540px;margin: auto;}
