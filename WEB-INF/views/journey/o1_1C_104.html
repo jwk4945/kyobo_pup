@@ -437,50 +437,50 @@
             </div>
         </div>
         <!-- e: 컨텐츠 하단 영역-->
+
+        <!-- [S] footer -->
+        <footer class="footer_wrapper">
+            <div class="footer_body">
+                <div class="logo_box">
+                    <a id="link_home" class="logo_link">
+                            <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+                    </a>
+                    <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+                </div>
+                
+                <address class="footer_info_box">
+                    <div class="info_text_multi">
+                        <span class="info_text">교보문고</span>
+                        <span class="gap">|</span>
+                        <span class="info_text">대표이사 : 안병현</span>
+                    </div>
+                    <span class="info_text">서울특별시 종로구 종로 1</span>
+                    <span class="info_text">사업자등록번호 : 102-81-11670</span>
+                    <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+                    <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+                    <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+                    <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+                    <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+                </address>
+                
+                <div class="footer_menu_box">
+                    <ul class="footer_menu_list">
+                        <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                        <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+                    </ul>
+                    <ul class="footer_menu_list sub">
+                        <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                        <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                        <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                        <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- [E] footer -->
     </section>
 </div>
 <!-- [E] cont -->
-
-<!-- [S] footer -->
-<footer class="footer_wrapper">
-    <div class="footer_body">
-        <div class="logo_box">
-            <a id="link_home" class="logo_link">
-                    <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
-            </a>
-            <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
-        </div>
-        
-        <address class="footer_info_box">
-            <div class="info_text_multi">
-                <span class="info_text">교보문고</span>
-                <span class="gap">|</span>
-                <span class="info_text">대표이사 : 안병현</span>
-            </div>
-            <span class="info_text">서울특별시 종로구 종로 1</span>
-            <span class="info_text">사업자등록번호 : 102-81-11670</span>
-            <span class="info_text"><b>대표전화 : 1544-9000</b></span>
-            <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
-            <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
-            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
-            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
-        </address>
-        
-        <div class="footer_menu_box">
-            <ul class="footer_menu_list">
-                <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
-                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
-            </ul>
-            <ul class="footer_menu_list sub">
-                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
-                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
-                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
-                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
-            </ul>
-        </div>
-    </div>
-</footer>
-<!-- [E] footer -->
 
 <!-- dim -->
 <div class="dim"></div>
@@ -663,7 +663,10 @@
 
 <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
+
 <script type="module">
     import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
     import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
