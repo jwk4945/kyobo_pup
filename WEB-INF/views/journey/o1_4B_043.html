@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff">
-    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
-    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
-    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
-
-    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
-    <script src="../../../resources/v1/js/common.js"></script>
-    <script src="../../../resources/v1/js/link.js"></script>
 
     <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
     <meta property="og:url" content="https://kyobobook.co.kr/"/>
-    <meta property="og:title" content="어떤 고등학교가 잘 맞을까요?"/>
+    <meta property="og:title" content="볼록한 내 뒷목은?"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
     <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+    
+    <link href="/resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="/resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="/resources/v1/css/import.css">
+
+    <script src="/resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="/resources/v1/js/common.js"></script>
+    <script src="/resources/v1/js/link.js"></script>
+
+    <script src="/resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="/resources/v1/js/ga-utils.js"></script>
 
     <title>볼록한 내 뒷목은?</title>
 </head>
@@ -426,13 +430,13 @@
     </section>
     <!-- s: 컨텐츠 하단 영역-->
     <div class="bg-btm-gray btm-wrap">
-        <!-- 평가영역 -->
+        <!-- 평가여역 -->
         <section id="feedback-area" class="bg-6c2a2a">
             <div class="feedback-inner">
                 <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                 <div class="feedback-btn-box">
                     <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="feedback-radio-01">
                         <label class="feedback-btn" for="feedback-radio-01">
                             <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
                         </label>
@@ -469,6 +473,11 @@
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
             </div>
+        </div>
+        <div class="confirm-btn-box">
+            <a href="#!" class="confirm-btn">
+                확인하기
+            </a>
         </div>
     </div>
     <!-- e: 컨텐츠 하단 영역-->
@@ -685,39 +694,30 @@
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">
-    <lottie-player src="../../../resources/v1/img/loading-animation.json"
-                    background="transparent"
-                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    <lottie-player src="/resources/v1/img/loading-animation.json"
+                   background="transparent"
+                   style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
     </lottie-player>
     <div class="fc-2 fs-6 fw-500">
-        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
-        이동중이에요!
+      고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+      이동중이에요!
     </div>
 </div>
-
+  
+<!-- <script src="/resources/v1/js/swiper-bundle.min.js"></script> -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
-  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v16.0" nonce="lRsG2N83"></script>
-
 <script type="module">
-    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
-    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+import { AnimationManager } from "/resources/v1/js/open_AnimationManager.js";
+import { EventProcessor } from "/resources/v1/js/open_EventProcessor.js";
 
-    try {
-        window.onload = function() {
-            // animation setting
-            AnimationManager.loadElementsToAnimate();
-        }
-    }
-    catch(error){
-        alert(error);
-        alert(error.stack);
-    }
+try {
+    // animation setting
+    AnimationManager.loadElementsToAnimate();
+}
+catch(error){
+    alert(error);
+    alert(error.stack);
+}
 </script>
 </body>
 </html>
-
-<!-- [컨텐츠 오픈 히스토리] -->
-<!-- 230518 확대오픈 -->
-<!-- [ // 컨텐츠 오픈 히스토리] -->

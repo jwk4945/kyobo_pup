@@ -7,7 +7,7 @@
 
     <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
     <meta property="og:url" content="https://kyobobook.co.kr/"/>
-    <meta property="og:title" content="부모님에게 하는 착한 거짓말"/>
+    <meta property="og:title" content="너는 착한 아이잖아"/>
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
     <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
@@ -23,12 +23,15 @@
     <script src="/resources/v1/js/jquery-1.8.2.js"></script>
     <script src="/resources/v1/js/ga-utils.js"></script>
 
-    <title>부모님에게 하는 착한 거짓말</title>
+    <title>건강검진 전 필요한 것</title>
 </head>
 <script>
     document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
 </script>
-<body class="_14D_038 survey-type type-d bg-6">
+<body class="_7D_003 survey-type type-d bg-6">
+<!--GA 파라미터-->
+<input type="hidden" id="event_name" value="DBS_캠페인_MO" />
+<input type="hidden" id="ep_button_area" value="건강관리_운동외_건강검진_상세" />
 <!-- [S] skip-nav -->
 <div class="skip-nav">
     <a href="#cont-wrap">본문 바로가기</a>
@@ -51,14 +54,14 @@
             </a>
         </div> 
         <h1>
-            부모님에게 하는 착한 거짓말
+            건강검진 전 필요한 것
         </h1>
         <div>
             <a id="link_share">
                 <span class="blind">공유하기</span>
                 <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
             </a>
-        </div>
+        </div> 
     </nav>
 </header>
 <!-- [E] header-->
@@ -78,7 +81,7 @@
                         data-animation-infos="remove-class-nm: 'opacity-0',
                                                 start-ms:'300',
                                                 transition-props:'[opacity]',
-                                                transition-duration:'0.7s'">질병</span>
+                                                transition-duration:'0.7s'">건강관리</span>
                     <div class="mt-10">
                         <div class="fs-22 opacity-0"
                             data-animation-type="onload"
@@ -87,7 +90,7 @@
                                                 style-af-ani: 'transform:',
                                                 start-ms:'500',
                                                 transition-props:'[opacity,transform]',
-                                                transition-duration:'0.8s'">부모님에게 하는 착한 거짓말
+                                                transition-duration:'0.8s'">잠깐!! 건강검진 받기 전에
                         </div>
                         <div class="fs-22 strong-underline opacity-0"
                             data-animation-type="onload"
@@ -96,7 +99,7 @@
                                                 style-af-ani: 'transform:',
                                                 start-ms:'700',
                                                 transition-props:'[opacity,transform]',
-                                                transition-duration:'0.8s'">어떻게 생각하세요?
+                                                transition-duration:'0.8s'">꼭 챙겨야 할 사항은?
                         </div>
                     </div>
                     <div class="opacity-0 mt-10"
@@ -108,8 +111,8 @@
                                                 transition-props:'[opacity,transform]',
                                                 transition-duration:'0.8s'">
                         <span class="sub-tit">
-                            치매를 앓는 부모님의 안전을 지키고자<br>
-                            거짓말을 하게 되었습니다.
+                            짝수년 출생자는 짝수년도,<br>
+                            홀수년 출생자는 홀수년도에 건강검진 받으세요!
                         </span>
                     </div>
                 </article>
@@ -128,21 +131,23 @@
                                                 start-ms:'1000',
                                                 transition-props:'[opacity]',
                                                 transition-duration:'0.5s'">
-                                <input type="radio" name="kyobolife-survey" value="1" id="answer-01">
+                                <input type="radio" name="kyobolife-survey" value="0" id="answer-01"
+                                       onclick="ga360.GA_Event('DBS_캠페인_MO', '건강관리_운동외_건강검진_상세_메인', '설문확인', '설문확인_적절한검진항목선택하기');"
+                                       data-sv="2년 전 검진결과 확인하고, 적절한 검진항목 선택하기">
                                 <label for="answer-01">
                                     <div class="radio-btn bdc-5"></div>
                                     <div class="fs-5 contents">
-                                        <small class="fc-4">의도가 좋아도,</small>
-                                        <div class="mt-5">거짓말은 해서는 안 된다.</div>
+                                        <small class="fc-4">2년 전 검진결과 확인하고,</small>
+                                        <div class="mt-5">적절한 검진항목 선택하기</div>
                                     </div>
-                                    <img src="../../../resources/v1/img/14G_038/14G_038_01.gif" alt="안 된다. 이미지" width="50px">
+                                    <img src="/resources/v1/img/7D_003_01.png" alt="겸진 관련 대표 이미지" width="50px">
                                 </label>
                             </div>
                             <div class="li-item-result-wrapper">
                                 <div class="li-item-result">
                                     <div>
-                                        <small class="fc-4">의도가 좋아도,</small>
-                                        <div>거짓말은 해서는 안 된다.</div>
+                                        <small class="fc-4">2년 전 검진결과 확인하고,</small>
+                                        <div>적절한 검진항목 선택하기</div>
                                         <div class="progress-bar mt-10">
                                             <div class="painted-bar"></div>
                                         </div>
@@ -166,21 +171,23 @@
                                                 start-ms:'1300',
                                                 transition-props:'[opacity]',
                                                 transition-duration:'0.5s'">
-                                <input type="radio" name="kyobolife-survey" value="2" id="answer-02">
+                                <input type="radio" name="kyobolife-survey" value="1" id="answer-02"
+                                       onclick="ga360.GA_Event('DBS_캠페인_MO', '건강관리_운동외_건강검진_상세_메인', '설문확인', '설문확인_어떤보험금을받을수있는지확인하기');"
+                                       data-sv="검진결과에 따라 받을 수 있는 보험금 확인하기">
                                 <label for="answer-02">
                                     <div class="radio-btn bdc-5"></div>             
                                     <div class="fs-5 contents">
-                                        <small class="fc-4">위험을 예방하기 위한</small>
-                                        <div class="mt-5 contents">거짓말이기 때문에 괜찮다.</div>
+                                        <small class="fc-4">검진결과에 따라</small>
+                                        <div class="mt-5 contents">받을 수 있는 보험금 확인하기</div>
                                     </div>
-                                    <img src="../../../resources/v1/img/14G_038/14G_038_02.gif" alt="괜찮다. 이미지" width="50px">
+                                    <img src="/resources/v1/img/7D_003_02.png" alt="보험금 대표 이미지" width="50px">
                                 </label>
                             </div>  
                             <div class="li-item-result-wrapper"> 
                                 <div class="li-item-result">
                                     <div>
-                                        <small class="fc-4">위험을 예방하기 위한</small>
-                                        <div>거짓말이기 때문에 괜찮다.</div>
+                                        <small class="fc-4">검진결과에 따라</small>
+                                        <div>받을 수 있는 보험금 확인하기</div>
                                         <div class="progress-bar mt-10">
                                             <div class="painted-bar"></div>
                                         </div>
@@ -199,24 +206,23 @@
                     <button type="submit" id="goNextBtn" class="com-btn fs-4 fw-700" data-is-not-result-page="true" disabled>설문 확인하기</button>
 
                     <div class="text-align-center" data-is-not-result-page="false">
-                        <div class="fs-20 fw-700 fc-1"
+                        <div class="fs-20 fw-700 fc-12"
                             data-animation-type="onresult"
                             data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
                                                     style-af-ani: 'transform:translateX(0px); opacity:1',
                                                     start-ms: '600'">
-                            "어르신, 여기에서 기다리면<br>
-                            <span class="fc-12 va-top">집으로 가는 버스</span>가 올 거예요."
+                            둘 다 정답입니다.
                         </div>
-                        <div class="fc-3 text-align-center"
+                        <div class="fc-3 text-align-center mt-5"
                             data-animation-type="onresult"
                             data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
                                                     style-af-ani: 'transform:translateX(0px); opacity:1',
                                                     start-ms: '900'">
-                            하지만 그 정류장은<br>
-                            버스가 오지 않는 가짜 정류장입니다.
+                            오늘은 보험금을 받을 수 있는<br>
+                            점검 사항을 알려드릴게요.
                         </div>
                         <div class="mt-20">
-                            <img src="../../../resources/v1/img/14G_038/14G_038_03.png" alt="집으로 가는 버스가 올거예요. 대표 이미지" width="300px"
+                            <img src="/resources/v1/img/7D_003_03.png" alt="오늘은 보험금을 받을 수 있는 점검 사항을 알려드릴게요. 대표 이미지" width="300px"
                                     data-animation-type="onresult"
                                     data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
                                                         style-af-ani: 'transform:translateX(0px); opacity:1',
@@ -230,7 +236,7 @@
                     data-animation-infos="style-bf-ani: 'opacity:0',
                                         style-af-ani: 'opacity:1', scroll-duration: 300'">
                     <article class="inner text-align-left">
-                        <div class="inner-cont">
+                        <div class="inner-cont overflow-hidden">
                             <!-- 1 -->
                             <div class="title-msg">
                                 <span class="section-no fw-700 fc-5"
@@ -241,49 +247,33 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                                         style-af-ani: 'margin-left:0px; opacity:1'">
-                                    치매 노인들이<br>
-                                    자주 하는 말이 있습니다.
+                                                        대장에서 용종이<br>
+                                                        발견되어 떼어 냈어요.
                                 </div>
                             </div>
-
-                            <div class="mt-20 fc-3"
+                            <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                “집에서 아이들이 기다리고 있으니 돌아가야 한다.”라며 자꾸 밖으로 나가려고 한다는 것입니다.
+                                                    조직 검사 비용과 용종 제거 비용을 실손보험에서 받을 수 있습니다.
                             </div>
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                이때 억지로 말리지 않고 “저기 버스정류장이 있어요.”라며 가짜 정류장으로 안내합니다.
-                            </div>
-                            
-                            <div class="img-box text-align-center mt-20"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:50px; opacity:0',
-                                                    style-af-ani: 'margin-left:0px; opacity:1'">
-                                <img src="../../../resources/v1/img/14G_038/14G_038_04.gif" alt="치매 노인들이 자주 하는 말 대표 이미지" width="200">
-                            </div>
-
-                            <div class="mt-20 fc-3"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                치매 노인은 집으로 갈 수 있다고 생각하며 버스를 기다리다가 왜 버스를 타려고 했는지 잊어버리곤 합니다.
+                                                    수술비 특약에 가입되어 있으면 수술보험금을 받을 수 있습니다.
                             </div>
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                이때 요양시설 직원이 “버스가 늦네요, 커피 한잔하세요”라며 안전하게 시설로 모시고 돌아옵니다.
+                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:100px; opacity:0',
+                                                    style-af-ani: 'margin-left:0px; opacity:1'">
+                                                    보험금 청구시효는 3년이며, 4년 전에 떼어 냈다면 아쉽지만 청구하지 못합니다.
                             </div>
-                            
                             <div class="img-box text-align-center mt-20"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:50px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                <img src="../../../resources/v1/img/14G_038/14G_038_05.png" alt="안전하게 시설로 모시고 돌아옵니다. 대표 이미지" width="200">
+                                <img src="/resources/v1/img/7D_003_img-04.png" alt="대장 용종 떼어 냈어요 대표 이미지" width="200">
                             </div>
                             <!-- // 1 -->
 
@@ -297,8 +287,8 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'opacity:0',
                                                         style-af-ani: 'opacity:1'">
-                                    치매는더이상<br>
-                                    다른 가족의 일이 아닙니다.
+                                    혈액검사 결과<br>
+                                    당뇨로 진단받았어요.
                                 </div>
                             </div>
 
@@ -306,14 +296,21 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                치매는 80세 이상 노인 4명 중 1명이 걸리는 흔한 질병이 되었습니다.
+                                당뇨 진단보험금 지급기준은 공복혈당이 아니라 당화혈색소입니다.
+                            </div>
+
+                            <div class="mt-5 fc-3"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                    style-af-ani: 'opacity:1';">
+                                당화혈색소 수치가 6.5% 이상이면 당뇨 진단 보험금을 받을 수 있습니다.
                             </div>
 
                             <div class="img-box text-align-center mt-20"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:50px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                <img src="../../../resources/v1/img/14G_038/14G_038_06.png" alt="빠른 속도로 늘어나는 한국의 치매환자, 2021년, 2050년 대표 이미지" width="300">
+                                <img src="/resources/v1/img/7D_003_img-05.png" alt="혈액검사 결과 당뇨로 진단받았어요 대표 이미지" width="200">
                             </div>
                             <!-- // 2 -->
 
@@ -327,30 +324,16 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'opacity:0',
                                                         style-af-ani: 'opacity:1'">
-                                    치매환자 가족들을 위한<br>
-                                    조언입니다.
+                                    MRA 검사에서<br>
+                                    뇌동맥류가 발견되었어요.
                                 </div>
-                            </div>
-
-                            <div class="mt-5 fc-3 fs-12"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                [고대안암병원 신경과 박건우 교수]
-                            </div>
-
-                            <div class="mt-20 fc-12 fw-700"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                첫 번째, 친인척과 지인들에게 알리고 도움을 받으세요.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                감정을 배제하고 객관적으로 소통하세요.
+                                크기가 작은 경우 수술을 하지 않는 때도 있습니다.
                             </div>
 
                             <div class="mt-5 fc-3"
@@ -360,39 +343,11 @@
                                 오랜 간병을 위해서는 보호자의 휴식과 스트레스 관리가 무엇보다 중요합니다.
                             </div>
 
-                            <div class="mt-20 fc-12 fw-700"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                두 번째, 오래된 기억에 의존하는 치매환자의 특성상 집안 구조는 가급적 바꾸지 않는 것이 좋습니다.
-                            </div>
-
-                            <div class="mt-5 fc-3"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                대신 위험한 구조물은 치우고 화장실 스위치 등은 자동으로 바꾸는 것이 좋습니다.
-                            </div>
-
-                            <div class="mt-20 fc-12 fw-700"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                세 번째, 간병기간이 길어질수록 비용부담이 문제가 됩니다.
-                            </div>
-
-                            <div class="mt-5 fc-3"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                환자 간병에 사용 가능한 가족의 보유자산을 확인할 필요가 있습니다.
-                            </div>
-
                             <div class="img-box text-align-center mt-20"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:50px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                <img src="../../../resources/v1/img/14G_038/14G_038_07.gif" alt="치매환자 가족들을 위한 조언 대표 이미지" width="200">
+                                <img src="/resources/v1/img/7D_003_06.png" alt="MRA 검사에서 뇌동맥류가 발견되었어요. 대표 이미지" width="200">
                             </div>
                             <!-- // 3 -->
 
@@ -406,8 +361,8 @@
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'opacity:0',
                                                         style-af-ani: 'opacity:1'">
-                                    우리 가족은 치매보험금을<br>
-                                    받을 수 있는지 확인해 보세요.
+                                    초음파검사를 하다가<br>
+                                    갑상선암을 발견했어요.
                                 </div>
                             </div>
 
@@ -415,51 +370,29 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                치매보험에서 CDR 2점 이하의 경증 치매도 보장하는지 체크해 보세요.
+                                조직검사가 필요하여 시행하였을 때 실손보험에서 받을 수 있습니다.
                             </div>
 
                             <div class="mt-5 fc-3"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'opacity:0;', 
                                                     style-af-ani: 'opacity:1';">
-                                치매보험은 CDR척도 등에 의해 치매로 진단받은 후 90일간 그 상태가 지속되어 진단 확정 시 보험금을 지급(일시지급 또는 분할지급)하는 상품입니다.
+                                초기 암의 경우 보험상품에 가입한 시기 및 약관 내용에 따라 유사 암보험금, 소액 암보험금, 일반암보험금을 받을 수도 있습니다.
                             </div>
 
-                            <div class="mt-20 clear"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                                    <span class="fl fw-700">임상 치매적도(CDR) 점수</span>
-                                                    <span class="fr fs-12 fc-3 pt-2">[출처 : 분당서울대학교병원]</span>
-                            </div>
-
-                            <div class="img-box text-align-center mt-10"
+                            <div class="img-box text-align-center mt-20"
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:50px; opacity:0',
                                                     style-af-ani: 'margin-left:0px; opacity:1'">
-                                <img src="../../../resources/v1/img/14G_038/14G_038_08.png" alt="점수 3~5는 중증치매, 표: 점수/명칭/증상, 0.5/최경도/지속적인 건망증, 1/경도/최근 사건에 대한 기억장애, 2/중증도/과거기억 상실 반복 사건 인지능력 상실, 3/중증/심한 기억장애, 4/심각/기억대부분 상실,본인 이름에 대해서만 반응, 5/말기/기억력 상실" width="300">
-                            </div>
-
-                            <div class="mt-20 fc-3"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'opacity:0;', 
-                                                    style-af-ani: 'opacity:1';">
-                                                    CDR점수는 0.5, 1, 2, 3, 4, 5로 되어 있으며 점수가 높을수록 정도가 심한 것을 의미합니다. 보통 3 이상을 중증치매, 2 이하를 경증 치매라고 합니다.
+                                <img src="/resources/v1/img/7D_003_07.png" alt="초음파검사를 하다가 갑상선암을 발견했어요. 대표 이미지" width="200">
                             </div>
                             <!-- // 4 -->
                         </div>
                     </article>
 
                     <article class="text-align-center pb-0">
-                        <div class="img-box text-align-center"
-                                data-animation-type="onscroll"
-                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%; margin-left:50px; opacity:0',
-                                                    style-af-ani: 'margin-left:0px; opacity:1'">
-                            <img src="../../../resources/v1/img/14G_038/14G_038_09.gif" alt="치매와 가족 대표 이미지" width="200">
-                        </div>
-
-                        <div class="mt-30">
-                            <img src="../../../resources/v1/img/check-blue.png" width="50"
+                        <div class="mt-5">
+                            <img src="/resources/v1/img/check-blue.png" width="50"
                                     data-animation-type="onscroll"
                                     data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
                                                 style-af-ani: 'transform: scale(1); opacity:1'">
@@ -467,37 +400,32 @@
                                 data-animation-type="onscroll"
                                 data-animation-infos="style-bf-ani: 'margin-left: getOffsetRightFromParent(px); opacity:0',
                                                     style-af-ani: 'margin-left: 0px; opacity:1'">
+                                잊지 마세요. 혹시 내 건강이 걱정된다면...<br>
                                 <span class="fc-12 fs-22 fw-700">
-                                    치매는 본인은 물론 가족들까지<br>
-                                    큰 슬픔과 고통에 빠뜨리는 질병입니다.
+                                    건강검진 받기 전 보험증권 확인!
                                 </span>
-                                <br>
-                                치매환자 못지않게 보호자 및 가족 구성원의<br>
-                                행복도 중요하다는 것을 잊지 마세요.
                             </p>
                         </div>
                     </article>
                 </section>
 
                 <!-- s: 컨텐츠 하단 영역-->
-                <div class="bg-btm-blue btm-wrap" data-is-not-result-page="false">
-                    <!-- 평가영역 -->
-                    <section id="feedback-area" class="bg-f4f4f4">
+                <div class="bg-btm-gray btm-wrap">
+                    <!-- 평가여역 -->
+                    <section id="feedback-area" class="bg-6c2a2a">
                         <div class="feedback-inner">
                             <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                             <div class="feedback-btn-box">
                                 <div class="feedback-btn-box-inner">
-                                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-                                    <label class="feedback-btn good" for="feedback-radio-01">
-                                        <!-- <img src="../../../resources/v1/img/icon/ico-feedback-good_gray.png" width="50"> -->
-                                        <span class="blind">좋아요</span>
+                                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="feedback-radio-01">
+                                    <label class="feedback-btn" for="feedback-radio-01">
+                                        <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
                                     </label>
                                 </div>
                                 <div class="feedback-btn-box-inner">
                                     <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-                                    <label class="feedback-btn bad" for="feedback-radio-02">
-                                        <!-- <img src="../../../resources/v1/img/icon/ico-feedback-bad_gray.png" width="50"> -->
-                                        <span class="blind">별로에요</span>
+                                    <label class="feedback-btn" for="feedback-radio-02">
+                                        <img src="../../../resources/v1/img/icon/ico-feedback-bad.png" width="50">
                                     </label>
                                 </div>
                             </div>
@@ -508,7 +436,7 @@
                     <div id="output"></div>
 
                     <!-- 동의 영역 -->
-                    <div class="agree-area white">
+                    <div class="agree-area">
                         <div class="all-agree-box">
                             <label for="chk-all" class="check-style-all">
                                 <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
@@ -536,47 +464,6 @@
                 <!-- e: 컨텐츠 하단 영역-->
             </div>
         </div>
-
-        <!-- [S] footer -->
-        <footer class="footer_wrapper" data-is-not-result-page="false">
-            <div class="footer_body">
-                <div class="logo_box">
-                    <a id="link_home" class="logo_link">
-                            <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
-                    </a>
-                    <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
-                </div>
-                
-                <address class="footer_info_box">
-                    <div class="info_text_multi">
-                        <span class="info_text">교보문고</span>
-                        <span class="gap">|</span>
-                        <span class="info_text">대표이사 : 안병현</span>
-                    </div>
-                    <span class="info_text">서울특별시 종로구 종로 1</span>
-                    <span class="info_text">사업자등록번호 : 102-81-11670</span>
-                    <span class="info_text"><b>대표전화 : 1544-9000</b></span>
-                    <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
-                    <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
-                    <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
-                    <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
-                </address>
-                
-                <div class="footer_menu_box">
-                    <ul class="footer_menu_list">
-                        <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
-                        <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
-                    </ul>
-                    <ul class="footer_menu_list sub">
-                        <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
-                        <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
-                        <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
-                        <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-        <!-- [E] footer -->
     </div>
 
     <div class="top-bg-panel-wrapper">
@@ -584,6 +471,47 @@
     </div>
 </div>
 <!-- [E] cont -->
+
+<!-- [S] footer -->
+<footer class="footer_wrapper">
+    <div class="footer_body">
+        <div class="logo_box">
+            <a id="link_home" class="logo_link">
+                    <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+            </a>
+            <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+        </div>
+        
+        <address class="footer_info_box">
+            <div class="info_text_multi">
+                <span class="info_text">교보문고</span>
+                <span class="gap">|</span>
+                <span class="info_text">대표이사 : 안병현</span>
+            </div>
+            <span class="info_text">서울특별시 종로구 종로 1</span>
+            <span class="info_text">사업자등록번호 : 102-81-11670</span>
+            <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+            <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+            <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+        </address>
+        
+        <div class="footer_menu_box">
+            <ul class="footer_menu_list">
+                <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+            </ul>
+            <ul class="footer_menu_list sub">
+                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- [E] footer -->
 
 <!-- dim -->
 <div class="dim"></div>
@@ -749,21 +677,21 @@
         </div>
     </div>
 </div>
-<!-- e: 마케팅 수신 동의 팝업 -->
+<!-- e: 마케팅 수신 동의 팝업 --> 
 <!-- [E] pop -->
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">
     <lottie-player src="/resources/v1/img/loading-animation.json"
-                   background="transparent"
-                   style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
     </lottie-player>
     <div class="fc-2 fs-6 fw-500">
-      고객님에게 맞는 <b>교보생명</b> 상품으로<br>
-      이동중이에요!
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
     </div>
 </div>
-  
+
 <!-- <script src="/resources/v1/js/swiper-bundle.min.js"></script> -->
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <script type="module">
