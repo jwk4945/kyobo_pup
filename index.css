@@ -41,7 +41,7 @@ header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
 .list_wrap .list .col_wrap{color: #999;}
 .list_wrap .list .col_wrap.done{color: #333;}
 .list_wrap .list .col_wrap.this{background: rgba(230, 245, 242, 0.571);}
-.list_wrap .list .col_wrap.dis{background: #999;}
+.list_wrap .list .col_wrap.dis{background: #999;color: #d6d6d6;}
 .list_wrap .list .col_wrap.dis img{filter: grayscale(100%);}
 
 @media (max-width:540px){
