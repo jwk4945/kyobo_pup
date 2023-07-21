@@ -185,7 +185,7 @@ export const EventProcessor = (function (){
         hideTargets = hideTargets || [
             // document.querySelector('nav'),
             document.querySelector('header'),
-            // document.querySelector('#goFirstBtn')
+            document.querySelector('#goFirstBtn')
         ];
         let isShowing = true;
         let prevScrollY = 0;
@@ -393,8 +393,8 @@ export const EventProcessor = (function (){
     function postBannerClickInfo(href, callback) {
         const url = `/journey/form/banner-visit`;
         const sendData = {
-            csjr_ctts_advr_expr_srmb: _bannerHistorySeq // 배너이력순번
-            , srch_kywr_name: _searchKeyword // 교보문고 검색키드,
+            csjr_ctts_advr_expr_srmb: 1 //_bannerHistorySeq // 배너이력순번
+            , srch_kywr_name: _searchKeyword // 교보문고 검색키워드
             , csjr_ctts_num: _contentsId // 콘텐츠아이디
             , bnnr_expr_mthd_dvsn_code: '003' // 자동 : 수동          -> 5/18 고정값 "003" 으로 변경
             , bnnr_expr_cmdt_kind_code: '003' // 보험 : 부가서비스      -> 5/18 고정값 "003" 으로 변경
@@ -402,7 +402,7 @@ export const EventProcessor = (function (){
             , bnnr_urladrs: getLinkInfos().linkUrl
         };
         postData(url, sendData, result=>{
-            console.log(result);
+            console.log('postBannerClickInfo::', result);
             window.location.href=href;
             if(callback!==undefined)
                 callback();
@@ -741,6 +741,33 @@ export const EventProcessor = (function (){
         postData(url, sendData, result=>{console.log(result)})
     }
 
+    function getConsent(accessToken) {
+        const url = `/journey/consent`;
+
+        fetch('/journey/consent', {
+          method: 'GET',
+          headers: {
+              'accessToken': accessToken,
+              'Content-type' : 'application/json'
+          },
+          mode: 'cors',
+          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          credentials: 'same-origin', // include, *same-origin, omit
+          redirect: 'follow', // manual, *follow, error
+          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        }).then(function (res) {
+            if (res.ok) {
+                return res.json();
+            } else {
+                throw new Error('Error: ' + res.status);
+            }
+        }).then(function (data) {
+           console.log(data);
+        }).catch(function (err) {
+            console.log(err);
+        });
+    }
+
     function removeLocalStorage(key, isGlobal=false){
         if(isGlobal){
             localStorage.removeItem(key);
@@ -833,9 +860,10 @@ export const EventProcessor = (function (){
         window.addEventListener('resize',_setPropertiesForCss);
         window.addEventListener('resize',()=>AnimationManager.set100vh(document.documentElement.clientHeight));
     }
+
     return {setGoNextAndFirstBtn, isAutoBottomStyle, setAutoBottomSheetEvent
         , setBottomSheetEvent, setPropertiesForCss, getResultOfSurvey, togglePageContents
-        , initSetting, setUserInLastPage, postReview, getLocalStorage, setLocalStorage, postBannerExposeInfo, postBannerClickInfo, showLoadingScreen, closeLoadingScreen}
+        , initSetting, setUserInLastPage, postReview, getLocalStorage, setLocalStorage, postBannerExposeInfo, postBannerClickInfo, showLoadingScreen, closeLoadingScreen, getConsent}
 })();
 
 
@@ -845,10 +873,13 @@ export const EventProcessor = (function (){
 /** sns 공유하기  */
 const shareKakao = (shareUrl) => {
 
-    Kakao.init( globalConfig.kakao.apiKey.prod );
+    if (!Kakao.isInitialized()) {
+        Kakao.init( globalConfig.kakao.apiKey.prod );
+    }
 
     const title = document.title;
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");
+    const imageUrl = document.querySelector("meta[property='og:image']").getAttribute("content");
 
     Kakao.Share.sendDefault({
         // container: '#ka-share-btn',
@@ -856,7 +887,7 @@ const shareKakao = (shareUrl) => {
         content: {
             title: title,
             description: desc,
-            imageUrl: 'https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png',
+            imageUrl: imageUrl,
             link: {
                 // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
                 mobileWebUrl: shareUrl,
@@ -952,7 +983,7 @@ const checkUserAgent = () => {
 
 function initialize(shareUrl) {
     // userAgent set
-    // checkUserAgent();
+    checkUserAgent();
 
     const copyUrl = document.getElementById('url-copy-span');
     // 확대오픈 시 공유하기 pass
@@ -986,11 +1017,24 @@ function handleShareButtonClick(event, url) {
     }
 }
 
+
 // 1. EventProcessor.initSetting -> 기존 컨텐츠 init setting... 임시로 load 이벤트로 분리
 // 2. initialize -> 확대오픈/정식오픈 add 컨텐츠 init setting... DomContentLoaded에 정의.
 window.addEventListener('load', function() {
     console.log('window onLoad');
 });
+
+// 쿠키에서 accessToken 값을 가져오는 함수
+function getAccessTokenFromCookie() {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith('accessToken=')) {
+            return cookie.substring('accessToken='.length);
+        }
+    }
+    return null;
+}
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1045,25 +1089,26 @@ document.addEventListener('DOMContentLoaded', function() {
         handleShareButtonClick(e, currentUrl);
     });
 
+
     const linkForInsurance = document.getElementById('linkForInsurance');
-    //
-    // linkForInsurance.addEventListener('click', async e => {
-    //     e.preventDefault();
-    //     await EventProcessor.postBannerExposeInfo();
-    //     EventProcessor.showLoadingScreen();
-    //     window.setTimeout(() =>
-    //         EventProcessor.postBannerClickInfo(info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen), 2000); //로딩스크린 2초후 실행
-    // })
-    // linkForInsurance.addEventListener('click',e=>{
-    //     e.preventDefault();
-    //     EventProcessor.postBannerExposeInfo();
-    //     EventProcessor.showLoadingScreen();
-    //     window.setTimeout(()=> EventProcessor.postBannerClickInfo (
-    //             info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen), 2000); //로딩스크린 2초후 실행
-    // })
+    linkForInsurance.addEventListener('click', e => {
+        e.preventDefault();
+
+        EventProcessor.showLoadingScreen();
+        window.setTimeout(()=>
+            EventProcessor.postBannerClickInfo(info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen()), 2000); //로딩스크린 2초후 실행
+    });
+
+
+    const accessToken = getAccessTokenFromCookie();
+    // consent Test
+    const headerClickInfo = document.getElementById('header');
+    headerClickInfo.addEventListener('click', e=> {
+        console.log(accessToken);
+        EventProcessor.getConsent(accessToken);
+    });
 
     initialize(currentUrl);
-
 
 });
 
