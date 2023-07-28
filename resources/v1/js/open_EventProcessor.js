@@ -185,7 +185,7 @@ export const EventProcessor = (function (){
         hideTargets = hideTargets || [
             // document.querySelector('nav'),
             document.querySelector('header'),
-            document.querySelector('#goFirstBtn')
+            // document.querySelector('#goFirstBtn')
         ];
         let isShowing = true;
         let prevScrollY = 0;
@@ -198,7 +198,11 @@ export const EventProcessor = (function (){
         if(gnb===null)
             return;
 
-        window.addEventListener('scroll',e=>{
+        window.addEventListener('scroll',e => {
+            if (window.scrollY <= 0) {
+                return
+            }
+            
             let isScrollingDown = window.scrollY>prevScrollY;
             //화면 스크롤이 가장 위인 경우, 위로 스크롤하면 바로 등장
             if(!isScrollingDown && window.scrollY===0) {
@@ -358,8 +362,8 @@ export const EventProcessor = (function (){
             console.log(result);
             result.forEach(row=>{
                 const idx = row.csjr_srvy_ansr_srmb;
-                surveyResultTargets.arrSurveyResultTexts[idx-1].textContent = row.csjr_ctts_srvy_rate;
-                surveyResultTargets.arrSurveyResultBars[idx-1].style.width = `${row.csjr_ctts_srvy_rate}%`;
+                surveyResultTargets.arrSurveyResultTexts[idx].textContent = row.csjr_ctts_srvy_rate;
+                surveyResultTargets.arrSurveyResultBars[idx].style.width = `${row.csjr_ctts_srvy_rate}%`;
             })
         })
     }
@@ -742,9 +746,9 @@ export const EventProcessor = (function (){
     }
 
     function getConsent(accessToken) {
-        const url = `/journey/consent`;
+        const url = `/journey/consent/1`;
 
-        fetch('/journey/consent', {
+        fetch('/journey/consent/1', {
           method: 'GET',
           headers: {
               'accessToken': accessToken,
@@ -764,6 +768,7 @@ export const EventProcessor = (function (){
         }).then(function (data) {
            console.log(data);
         }).catch(function (err) {
+            // self.location.href = "http://mmbr.kyobobook.co.kr/login?continue=http://local.kyobobook.co.kr:8080/journey/v2_2B_061&login-channel=134";
             console.log(err);
         });
     }
@@ -1104,7 +1109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // consent Test
     const headerClickInfo = document.getElementById('header');
     headerClickInfo.addEventListener('click', e=> {
-        console.log(accessToken);
+        // console.log(accessToken);
         EventProcessor.getConsent(accessToken);
     });
 
