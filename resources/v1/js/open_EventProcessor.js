@@ -1,9 +1,9 @@
 import { AnimationManager } from "./open_AnimationManager.js";
 import globalConfig from "./config.js";
-import appData from "./data.js";
+import appData from "./ins_data.js";
+import ua from "./ua.js";
 
 let info = null;
-let ua = null;
 
 export const EventProcessor = (function (){
     let _isAutoBottomStyle=false;
@@ -202,7 +202,7 @@ export const EventProcessor = (function (){
             if (window.scrollY <= 0) {
                 return
             }
-            
+
             let isScrollingDown = window.scrollY>prevScrollY;
             //화면 스크롤이 가장 위인 경우, 위로 스크롤하면 바로 등장
             if(!isScrollingDown && window.scrollY===0) {
@@ -752,7 +752,8 @@ export const EventProcessor = (function (){
           method: 'GET',
           headers: {
               'accessToken': accessToken,
-              'Content-type' : 'application/json'
+              'Content-type': 'application/json',
+              'x-requested-with': 'XMLHttpRequest'
           },
           mode: 'cors',
           cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -761,17 +762,23 @@ export const EventProcessor = (function (){
           referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
         }).then(function (res) {
             if (res.ok) {
+                ua.changeLoginStatus(true);
                 return res.json();
             } else {
                 throw new Error('Error: ' + res.status);
             }
         }).then(function (data) {
-           console.log(data);
+            console.log(data);
+            console.log(ua);
+
+            // ssoUrl + redirectUrl + channelCode(134)
+            // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + "http://local.kybobook.co.kr:8080/journey/v2_2B_061" + "&loginChannel=" + "134";
+            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=http://local.kyobobook.co.kr:8080/journey/v2_2B_061&loginChannel=134";
         }).catch(function (err) {
-            // self.location.href = "http://mmbr.kyobobook.co.kr/login?continue=http://local.kyobobook.co.kr:8080/journey/v2_2B_061&login-channel=134";
             console.log(err);
         });
     }
+
 
     function removeLocalStorage(key, isGlobal=false){
         if(isGlobal){
@@ -884,7 +891,7 @@ const shareKakao = (shareUrl) => {
 
     const title = document.title;
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");
-    const imageUrl = document.querySelector("meta[property='og:image']").getAttribute("content");
+    const imageUrl = document.querySelector("meta[property='og:iamge']").getAttribute("content");
 
     Kakao.Share.sendDefault({
         // container: '#ka-share-btn',
@@ -968,22 +975,15 @@ function render(renderInfo) {
     `;
 
     document.querySelector('#output').innerHTML = template;
+}
+
+function renderConsentView() {
 
 }
 
 
-const checkUserAgent = () => {
-    // userAgent 분기(문고는 백엔드에서 처리하고 있음. 임시로 프론트에서 처리하도록 작성함)
-    ua = {
-        device: {
-            isMobile: /*[[${session.isMobile}]]*/ true,
-            isMobileApp: /*[[${session.isMobileApp}]]*/ false,
-            isIOS: /*[[${session.isIOS}]]*/ true,
-            isAndroid: /*[[${session.isAndroid}]]*/ false,
-            isMSIE: /*[[${session.isMSIE}]]*/ false,
-            isMac: /*[[${session.isMac}]]*/ false,
-        }
-    };
+function checkUserAgent() {
+    console.log(ua.device);
 }
 
 function initialize(shareUrl) {
@@ -1054,7 +1054,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // test url: http://127.0.0.1:5501/WEB-INF/views/journey/v2_2D_091.html
     // 운영 url: https://life-marketing.kyobobook.co.kr/journey/v2_2B_061?kywr=1LCB6roRfjT16
-    // 접두어 v1: 임시오픈 v2: 확대오픈 o1: 정식오픈
+    // (prefix) v1: 임시오픈 / v2: 확대오픈 / o1: 정식오픈
     const fileName = fileNameWithoutPrefix.replace('.html', '');
 
     // find By fileName
@@ -1064,7 +1064,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // initSetting
     EventProcessor.initSetting(fileName, info);
-    console.log(fileName)
 
     // 컨텐츠 평가(좋아요/싫어요) 저장 값 set
     const radios = document.querySelectorAll('input[name="feedback-radio"][type="radio"]');
@@ -1079,11 +1078,6 @@ document.addEventListener('DOMContentLoaded', function() {
             EventProcessor.setLocalStorage('feedback-value', e.target.value, 14); //2주만 보관
         });
     });
-
-    // document.getElementById('link-login').addEventListener("click", function(event) {
-    //     event.preventDefault(); // 기본 이벤트 중단
-    //     window.location.href = "";
-    // });
 
 
     // 공유하기
