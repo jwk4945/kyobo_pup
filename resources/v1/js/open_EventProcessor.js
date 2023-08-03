@@ -2,6 +2,7 @@ import { AnimationManager } from "./open_AnimationManager.js";
 import globalConfig from "./config.js";
 import appData from "./ins_data.js";
 import ua from "./ua.js";
+import { renderInsuaranceView, renderConsentView } from "./render.js";
 
 let info = null;
 
@@ -945,41 +946,6 @@ function findByfileName(fileName) {
 }
 
 
-function render(renderInfo) {
-    // 보험 상품 info template literal
-    // const data = { name: 'test name', explain: 'test explain' };
-    // href=${ renderInfo.linkInfoForInsurance.url }
-    console.log(renderInfo);
-    const template = `
-                <section class="btm-area">
-                    <p class="explain">${ renderInfo.linkInfoForInsurance.explain }</p>
-                    <a id="linkForInsurance"
-                    onclick="ga360.GA_Event('DBS_캠페인_MO', '${ renderInfo.gaParams.params1 }', '${ renderInfo.gaParams.params2 }', '${ renderInfo.gaParams.params3 }', '${ renderInfo.gaParams.params4 }');">
-                        <div class="pd-area">
-                            <div class="clear">
-                                <div class="ci fl">
-                                    <img src="${ renderInfo.linkInfoForInsurance.imgUrl }" alt="KYOBO 교보생명">
-                                </div>
-                                <dl class="fl">
-                                    <dt class="name">${ renderInfo.linkInfoForInsurance.name }</dt>
-                                    <dd class="certificationMsg">
-                                        <div class="certificationMsg-txt">${ renderInfo.linkInfoForInsurance.certificationMsg }</div>
-                                        <div class="certificationMsg-date">${ renderInfo.linkInfoForInsurance.period }</div>
-                                    </dd>
-                                </dl>
-                            </div>
-                            <div class="ico-arw"></div>
-                        </div>
-                    </a>
-                </section>                        
-    `;
-
-    document.querySelector('#output').innerHTML = template;
-}
-
-function renderConsentView() {
-
-}
 
 
 function checkUserAgent() {
@@ -1059,8 +1025,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // find By fileName
     info = findByfileName(fileName);
-    render(info);
-
+    renderInsuaranceView(info);
+    
+    // 동의영역 view 
+    renderConsentView();
 
     // initSetting
     EventProcessor.initSetting(fileName, info);
