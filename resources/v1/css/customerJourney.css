@@ -498,7 +498,7 @@ section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;t
 
 
 /* 해상도 대응 */
-@media (max-width: 375px) {
+@media (max-width: 374px) {
     .fact-chk .main-banner-wrapper{height: 360px;}
     .information-type .main-banner-wrapper.center-type{height: 360px;}
 }
