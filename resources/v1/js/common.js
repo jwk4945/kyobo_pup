@@ -39,12 +39,21 @@ $(document).ready(function (){
         }
     });
 
+    $('.dim').on('click', function(){
+        if($('#popShare').hasClass('active')){
+            $('#popShare').removeClass('active');
+            $('#link_share').removeClass('active');
+            $('.dim').removeClass('active');
+            $('html').removeClass('lock');
+        }
+    });
+
     // URL공유 토스트 팝업
     $('.btn_share_link').on('click', function(){
         $('.toast_wrap_share').addClass('on');
         setTimeout(function(){
             $('.toast_wrap_share').removeClass('on');
-        }, 4500);
+        }, 3500);
     });
     // //SNS 공유하기
 
