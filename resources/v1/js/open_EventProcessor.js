@@ -1025,10 +1025,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // find By fileName
     info = findByfileName(fileName);
-    renderInsuaranceView(info);
+
+    // 보험 상품 view 
+    renderInsuaranceView(info, fileName);
     
     // 동의영역 view 
-    renderConsentView();
+    renderConsentView(fileName);
 
     // initSetting
     EventProcessor.initSetting(fileName, info);

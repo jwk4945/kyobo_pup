@@ -4,7 +4,7 @@
     href=${ renderInfo.linkInfoForInsurance.url }
 */
 
-export function renderInsuaranceView(renderInfo) {
+export function renderInsuaranceView(renderInfo, fileName) {
     console.log('renderInsuaranceView', renderInfo);
 
     const template = `
@@ -31,11 +31,19 @@ export function renderInsuaranceView(renderInfo) {
                 </section>                        
     `;
 
-    document.querySelector('#ins_view').innerHTML = template;
+    if (fileName === '2B_061') {
+        document.querySelector('#ins_view').innerHTML = template;
+    } else {
+        document.querySelector('#output').innerHTML = template;
+    }
 
 }
 
-export function renderConsentView() {
+export function renderConsentView(fileName) {
+    if (fileName !== '2B_061') {
+        return; 
+    }
+    
     // 개인정보 제3자 제공 동의 (선택)
     const personalTemplate = `
         <div id="personalPop" class="pop-area" style="display: none;">
@@ -98,7 +106,7 @@ export function renderConsentView() {
         </div>
     `;
 
-    document.querySelector('#cnst_p_view').innerHTML = personalTemplate; 
+    document.querySelector('#cnst_personal_view').innerHTML = personalTemplate; 
 
     // 마케팅 수신 동의 (선택)
     const marketTemplate = `
@@ -147,7 +155,7 @@ export function renderConsentView() {
         </div>
     `;
 
-    document.querySelector('#cnst_m_view').innerHTML = marketTemplate; 
+    document.querySelector('#cnst_market_view').innerHTML = marketTemplate; 
 }
 
 
