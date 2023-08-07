@@ -486,7 +486,7 @@ section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;t
 .horizontal-box ul li .inner input{width: 0;height: 0;visibility: hidden;font-size: 0;position: absolute;top: 0;left: 0;text-indent: -9999px;}
 .horizontal-box ul li .inner{overflow: hidden;}
 .horizontal-box ul li .inner label {display: block;padding-bottom: 10px;}
-.horizontal-box ul li .inner label .box{position: relative;background: #fff;border-radius: 15px;padding: 20px 0;height: 230px;box-sizing: border-box;text-align: center;}
+.horizontal-box ul li .inner label .box{position: relative;background: #fff;border-radius: 10px;padding: 20px 0;height: 230px;box-sizing: border-box;text-align: center;}
 .horizontal-box ul li .inner label .box::after{content: "";display: block;position: absolute;bottom: -10px;left: 50%;transform: translate(-50%);width: 20px;height: 12px;background: url(../img/ico_bg_q_off.png) 0 0 no-repeat;background-size: contain;}
 .horizontal-box ul li .inner label .box .img-box{display: flex;justify-content: center;margin-top: 25px;}
 .horizontal-box ul li .inner label .box .img-box img{width: 80px;justify-content: center;}
