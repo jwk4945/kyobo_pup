@@ -368,7 +368,7 @@ textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: bord
 .com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 50px;background: #222;color: white;cursor: pointer;}
 .type-d .com-btn{background: #17478c;}
 
-.confirm-btn-box{padding: 15px 20px 0;font-weight: 700;}
+.confirm-btn-box{max-width: 540px;padding: 15px 20px 0;margin: 0 auto;font-weight: 700;}
 .confirm-btn-box .confirm-btn{display: inline-block; width: 100%;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);}
 .type-a .confirm-btn-box .confirm-btn{background: #27809e;}
 .type-b .confirm-btn-box .confirm-btn{background: #d95555;}
@@ -470,13 +470,13 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .agree-area label span{color: #222;font-size: 15px;line-height: 40px;}
 .agree-area label input:checked + i + span{color: #222;font-weight: 700;}
 
-.agree-area .all-agree-box{padding-bottom: 5px;border-bottom: 1px solid #ddd;}
+.agree-area .all-agree-box{max-width: 500px;margin: 0 auto;padding-bottom: 5px;border-bottom: 1px solid #ddd;}
 .agree-area .all-agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-all.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .all-agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .all-agree-box label span{font-size: 16px;}
 
+.agree-area .agree-box{display: flex;justify-content: space-between;max-width: 500px;margin: 0 auto;}
 .agree-area .all-agree-box + .agree-box{margin-top: 10px;}
-.agree-area .agree-box{display: flex;justify-content: space-between;}
 .agree-area .agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .agree-box label input:checked + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-on.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .agree-box a{line-height: 40px;color: #222;text-decoration: underline;font-size: 12px;}
