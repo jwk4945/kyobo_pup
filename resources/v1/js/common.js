@@ -69,6 +69,36 @@ $(document).ready(function (){
 		}
     }; appHidden();
     // // ios, android
+
+    // 마케팅 수신 항복 미선택시 토스트 메세지
+    $('.btn_agree').on('click', function(){
+        $('.toast_wrap_agree').addClass('on');
+        setTimeout(function(){
+            $('.toast_wrap_agree').removeClass('on');
+        }, 2500);
+    });
+
+    // var chkMk = $('.chk_agr_mkt > input').is(':checked');
+
+    // 제3자 제공 동의 유도 토스트 메세지
+    $('.chk_agr_mkt').on('click', function(){
+        if($('.chk_agr_mkt > input').is(':checked')){
+            console.log('체크됨');
+            // $('.toast_wrap_re').addClass('on');
+            // setTimeout(function(){
+            //     $('.toast_wrap_re').removeClass('on');
+            // }, 2500);
+
+            // if($('.chk_agr_info>input').prop('checked', false)){
+            //     $('.toast_wrap_re').addClass('on');
+            //     setTimeout(function(){
+            //         $('.toast_wrap_re').removeClass('on');
+            //     }, 2500);
+            // }
+        } else{
+            console.log('체크안됨');
+        }
+    });
 });
 
 // 동의영역 전체 선택

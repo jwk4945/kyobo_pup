@@ -420,13 +420,13 @@
                 </label>
             </div>
             <div class="agree-box">
-                <label for="chk-agr1" class="check-style-agr">
+                <label for="chk-agr1" class="check-style-agr chk_agr_info">
                     <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
             </div>
             <div class="agree-box">
-                <label for="chk-agr2" class="check-style-agr">
+                <label for="chk-agr2" class="check-style-agr chk_agr_mkt">
                     <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
@@ -642,12 +642,21 @@
         <div class="pop-footer">
             <div class="btn-box">
                 <a href="javascript:void(0);" class="btn" onclick="popClose('marketPop');">동의안함</a>
-                <a href="javascript:void(0);" class="btn agree">동의</a>
+                <a href="javascript:void(0);" class="btn agree btn_agree">동의</a>
             </div>
         </div>
     </div>
+    <!-- 마케팅 수신 항복 미선택시 토스트 메세지 -->
+    <div class="toast_wrap_agree">
+        <span class="toast_message">마케팅 수신 방법을 선택해주세요.</span>
+    </div>
 </div>
-<!-- e: 마케팅 수신 동의 팝업 --> 
+<!-- e: 마케팅 수신 동의 팝업 -->
+
+<!-- 제3자 제공 동의 유도 토스트 메세지 -->
+<div class="toast_wrap_re">
+    <span class="toast_message">제3자 제공 동의 시에만<br>상품 안내를 받아 볼 수 있습니다.</span>
+</div>
 <!-- [E] pop -->
 
 <!--로딩스크린-->
