@@ -554,6 +554,12 @@
 <!-- e: 마케팅 수신 동의 팝업 -->
 <!-- [E] pop -->
 
+<!-- [S]top버튼 -->
+<div class="btn-top-wrap">
+    <button type="top" class="btn-fixed-top">top</button>
+</div>
+<!-- [E]top버튼 -->
+
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">
     <lottie-player src="../../../resources/v1/img/loading-animation.json"
@@ -580,6 +586,23 @@ catch(error){
     alert(error);
     alert(error.stack);
 }
+
+$(document).ready(function(){
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 30) {
+            $('.btn-fixed-top').fadeIn();
+        } else {
+            $('.btn-fixed-top').fadeOut();
+        }
+    });
+
+    $(".btn-fixed-top").on('click', function () {
+        $('html, body').stop().animate({ scrollTop: 0 }, 200);
+        // $('html, body').scrollTop(0);
+        return false;
+    });
+});
 </script>
 </body>
 </html>
