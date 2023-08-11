@@ -107,6 +107,17 @@ $(document).ready(function (){
         return false;
     });
     // // 탑버튼
+
+    // 헤어 쉐도우 적용
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 5) {
+            $('#header').addClass('shadow');
+            console.log('gg');
+        } else {
+            $('#header').removeClass('shadow');
+            console.log('ff');
+        }
+    });
 });
 
 // 동의영역 전체 선택

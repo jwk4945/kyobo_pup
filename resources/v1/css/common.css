@@ -311,7 +311,8 @@ body.type-c{color:white;background: #6a50c2;}
 main {overflow-x: hidden;}
 
 /* === header nav === */
-header{position: fixed;z-index: 10;background-color: white;top: 0;left: 0;right: 0;height: 60px;transition: transform 0.4s;box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);}
+header{position: fixed;z-index: 10;background-color: white;top: 0;left: 0;right: 0;height: 60px;transition: transform 0.4s;}
+header.shadow{box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);}
 header nav{height: 60px;padding: 0 8px;display: flex;flex-direction: row;align-items: center;}
 header nav h1{font-size: 18px;font-weight: 500;padding: 0 20px 0 0;text-align: center;text-overflow: ellipsis;white-space: nowrap;overflow-x: hidden;flex: 1;color: #000;}
 header.hide{transform: translateY(-100%);}
