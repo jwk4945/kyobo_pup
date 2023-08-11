@@ -30,7 +30,7 @@
 .survey-type .survey-form li{white-space: nowrap;display: flex;width: 200%;transition: transform 0.4s;}
 ._7E_006 .survey-form li{width: 100%;}
 .survey-type .survey-form li .li-item, .survey-type .survey-form li .li-item-result-wrapper {padding: 0 20px 5px;display: inline-block;width: 100%;box-sizing: border-box;}
-.survey-type .survey-form li label, .survey-type .survey-form li .li-item-result{display: flex;border-radius: 10px;background-color: rgba(255, 255, 255, 0.95);padding: 10px 25px 15px 20px;cursor: pointer;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);align-items: center;max-width: 480px;margin: auto;color: #222;min-height: 80px;box-sizing: border-box;}
+.survey-type .survey-form li label, .survey-type .survey-form li .li-item-result{display: flex;border-radius: 10px;background-color: rgba(255, 255, 255, 0.95);padding: 10px 25px 15px 20px;cursor: pointer;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);align-items: center;max-width: 510px;margin: auto;color: #222;min-height: 80px;box-sizing: border-box;}
 .survey-type .survey-form.survey-form2 li{width: 100%;}
 .survey-type .survey-form.survey-form2 li label{display: flex;border-radius: 0;background-color: initial;padding: 0 0 10px;cursor: pointer;box-shadow: none;margin: auto;color: #222;}
 .survey-type .survey-form.survey-form2 .horizontal-box ul li .inner label .box{width: 100%;}
@@ -84,7 +84,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{border: 7px solid #2f65b3;}
 .horizontal-ul>li label.speech-box .image-box{display: flex;justify-items: center;align-items: center;}
 .survey-type .survey-form label.speech-box input[type='radio']{margin: 0 0 10px;width: 25px;height: 25px;border: 8px solid #e6e6e6;}
 .survey-type .cont-area{padding: 0 15px 30px;flex: 0;text-align: center;overflow: hidden;}
-.survey-type .cont-area #goNextBtn{max-width: 540px;margin: 0 auto;}
+.survey-type .cont-area #goNextBtn{max-width: 510px;margin: 0 auto;}
 /* 삭제예정 */
 /* .survey-type .footer-area{
     padding: 0 15px 35px;
@@ -100,11 +100,11 @@ input[type='radio']:checked+* .radio-btn.bdc-5{border: 7px solid #2f65b3;}
 .survey-type .per{padding-left: 5px;}
 .survey-type .footer-area{padding: 0 15px 35px;flex: 0;text-align: center;overflow: hidden;}
 .survey-type .footer-area.after{padding: 0 15px 40px;flex: 0;}
-.survey-type .footer-area button{border-radius: 5px;height: 50px;max-width: calc(480px + 50px);margin: auto;}
+.survey-type .footer-area button{border-radius: 5px;height: 50px;max-width: 510px;margin: auto;}
 .survey-type .survey-form button:disabled{color: #fff;background-color: #999;cursor: initial;}
 .survey-type .explanation-box{background-color: white;padding: 20px;text-align: left;border-radius: 5px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);}
 .card-section-wrap{padding: 0 15px;}
-.card-section{border-radius: 5px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);background: white;padding: 30px 20px;margin: auto;max-width: 540px;}
+.card-section{border-radius: 5px;box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);background: white;padding: 30px 20px;margin: auto;max-width: 510px;}
 
 section article{padding-top: 75px;overflow: hidden;}
 section article.inner{padding: 0 15px;}
