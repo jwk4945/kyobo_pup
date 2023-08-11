@@ -92,6 +92,21 @@ $(document).ready(function (){
     //         console.log('체크안됨');
     //     }
     // });
+
+    // 탑버튼
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 30) {
+            $('.btn-fixed-top').fadeIn();
+        } else {
+            $('.btn-fixed-top').fadeOut();
+        }
+    });
+
+    $(".btn-fixed-top").on('click', function () {
+        $('html, body').stop().animate({ scrollTop: 0 }, 200);
+        return false;
+    });
+    // // 탑버튼
 });
 
 // 동의영역 전체 선택

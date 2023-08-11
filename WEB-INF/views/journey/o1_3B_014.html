@@ -586,22 +586,6 @@ catch(error){
     alert(error);
     alert(error.stack);
 }
-
-$(document).ready(function(){
-
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 30) {
-            $('.btn-fixed-top').fadeIn();
-        } else {
-            $('.btn-fixed-top').fadeOut();
-        }
-    });
-
-    $(".btn-fixed-top").on('click', function () {
-        $('html, body').stop().animate({ scrollTop: 0 }, 200);
-        return false;
-    });
-});
 </script>
 </body>
 </html>
