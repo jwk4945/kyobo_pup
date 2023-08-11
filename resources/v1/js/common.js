@@ -78,26 +78,20 @@ $(document).ready(function (){
         }, 2500);
     });
 
-    // var chkMk = $('.chk_agr_mkt > input').is(':checked');
-
     // 제3자 제공 동의 유도 토스트 메세지
-    $('.chk_agr_mkt').on('click', function(){
-        if($('.chk_agr_mkt > input').is(':checked')){
+    $('.chk_agr_mkt input').on('click', function(){
+        if($(this).is(':checked')){
             console.log('체크됨');
-            // $('.toast_wrap_re').addClass('on');
-            // setTimeout(function(){
-            //     $('.toast_wrap_re').removeClass('on');
-            // }, 2500);
 
-            // if($('.chk_agr_info>input').prop('checked', false)){
-            //     $('.toast_wrap_re').addClass('on');
-            //     setTimeout(function(){
-            //         $('.toast_wrap_re').removeClass('on');
-            //     }, 2500);
-            // }
+            $('.toast_wrap_re').addClass('on');
+            setTimeout(function(){
+                $('.toast_wrap_re').removeClass('on');
+            }, 2500);
+
         } else{
             console.log('체크안됨');
         }
+
     });
 });
 
