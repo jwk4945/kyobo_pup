@@ -1,10 +1,11 @@
 import { AnimationManager } from "./open_AnimationManager.js";
 import globalConfig from "./config.js";
-import appData from "./ins_data.js";
+import appData from "./insData.js";
 import ua from "./ua.js";
 import { renderInsuaranceView, renderConsentView } from "./render.js";
 
 let info = null;
+let bookstoreMemberNo = null;
 
 export const EventProcessor = (function (){
     let _isAutoBottomStyle=false;
@@ -104,7 +105,7 @@ export const EventProcessor = (function (){
     }
 
     function initSettingForSubmitButton({bPostSurveyInput=true,
-                                        forceEnableNextButton=false}){
+                                            forceEnableNextButton=false}){
         EventProcessor.setUserInLastPage(false);
         initSettingForButtonEnable(forceEnableNextButton); // 버튼 활성화 처리
         initSettingForSubmitSurvey(bPostSurveyInput); // 설문조사 결과 제출 및 가져오기
@@ -156,7 +157,7 @@ export const EventProcessor = (function (){
         swiper.on('slideChange',swiper=>{
 
             if((swiper.realIndex === swiper.slides.length-1) //마지막 슬라이드 도착했거나
-              ||(swiper.realIndex === swiper.slides.length-2 && swiper.previousIndex === swiper.slides.length-1)) //마지막슬라이드에서 직전슬라이드로 돌아온 경우
+                ||(swiper.realIndex === swiper.slides.length-2 && swiper.previousIndex === swiper.slides.length-1)) //마지막슬라이드에서 직전슬라이드로 돌아온 경우
             {
                 togglePageContents();
                 EventProcessor.setUserInLastPage(true);
@@ -345,8 +346,7 @@ export const EventProcessor = (function (){
         // let checkedInput = document.querySelector('input[name="kyobolife-survey"]:checked');
         // let parent = checkedInput.parentElement;
         // let dlTextContent = parent.querySelector('dl').getAttribute('data-dl');
-
-        let inputElement = document.getElementById('your-input-id');
+        
         let checkedInput = document.querySelector('input[name="kyobolife-survey"]:checked')
         let dataSurvey = checkedInput.getAttribute('data-sv');
 
@@ -574,8 +574,8 @@ export const EventProcessor = (function (){
             e.preventDefault();
             showLoadingScreen();
             window.setTimeout(()=>postBannerClickInfo(
-                linkInfos.linkUrl
-                , closeLoadingScreen)
+                    linkInfos.linkUrl
+                    , closeLoadingScreen)
                 , 2000); //로딩스크린 2초후 실행
         })
 
@@ -746,35 +746,46 @@ export const EventProcessor = (function (){
         postData(url, sendData, result=>{console.log(result)})
     }
 
-    function getConsent(accessToken) {
-        const url = `/journey/consent/1`;
+    function getConsent(accessToken, sub, tempFlags) {
+        const url = `/journey/consent/personal-information/agreement`;
 
-        fetch('/journey/consent/1', {
-          method: 'GET',
-          headers: {
-              'accessToken': accessToken,
-              'Content-type': 'application/json',
-              'x-requested-with': 'XMLHttpRequest'
-          },
-          mode: 'cors',
-          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: 'same-origin', // include, *same-origin, omit
-          redirect: 'follow', // manual, *follow, error
-          referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        const sendData = {
+            bookstoreMemberNo: ua.bookstoreMemberNo
+            , personalInformationAgreementFlag: tempFlags.chkArg1
+            , marketingConsentAgreementFlag: tempFlags.chkArg2
+            , marketingConsentAgreementSmsFlag: tempFlags.chkSms
+            , marketingConsentAgreementEmailFlag: tempFlags.chkEmail
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'accessToken': accessToken,
+                'Content-type': 'application/json',
+                'x-requested-with': 'XMLHttpRequest'
+            },
+            mode: 'cors',
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin', // include, *same-origin, omit
+            redirect: 'follow', // manual, *follow, error
+            referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify(sendData), // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
         }).then(function (res) {
             if (res.ok) {
                 ua.changeLoginStatus(true);
                 return res.json();
+            } else if (res.status === 403) {
+                console.log('403');
+
+                // ssoUrl + redirectUrl + channelCode(134)
+                self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+
             } else {
                 throw new Error('Error: ' + res.status);
             }
         }).then(function (data) {
             console.log(data);
             console.log(ua);
-
-            // ssoUrl + redirectUrl + channelCode(134)
-            // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + "http://local.kybobook.co.kr:8080/journey/v2_2B_061" + "&loginChannel=" + "134";
-            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=http://local.kyobobook.co.kr:8080/journey/v2_2B_061&loginChannel=134";
         }).catch(function (err) {
             console.log(err);
         });
@@ -946,18 +957,77 @@ function findByfileName(fileName) {
 }
 
 
-
-
 function checkUserAgent() {
-    console.log(ua.device);
+    // console.log(ua.device);
 }
 
-function initialize(shareUrl) {
+function initialize(shareUrl, accessToken) {
+    // domContentLoaded -> initialize -> onLoad
+
     // userAgent set
     checkUserAgent();
 
+    // is Logined
+    // document.querySelector('#isLogined').value || false;
+    fetch(`/journey/consent/is-login`, {
+        method: 'GET',
+        headers: {
+            'accessToken': accessToken,
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        ua.changeLoginStatus(data.isLogin);
+
+        // link_login
+
+        if (ua.isLogined) {
+            return fetch(`/journey/consent/personal-information/agreement/${bookstoreMemberNo}`, {
+                method: 'GET',
+                headers: {
+                    'accessToken': accessToken,
+                    'Content-type': 'application/json',
+                    // 'x-requested-with': 'XMLHttpRequest'
+                },
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+            })
+                .then(res2 => res2.json())
+                .then(data2 => {
+                    console.log(data2);
+                    for (let flagName in data2) {
+                        ua.changeFlag(flagName, data2[flagName]);
+                    }
+                })
+                .catch(err2 => {
+                    console.error('Error:', err2);
+                });
+        } else {
+            return Promise.reject('로그인되지 않음');
+        }
+    })
+    .catch(err => {
+        console.error('Error:', err);
+    });
+
+
+    let agreeBox = document.getElementById("agreeBox");
+    let allAgreeBox = document.getElementById("allAgreeBox");
+    let perSonalAgreeBox = document.getElementById("personalAgreeBox");
+    let marketAgreeBox = document.getElementById("marketAgreeBox");
+
+
+    perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'block' : 'none';
+    marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'block' : 'none';
+
+    allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'block') && (marketAgreeBox.style.display === 'block') ? 'block' : 'none';
+
+
+    // sns 공유하기 - url copy
     const copyUrl = document.getElementById('url-copy-span');
-    // 확대오픈 시 공유하기 pass
     if (copyUrl) {
         copyUrl.innerText = shareUrl;
     }
@@ -988,12 +1058,24 @@ function handleShareButtonClick(event, url) {
     }
 }
 
-
 // 1. EventProcessor.initSetting -> 기존 컨텐츠 init setting... 임시로 load 이벤트로 분리
 // 2. initialize -> 확대오픈/정식오픈 add 컨텐츠 init setting... DomContentLoaded에 정의.
 window.addEventListener('load', function() {
     console.log('window onLoad');
 });
+
+// 약관동의 flag 현재 값을 가져오는 함수
+function getFlags() {
+    const tempFlags = {
+        chkArg1: document.getElementById('chk-agr1').checked,
+        chkArg2: document.getElementById('chk-agr2').checked,
+        chkSms: document.getElementById('chk-sms').checked,
+        chkEmail: document.getElementById('chk-mail').checked
+    }
+
+    console.log(tempFlags);
+    return tempFlags;
+}
 
 // 쿠키에서 accessToken 값을 가져오는 함수
 function getAccessTokenFromCookie() {
@@ -1007,6 +1089,98 @@ function getAccessTokenFromCookie() {
     return null;
 }
 
+// accessToken에서 교보문고 회원번호(sub) 값을 가져오는 함수
+function getSubFromAccessToken(token) {
+    try {
+        return JSON.parse(atob(token.split('.')[1])).sub;
+    } catch(err) {
+        return null;
+    }
+    // const base64Url = token.split('.')[1];
+    // const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    // const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+    //     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    // }).join(''));
+    //
+    // return JSON.parse(jsonPayload);
+}
+
+function handleConsentCheckboxChange(e) {    
+    // 체크 버튼
+    const chkArg1 = document.getElementById('chk-agr1');
+    const chkArg2 = document.getElementById('chk-agr2');
+    const toastElem = document.querySelector('.toast_wrap_re');
+
+    const chkSms = document.getElementById('chk-sms');
+    const chkMail = document.getElementById('chk-mail');    
+
+    // chk-arg2 체크 시 
+    if (e.target === chkArg2) {
+        // toast 메세지 on 
+        if (!chkArg1.checked  && chkArg2.checked) {
+            toastElem.classList.add('on'); 
+    
+            setTimeout(() => {
+                toastElem.classList.remove('on');
+            }, 2500);
+        }
+        // chk-arg2 체크 시 chk-sms, chk-mail checked로 변경
+        if (chkArg2.checked) {
+            chkSms.checked = true; 
+            chkMail.checked = true; 
+        } else {
+            chkSms.checked = false; 
+            chkMail.checked = false; 
+        }        
+    }
+}
+
+function popClose(pop) {
+    pop.classList.remove('lock');
+    pop.style.display = 'none'; 
+    pop.classList.remove('open');
+}
+
+function handleAgreeButtonClick(e) {
+    // 체크 버튼
+    const chkArg1 = document.getElementById('chk-agr1');
+    const chkArg2 = document.getElementById('chk-agr2');
+    const toastElem = document.querySelector('.toast_wrap_agree');
+
+    const chkSms = document.getElementById('chk-sms');
+    const chkMail = document.getElementById('chk-mail');
+
+    if (e.target.id === 'personalAgrBtn') {
+        // 개인정보 제3자 제공 - 동의
+        chkArg1.checked = true;
+
+        const personalPop = document.getElementById('personalPop');
+        popClose(personalPop);
+    } else if (e.target.id === 'personalDisAgrBtn') {
+        // 개인정보 제3자 제공 - 동의안함
+        chkArg1.checked = false;
+    } else if (e.target.id === 'marketAgrBtn') {
+        // 마케팅 수신 - 동의
+        if (chkSms.checked || chkMail.checked) {
+            chkArg2.checked = true; 
+            
+            const marketPop = document.getElementById('marketPop');
+            popClose(marketPop);
+        } else if ((chkSms.checked && chkMail.checked) === false) {
+            toastElem.classList.add('on');
+    
+            setTimeout(() => {
+                toastElem.classList.remove('on');
+            }, 2500);
+            
+        }
+    } else if (e.target.id === 'marketDisAgrBtn') {
+        // 마케팅 수신 - 동의안함
+        chkArg2.checked = false; 
+        chkSms.checked = false; 
+        chkMail.checked = false; 
+    } 
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded');
@@ -1026,10 +1200,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // find By fileName
     info = findByfileName(fileName);
 
-    // 보험 상품 view 
+    // 보험 상품 view
     renderInsuaranceView(info, fileName);
-    
-    // 동의영역 view 
+
+    // 동의영역 view
     renderConsentView(fileName);
 
     // initSetting
@@ -1047,6 +1221,13 @@ document.addEventListener('DOMContentLoaded', function() {
             EventProcessor.postReview(e.target.value);
             EventProcessor.setLocalStorage('feedback-value', e.target.value, 14); //2주만 보관
         });
+    });
+
+    // 약관 동의 영역 check 
+    const consentCheckbox = document.querySelectorAll('.agree-box input[type="checkbox"]');
+
+    consentCheckbox.forEach(checkbox => {
+        checkbox.addEventListener('change', handleConsentCheckboxChange);
     });
 
 
@@ -1070,14 +1251,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const accessToken = getAccessTokenFromCookie();
+    bookstoreMemberNo = getSubFromAccessToken(accessToken);
+    ua.bookstoreMemberNo = bookstoreMemberNo;
+
     // consent Test
-    const headerClickInfo = document.getElementById('header');
-    headerClickInfo.addEventListener('click', e=> {
+    const consentClickInfo = document.getElementById('confirm');
+    consentClickInfo.addEventListener('click', e => {
         // console.log(accessToken);
-        EventProcessor.getConsent(accessToken);
+        const tempFalgs = getFlags();
+        EventProcessor.getConsent(accessToken, bookstoreMemberNo, tempFalgs);
     });
 
-    initialize(currentUrl);
+
+    document.querySelectorAll('.btnConsent').forEach(btn => {
+        btn.addEventListener('click', handleAgreeButtonClick);
+    });
+
+
+
+    initialize(currentUrl, accessToken);
 
 });
 

@@ -31,7 +31,7 @@ export function renderInsuaranceView(renderInfo, fileName) {
                 </section>                        
     `;
 
-    if (fileName === '2B_061') {
+    if (fileName === '2B_061' || fileName === '2B_065') {
         document.querySelector('#ins_view').innerHTML = template;
     } else {
         document.querySelector('#output').innerHTML = template;
@@ -40,13 +40,13 @@ export function renderInsuaranceView(renderInfo, fileName) {
 }
 
 export function renderConsentView(fileName) {
-    if (fileName !== '2B_061') {
+    if (fileName !== '2B_061' || fileName !== '2B_065') {
         return; 
     }
     
     // 개인정보 제3자 제공 동의 (선택)
     const personalTemplate = `
-        <div id="personalPop" class="pop-area" style="display: none;">
+    <div id="personalPop" class="pop-area" style="display: none;">
         <div class="pop-inner">
             <div class="pop-header">
                 개인정보 제3자 제공 동의 (선택)
@@ -98,19 +98,19 @@ export function renderConsentView(fileName) {
             </div>
             <div class="pop-footer">
                 <div class="btn-box">      
-                    <a href="javascript:void(0);" class="btn" onclick="popClose('personalPop');">동의안함</a>
-                    <a href="javascript:void(0);" class="btn agree">동의</a>
+                    <a href="javascript:void(0);" class="btn btnConsent" onclick="popClose('personalPop');" id="personalDisAgrBtn">동의안함</a>
+                    <a href="javascript:void(0);" class="btn btnConsent agree" id="personalAgrBtn">동의</a>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     `;
 
     document.querySelector('#cnst_personal_view').innerHTML = personalTemplate; 
 
     // 마케팅 수신 동의 (선택)
     const marketTemplate = `
-        <div id="marketPop" class="pop-area" style="display: none;">
+    <div id="marketPop" class="pop-area" style="display: none;">
         <div class="pop-inner">
             <div class="pop-header">
                 마케팅 수신 동의 (선택)
@@ -147,12 +147,16 @@ export function renderConsentView(fileName) {
             </div>
             <div class="pop-footer">
                 <div class="btn-box">
-                    <a href="javascript:void(0);" class="btn" onclick="popClose('marketPop');">동의안함</a>
-                    <a href="javascript:void(0);" class="btn agree">동의</a>
+                    <a href="javascript:void(0);" class="btn btnConsent" onclick="popClose('marketPop');" id="marketDisAgrBtn">동의안함</a>
+                    <a href="javascript:void(0);" class="btn btnConsent agree btn_agree" id="marketAgrBtn">동의</a>
                 </div>
             </div>
         </div>
+        <!-- 마케팅 수신 항복 미선택시 토스트 메세지 -->
+        <div class="toast_wrap_agree">
+            <span class="toast_message">마케팅 수신 방법을 선택해주세요.</span>
         </div>
+    </div>
     `;
 
     document.querySelector('#cnst_market_view').innerHTML = marketTemplate; 
