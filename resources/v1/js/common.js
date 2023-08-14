@@ -112,10 +112,8 @@ $(document).ready(function (){
     $(window).scroll(function() {
         if ($(this).scrollTop() > 5) {
             $('#header').addClass('shadow');
-            console.log('gg');
         } else {
             $('#header').removeClass('shadow');
-            console.log('ff');
         }
     });
 });
