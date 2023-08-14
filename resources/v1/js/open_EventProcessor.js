@@ -975,13 +975,21 @@ function initialize(shareUrl, accessToken) {
             'accessToken': accessToken,
         }
     })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) {
+            throw new Error('로그인 실패');
+        }
+        return res.json();
+    })
     .then(data => {
         ua.changeLoginStatus(data.isLogin);
 
         // link_login
-
+        const linkLogin = document.getElementById('link_login');
+    
         if (ua.isLogined) {
+            linkLogin.innerHTML = '로그아웃'; 
+
             return fetch(`/journey/consent/personal-information/agreement/${bookstoreMemberNo}`, {
                 method: 'GET',
                 headers: {
@@ -1006,10 +1014,12 @@ function initialize(shareUrl, accessToken) {
                     console.error('Error:', err2);
                 });
         } else {
+            linkLogin.innerHTML = '로그인'; 
             return Promise.reject('로그인되지 않음');
         }
     })
     .catch(err => {
+        document.getElementById('link_login').innerHTML = '로그인'; 
         console.error('Error:', err);
     });
 
