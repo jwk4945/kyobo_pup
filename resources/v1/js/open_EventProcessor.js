@@ -1105,14 +1105,30 @@ function getSubFromAccessToken(token) {
     // return JSON.parse(jsonPayload);
 }
 
-function handleConsentCheckboxChange(e) {    
+function handleConsentCheckboxChange(e) {
     // 체크 버튼
+    const chkAll = document.getElementById('chk-all');
     const chkArg1 = document.getElementById('chk-agr1');
     const chkArg2 = document.getElementById('chk-agr2');
     const toastElem = document.querySelector('.toast_wrap_re');
 
     const chkSms = document.getElementById('chk-sms');
     const chkMail = document.getElementById('chk-mail');    
+
+    if (e.target === chkAll) {
+        if (chkAll.checked) {
+            chkArg1.checked = true;
+            chkArg2.checked = true;
+            chkSms.checked = true;
+            chkMail.checked = true;
+        } else {
+            chkArg1.checked = false;
+            chkArg2.checked = false;
+            chkSms.checked = false;
+            chkMail.checked = false;
+        } 
+    }
+
 
     // chk-arg2 체크 시 
     if (e.target === chkArg2) {
@@ -1141,6 +1157,19 @@ function popClose(pop) {
     pop.classList.remove('open');
 }
 
+function chkAll(chkArg1, chkAgr2) {
+    const chkAll = document.getElementById('chk-all');
+    if (chkArg1 && chkAgr2) {
+        chkAll.checked = true;
+    }
+}
+function unchkAll(chkArg1, chkAgr2) {
+    const chkAll = document.getElementById('chk-all');
+    if (!(chkArg1 && chkAgr2)) {
+        chkAll.checked = false;
+    }    
+}
+
 function handleAgreeButtonClick(e) {
     // 체크 버튼
     const chkArg1 = document.getElementById('chk-agr1');
@@ -1156,9 +1185,11 @@ function handleAgreeButtonClick(e) {
 
         const personalPop = document.getElementById('personalPop');
         popClose(personalPop);
+        chkAll(chkArg1.checked, chkArg2.checked);
     } else if (e.target.id === 'personalDisAgrBtn') {
         // 개인정보 제3자 제공 - 동의안함
         chkArg1.checked = false;
+        unchkAll(chkArg1.checked, chkArg2.checked);
     } else if (e.target.id === 'marketAgrBtn') {
         // 마케팅 수신 - 동의
         if (chkSms.checked || chkMail.checked) {
@@ -1166,7 +1197,9 @@ function handleAgreeButtonClick(e) {
             
             const marketPop = document.getElementById('marketPop');
             popClose(marketPop);
+            chkAll(chkArg1.checked, chkArg2.checked);
         } else if ((chkSms.checked && chkMail.checked) === false) {
+            // 마케팅 수신 - 동의안함
             toastElem.classList.add('on');
     
             setTimeout(() => {
@@ -1179,6 +1212,8 @@ function handleAgreeButtonClick(e) {
         chkArg2.checked = false; 
         chkSms.checked = false; 
         chkMail.checked = false; 
+
+        unchkAll(chkArg1.checked, chkArg2.checked);
     } 
 }
 
@@ -1224,7 +1259,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 약관 동의 영역 check 
-    const consentCheckbox = document.querySelectorAll('.agree-box input[type="checkbox"]');
+    // const consentCheckbox = document.querySelectorAll('.agree-box input[type="checkbox"]');
+    const consentCheckbox = document.querySelectorAll('.agree-area input[type="checkbox"]');
 
     consentCheckbox.forEach(checkbox => {
         checkbox.addEventListener('change', handleConsentCheckboxChange);
