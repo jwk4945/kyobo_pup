@@ -40,7 +40,8 @@ export function renderInsuaranceView(renderInfo, fileName) {
 }
 
 export function renderConsentView(fileName) {
-    if (fileName !== '2B_061' || fileName !== '2B_065') {
+    console.log(fileName);
+    if (fileName != '2B_061' && fileName != '2B_065') {
         return; 
     }
     
