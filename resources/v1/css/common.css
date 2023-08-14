@@ -480,7 +480,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .agree-area .all-agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .all-agree-box label span{font-size: 16px;}
 
-.agree-area .agree-box{display: flex;justify-content: space-between;max-width: 510px;margin: 0 auto;}
+.agree-area .agree-box{display: flex !important;justify-content: space-between;max-width: 510px;margin: 0 auto;}
 .agree-area .all-agree-box + .agree-box{margin-top: 10px;}
 .agree-area .agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .agree-box label input:checked + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-on.png) 0 0 no-repeat;background-size: contain;}

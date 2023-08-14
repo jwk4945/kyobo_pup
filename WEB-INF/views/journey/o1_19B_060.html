@@ -372,19 +372,19 @@
 
         <!-- 동의 영역 -->
         <div class="agree-area">
-            <div class="all-agree-box">
+            <div class="all-agree-box" id="allAgreeBox">
                 <label for="chk-all" class="check-style-all">
                     <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
                 </label>
             </div>
-            <div class="agree-box">
-                <label for="chk-agr1" class="check-style-agr">
+            <div class="agree-box" id="personalAgreeBox">
+                <label for="chk-agr1" class="check-style-agr chk_agr_info">
                     <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
             </div>
-            <div class="agree-box">
-                <label for="chk-agr2" class="check-style-agr">
+            <div class="agree-box" id="marketAgreeBox">
+                <label for="chk-agr2" class="check-style-agr chk_agr_mkt">
                     <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
