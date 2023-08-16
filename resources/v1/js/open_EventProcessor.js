@@ -1162,7 +1162,8 @@ function handleConsentCheckboxChange(e) {
 }
 
 function popClose(pop) {
-    pop.classList.remove('lock');
+    document.documentElement.classList.remove('lock');
+
     pop.style.display = 'none'; 
     pop.classList.remove('open');
 }
@@ -1199,7 +1200,8 @@ function handleAgreeButtonClick(e) {
     } else if (e.target.id === 'personalDisAgrBtn') {
         // 개인정보 제3자 제공 - 동의안함
         chkArg1.checked = false;
-        unchkAll(chkArg1.checked, chkArg2.checked);
+        popClose(personalPop);
+        unchkAll(chkArg1.checked, chkArg2.checked);        
     } else if (e.target.id === 'marketAgrBtn') {
         // 마케팅 수신 - 동의
         if (chkSms.checked || chkMail.checked) {
@@ -1212,6 +1214,7 @@ function handleAgreeButtonClick(e) {
             // 마케팅 수신 - 동의안함
             toastElem.classList.add('on');
     
+
             setTimeout(() => {
                 toastElem.classList.remove('on');
             }, 2500);
@@ -1222,6 +1225,7 @@ function handleAgreeButtonClick(e) {
         chkArg2.checked = false; 
         chkSms.checked = false; 
         chkMail.checked = false; 
+        popClose(marketPop);
 
         unchkAll(chkArg1.checked, chkArg2.checked);
     } 

@@ -159,10 +159,10 @@ function popOpen(id) {
 }
 
 function popClose(id) {
-    var $lyAcive = $('#' + id);
-    $('html').removeClass('lock');
+    // var $lyAcive = $('#' + id);
+    // $('html').removeClass('lock');
 
-    $lyAcive.hide();
-    $lyAcive.removeClass('open');
+    // $lyAcive.hide();
+    // $lyAcive.removeClass('open');
 }
 // // 약관팝업 노출
