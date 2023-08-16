@@ -31,20 +31,11 @@ export function renderInsuaranceView(renderInfo, fileName) {
                 </section>                        
     `;
 
-    if (fileName === '2B_061' || fileName === '2B_065') {
-        document.querySelector('#ins_view').innerHTML = template;
-    } else {
-        document.querySelector('#output').innerHTML = template;
-    }
 
+    document.querySelector('#ins_view').innerHTML = template;
 }
 
-export function renderConsentView(fileName) {
-    console.log(fileName);
-    if (fileName != '2B_061' && fileName != '2B_065') {
-        return; 
-    }
-    
+export function renderConsentView(fileName) {    
     // 개인정보 제3자 제공 동의 (선택)
     const personalTemplate = `
     <div id="personalPop" class="pop-area" style="display: none;">
