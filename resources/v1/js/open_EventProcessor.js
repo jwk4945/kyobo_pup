@@ -746,7 +746,7 @@ export const EventProcessor = (function (){
         postData(url, sendData, result=>{console.log(result)})
     }
 
-    function getConsent(accessToken, sub, tempFlags) {
+    function postConsent(accessToken, sub, tempFlags) {
         const url = `/journey/consent/personal-information/agreement`;
 
         const sendData = {
@@ -775,11 +775,11 @@ export const EventProcessor = (function (){
                 ua.changeLoginStatus(true);
                 return res.json();
             } else if (res.status === 403) {
-                console.log('403');
+                ua.changeLoginStatus(false);
+                console.warn('로그인 토큰 만료');
 
                 // ssoUrl + redirectUrl + channelCode(134)
                 self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-
             } else {
                 throw new Error('Error: ' + res.status);
             }
@@ -887,7 +887,7 @@ export const EventProcessor = (function (){
 
     return {setGoNextAndFirstBtn, isAutoBottomStyle, setAutoBottomSheetEvent
         , setBottomSheetEvent, setPropertiesForCss, getResultOfSurvey, togglePageContents
-        , initSetting, setUserInLastPage, postReview, getLocalStorage, setLocalStorage, postBannerExposeInfo, postBannerClickInfo, showLoadingScreen, closeLoadingScreen, getConsent}
+        , initSetting, setUserInLastPage, postReview, getLocalStorage, setLocalStorage, postBannerExposeInfo, postBannerClickInfo, showLoadingScreen, closeLoadingScreen, postConsent}
 })();
 
 
@@ -977,18 +977,20 @@ function initialize(shareUrl, accessToken) {
     })
     .then(res => {
         if (!res.ok) {
-            throw new Error('로그인 실패');
+            // document.getElementById('link_login').innerHTML = '로그인';
+            throw new Error('로그인 되지 않음');
         }
+        console.info('로그인 됨');
         return res.json();
     })
     .then(data => {
         ua.changeLoginStatus(data.isLogin);
 
         // link_login
-        const linkLogin = document.getElementById('link_login');
+        // const linkLogin = document.getElementById('link_login');
     
         if (ua.isLogined) {
-            linkLogin.innerHTML = '로그아웃'; 
+            // linkLogin.innerHTML = '로그아웃';
 
             return fetch(`/journey/consent/personal-information/agreement/${bookstoreMemberNo}`, {
                 method: 'GET',
@@ -1014,12 +1016,11 @@ function initialize(shareUrl, accessToken) {
                     console.error('Error:', err2);
                 });
         } else {
-            linkLogin.innerHTML = '로그인'; 
-            return Promise.reject('로그인되지 않음');
+            // linkLogin.innerHTML = '로그인';
+            // throw new Error('로그인되지 않음');
         }
     })
     .catch(err => {
-        document.getElementById('link_login').innerHTML = '로그인'; 
         console.error('Error:', err);
     });
 
@@ -1028,6 +1029,7 @@ function initialize(shareUrl, accessToken) {
     let allAgreeBox = document.getElementById("allAgreeBox");
     let perSonalAgreeBox = document.getElementById("personalAgreeBox");
     let marketAgreeBox = document.getElementById("marketAgreeBox");
+
 
     perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'flex' : 'none';
     marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'flex' : 'none';
@@ -1071,7 +1073,41 @@ function handleShareButtonClick(event, url) {
 // 2. initialize -> 확대오픈/정식오픈 add 컨텐츠 init setting... DomContentLoaded에 정의.
 window.addEventListener('load', function() {
     console.log('window onLoad');
+
+    const linkLogin = document.getElementById("link_login");
+    const linkLogout = document.getElementById("link_logout");
+
+    if (ua.isLogined) {
+        // 로그인 됨
+        linkLogin.style.display = 'none';
+        linkLogout.style.display = 'block';
+
+        linkLogout.addEventListener("click", function() {
+            deleteCookie("accessToken");
+            deleteCookie("refreshToken");
+
+            location.reload();
+        });
+    } else {
+        // 로그인 되지 않음
+        linkLogin.style.display = 'block';
+        linkLogout.style.display = 'none';
+
+        document.getElementById("link_login").addEventListener("click", function() {
+            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+        });
+    }
 });
+
+function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.kyobobook.co.kr";
+}
+
+
+
+function logout() {
+
+}
 
 // 약관동의 flag 현재 값을 가져오는 함수
 function getFlags() {
@@ -1308,7 +1344,7 @@ document.addEventListener('DOMContentLoaded', function() {
     consentClickInfo.addEventListener('click', e => {
         // console.log(accessToken);
         const tempFalgs = getFlags();
-        EventProcessor.getConsent(accessToken, bookstoreMemberNo, tempFalgs);
+        EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFalgs);
     });
 
 
