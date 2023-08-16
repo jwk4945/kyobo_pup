@@ -1029,11 +1029,10 @@ function initialize(shareUrl, accessToken) {
     let perSonalAgreeBox = document.getElementById("personalAgreeBox");
     let marketAgreeBox = document.getElementById("marketAgreeBox");
 
+    perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'flex' : 'none';
+    marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'flex' : 'none';
 
-    perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'block' : 'none';
-    marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'block' : 'none';
-
-    allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'block') && (marketAgreeBox.style.display === 'block') ? 'block' : 'none';
+    allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') && (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
 
 
     // sns 공유하기 - url copy
