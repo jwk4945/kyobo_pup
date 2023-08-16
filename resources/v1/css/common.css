@@ -498,7 +498,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .agree-area.white .agree-box a{color: #fff;}
 
 /* 확인하기 버튼 로그인 컨펌 link_login */
-#poplogin{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translate(-50%);max-width: 335px;width: calc(100vw - 40px);}
+#poplogin{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);max-width: 335px;width: calc(100vw - 40px);}
 #poplogin.active{display: block;}
 #poplogin .poplogin-inner{border-radius: 16px;overflow: hidden;}
 #poplogin .poplogin-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}

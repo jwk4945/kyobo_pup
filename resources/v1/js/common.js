@@ -116,6 +116,34 @@ $(document).ready(function (){
             $('#header').removeClass('shadow');
         }
     });
+
+    // 로그인 컨펌 팝업
+    $('.link_login').on('click', function(){
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $('#poplogin').removeClass('active');
+            $('.dim').removeClass('active');
+            $('html').removeClass('lock');
+        } else{
+            $(this).addClass('active');
+            $('#poplogin').addClass('active'); 
+            $('.dim').addClass('active');
+            $('html').addClass('lock');
+        }
+    });
+
+    $('.dialog-btn > button').on('click', function(){
+        if($('#poplogin').hasClass('active')){
+            $('#poplogin').removeClass('active');
+            $('.dim').removeClass('active');
+            $('html').removeClass('lock');
+        } else{
+            $('#poplogin').addClass('active');
+            $('.dim').addClass('active');
+            $('html').addClass('lock');
+        }
+    });
+    // // 로그인 컨펌 팝업
 });
 
 // 동의영역 전체 선택
@@ -166,38 +194,3 @@ function popClose(id) {
     // $lyAcive.removeClass('open');
 }
 // // 약관팝업 노출
-
-// 로그인 컨펌 팝업
-$('#link_login').on('click', function(){
-    if($(this).hasClass('active')){
-        $(this).removeClass('active');
-        $('#poplogin').removeClass('active');
-        $('.dim').removeClass('active');
-        $('html').removeClass('lock');
-    } else{
-        $(this).addClass('active');
-        $('#poplogin').addClass('active'); 
-        $('.dim').addClass('active');
-        $('html').addClass('lock');
-    }
-});
-
-$('.dialog-btn > button').on('click', function(){
-    if($('#poplogin').hasClass('active')){
-        $('#poplogin').removeClass('active');
-        $('.dim').removeClass('active');
-        $('html').removeClass('lock');
-    } else{
-        $('#poplogin').addClass('active');
-        $('.dim').addClass('active');
-        $('html').addClass('lock');
-    }
-});
-
-$('.dim').on('click', function(){
-    if($('#poplogin').hasClass('active')){
-        $('#poplogin').removeClass('active');
-        $('.dim').removeClass('active');
-        $('html').removeClass('lock');
-    }
-});
