@@ -98,7 +98,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{border: 7px solid #2f65b3;}
 .balance-type .footer-area{padding: 0;flex: 1 0 100px;background: url('../img/6F_007_img-05.svg');background-repeat: no-repeat;background-size: contain;background-position: center;margin-bottom: 15px;max-height: 180px;}
 .balance-type .footer-area img{height: 100%;}
 .survey-type .per{padding-left: 5px;}
-.survey-type .footer-area{padding: 0 15px 35px;flex: 0;text-align: center;overflow: hidden;}
+.survey-type .footer-area{padding: 0 20px 35px;flex: 0;text-align: center;overflow: hidden;}
 .survey-type .footer-area.after{padding: 0 15px 40px;flex: 0;}
 .survey-type .footer-area button{border-radius: 5px;height: 50px;max-width: 510px;margin: auto;}
 .survey-type .survey-form button:disabled{color: #fff;background-color: #999;cursor: initial;}
