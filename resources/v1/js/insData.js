@@ -47,7 +47,7 @@ export default
     {
         contentsId: "2B_061",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",
             name: "교보e1년저축보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -115,7 +115,7 @@ export default
     {
         contentsId: "5B_041",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000971&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000971?evcode=KB_CJ_EI",
             name: "교보e상해케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -132,7 +132,7 @@ export default
     {
         contentsId: "16B_011",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",
             name: "교보e1년저축보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -166,7 +166,7 @@ export default
     {
         contentsId: "4B_043",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
             name: "교보e생활습관케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -217,7 +217,7 @@ export default
     {
         contentsId: "9B_062",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
             name: "교보e감염케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -234,7 +234,7 @@ export default
     {
         contentsId: "12G_108",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
             name: "교보e감염케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -252,7 +252,7 @@ export default
         contentsId: "14G_057",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: " 내보험바로알기서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
@@ -268,7 +268,7 @@ export default
     {
         contentsId: "18B_023",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000978&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000978?evcode=KB_CJ_EI",
             name: "교보e암케어보험(무배당,서비스서택형)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -285,7 +285,7 @@ export default
     {
         contentsId: "19G_142",
         linkInfoForInsurance: {
-            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000975&evcode=KB_CJ_EI",
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000975?evcode=KB_CJ_EI",
             name: "교보e뇌·심장케어보험(무배당,서비스선택형)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부족한 보장을 꽉 채운 건강보험',
@@ -300,3 +300,6 @@ export default
         }
     }
 ]
+
+
+
