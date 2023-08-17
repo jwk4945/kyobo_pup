@@ -11,6 +11,7 @@ let ua = {
         isMac: false,
     },
     flag: {
+        allFlag: false, // 프론트에서 자체 관리 flag (서버에 전달X)
         personalInformationAgreementFlag: false, // 제 3자 정보 제공동의
         marketingConsentAgreementFlag: false, // 마케팅 정보 제공동의
         marketingConsentAgreementSmsFlag: false, // 마케팅 정보 sms 동의

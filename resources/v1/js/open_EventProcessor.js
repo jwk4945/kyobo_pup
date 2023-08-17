@@ -346,7 +346,7 @@ export const EventProcessor = (function (){
         // let checkedInput = document.querySelector('input[name="kyobolife-survey"]:checked');
         // let parent = checkedInput.parentElement;
         // let dlTextContent = parent.querySelector('dl').getAttribute('data-dl');
-        
+
         let checkedInput = document.querySelector('input[name="kyobolife-survey"]:checked')
         let dataSurvey = checkedInput.getAttribute('data-sv');
 
@@ -751,10 +751,10 @@ export const EventProcessor = (function (){
 
         const sendData = {
             bookstoreMemberNo: ua.bookstoreMemberNo
-            , personalInformationAgreementFlag: tempFlags.chkArg1
-            , marketingConsentAgreementFlag: tempFlags.chkArg2
+            , personalInformationAgreementFlag: tempFlags.chkAgr1
+            , marketingConsentAgreementFlag: tempFlags.chkAgr2
             , marketingConsentAgreementSmsFlag: tempFlags.chkSms
-            , marketingConsentAgreementEmailFlag: tempFlags.chkEmail
+            , marketingConsentAgreementEmailFlag: tempFlags.chkMail
         };
 
         fetch(url, {
@@ -967,6 +967,13 @@ function initialize(shareUrl, accessToken) {
     // userAgent set
     checkUserAgent();
 
+
+
+    let agreeBox = document.getElementById("agreeBox");
+    let allAgreeBox = document.getElementById("allAgreeBox");
+    let perSonalAgreeBox = document.getElementById("personalAgreeBox");
+    let marketAgreeBox = document.getElementById("marketAgreeBox");
+
     // is Logined
     // document.querySelector('#isLogined').value || false;
     fetch(`/journey/consent/is-login`, {
@@ -975,66 +982,67 @@ function initialize(shareUrl, accessToken) {
             'accessToken': accessToken,
         }
     })
-    .then(res => {
-        if (!res.ok) {
-            // document.getElementById('link_login').innerHTML = '로그인';
-            throw new Error('로그인 되지 않음');
-        }
-        console.info('로그인 됨');
-        return res.json();
-    })
-    .then(data => {
-        ua.changeLoginStatus(data.isLogin);
+        .then(res => {
+            if (!res.ok) {
+                // document.getElementById('link_login').innerHTML = '로그인';
+                throw new Error('로그인 되지 않음');
+            }
+            console.info('로그인 됨');
+            return res.json();
+        })
+        .then(data => {
+            ua.changeLoginStatus(data.isLogin);
 
-        // link_login
-        // const linkLogin = document.getElementById('link_login');
-    
-        if (ua.isLogined) {
-            // linkLogin.innerHTML = '로그아웃';
+            // link_login
+            // const linkLogin = document.getElementById('link_login');
 
-            return fetch(`/journey/consent/personal-information/agreement/${bookstoreMemberNo}`, {
-                method: 'GET',
-                headers: {
-                    'accessToken': accessToken,
-                    'Content-type': 'application/json',
-                    // 'x-requested-with': 'XMLHttpRequest'
-                },
-                mode: 'cors',
-                cache: 'no-cache',
-                credentials: 'same-origin',
-                redirect: 'follow',
-                referrerPolicy: 'no-referrer',
-            })
-                .then(res2 => res2.json())
-                .then(data2 => {
-                    console.log(data2);
-                    for (let flagName in data2) {
-                        ua.changeFlag(flagName, data2[flagName]);
-                    }
+            if (ua.isLogined) {
+                // linkLogin.innerHTML = '로그아웃';
+
+                return fetch(`/journey/consent/personal-information/agreement/${bookstoreMemberNo}`, {
+                    method: 'GET',
+                    headers: {
+                        'accessToken': accessToken,
+                        'Content-type': 'application/json',
+                        // 'x-requested-with': 'XMLHttpRequest'
+                    },
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'same-origin',
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer',
                 })
-                .catch(err2 => {
-                    console.error('Error:', err2);
-                });
-        } else {
-            // linkLogin.innerHTML = '로그인';
-            // throw new Error('로그인되지 않음');
-        }
-    })
-    .catch(err => {
-        console.error('Error:', err);
-    });
+                    .then(res2 => res2.json())
+                    .then(data2 => {
+                        console.log(data2);
+                        for (let flagName in data2) {
+                            ua.changeFlag(flagName, data2[flagName]);
+                        }
+
+                        console.log(ua);
+                        // 동의여부 "display" - from api
+                        perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'flex' : 'none';
+                        marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'flex' : 'none';
+                        allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') && (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
+
+                    })
+                    .catch(err2 => {
+                        console.error('Error:', err2);
+                    });
+            } else {
+                // linkLogin.innerHTML = '로그인';
+                // throw new Error('로그인되지 않음');
+            }
+        })
+        .catch(err => {
+            console.error('Error:', err);
+        });
 
 
-    let agreeBox = document.getElementById("agreeBox");
-    let allAgreeBox = document.getElementById("allAgreeBox");
-    let perSonalAgreeBox = document.getElementById("personalAgreeBox");
-    let marketAgreeBox = document.getElementById("marketAgreeBox");
 
 
-    perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'flex' : 'none';
-    marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'flex' : 'none';
-
-    allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') && (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
+    // 동의여부 "check" - from localStorage
+   getConsentLocalStorage();
 
 
     // sns 공유하기 - url copy
@@ -1069,18 +1077,19 @@ function handleShareButtonClick(event, url) {
     }
 }
 
-// 1. EventProcessor.initSetting -> 기존 컨텐츠 init setting... 임시로 load 이벤트로 분리
-// 2. initialize -> 확대오픈/정식오픈 add 컨텐츠 init setting... DomContentLoaded에 정의.
 window.addEventListener('load', function() {
     console.log('window onLoad');
 
     const linkLogin = document.getElementById("link_login");
     const linkLogout = document.getElementById("link_logout");
 
+    const liLogin = document.getElementById("li_login");
+    const liLogout = document.getElementById("li_logout");
+
     if (ua.isLogined) {
         // 로그인 됨
-        linkLogin.style.display = 'none';
-        linkLogout.style.display = 'block';
+        liLogin.style.display = 'none';
+        liLogout.style.display = 'block';
 
         linkLogout.addEventListener("click", function() {
             deleteCookie("accessToken");
@@ -1090,8 +1099,8 @@ window.addEventListener('load', function() {
         });
     } else {
         // 로그인 되지 않음
-        linkLogin.style.display = 'block';
-        linkLogout.style.display = 'none';
+        liLogin.style.display = 'block';
+        liLogout.style.display = 'none';
 
         document.getElementById("link_login").addEventListener("click", function() {
             self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
@@ -1112,14 +1121,25 @@ function logout() {
 // 약관동의 flag 현재 값을 가져오는 함수
 function getFlags() {
     const tempFlags = {
-        chkArg1: document.getElementById('chk-agr1').checked,
-        chkArg2: document.getElementById('chk-agr2').checked,
-        chkSms: document.getElementById('chk-sms').checked,
-        chkEmail: document.getElementById('chk-mail').checked
+        chkAll: document.getElementById('chkAll').checked,
+        chkAgr1: document.getElementById('chkAgr1').checked,
+        chkAgr2: document.getElementById('chkAgr2').checked,
+        chkSms: document.getElementById('chkSms').checked,
+        chkMail: document.getElementById('chkMail').checked
     }
 
     console.log(tempFlags);
     return tempFlags;
+}
+
+// 약관동의 - 사용자 체크에 따라 ua.flag 업데이트
+function setFlags() {
+    ua.changeFlag('personalInformationAgreementFlag', document.getElementById('chkAgr1').checked);
+    ua.changeFlag('marketingConsentAgreementFlag', document.getElementById('chkAgr2').checked);
+    ua.changeFlag('marketingConsentAgreementSmsFlag', document.getElementById('chkSms').checked);
+    ua.changeFlag('marketingConsentAgreementEmailFlag', document.getElementById('chkMail').checked);
+
+    console.log(ua.flag);
 }
 
 // 쿠키에서 accessToken 값을 가져오는 함수
@@ -1152,118 +1172,177 @@ function getSubFromAccessToken(token) {
 
 function handleConsentCheckboxChange(e) {
     // 체크 버튼
-    const chkAll = document.getElementById('chk-all');
-    const chkArg1 = document.getElementById('chk-agr1');
-    const chkArg2 = document.getElementById('chk-agr2');
+    const chkAll = document.getElementById('chkAll');
+    const chkAgr1 = document.getElementById('chkAgr1');
+    const chkAgr2 = document.getElementById('chkAgr2');
     const toastElem = document.querySelector('.toast_wrap_re');
 
-    const chkSms = document.getElementById('chk-sms');
-    const chkMail = document.getElementById('chk-mail');    
+    const chkSms = document.getElementById('chkSms');
+    const chkMail = document.getElementById('chkMail');
 
     if (e.target === chkAll) {
         if (chkAll.checked) {
-            chkArg1.checked = true;
-            chkArg2.checked = true;
+            chkAgr1.checked = true;
+            chkAgr2.checked = true;
             chkSms.checked = true;
             chkMail.checked = true;
         } else {
-            chkArg1.checked = false;
-            chkArg2.checked = false;
+            chkAgr1.checked = false;
+            chkAgr2.checked = false;
             chkSms.checked = false;
             chkMail.checked = false;
-        } 
+        }
     }
 
 
     // chk-arg2 체크 시 
-    if (e.target === chkArg2) {
+    if (e.target === chkAgr2) {
         // toast 메세지 on 
-        if (!chkArg1.checked  && chkArg2.checked) {
-            toastElem.classList.add('on'); 
-    
+        if (!chkAgr1.checked  && chkAgr2.checked) {
+            toastElem.classList.add('on');
+
             setTimeout(() => {
                 toastElem.classList.remove('on');
             }, 2500);
         }
-        // chk-arg2 체크 시 chk-sms, chk-mail checked로 변경
-        if (chkArg2.checked) {
-            chkSms.checked = true; 
-            chkMail.checked = true; 
+        // chk-arg2 체크 시 chkSms, chkMail checked로 변경
+        if (chkAgr2.checked) {
+            chkSms.checked = true;
+            chkMail.checked = true;
         } else {
-            chkSms.checked = false; 
-            chkMail.checked = false; 
-        }        
+            chkSms.checked = false;
+            chkMail.checked = false;
+        }
     }
 }
 
 function popClose(pop) {
     document.documentElement.classList.remove('lock');
 
-    pop.style.display = 'none'; 
+    pop.style.display = 'none';
     pop.classList.remove('open');
 }
 
-function chkAll(chkArg1, chkAgr2) {
-    const chkAll = document.getElementById('chk-all');
-    if (chkArg1 && chkAgr2) {
+function chkAll(chkAgr1, chkAgr2) {
+    const chkAll = document.getElementById('chkAll');
+    if (chkAgr1 && chkAgr2) {
         chkAll.checked = true;
     }
 }
-function unchkAll(chkArg1, chkAgr2) {
-    const chkAll = document.getElementById('chk-all');
-    if (!(chkArg1 && chkAgr2)) {
+function unchkAll(chkAgr1, chkAgr2) {
+    const chkAll = document.getElementById('chkAll');
+    if (!(chkAgr1 && chkAgr2)) {
         chkAll.checked = false;
-    }    
+    }
 }
 
 function handleAgreeButtonClick(e) {
     // 체크 버튼
-    const chkArg1 = document.getElementById('chk-agr1');
-    const chkArg2 = document.getElementById('chk-agr2');
+    const chkAgr1 = document.getElementById('chkAgr1');
+    const chkAgr2 = document.getElementById('chkAgr2');
     const toastElem = document.querySelector('.toast_wrap_agree');
 
-    const chkSms = document.getElementById('chk-sms');
-    const chkMail = document.getElementById('chk-mail');
+    const chkSms = document.getElementById('chkSms');
+    const chkMail = document.getElementById('chkMail');
 
     if (e.target.id === 'personalAgrBtn') {
         // 개인정보 제3자 제공 - 동의
-        chkArg1.checked = true;
+        chkAgr1.checked = true;
 
         const personalPop = document.getElementById('personalPop');
         popClose(personalPop);
-        chkAll(chkArg1.checked, chkArg2.checked);
+        chkAll(chkAgr1.checked, chkAgr2.checked);
     } else if (e.target.id === 'personalDisAgrBtn') {
         // 개인정보 제3자 제공 - 동의안함
-        chkArg1.checked = false;
+        chkAgr1.checked = false;
         popClose(personalPop);
-        unchkAll(chkArg1.checked, chkArg2.checked);        
+        unchkAll(chkAgr1.checked, chkAgr2.checked);
     } else if (e.target.id === 'marketAgrBtn') {
         // 마케팅 수신 - 동의
         if (chkSms.checked || chkMail.checked) {
-            chkArg2.checked = true; 
-            
+            chkAgr2.checked = true;
+
             const marketPop = document.getElementById('marketPop');
             popClose(marketPop);
-            chkAll(chkArg1.checked, chkArg2.checked);
+            chkAll(chkAgr1.checked, chkAgr2.checked);
         } else if ((chkSms.checked && chkMail.checked) === false) {
             // 마케팅 수신 - 동의안함
             toastElem.classList.add('on');
-    
 
             setTimeout(() => {
                 toastElem.classList.remove('on');
             }, 2500);
-            
+
         }
     } else if (e.target.id === 'marketDisAgrBtn') {
         // 마케팅 수신 - 동의안함
-        chkArg2.checked = false; 
-        chkSms.checked = false; 
-        chkMail.checked = false; 
+        chkAgr2.checked = false;
+        chkSms.checked = false;
+        chkMail.checked = false;
         popClose(marketPop);
 
-        unchkAll(chkArg1.checked, chkArg2.checked);
-    } 
+        unchkAll(chkAgr1.checked, chkAgr2.checked);
+    }
+}
+function handleConfirmButtonClick(e) {
+    setConsentLocalStorage();
+
+    const elem = e.target;
+
+    const popLogin = document.getElementById('poplogin');
+    const dims = document.querySelectorAll('.dim');
+
+    if (elem.classList.contains('active')) {
+        elem.classList.remove('active');
+        popLogin.classList.remove('active');
+        dims.forEach(dim => dim.classList.remove('active'));
+        document.documentElement.classList.remove('lock');
+    } else {
+        elem.classList.add('active');
+        popLogin.classList.add('active');
+        dims.forEach(dim => dim.classList.add('active'));
+        document.documentElement.classList.add('lock');
+    }
+
+}
+
+function setConsentLocalStorage(e) {
+    const tempFlags = getFlags();
+    const expiryTime = new Date().getTime() + (10 * 60 * 1000); // 보관기간: 10분
+
+    for (let key in tempFlags) {
+        if (tempFlags[key]) {
+            localStorage.setItem(key, JSON.stringify({
+                value: tempFlags[key],
+                expiryTime: expiryTime
+            }));
+        } else {
+            localStorage.removeItem(key);
+        }
+    }
+}
+
+function getConsentLocalStorage() {
+    const keys = ['chkAll', 'chkAgr1', 'chkAgr2', 'chkSms', 'chkMail'];
+
+    keys.forEach(key => {
+        // console.log(key, ua.flag);
+        const storedData = localStorage.getItem(key);
+
+        if (storedData) {
+            const { value, expiryTime } = JSON.parse(storedData);
+            const currentTime = new Date().getTime();
+
+            if (currentTime < expiryTime) {
+                document.getElementById(key).checked = value;
+                if (key === 'chkSms' || key === 'chkMail') {
+                    document.getElementById('chkAgr2').checked = value;
+                }
+            } else {
+                localStorage.removeItem(key);
+            }
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1313,7 +1392,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     consentCheckbox.forEach(checkbox => {
         checkbox.addEventListener('change', handleConsentCheckboxChange);
+        // checkbox.addEventListener('change', setConsentLocalStorage);
     });
+
 
 
     // 공유하기
@@ -1339,19 +1420,38 @@ document.addEventListener('DOMContentLoaded', function() {
     bookstoreMemberNo = getSubFromAccessToken(accessToken);
     ua.bookstoreMemberNo = bookstoreMemberNo;
 
+    const tempFalgs = getFlags();
+
+    // confirm
+    const confirmClick = document.getElementById('confirm');
+    confirmClick.addEventListener('click', function(e) {
+        if (ua.isLogined) {
+            EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFalgs);
+        } else {
+            handleConfirmButtonClick(e);
+        }
+    });
+
     // consent Test
-    const consentClickInfo = document.getElementById('confirm');
-    consentClickInfo.addEventListener('click', e => {
+    const consentClick = document.getElementById('btnLogin');
+    consentClick.addEventListener('click', e => {
         // console.log(accessToken);
-        const tempFalgs = getFlags();
         EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFalgs);
+    });
+
+    const consetNextClick = document.getElementById('btnNext');
+    consetNextClick.addEventListener('click', e => {
+        e.preventDefault();
+
+        EventProcessor.showLoadingScreen();
+        window.setTimeout(()=>
+            EventProcessor.postBannerClickInfo(info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen()), 2000); //로딩스크린 2초후 실행
     });
 
 
     document.querySelectorAll('.btnConsent').forEach(btn => {
         btn.addEventListener('click', handleAgreeButtonClick);
     });
-
 
 
     initialize(currentUrl, accessToken);

@@ -120,13 +120,13 @@ export function renderConsentView(fileName) {
                 </div>
                 <div class="chk-area mt-15">
                     <div class="agree-box">
-                        <label for="chk-sms">
-                            <input type="checkbox" name="" id="chk-sms"><i></i><span>SMS(메신저 등)</span>
+                        <label for="chkSms">
+                            <input type="checkbox" name="" id="chkSms"><i></i><span>SMS(메신저 등)</span>
                         </label>
                     </div>
                     <div class="agree-box">
-                        <label for="chk-mail">
-                            <input type="checkbox" name="" id="chk-mail"><i></i><span>이메일</span>
+                        <label for="chkMail">
+                            <input type="checkbox" name="" id="chkMail"><i></i><span>이메일</span>
                         </label>
                     </div>
                 </div>

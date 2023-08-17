@@ -8,7 +8,7 @@ $(document).ready(function (){
     // 구매인전서비스
     $('#link_paychk').attr('href', 'https://pgweb.uplus.co.kr/ms/escrow/s_escrowYn.do?mertid=ink0911');
     // 로그인
-    $('#link_login').attr('href', 'https://mmbr.kyobobook.co.kr/login');
+    // $('#link_login').attr('href', 'https://mmbr.kyobobook.co.kr/login');
     // 회원가입
     $('#link_join').attr('href', 'https://mmbr.kyobobook.co.kr/join');
     // 이용약관

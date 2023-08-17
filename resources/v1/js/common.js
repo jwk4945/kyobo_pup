@@ -118,19 +118,20 @@ $(document).ready(function (){
     });
 
     // 로그인 컨펌 팝업
-    $('.link_login').on('click', function(){
-        if($(this).hasClass('active')){
-            $(this).removeClass('active');
-            $('#poplogin').removeClass('active');
-            $('.dim').removeClass('active');
-            $('html').removeClass('lock');
-        } else{
-            $(this).addClass('active');
-            $('#poplogin').addClass('active'); 
-            $('.dim').addClass('active');
-            $('html').addClass('lock');
-        }
-    });
+    // $('#header').on('click', function(){
+    //     console.log(222)
+    //     if($(this).hasClass('active')){
+    //         $(this).removeClass('active');
+    //         $('#poplogin').removeClass('active');
+    //         $('.dim').removeClass('active');
+    //         $('html').removeClass('lock');
+    //     } else{
+    //         $(this).addClass('active');
+    //         $('#poplogin').addClass('active'); 
+    //         $('.dim').addClass('active');
+    //         $('html').addClass('lock');
+    //     }
+    // });
 
     $('.dialog-btn > button').on('click', function(){
         if($('#poplogin').hasClass('active')){
