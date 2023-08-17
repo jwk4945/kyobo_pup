@@ -369,7 +369,7 @@ textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: bord
 .com-btn{border: none;font-family: inherit;display: block;width: 100%;font-size:inherit;line-height: 1.5;border-radius: 5px;height: 50px;background: #222;color: white;cursor: pointer;}
 .type-d .com-btn{background: #17478c;}
 
-.confirm-btn-box{max-width: 540px;padding: 15px 15px 0;margin: 0 auto;font-weight: 700;}
+.confirm-btn-box{max-width: 540px;padding: 15px 20px 0;margin: 0 auto;font-weight: 700;}
 .confirm-btn-box .confirm-btn{display: inline-block; width: 100%;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);}
 .type-a .confirm-btn-box .confirm-btn{background: #27809e;}
 .type-b .confirm-btn-box .confirm-btn{background: #d95555;}
@@ -425,7 +425,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 ._5B_041 #feedback-area{background: #823333;}
 /* 삭제 예정 */
 
-#feedback-area{padding: 5px 15px 5px 20px;border-bottom-left-radius: 15px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
+#feedback-area{padding: 5px 20px;border-bottom-left-radius: 15px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
 #feedback-area .feedback-inner{display: flex;justify-content: space-between;align-items: center;max-width: 510px;margin: auto;}
 #feedback-area .feedback-inner .feedback-txt{font-size: 16px;font-weight: 700;}
 
@@ -437,7 +437,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 
 .btm-wrap #feedback-area.bg-f4f4f4{color: #222;}
 #feedback-area.bg-f4f4f4{background: #f4f4f4;position: relative;}
-#feedback-area.bg-f4f4f4::before{content: "";display: block;width: calc(100% - 40px);height: 1px;background: #ddd;position: absolute;top: 0;left: 20px;}
+#feedback-area.bg-f4f4f4::before{content: "";display: block;width: calc(100% - 40px);height: 1px;background: #ddd;position: absolute;top: 0;left: 50%;max-width: 510px;transform: translateX(-50%);}
 
 #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box .feedback-btn.good{display: inline-block;width: 50px;height: 50px;opacity: 1;cursor: pointer;font-size: 0;background: url(../img/icon/ico-feedback-good_gray.png) 0 0 no-repeat;background-size: contain;}
 #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box .feedback-btn.bad{display: inline-block;width: 50px;height: 50px;opacity: 1;cursor: pointer;font-size: 0;background: url(../img/icon/ico-feedback-bad_gray.png) 0 0 no-repeat;background-size: contain;}
@@ -450,7 +450,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 
 #feedback-area.bg-f4f4f4 .feedback-inner .feedback-btn-box::before{content: "";display: block;position: absolute;top: 20px;left: 55px;width: 1px;height: 10px;background: #000;opacity: 0.3;}
 
-.btm-wrap .btm-area{padding: 30px 15px 0;max-width: 540px;margin: auto;}
+.btm-wrap .btm-area{padding: 30px 20px 0;max-width: 550px;margin: auto;}
 .btm-wrap.bg-btm-gray .btm-area{color: #222;font-size: 18px;}
 .btm-wrap.bg-btm-pink .btm-area .explain, .btm-wrap.bg-btm-blue .btm-area .explain{color: #fff;font-weight: 700;font-size: 18px;}
 .btm-wrap .btm-area .explain{font-weight: 700;}
@@ -480,7 +480,7 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .agree-area .all-agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .all-agree-box label span{font-size: 16px;}
 
-.agree-area .agree-box{display: flex !important;justify-content: space-between;max-width: 510px;margin: 0 auto;}
+.agree-area .agree-box{display: flex;justify-content: space-between;max-width: 510px;margin: 0 auto;}
 .agree-area .all-agree-box + .agree-box{margin-top: 10px;}
 .agree-area .agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk.png) 0 0 no-repeat;background-size: contain;}
 .agree-area .agree-box label input:checked + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-on.png) 0 0 no-repeat;background-size: contain;}
