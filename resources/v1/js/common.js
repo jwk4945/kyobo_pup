@@ -149,7 +149,7 @@ $(document).ready(function (){
 
 // 동의영역 전체 선택
 function chkall() {
-	if($("#chk-all").is(':checked')) {
+	if($("#chkAll").is(':checked')) {
 		$("input[name=typ-all]").prop("checked", true);
 	} else {
 		$("input[name=typ-all]").prop("checked", false);
@@ -170,9 +170,9 @@ $(document).on("click", "input:checkbox[name=typ-all]", function(e) {
 	}
 	
 	if(chks.length == chksChecked){
-		$("#chk-all").prop("checked", true);
+		$("#chkAll").prop("checked", true);
 	}else{
-		$("#chk-all").prop("checked",false);
+		$("#chkAll").prop("checked",false);
 	}
 	
 });
