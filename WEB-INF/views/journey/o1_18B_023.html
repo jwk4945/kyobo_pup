@@ -456,19 +456,19 @@
         <!-- 동의 영역 -->
         <div class="agree-area">
             <div class="all-agree-box" id="allAgreeBox">
-                <label for="chk-all" class="check-style-all">
-                    <input type="checkbox" name="" id="chk-all" onclick="chkall();"><i></i><span>전체동의</span>
+                <label for="chkAll" class="check-style-all">
+                    <input type="checkbox" name="" id="chkAll" onclick="chkall();"><i></i><span>전체동의</span>
                 </label>
             </div>
             <div class="agree-box" id="personalAgreeBox">
-                <label for="chk-agr1" class="check-style-agr chk_agr_info">
-                    <input type="checkbox" name="typ-all" id="chk-agr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                <label for="chkAgr1" class="check-style-agr chk_agr_info">
+                    <input type="checkbox" name="typ-all" id="chkAgr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
             </div>
             <div class="agree-box" id="marketAgreeBox">
-                <label for="chk-agr2" class="check-style-agr chk_agr_mkt">
-                    <input type="checkbox" name="typ-all" id="chk-agr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                <label for="chkAgr2" class="check-style-agr chk_agr_mkt">
+                    <input type="checkbox" name="typ-all" id="chkAgr2"><i></i><span>마케팅 수신 동의(선택)</span>
                 </label>
                 <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
             </div>
@@ -510,8 +510,8 @@
         
         <div class="footer_menu_box">
             <ul class="footer_menu_list">
-                <li class="footer_menu_item"><a id="link_login" class="footer_menu_link">로그인</a></li>
-                <li class="footer_menu_item"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
+                <li class="footer_menu_item" id="li_login"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item" id="li_logout"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
                 <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
             </ul>
             <ul class="footer_menu_list sub">
@@ -583,6 +583,18 @@
 </div>
 <!-- [E] 공유하기 팝업 -->
 
+<!-- [S] 로그인 확인 팝업 -->
+<div id="poplogin">
+    <div class="poplogin-inner">
+        <div class="dialog-contents">
+            로그인하고<br>맞춤 상품 확인해보세요!
+        </div>
+        <div class="dialog-btn">
+            <button class="btn-next" id="btnNext">다음에 하기</button>
+            <button class="btn-login" id="btnLogin">로그인 하기</button>
+        </div>
+    </div>
+</div>
 <!-- [S] pop -->
 <!-- s: 개인정보 제3자 제공동의 팝업 -->
 <div id="cnst_personal_view"></div>
