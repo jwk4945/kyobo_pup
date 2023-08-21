@@ -108,7 +108,7 @@ $(document).ready(function (){
     });
     // // 탑버튼
 
-    // 헤어 쉐도우 적용
+    // 헤더 쉐도우 적용
     $(window).scroll(function() {
         if ($(this).scrollTop() > 5) {
             $('#header').addClass('shadow');
