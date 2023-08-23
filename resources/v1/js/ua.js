@@ -5,8 +5,8 @@ let ua = {
     device: {
         isMobile: true,
         isMobileApp: false,
-        isIOS: true,
-        isAndroid: false,
+        isIOS: false,
+        isAndroid: true,
         isMSIE: false,
         isMac: false,
     },
