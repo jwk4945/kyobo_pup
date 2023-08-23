@@ -50,7 +50,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",
             name: "교보e1년저축보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '소액으로 차근차근 오늘부터 시작해요!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -67,7 +67,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내보험바로알기 서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -84,7 +84,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내보험바로알기 서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -101,7 +101,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내보험바로알기 서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -118,7 +118,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000971?evcode=KB_CJ_EI",
             name: "교보e상해케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '부담없는 보험료로 생활 안전 필수 보장!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -135,7 +135,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",
             name: "교보e1년저축보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '소액으로 차근차근 오늘부터 시작해요!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -152,7 +152,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내보험바로알기 서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -169,7 +169,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
             name: "교보e생활습관케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '언제든 발생할 수 있는 생활습관 보장!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -186,7 +186,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내보험바로알기 서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -203,7 +203,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내보험바로알기 서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -220,7 +220,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
             name: "교보e감염케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '여가생활 도중 걸릴 수 있는 감염질환 보장!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -237,7 +237,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
             name: "교보e감염케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '여가생활 도중 걸릴 수 있는 감염질환 보장!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -254,7 +254,7 @@ export default
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: " 내보험바로알기서비스",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -269,9 +269,10 @@ export default
         contentsId: "18B_023",
         linkInfoForInsurance: {
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000978?evcode=KB_CJ_EI",
-            name: "교보e암케어보험(무배당,서비스서택형)",
+            name: "교보e암케어보험(무배당,서비스선택형)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '"꼭 필요한 암보장만 준비\n' +
+                '암치료지원 서비스까지!"',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },
@@ -288,7 +289,7 @@ export default
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000975?evcode=KB_CJ_EI",
             name: "교보e뇌·심장케어보험(무배당,서비스선택형)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '부족한 보장을 꽉 채운 건강보험',
+            explain: '필요한 보장부터 간병에 힘이 되는 서비스까지!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
             period: "(2022-12-27 ~ 2023-12-26)"
         },

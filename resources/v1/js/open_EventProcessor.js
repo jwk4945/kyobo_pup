@@ -959,11 +959,11 @@ function checkUserAgent() {
     const userAgent = navigator.userAgent.toLowerCase();
 
     if (userAgent.indexOf('android') > -1) {
-        ua.setUserAgent(ua.device.isMobile, true);
-        ua.setUserAgent(ua.device.isAndroid, true);
+        ua.setUserAgent('isMobile', true);
+        ua.setUserAgent('isAndroid', true);
     } else if (userAgent.indexOf('iphone') > -1 || userAgent.indexOf('ipad') > -1) {
-        ua.setUserAgent(ua.device.isMobile, true);
-        ua.setUserAgent(ua.device.isIOS, true);
+        ua.setUserAgent('isMobile', true);
+        ua.setUserAgent('isIOS', true);
     }
     console.log(ua.device);
 }

@@ -6,10 +6,12 @@
 
 export function renderInsuaranceView(renderInfo, fileName) {
     console.log('renderInsuaranceView', renderInfo);
-
-    const template = `
+    
+    let template; 
+    if (fileName === '18B_023') {
+        template = `
                 <section class="btm-area">
-                    <p class="explain">${ renderInfo.linkInfoForInsurance.explain }</p>
+                    <p class="explain">${ '꼭 필요한 암보장만 준비' } </br> ${ '암치료지원 서비스까지!' }</p>
                     <a id="linkForInsurance"
                     onclick="ga360.GA_Event('DBS_캠페인_MO', '${ renderInfo.gaParams.params1 }', '${ renderInfo.gaParams.params2 }', '${ renderInfo.gaParams.params3 }', '${ renderInfo.gaParams.params4 }');">
                         <div class="pd-area">
@@ -30,7 +32,32 @@ export function renderInsuaranceView(renderInfo, fileName) {
                     </a>
                 </section>                        
     `;
-
+    } else {
+        template = `
+                <section class="btm-area">
+                    <p class="explain">${ renderInfo.linkInfoForInsurance.explain } </p>
+                    <a id="linkForInsurance"
+                    onclick="ga360.GA_Event('DBS_캠페인_MO', '${ renderInfo.gaParams.params1 }', '${ renderInfo.gaParams.params2 }', '${ renderInfo.gaParams.params3 }', '${ renderInfo.gaParams.params4 }');">
+                        <div class="pd-area">
+                            <div class="clear">
+                                <div class="ci fl">
+                                    <img src="${ renderInfo.linkInfoForInsurance.imgUrl }" alt="KYOBO 교보생명">
+                                </div>
+                                <dl class="fl">
+                                    <dt class="name">${ renderInfo.linkInfoForInsurance.name }</dt>
+                                    <dd class="certificationMsg">
+                                        <div class="certificationMsg-txt">${ renderInfo.linkInfoForInsurance.certificationMsg }</div>
+                                        <div class="certificationMsg-date">${ renderInfo.linkInfoForInsurance.period }</div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="ico-arw"></div>
+                        </div>
+                    </a>
+                </section>                        
+    `;
+    }
+    
 
     document.querySelector('#ins_view').innerHTML = template;
 }

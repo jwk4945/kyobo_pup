@@ -20,8 +20,9 @@ let ua = {
         remainingPointsFlag: false // 포인트 정책 여부
     },
     setUserAgent: function(deviceName, deviceFlag) {
-        if (this.flag.hasOwnProperty(deviceName)) {
-            this.flag[deviceName] = deviceFlag;
+        console.log(deviceName, deviceFlag)
+        if (this.device.hasOwnProperty(deviceName)) {
+            this.device[deviceName] = deviceFlag;
         }
     },
     changeLoginStatus: function(state) {
