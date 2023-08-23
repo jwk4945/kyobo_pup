@@ -957,6 +957,7 @@ function findByfileName(fileName) {
 
 function checkUserAgent() {
     const userAgent = navigator.userAgent.toLowerCase();
+    alert(userAgent);
 
     if (userAgent.indexOf('android') > -1) {
         ua.setUserAgent('isMobile', true);
@@ -965,7 +966,7 @@ function checkUserAgent() {
         ua.setUserAgent('isMobile', true);
         ua.setUserAgent('isIOS', true);
     }
-    console.log(ua.device);
+    
 }
 
 function initialize(shareUrl, accessToken) {
