@@ -3,10 +3,10 @@ let ua = {
     isLogined: false,
     bookstoreMemberNo: '',
     device: {
-        isMobile: true,
+        isMobile: false,
         isMobileApp: false,
         isIOS: false,
-        isAndroid: true,
+        isAndroid: false,
         isMSIE: false,
         isMac: false,
     },
@@ -18,6 +18,11 @@ let ua = {
         marketingConsentAgreementEmailFlag: false, // 마케팅 정보 email 동의
         eventFlag: false, // 이벤트 기간 여부
         remainingPointsFlag: false // 포인트 정책 여부
+    },
+    setUserAgent: function(deviceName, deviceFlag) {
+        if (this.flag.hasOwnProperty(deviceName)) {
+            this.flag[deviceName] = deviceFlag;
+        }
     },
     changeLoginStatus: function(state) {
         this.isLogined = state;

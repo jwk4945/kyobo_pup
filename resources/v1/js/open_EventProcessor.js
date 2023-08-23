@@ -779,7 +779,8 @@ export const EventProcessor = (function (){
                 console.warn('로그인 토큰 만료');
 
                 // ssoUrl + redirectUrl + channelCode(134)
-                self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
             } else {
                 throw new Error('Error: ' + res.status);
             }
@@ -897,13 +898,11 @@ export const EventProcessor = (function (){
 /** sns 공유하기  */
 const shareKakao = (shareUrl) => {
 
-    if (!Kakao.isInitialized()) {
-        Kakao.init( globalConfig.kakao.apiKey.prod );
-    }
+    Kakao.init( globalConfig.kakao.apiKey.prod );
 
     const title = document.title;
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");
-    const imageUrl = document.querySelector("meta[property='og:iamge']").getAttribute("content");
+    const imageUrl = document.querySelector("meta[property='og:image']").getAttribute("content");
 
     Kakao.Share.sendDefault({
         // container: '#ka-share-btn',
@@ -956,9 +955,17 @@ function findByfileName(fileName) {
     return appData[0];
 }
 
-
 function checkUserAgent() {
-    // console.log(ua.device);
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.indexOf('android') > -1) {
+        ua.setUserAgent(isMobile, true);
+        ua.setUserAgent(isAndroid, true);
+    } else if (userAgent.indexOf('iphone') > -1 || userAgent.indexOf('ipad') > -1) {
+        ua.setUserAgent(isMobile, true);
+        ua.setUserAgent(isIOS, true);
+    }
+    console.log(ua.device);
 }
 
 function initialize(shareUrl, accessToken) {
@@ -1103,7 +1110,8 @@ window.addEventListener('load', function() {
         liLogout.style.display = 'none';
 
         document.getElementById("link_login").addEventListener("click", function() {
-            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
         });
     }
 });
@@ -1217,6 +1225,7 @@ function handleConsentCheckboxChange(e) {
 }
 
 function popClose(pop) {
+    console.log(pop)
     document.documentElement.classList.remove('lock');
 
     pop.style.display = 'none';
@@ -1285,8 +1294,6 @@ function handleAgreeButtonClick(e) {
     }
 }
 function handleConfirmButtonClick(e) {
-    setConsentLocalStorage();
-
     const elem = e.target;
 
     const popLogin = document.getElementById('poplogin');
@@ -1306,9 +1313,9 @@ function handleConfirmButtonClick(e) {
 
 }
 
-function setConsentLocalStorage(e) {
+function setConsentLocalStorage() {
     const tempFlags = getFlags();
-    const expiryTime = new Date().getTime() + (10 * 60 * 1000); // 보관기간: 10분
+    const expiryTime = new Date().getTime() + (1 * 60 * 1000); // 보관기간: 10분
 
     for (let key in tempFlags) {
         if (tempFlags[key]) {
@@ -1326,7 +1333,7 @@ function getConsentLocalStorage() {
     const keys = ['chkAll', 'chkAgr1', 'chkAgr2', 'chkSms', 'chkMail'];
 
     keys.forEach(key => {
-        // console.log(key, ua.flag);
+        // console.log('getConsentLocalStorage', key, ua.flag);
         const storedData = localStorage.getItem(key);
 
         if (storedData) {
@@ -1420,13 +1427,13 @@ document.addEventListener('DOMContentLoaded', function() {
     bookstoreMemberNo = getSubFromAccessToken(accessToken);
     ua.bookstoreMemberNo = bookstoreMemberNo;
 
-    const tempFalgs = getFlags();
 
     // confirm
     const confirmClick = document.getElementById('confirm');
     confirmClick.addEventListener('click', function(e) {
+        const tempFlags = getFlags();
         if (ua.isLogined) {
-            EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFalgs);
+            EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFlags);
         } else {
             handleConfirmButtonClick(e);
         }
@@ -1436,11 +1443,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const consentClick = document.getElementById('btnLogin');
     consentClick.addEventListener('click', e => {
         // console.log(accessToken);
-        EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFalgs);
+        const tempFlags = getFlags();
+        setConsentLocalStorage();
+        EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFlags);
     });
 
-    const consetNextClick = document.getElementById('btnNext');
-    consetNextClick.addEventListener('click', e => {
+    const consentNextClick = document.getElementById('btnNext');
+    consentNextClick.addEventListener('click', e => {
         e.preventDefault();
 
         EventProcessor.showLoadingScreen();
