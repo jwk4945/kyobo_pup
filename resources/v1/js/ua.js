@@ -11,13 +11,13 @@ let ua = {
         isMac: false,
     },
     flag: {
-        allFlag: false, // 프론트에서 자체 관리 flag (서버에 전달X)
-        personalInformationAgreementFlag: false, // 제 3자 정보 제공동의
-        marketingConsentAgreementFlag: false, // 마케팅 정보 제공동의
-        marketingConsentAgreementSmsFlag: false, // 마케팅 정보 sms 동의
-        marketingConsentAgreementEmailFlag: false, // 마케팅 정보 email 동의
-        eventFlag: false, // 이벤트 기간 여부
-        remainingPointsFlag: false // 포인트 정책 여부
+        allFlag: 'N', // 프론트에서 자체 관리 flag (서버에 전달X)
+        personalInformationAgreementFlag: 'N', // 제 3자 정보 제공동의
+        marketingConsentAgreementFlag: 'N', // 마케팅 정보 제공동의
+        marketingConsentAgreementSmsFlag: 'N', // 마케팅 정보 sms 동의
+        marketingConsentAgreementEmailFlag: 'N', // 마케팅 정보 email 동의
+        eventFlag: 'N', // 이벤트 기간 여부
+        remainingPointsFlag: 'N' // 포인트 정책 여부
     },
     setUserAgent: function(deviceName, deviceFlag) {
         console.log(deviceName, deviceFlag)

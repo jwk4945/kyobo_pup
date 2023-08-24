@@ -904,6 +904,10 @@ const shareKakao = (shareUrl) => {
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");
     const imageUrl = document.querySelector("meta[property='og:image']").getAttribute("content");
 
+    console.log(ua);
+
+
+
     Kakao.Share.sendDefault({
         // container: '#ka-share-btn',
         objectType: 'feed',
@@ -957,7 +961,6 @@ function findByfileName(fileName) {
 
 function checkUserAgent() {
     const userAgent = navigator.userAgent.toLowerCase();
-    alert(userAgent);
 
     if (userAgent.indexOf('android') > -1) {
         ua.setUserAgent('isMobile', true);
@@ -966,7 +969,6 @@ function checkUserAgent() {
         ua.setUserAgent('isMobile', true);
         ua.setUserAgent('isIOS', true);
     }
-    
 }
 
 function initialize(shareUrl, accessToken) {
@@ -1029,8 +1031,8 @@ function initialize(shareUrl, accessToken) {
 
                         console.log(ua);
                         // 동의여부 "display" - from api
-                        perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.personalInformationAgreementFlag)) ? 'flex' : 'none';
-                        marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && !ua.flag.marketingConsentAgreementFlag)) ? 'flex' : 'none';
+                        perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && ua.flag.personalInformationAgreementFlag !== 'Y')) ? 'flex' : 'none';
+                        marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && ua.flag.marketingConsentAgreementFlag !== 'Y')) ? 'flex' : 'none';
                         allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') && (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
 
                     })
@@ -1130,11 +1132,11 @@ function logout() {
 // 약관동의 flag 현재 값을 가져오는 함수
 function getFlags() {
     const tempFlags = {
-        chkAll: document.getElementById('chkAll').checked,
-        chkAgr1: document.getElementById('chkAgr1').checked,
-        chkAgr2: document.getElementById('chkAgr2').checked,
-        chkSms: document.getElementById('chkSms').checked,
-        chkMail: document.getElementById('chkMail').checked
+        chkAll: document.getElementById('chkAll').checked ? 'Y' : 'N',
+        chkAgr1: document.getElementById('chkAgr1').checked ? 'Y' : 'N',
+        chkAgr2: document.getElementById('chkAgr2').checked ? 'Y' : 'N',
+        chkSms: document.getElementById('chkSms').checked ? 'Y' : 'N',
+        chkMail: document.getElementById('chkMail').checked ? 'Y' : 'N'
     }
 
     console.log(tempFlags);
@@ -1143,10 +1145,10 @@ function getFlags() {
 
 // 약관동의 - 사용자 체크에 따라 ua.flag 업데이트
 function setFlags() {
-    ua.changeFlag('personalInformationAgreementFlag', document.getElementById('chkAgr1').checked);
-    ua.changeFlag('marketingConsentAgreementFlag', document.getElementById('chkAgr2').checked);
-    ua.changeFlag('marketingConsentAgreementSmsFlag', document.getElementById('chkSms').checked);
-    ua.changeFlag('marketingConsentAgreementEmailFlag', document.getElementById('chkMail').checked);
+    ua.changeFlag('personalInformationAgreementFlag', document.getElementById('chkAgr1').checked ? 'Y' : 'N');
+    ua.changeFlag('marketingConsentAgreementFlag', document.getElementById('chkAgr2').checked ? 'Y' : 'N');
+    ua.changeFlag('marketingConsentAgreementSmsFlag', document.getElementById('chkSms').checked ? 'Y' : 'N');
+    ua.changeFlag('marketingConsentAgreementEmailFlag', document.getElementById('chkMail').checked ? 'Y' : 'N');
 
     console.log(ua.flag);
 }
@@ -1316,7 +1318,7 @@ function handleConfirmButtonClick(e) {
 
 function setConsentLocalStorage() {
     const tempFlags = getFlags();
-    const expiryTime = new Date().getTime() + (1 * 60 * 1000); // 보관기간: 10분
+    const expiryTime = new Date().getTime() + (1 * 60 * 1000); // 보관기간: 10분; test 시 1분 set
 
     for (let key in tempFlags) {
         if (tempFlags[key]) {
@@ -1342,9 +1344,9 @@ function getConsentLocalStorage() {
             const currentTime = new Date().getTime();
 
             if (currentTime < expiryTime) {
-                document.getElementById(key).checked = value;
+                document.getElementById(key).checked = (value === 'Y' ? true : false);
                 if (key === 'chkSms' || key === 'chkMail') {
-                    document.getElementById('chkAgr2').checked = value;
+                    document.getElementById('chkAgr2').checked = (value === 'Y' ? true : false);
                 }
             } else {
                 localStorage.removeItem(key);
