@@ -357,10 +357,10 @@ export const EventProcessor = (function (){
             , csjr_srvy_ansr_srmb: checkedInput.value // 응답 라디오 순번
             , csjr_srvy_ansr_cntt: dataSurvey // 응답 보기설문내용
         };
-        console.log(sendData);
+        // console.log(sendData);
 
         postData(url, sendData, result=>{
-            console.log(result);
+            // console.log(result);
             result.forEach(row=>{
                 const idx = row.csjr_srvy_ansr_srmb;
                 surveyResultTargets.arrSurveyResultTexts[idx].textContent = row.csjr_ctts_srvy_rate;
@@ -709,6 +709,7 @@ export const EventProcessor = (function (){
         const url = `/journey/form/contents-survey?ctts_num=${contentsId}`;
         const testData = {arr:[55,45]}
         fetch(url)
+
             .then(res=>res.json())
             .then(json=>callback(json))
             .catch(()=>callback(testData))
@@ -773,14 +774,16 @@ export const EventProcessor = (function (){
         }).then(function (res) {
             if (res.ok) {
                 ua.changeLoginStatus(true);
-                return res.json();
+
+                return null;
+                // return res.json();
             } else if (res.status === 403) {
                 ua.changeLoginStatus(false);
                 console.warn('로그인 토큰 만료');
 
                 // ssoUrl + redirectUrl + channelCode(134)
-                // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-                self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
             } else {
                 throw new Error('Error: ' + res.status);
             }
@@ -904,10 +907,6 @@ const shareKakao = (shareUrl) => {
     const desc = document.querySelector("meta[property='og:description']").getAttribute("content");
     const imageUrl = document.querySelector("meta[property='og:image']").getAttribute("content");
 
-    console.log(ua);
-
-
-
     Kakao.Share.sendDefault({
         // container: '#ka-share-btn',
         objectType: 'feed',
@@ -1029,11 +1028,22 @@ function initialize(shareUrl, accessToken) {
                             ua.changeFlag(flagName, data2[flagName]);
                         }
 
-                        console.log(ua);
                         // 동의여부 "display" - from api
                         perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && ua.flag.personalInformationAgreementFlag !== 'Y')) ? 'flex' : 'none';
                         marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && ua.flag.marketingConsentAgreementFlag !== 'Y')) ? 'flex' : 'none';
                         allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') && (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
+
+                        // 기존 동의 이력이 있을 때 checked
+                        document.getElementById('chkAgr1').checked = ua.flag.personalInformationAgreementFlag === 'Y' ? true : false;
+                        document.getElementById('chkAgr2').checked = ua.flag.marketingConsentAgreementFlag === 'Y' ? true : false;
+                        document.getElementById('chkSms').checked = ua.flag.marketingConsentAgreementSmsFlag === 'Y' ? true : false;
+                        document.getElementById('chkMail').checked = ua.flag.marketingConsentAgreementEmailFlag === 'Y' ? true : false;
+
+                        // 전체 동의 이력이 있으면 confirm 버튼 보이지 않게 처리
+                        // if (Object.values(ua.flag).every(val => val === 'Y')) {
+                        if (ua.flag.personalInformationAgreementFlag === 'Y' && ua.flag.marketingConsentAgreementFlag === 'Y' && ua.flag.marketingConsentAgreementSmsFlag === 'Y' && ua.flag.marketingConsentAgreementEmailFlag === 'Y' ) {
+                            document.querySelector('.confirm-btn-box').style.display = 'none';
+                        }
 
                     })
                     .catch(err2 => {
@@ -1052,7 +1062,7 @@ function initialize(shareUrl, accessToken) {
 
 
     // 동의여부 "check" - from localStorage
-   getConsentLocalStorage();
+    getConsentLocalStorage();
 
 
     // sns 공유하기 - url copy
@@ -1088,7 +1098,7 @@ function handleShareButtonClick(event, url) {
 }
 
 window.addEventListener('load', function() {
-    console.log('window onLoad');
+    // console.log('window onLoad');
 
     const linkLogin = document.getElementById("link_login");
     const linkLogout = document.getElementById("link_logout");
@@ -1113,11 +1123,13 @@ window.addEventListener('load', function() {
         liLogout.style.display = 'none';
 
         document.getElementById("link_login").addEventListener("click", function() {
-            // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-            self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
         });
     }
+
 });
+
 
 function deleteCookie(name) {
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.kyobobook.co.kr";
@@ -1139,7 +1151,7 @@ function getFlags() {
         chkMail: document.getElementById('chkMail').checked ? 'Y' : 'N'
     }
 
-    console.log(tempFlags);
+    // console.log(tempFlags);
     return tempFlags;
 }
 
@@ -1150,7 +1162,7 @@ function setFlags() {
     ua.changeFlag('marketingConsentAgreementSmsFlag', document.getElementById('chkSms').checked ? 'Y' : 'N');
     ua.changeFlag('marketingConsentAgreementEmailFlag', document.getElementById('chkMail').checked ? 'Y' : 'N');
 
-    console.log(ua.flag);
+    // console.log(ua.flag);
 }
 
 // 쿠키에서 accessToken 값을 가져오는 함수
@@ -1228,7 +1240,7 @@ function handleConsentCheckboxChange(e) {
 }
 
 function popClose(pop) {
-    console.log(pop)
+    // console.log(pop)
     document.documentElement.classList.remove('lock');
 
     pop.style.display = 'none';
@@ -1355,8 +1367,14 @@ function getConsentLocalStorage() {
     });
 }
 
+function triggerLoadingScreen() {
+    EventProcessor.showLoadingScreen();
+    window.setTimeout(()=>
+        EventProcessor.postBannerClickInfo(info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen()), 2000); //로딩스크린 2초후 실행
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded');
+    // console.log('DOMContentLoaded');
 
     const url = window.location.href;
     const fileNameWithQuery = url.split('/').pop();
@@ -1390,7 +1408,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     radios.forEach(radio => {
         radio.addEventListener('change', e => {
-            console.log('change');
+            // console.log('change');
             EventProcessor.postReview(e.target.value);
             EventProcessor.setLocalStorage('feedback-value', e.target.value, 14); //2주만 보관
         });
@@ -1435,6 +1453,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const confirmClick = document.getElementById('confirm');
     confirmClick.addEventListener('click', function(e) {
         const tempFlags = getFlags();
+
+        if (Object.values(tempFlags).every(val => val === 'N')) {
+            triggerLoadingScreen();
+            return;
+        }
+
         if (ua.isLogined) {
             EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFlags);
         } else {
@@ -1454,10 +1478,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const consentNextClick = document.getElementById('btnNext');
     consentNextClick.addEventListener('click', e => {
         e.preventDefault();
-
-        EventProcessor.showLoadingScreen();
-        window.setTimeout(()=>
-            EventProcessor.postBannerClickInfo(info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen()), 2000); //로딩스크린 2초후 실행
+        triggerLoadingScreen();
+        // EventProcessor.showLoadingScreen();
+        // window.setTimeout(()=>
+        //     EventProcessor.postBannerClickInfo(info.linkInfoForInsurance.url, EventProcessor.closeLoadingScreen()), 2000); //로딩스크린 2초후 실행
     });
 
 

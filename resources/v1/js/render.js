@@ -5,15 +5,15 @@
 */
 
 export function renderInsuaranceView(renderInfo, fileName) {
-    console.log('renderInsuaranceView', renderInfo);
-    
-    let template; 
+    // console.log('renderInsuaranceView', renderInfo);
+
+    let template;
     if (fileName === '18B_023') {
+        // '교보e암케어보험' 인 경우 explain이 2줄이 되기때문에 예외 케이스로 작성
         template = `
                 <section class="btm-area">
                     <p class="explain">${ '꼭 필요한 암보장만 준비' } </br> ${ '암치료지원 서비스까지!' }</p>
-                    <a id="linkForInsurance"
-                    onclick="ga360.GA_Event('DBS_캠페인_MO', '${ renderInfo.gaParams.params1 }', '${ renderInfo.gaParams.params2 }', '${ renderInfo.gaParams.params3 }', '${ renderInfo.gaParams.params4 }');">
+                    <a id="linkForInsurance">
                         <div class="pd-area">
                             <div class="clear">
                                 <div class="ci fl">
@@ -36,8 +36,7 @@ export function renderInsuaranceView(renderInfo, fileName) {
         template = `
                 <section class="btm-area">
                     <p class="explain">${ renderInfo.linkInfoForInsurance.explain } </p>
-                    <a id="linkForInsurance"
-                    onclick="ga360.GA_Event('DBS_캠페인_MO', '${ renderInfo.gaParams.params1 }', '${ renderInfo.gaParams.params2 }', '${ renderInfo.gaParams.params3 }', '${ renderInfo.gaParams.params4 }');">
+                    <a id="linkForInsurance">
                         <div class="pd-area">
                             <div class="clear">
                                 <div class="ci fl">
@@ -57,7 +56,6 @@ export function renderInsuaranceView(renderInfo, fileName) {
                 </section>                        
     `;
     }
-    
 
     document.querySelector('#ins_view').innerHTML = template;
 }

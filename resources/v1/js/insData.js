@@ -16,6 +16,8 @@
 18B_023
 19G_142
 * */
+
+// event_name, ep_button_area, ep_button_area2, ep_button_name, ep_click_variable
 export default
 [
     {
@@ -35,11 +37,11 @@ export default
         },
         gaParams: {
             // 매개변수1 : [ep_button_area] 자기개발_요즘20대들은모른다는문제_상세
-            params1: "상세",
+            ep_button_area: "상세",
             // 매개변수2: [ep_button_area2] 상품페이지 이동
-            params2: "상품페이지 이동",
+            ep_button_area2: "상품페이지 이동",
             // 매개변수3: [ep_button_name] 배너선택
-            params3: "배너선택",
+            ep_button_name: "배너선택",
             // 매개변수4: [ep_click_variable] "{{상품}}" 상품_(무)교보시작해요저축보험
             params4: "상품_",
         }
@@ -55,9 +57,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -72,9 +75,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -89,9 +93,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -106,9 +111,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -123,9 +129,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -140,9 +147,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -157,9 +165,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -174,9 +183,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -191,9 +201,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -208,9 +219,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -225,9 +237,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -242,9 +255,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -259,9 +273,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -277,9 +292,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     },
@@ -294,9 +310,10 @@ export default
             period: "(2022-12-27 ~ 2023-12-26)"
         },
         gaParams: {
-            params1: "질병_척추근골격계_버섯목증후군_상세",
-            params2: "상품페이지 이동",
-            params3: "배너선택",
+            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+            ep_button_area2: "상품페이지 이동",
+            ep_button_name: "배너선택",
+            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
         }
     }

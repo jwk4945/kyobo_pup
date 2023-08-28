@@ -1,6 +1,6 @@
 $(document).ready(function (){
     // 교보문고 메인 - 홈
-    $('#link_home').attr('href', 'https://www.kyobobook.co.kr/');
+    // $('#link_home').attr('href', 'https://www.kyobobook.co.kr/');
     // 교보문고 메인
     $('#link_kyoboBook').attr('href', 'https://www.kyobobook.co.kr/');
     // 사업자정보확인
