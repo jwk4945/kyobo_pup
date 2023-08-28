@@ -19,7 +19,7 @@
 const GAData = [
     {
         contentsId: "2B_061",
-        ep_button_area: "자산관리_재테크_스노우볼효과_상세",
+        ep_button_area: "자산관리_재테크_스노우볼효과",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
@@ -28,7 +28,7 @@ const GAData = [
     },
     {
         contentsId: "3C_033",
-        ep_button_area: "자녀_아동_유치원_상세",
+        ep_button_area: "자녀_아동_유치원",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_자녀_아동_유치원",
@@ -37,7 +37,7 @@ const GAData = [
     },
     {
         contentsId: "13G_045",
-        ep_button_area: "질병_당뇨_식단_상세",
+        ep_button_area: "질병_당뇨_식단",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_질병_당뇨_식단",
@@ -46,7 +46,7 @@ const GAData = [
     },
     {
         contentsId: "6G_054",
-        ep_button_area: "자녀_태아&신생아_임신검사_상세",
+        ep_button_area: "자녀_태아&신생아_임신검사",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_자녀_태아&신생아_임신검사",
@@ -55,7 +55,7 @@ const GAData = [
     },
     {
         contentsId: "5B_041",
-        ep_button_area: "건강관리_운동_바디프로필_상세",
+        ep_button_area: "건강관리_운동_바디프로필",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_건강관리_운동_바디프로필",
@@ -64,7 +64,7 @@ const GAData = [
     },
     {
         contentsId: "16B_011",
-        ep_button_area: "자기개발_요즘20대들은모른다는문제_상세",
+        ep_button_area: "자기개발_요즘20대들은모른다는문제",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_자기개발_요즘20대들은모른다는문제",
@@ -73,7 +73,7 @@ const GAData = [
     },
     {
         contentsId: "4B_043 ",
-        ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
+        ep_button_area: "질병_척추근골격계_버섯목증후군",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_척추근골격계_버섯목증후군",
@@ -82,7 +82,7 @@ const GAData = [
     },
     {
         contentsId: "1B_067",
-        ep_button_area: "자녀_초중등_가스라이팅_상세",
+        ep_button_area: "자녀_초중등_가스라이팅",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_자녀_초중등_가스라이팅",
@@ -91,7 +91,7 @@ const GAData = [
     },
     {
         contentsId: "8B_110",
-        ep_button_area: "일상생활_부부_외벌이_상세",
+        ep_button_area: "일상생활_부부_외벌이",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_일상생활_부부_외벌이",
@@ -100,7 +100,7 @@ const GAData = [
     },
     {
         contentsId: "7D_003",
-        ep_button_area: "건강관리_운동외_건강검진_상세",
+        ep_button_area: "건강관리_운동외_건강검진",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_건강관리_운동외_건강검진",
@@ -109,7 +109,7 @@ const GAData = [
     },
     {
         contentsId: "9B_062",
-        ep_button_area: "일상생활_요리_똑똑한기름사용법_상세",
+        ep_button_area: "일상생활_요리_똑똑한기름사용법",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_일상생활_요리_똑똑한기름사용법",
@@ -118,7 +118,7 @@ const GAData = [
     },
     {
         contentsId: "12G_108",
-        ep_button_area: "일상생활_야외활동_자전거보험_상세",
+        ep_button_area: "일상생활_야외활동_자전거보험",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_일상생활_야외활동_자전거보험",
@@ -127,7 +127,7 @@ const GAData = [
     },
     {
         contentsId: "14G_057",
-        ep_button_area: "질병_치매_치료가능치매_상세",
+        ep_button_area: "질병_치매_치료가능치매",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_질병_치매_치료가능치매",
@@ -136,7 +136,7 @@ const GAData = [
     },
     {
         contentsId: "18B_023",
-        ep_button_area: "질병_암_암환자의영양실조_상세",
+        ep_button_area: "질병_암_암환자의영양실조",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_질병_암_암환자의영양실조",
@@ -145,7 +145,7 @@ const GAData = [
     },
     {
         contentsId: "19G_142",
-        ep_button_area: "질병_뇌심_고혈압관리_상세",
+        ep_button_area: "질병_뇌심_고혈압관리",
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_질병_뇌심_고혈압관리",

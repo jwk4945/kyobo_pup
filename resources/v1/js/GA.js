@@ -64,7 +64,13 @@ function setGAClickHandler(e) {
     // 6. 상품페이지 이동2
     if (e.currentTarget.id === 'confirm') {
         e.preventDefault();
-        // 상품페이지 이동의 경우 ep_click_variable 사용
+        // 상품페이지 이동의 경우 ep_click_variable2 사용
         ga360.GA_Event(eventName, epButtonArea + '상세', '상품페이지이동2', '동의영역버튼선택', epClickVariable2, epSearchInternalSearchWord);
     }
+
+    // 7. 정답 확인하기 (6G_054, 13G_045, 7D_003, 12G_108, 14G_057, 19G_142)
+    if (e.currentTarget.id === 'answer-01' || e.currentTarget.id === 'answer-02') {
+        ga360.GA_Event(eventName, epButtonArea + '메인', '정답 확인하기', e.currentTarget.value, epClickVariable);
+    }
+
 }

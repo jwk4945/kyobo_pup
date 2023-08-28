@@ -21,7 +21,9 @@
     <script src="../../../resources/v1/js/link.js"></script>
 
     <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
-    <script src="../../../resources/v1/js/ga-utils.js"></script>
+    <script src="../../../resources/v1/js/ga-utils.js" defer></script>
+    <script src="../../../resources/v1/js/GAData.js" defer></script>
+    <script src="../../../resources/v1/js/GA.js"></script>
 
     <title>유산확률 높은 주수</title>
 </head>
@@ -126,7 +128,7 @@
                                     data-animation-infos="style-bf-ani: 'width:0;',
                                                             style-af-ani: 'width:100%',
                                                             start-ms:'1100', transition-duration:'0.6s'">
-                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
+                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01" onclick="setGAClickHandler(event)">
                                     <label for="answer-01"
                                             data-animation-type="onload"
                                             data-animation-infos="style-bf-ani: 'opacity:0;',
@@ -151,7 +153,7 @@
                                     data-animation-infos="style-bf-ani: 'width:0;',
                                                             style-af-ani: 'width:100%',
                                                             start-ms:'1400', transition-duration:'0.6s'">
-                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-02">
+                                    <input type="radio" name="kyobolife-survey" value="02" id="answer-02" onclick="setGAClickHandler(event)">
                                     <label for="answer-02"
                                             data-animation-type="onload"
                                             data-animation-infos="style-bf-ani: 'opacity:0;',

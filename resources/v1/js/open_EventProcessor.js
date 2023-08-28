@@ -782,8 +782,8 @@ export const EventProcessor = (function (){
                 console.warn('로그인 토큰 만료');
 
                 // ssoUrl + redirectUrl + channelCode(134)
-                self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-                // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
             } else {
                 throw new Error('Error: ' + res.status);
             }
@@ -1123,8 +1123,8 @@ window.addEventListener('load', function() {
         liLogout.style.display = 'none';
 
         document.getElementById("link_login").addEventListener("click", function() {
-            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-            // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
         });
     }
 
