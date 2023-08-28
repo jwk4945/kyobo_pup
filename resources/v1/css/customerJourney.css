@@ -472,6 +472,7 @@ section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;t
 .loading-screen b{
     color: #003887;
     font-weight: 700;
+    vertical-align: top;
 }
 .checklist img{
     margin-right: 6px;
