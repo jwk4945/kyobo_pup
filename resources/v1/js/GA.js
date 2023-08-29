@@ -69,8 +69,9 @@ function setGAClickHandler(e) {
     }
 
     // 7. 정답 확인하기 (6G_054, 13G_045, 7D_003, 12G_108, 14G_057, 19G_142)
-    if (e.currentTarget.id === 'answer-01' || e.currentTarget.id === 'answer-02') {
-        ga360.GA_Event(eventName, epButtonArea + '메인', '정답 확인하기', e.currentTarget.value, epClickVariable);
+    if (e.currentTarget.id === 'goNextBtn') { // goNextBtn: 정답 확인하기 버튼 / btnNext: 다음에하기 버튼
+        const checked = document.querySelector('input[name="kyobolife-survey"]:checked').value;
+        ga360.GA_Event(eventName, epButtonArea + '메인', '정답 확인하기', checked, epClickVariable);
     }
 
 }

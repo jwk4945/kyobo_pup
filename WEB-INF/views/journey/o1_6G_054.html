@@ -128,7 +128,7 @@
                                     data-animation-infos="style-bf-ani: 'width:0;',
                                                             style-af-ani: 'width:100%',
                                                             start-ms:'1100', transition-duration:'0.6s'">
-                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01" onclick="setGAClickHandler(event)">
+                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
                                     <label for="answer-01"
                                             data-animation-type="onload"
                                             data-animation-infos="style-bf-ani: 'opacity:0;',
@@ -153,7 +153,7 @@
                                     data-animation-infos="style-bf-ani: 'width:0;',
                                                             style-af-ani: 'width:100%',
                                                             start-ms:'1400', transition-duration:'0.6s'">
-                                    <input type="radio" name="kyobolife-survey" value="02" id="answer-02" onclick="setGAClickHandler(event)">
+                                    <input type="radio" name="kyobolife-survey" value="02" id="answer-02">
                                     <label for="answer-02"
                                             data-animation-type="onload"
                                             data-animation-infos="style-bf-ani: 'opacity:0;',
@@ -177,7 +177,7 @@
 
                 </form>
                 <div class="footer-area">
-                    <button type="submit" id="goNextBtn" class="com-btn bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
+                    <button type="submit" id="goNextBtn" class="com-btn bg-7 fs-4 fw-700" onclick="setGAClickHandler(event)" disabled>정답 확인하기</button>
                 </div>
             </div>
             <!-- [E] 로드화면 -->

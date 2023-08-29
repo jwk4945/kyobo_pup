@@ -131,7 +131,7 @@ const GAData = [
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_질병_치매_치료가능치매",
-        ep_click_variable2: "상품_교보e감염케어보험(무배당)",
+        ep_click_variable2: "서비스_내보험바로알기",
         ep_search_internalSearchWord: ""
     },
     {
@@ -140,7 +140,7 @@ const GAData = [
         ep_button_area2: "",
         ep_button_name: "",
         ep_click_variable: "DBS_질병_암_암환자의영양실조",
-        ep_click_variable2: "서비스_내보험바로알기",
+        ep_click_variable2: "상품_교보e암케어보험(무배당,서비스선택형)",
         ep_search_internalSearchWord: ""
     },
     {

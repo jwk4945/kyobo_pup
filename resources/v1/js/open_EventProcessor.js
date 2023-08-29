@@ -782,8 +782,8 @@ export const EventProcessor = (function (){
                 console.warn('로그인 토큰 만료');
 
                 // ssoUrl + redirectUrl + channelCode(134)
-                // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-                self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+                // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
             } else {
                 throw new Error('Error: ' + res.status);
             }
@@ -1039,6 +1039,24 @@ function initialize(shareUrl, accessToken) {
                         document.getElementById('chkSms').checked = ua.flag.marketingConsentAgreementSmsFlag === 'Y' ? true : false;
                         document.getElementById('chkMail').checked = ua.flag.marketingConsentAgreementEmailFlag === 'Y' ? true : false;
 
+                        // 기존 동의 이력이 있을 때 && 세션에 동의 이력이 있을 때
+                        // 1.
+                        // (서버) NNNN
+                        // (화면) NNNN
+                        // 2.
+                        // (서버) NNNN - 이전에 동의한 적이 없고
+                        // (화면) YNNN - Y가 1개 이상일 때
+                        // 3.
+                        // (서버) YNNN - 이전에 동의한 적이 있고
+                        // (화면) NYYN - Y가 1개 이상일 때
+                        const storageKeys = ['chkAll', 'chkAgr1', 'chkAgr2', 'chkSms', 'chkMail'];
+                        storageKeys.forEach(key => {
+                            const item = JSON.parse(localStorage.getItem(key));
+                            if (item && item.value === 'Y') {
+                                document.getElementById(key).checked = true;
+                            }
+                        });
+
                         // 전체 동의 이력이 있으면 confirm 버튼 보이지 않게 처리
                         // if (Object.values(ua.flag).every(val => val === 'Y')) {
                         if (ua.flag.personalInformationAgreementFlag === 'Y' && ua.flag.marketingConsentAgreementFlag === 'Y' && ua.flag.marketingConsentAgreementSmsFlag === 'Y' && ua.flag.marketingConsentAgreementEmailFlag === 'Y' ) {
@@ -1123,8 +1141,8 @@ window.addEventListener('load', function() {
         liLogout.style.display = 'none';
 
         document.getElementById("link_login").addEventListener("click", function() {
-            // self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-            self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
+            // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
         });
     }
 
@@ -1330,7 +1348,7 @@ function handleConfirmButtonClick(e) {
 
 function setConsentLocalStorage() {
     const tempFlags = getFlags();
-    const expiryTime = new Date().getTime() + (1 * 60 * 1000); // 보관기간: 10분; test 시 1분 set
+    const expiryTime = new Date().getTime() + (10 * 60 * 1000); // 보관기간: 10분; test 시 1분 set
 
     for (let key in tempFlags) {
         if (tempFlags[key]) {

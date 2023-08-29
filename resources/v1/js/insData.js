@@ -68,7 +68,7 @@ export default
         contentsId: "3C_033",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
@@ -86,7 +86,7 @@ export default
         contentsId: "6G_054",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
@@ -104,7 +104,7 @@ export default
         contentsId: "13G_045",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
@@ -158,7 +158,7 @@ export default
         contentsId: "1B_067",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
@@ -194,7 +194,7 @@ export default
         contentsId: "8B_110",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
@@ -212,7 +212,7 @@ export default
         contentsId: "7D_003",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내보험바로알기 서비스",
+            name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
             certificationMsg: '생명보험협회 심의필 제 2022-05466호',
