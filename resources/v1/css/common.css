@@ -505,8 +505,8 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 #poplogin .poplogin-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}
 #poplogin .poplogin-inner .dialog-btn{display: flex;}
 #poplogin .poplogin-inner .dialog-btn button{flex: 1;cursor: pointer;color: #fff;padding: 5px 0;height: 50px;font-size: 15px;font-weight: 700;}
-#poplogin .poplogin-inner .dialog-btn .btn-next{background: #5055b1;}
-#poplogin .poplogin-inner .dialog-btn .btn-login{background: #767676;}
+#poplogin .poplogin-inner .dialog-btn .btn-next{background: #767676;}
+#poplogin .poplogin-inner .dialog-btn .btn-login{background: #5055b1;}
 
 /* 유의문구 영역 */
 .info-txt-wrap{margin: 20px auto 0;padding: 0 20px;max-width: 540px;}
