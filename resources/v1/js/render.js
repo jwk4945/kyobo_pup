@@ -13,7 +13,7 @@ export function renderInsuaranceView(renderInfo, fileName) {
         template = `
                 <section class="btm-area">
                     <p class="explain">${ '꼭 필요한 암보장만 준비' } </br> ${ '암치료지원 서비스까지!' }</p>
-                    <a id="linkForInsurance">
+                    <a id="linkForInsurance" onclick="setGAClickHandler(event)">
                         <div class="pd-area">
                             <div class="clear">
                                 <div class="ci fl">
@@ -36,7 +36,7 @@ export function renderInsuaranceView(renderInfo, fileName) {
         template = `
                 <section class="btm-area">
                     <p class="explain">${ renderInfo.linkInfoForInsurance.explain } </p>
-                    <a id="linkForInsurance">
+                    <a id="linkForInsurance" onclick="setGAClickHandler(event)">
                         <div class="pd-area">
                             <div class="clear">
                                 <div class="ci fl">

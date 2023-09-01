@@ -53,8 +53,8 @@ export default
             name: "교보e1년저축보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '소액으로 차근차근 오늘부터 시작해요!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03968호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -71,8 +71,8 @@ export default
             name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -89,8 +89,8 @@ export default
             name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -107,8 +107,8 @@ export default
             name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -125,8 +125,8 @@ export default
             name: "교보e상해케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '부담없는 보험료로 생활 안전 필수 보장!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03970호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -143,8 +143,8 @@ export default
             name: "교보e1년저축보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '소액으로 차근차근 오늘부터 시작해요!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03968호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -161,8 +161,8 @@ export default
             name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -179,8 +179,8 @@ export default
             name: "교보e생활습관케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '언제든 발생할 수 있는 생활습관 보장!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03965호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -197,8 +197,8 @@ export default
             name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -215,8 +215,8 @@ export default
             name: "내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -233,8 +233,8 @@ export default
             name: "교보e감염케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '여가생활 도중 걸릴 수 있는 감염질환 보장!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03967호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -251,8 +251,8 @@ export default
             name: "교보e감염케어보험(무배당)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '여가생활 도중 걸릴 수 있는 감염질환 보장!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03967호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -266,11 +266,11 @@ export default
         contentsId: "14G_057",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: " 내보험바로알기서비스",
+            name: " 내 보험 바로알기",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -288,8 +288,8 @@ export default
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '"꼭 필요한 암보장만 준비\n' +
                 '암치료지원 서비스까지!"',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03969호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
@@ -306,8 +306,8 @@ export default
             name: "교보e뇌·심장케어보험(무배당,서비스선택형)",
             imgUrl: '/resources/v1/img/img-ci-pd.png',
             explain: '필요한 보장부터 간병에 힘이 되는 서비스까지!',
-            certificationMsg: '생명보험협회 심의필 제 2022-05466호',
-            period: "(2022-12-27 ~ 2023-12-26)"
+            certificationMsg: '생명보험협회 심의필 제 2023-03966호',
+            period: "(2023-08-29 ~ 2024-08-28)"
         },
         gaParams: {
             ep_button_area: "질병_척추근골격계_버섯목증후군_상세",

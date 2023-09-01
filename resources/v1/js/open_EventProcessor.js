@@ -362,7 +362,7 @@ export const EventProcessor = (function (){
         postData(url, sendData, result=>{
             // console.log(result);
             result.forEach(row=>{
-                const idx = row.csjr_srvy_ansr_srmb;
+                const idx = row.csjr_srvy_ansr_srmb-1;
                 surveyResultTargets.arrSurveyResultTexts[idx].textContent = row.csjr_ctts_srvy_rate;
                 surveyResultTargets.arrSurveyResultBars[idx].style.width = `${row.csjr_ctts_srvy_rate}%`;
             })
@@ -933,8 +933,32 @@ const shareKakao = (shareUrl) => {
 }
 
 const shareFacebook = (shareUrl) => {
-    window.open("https://www.facebook.com/sharer/sharer.php?u=" + shareUrl);
+    // window.open("https://www.facebook.com/sharer/sharer.php?u=" + shareUrl);
+    // window.open("http://www.facebook.com/share.php?u=" + shareUrl);
+    const message = {
+        "exec" : {
+            "method": "outLink",
+            "params": "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl
+        },
+        "callback" : ""
+    };
+    const message2 = {
+        "exec" : {
+            "method": "outLink",
+            "params": {
+                "url": "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl
+            },
+            "callback": ""
+        }
+    };
+
+    if (window.webkit && window.webkit.messageHandlers ) {
+        window.webkit.messageHandlers.callNative.postMessage(message);
+    } else {
+        window.open("https://www.facebook.com/sharer/sharer.php?u=" + shareUrl);
+    }
 }
+
 
 const shareSms = (shareUrl) => {
     location.href = (ua.device.isAndroid ? "sms:?body=" : "sms:&body=") + shareUrl;
@@ -1479,6 +1503,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (ua.isLogined) {
             EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFlags);
+            triggerLoadingScreen();
         } else {
             handleConfirmButtonClick(e);
         }

@@ -35,7 +35,7 @@ function setGAClickHandler(e) {
     if (e.currentTarget.id === 'link_home') {
         e.preventDefault();
 
-        ga360.GA_Event('', epButtonArea + '공통', '홈', '홈', epClickVariable);
+        ga360.GA_Event(eventName, epButtonArea + '공통', '홈', '홈', epClickVariable);
         window.location.href = 'https://www.kyobobook.co.kr/';
     }
 
