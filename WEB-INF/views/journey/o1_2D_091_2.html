@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="‘FLEX 시대’"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+    
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="../../../resources/v1/js/ga-utils.js"></script>
+
+    <title>‘FLEX 시대’</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_2D_091 survey-type type-d bg-6">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>  
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div>
+        <h1>
+            ‘FLEX 시대’
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap" class="bg-6">
+    <div class="main-wrapper">
+        <div class="top-area">
+            <div id="survey-area">
+                <article class="fc-white">
+                    <span class="tag opacity-0"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                                start-ms:'300',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.7s'">자산관리</span>
+                    <div class="mt-10">
+                        <div class="fs-22 opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateY(-100%);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'500',
+                                                transition-props:'[opacity,transform]',
+                                                transition-duration:'0.8s'">슈퍼카·명품 시계·명품백 과시</div>
+                        <div class="fs-22 strong-underline opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateY(-250%);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'700',
+                                                transition-props:'[opacity,transform]',
+                                                transition-duration:'0.8s'">‘FLEX 시대’</div>
+                    </div>
+                    <div class="opacity-0 mt-10"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateY(-400%);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'900',
+                                                transition-props:'[opacity,transform]',
+                                                transition-duration:'0.8s'">
+                        <span class="sub-tit">
+                            오늘이 마지막인 것처럼 소비하는 사람들,<br>
+                            어떻게 생각하시나요?
+                        </span>
+                    </div>
+                </article>
+
+                <form class="survey-form">
+                    <ul class="vertical-ul">
+                        <li class="fs-0"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-af-ani:'transform:translateX(-50%);',
+                                                    start-ms:'0'">
+                            <div class="li-item opacity-0"
+                                    data-animation-type="onload"
+                                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateX(100vw);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'1000',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.5s'">
+                                <input type="radio" name="kyobolife-survey" value="1" id="answer-01">
+                                <label for="answer-01">
+                                    <div class="radio-btn bdc-5"></div>
+                                    <div class="fs-5 contents">
+                                        <small class="fc-4">100세 시대 중요한 건 안정적인 저축!</small>
+                                        <div class="mt-5">큰일나요!</div>
+                                    </div>
+                                    <img src="../../../resources/v1/img/2D_091/2D_091_01.png" alt="돼지저금통 이미지" width="50px">
+                                </label>
+                            </div>
+                            <div class="li-item-result-wrapper">
+                                <div class="li-item-result">
+                                    <div>
+                                        <small class="fc-4">100세 시대 중요한 건 안정적인 저축!</small>
+                                        <div>큰일나요!</div>
+                                        <div class="progress-bar mt-10">
+                                            <div class="painted-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-align-right">
+                                        <div class="display-inline-block result-ratio">-</div>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fs-0"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-af-ani:'transform:translateX(-50%);',
+                                                    start-ms:'300'">
+                            <div class="li-item opacity-0"
+                                    data-animation-type="onload"
+                                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateX(100vw);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'1300',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.5s'">
+                                <input type="radio" name="kyobolife-survey" value="2" id="answer-02">
+                                <label for="answer-02">
+                                    <div class="radio-btn bdc-5"></div>             
+                                    <div class="fs-5 contents">
+                                        <small class="fc-4">인생은 플렉스, 돈은 쓰라고 있는 것!</small>
+                                        <div class="mt-5 contents">멋있어요!</div>
+                                    </div>
+                                    <img src="../../../resources/v1/img/2D_091/2D_091_02.png" alt="핸드백 이미지" width="50px">
+                                </label>
+                            </div>  
+                            <div class="li-item-result-wrapper"> 
+                                <div class="li-item-result">
+                                    <div>
+                                        <small class="fc-4">인생은 플렉스, 돈은 쓰라고 있는 것!</small>
+                                        <div>멋있어요!</div>
+                                        <div class="progress-bar mt-10">
+                                            <div class="painted-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-align-right">
+                                        <div class="display-inline-block result-ratio">-</div>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="fs-0"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-af-ani:'transform:translateX(-50%);',
+                                                    start-ms:'600'">
+                            <div class="li-item opacity-0"
+                                    data-animation-type="onload"
+                                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateX(100vw);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'1600',
+                                                transition-props:'[opacity]',
+                                                transition-duration:'0.5s'">
+                                <input type="radio" name="kyobolife-survey" value="3" id="answer-03">
+                                <label for="answer-03">
+                                    <div class="radio-btn bdc-5"></div>             
+                                    <div class="fs-5 contents">
+                                        <small class="fc-4">쓸 때 쓰고, 아낄 땐 아끼는 현명함!</small>
+                                        <div class="mt-5 contents">그럴 수도 있죠!</div>
+                                    </div>
+                                    <img src="../../../resources/v1/img/2D_091/2D_091_03.png" alt="카드, 동전 이미지" width="50px">
+                                </label>
+                            </div>  
+                            <div class="li-item-result-wrapper"> 
+                                <div class="li-item-result">
+                                    <div>
+                                        <small class="fc-4">쓸 때 쓰고, 아낄 땐 아끼는 현명함!</small>
+                                        <div>그럴 수도 있죠!</div>
+                                        <div class="progress-bar mt-10">
+                                            <div class="painted-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-align-right">
+                                        <div class="display-inline-block result-ratio">-</div>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+
+                <div class="cont-area">
+                    <button type="submit" id="goNextBtn" class="com-btn fs-4 fw-700" data-is-not-result-page="true" disabled>설문 확인하기</button>
+
+                    <div class="text-align-center" data-is-not-result-page="false">
+                        <div class="fs-20 fw-700 fc-1"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                                    style-af-ani: 'transform:translateX(0px); opacity:1',
+                                                    start-ms: '600'">
+                                                    주식과 코인 열풍으로 적극적 투자에<br>
+                                                    나섰던 <span class="fc-12 va-top">20대(15~29세)가 벼랑 끝</span>으로<br>
+                                                    몰리고 있습니다.
+                        </div>
+                        <div class="mt-20">
+                            <img src="../../../resources/v1/img/2D_091/2D_091_04.png" alt="주식과 코인 열풍으로 적극적 투자해 벼랑끝으로 몰린 20대 대표 이미지" width="300px"
+                                    data-animation-type="onresult"
+                                    data-animation-infos="style-bf-ani: 'transform:translateX(-100px); opacity:0',
+                                                        style-af-ani: 'transform:translateX(0px); opacity:1',
+                                                        start-ms: '900'">
+                        </div>
+                    </div>
+                    <div class="text-align-center mt-30" data-is-not-result-page="false">
+                        <p class="fs-15 fc-3"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity: 0', style-af-ani: 'opacity: 1'">
+                            2022년 가계금융복지 통계에 따르면,<br>
+                            20대 부채 비중이 5년 전보다 109.5% 급증했습니다.
+                        </p>
+                        <p class="fs-15 fc-3 mt-5"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity: 0', style-af-ani: 'opacity: 1'">
+                            원인은 고물가 인플레이션의 지속, 소비 행태의 변화 등<br>
+                            여러 가지로 분석됩니다.
+                        </p>
+                        <p class="fs-15 fc-3 mt-5"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity: 0', style-af-ani: 'opacity: 1'">
+                            아직 경제적 기반이 마련되어 있지 않은 젊은 층의<br>
+                            삶이 더 팍팍해지는 것이 현실입니다.
+                        </p>
+                    </div>
+                    <div class="text-align-center" data-is-not-result-page="false">
+                        <div class="chart-img-explain-box mt-20">
+                            <img src="../../../resources/v1/img/2D_091/2D_091_05.png" width="300px"
+                                    alt="20대 제2금융권 가계대출 추이 (29세 이하, 단위:조원) 0, 5, 10, 15, 20, 25, 2019년 20.5, 2020년 22.6, 2021년 26.6, 2022년 3월 26.8 [출처:금융감감독원]"
+                                    data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'opacity: 0',
+                                                        style-af-ani: 'opacity: 1'">
+                        </div>
+                    </div>
+                </div>
+
+                <section data-is-not-result-page="false"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1', scroll-duration: 300'">
+                    <article class="inner text-align-left">
+                        <div class="inner-cont">
+                            <div class="title-msg">
+                                <span class="section-no fw-700 fc-5"
+                                        data-animation-type="onscroll"
+                                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                                            style-af-ani: 'opacity:0.2'">TIP.</span>
+                                <div class="fw-700 fs-22"
+                                    data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                                        style-af-ani: 'opacity:1'">
+                                                        일상 짠테크 꿀팁,<br>
+                                                        5가지를 알려드릴게요!
+                                </div>
+                            </div>
+
+                            <div class="mt-20 list-num c555">
+                                <div data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                        style-af-ani: 'opacity:1';"
+                                    class="list-item num-01">
+                                    <p class="mt-0 mb-0 fs-18 fw-700">스마트한 앱테크</p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        걸으면서 돈 버는 앱 활용하기<br>
+                                        <span class="fs-12">(토스, 헬스스위치, 캐시워크 등)</span>
+                                    </p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        디지털 폐지 줍기<br>
+                                        <span class="fs-12">(매일 앱 출석해서 현금이나 포인트 모으기)</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-box text-align-center mt-20"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'display:inline-block;width:100%;opacity:0',
+                                                    style-af-ani: 'opacity:1'">
+                                <img src="../../../resources/v1/img/2D_091/2D_091_06.gif" alt="디지털 폐지줍기 대표 이미지" width="200">
+                            </div>
+
+                            <div class="mt-20 list-num c555">
+                                <div data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                        style-af-ani: 'opacity:1';"
+                                    class="list-item num-02">
+                                    <p class="mt-0 mb-0 fs-18 fw-700">고정지출 짠테크</p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        지역화폐 발행 날짜 알람 맞춰서 구입하기<br>
+                                        <span class="fs-12">(7~10% 할인 구매)</span>
+                                    </p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        버스와 지하철 정기권 사용하기
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-box text-align-center mt-20"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                                    style-af-ani: 'opacity:1'">
+                                <img src="../../../resources/v1/img/2D_091/2D_091_07.gif" alt="고정지출 짠테크 대표 이미이" width="200">
+                            </div>
+
+                            <div class="mt-20 list-num c555">
+                                <div data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                        style-af-ani: 'opacity:1';"
+                                    class="list-item num-03">
+                                    <p class="mt-0 mb-0 fs-18 fw-700">알뜰한 쇼핑생활</p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        중고거래로 생활비 마련하기
+                                    </p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        백화점 상품권 저렴하게 구입하기<br>
+                                        <span class="fs-12">(소셜 마켓, 통신사 할인, 백화점 앞 구둣방 이용하기)</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-box text-align-center mt-20"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                                    style-af-ani: 'opacity:1'">
+                                <img src="../../../resources/v1/img/2D_091/2D_091_08.gif" alt="알뜰한 쇼핑생활 대표 이미지" width="200">
+                            </div>
+
+                            <div class="mt-20 list-num c555">
+                                <div data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                        style-af-ani: 'opacity:1';"
+                                    class="list-item num-04">
+                                    <p class="mt-0 mb-0 fs-18 fw-700">현명한 문화생활</p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        OTT 가입 해지하고 유튜브 요약본으로 해결하기
+                                    </p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        하루에 0원 쓰고 SNS 올리는 ‘무지출 챌린지 인증’ 도전하기
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-box text-align-center mt-20"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                                    style-af-ani: 'opacity:1'">
+                                <img src="../../../resources/v1/img/2D_091/2D_091_09.gif" alt="현명한 문화 생활 대표 이미지" width="200">
+                            </div>
+
+                            <div class="mt-20 list-num c555">
+                                <div data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                        style-af-ani: 'opacity:1';"
+                                    class="list-item num-05">
+                                    <p class="mt-0 mb-0 fs-18 fw-700">난방비 폭탄 피하는 절약 팁</p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        열 전달 효율이 높은 가습기 함께 사용하기
+                                    </p>
+                                    <p class="bull-list-chk c555 mt-5">
+                                        외출할 때는 난방온도 2~3도 낮추기
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="img-box text-align-center mt-20"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                                    style-af-ani: 'opacity:1'">
+                                <img src="../../../resources/v1/img/2D_091/2D_091_10.gif" alt="난방비 폭탄 피하는 절약 팁 대표 이미지" width="200">
+                            </div>
+                        </div>
+                    </article>
+                    <article class="text-align-center pb-0">
+                        <div>
+                            <img src="../../../resources/v1/img/check-blue.png" width="50"
+                                    data-animation-type="onscroll"
+                                    data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                                style-af-ani: 'transform: scale(1); opacity:1'">
+                            <p class="mt-5 mb-0 fs-16 fc-1"
+                                data-animation-type="onscroll"
+                                data-animation-infos="style-bf-ani: 'opacity:0',
+                                                    style-af-ani: 'opacity:1'">
+                                                    힘들게 줄인 돈, 안정적인 저축으로<br>
+                                <span class="fc-12 fs-22 fw-700">목돈 만드는 연습을 해 보세요!</span>
+                            </p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- s: 컨텐츠 하단 영역-->
+                <div class="bg-btm-blue btm-wrap" data-is-not-result-page="false">
+                    <!-- 평가영역 -->
+                    <section id="feedback-area" class="bg-f4f4f4">
+                        <div class="feedback-inner">
+                            <div class="feedback-txt">콘텐츠가 유익했어요!</div>
+                            <div class="feedback-btn-box">
+                                <div class="feedback-btn-box-inner">
+                                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                                    <label class="feedback-btn good" for="feedback-radio-01">
+                                        <!-- <img src="../../../resources/v1/img/icon/ico-feedback-good_gray.png" width="50"> -->
+                                        <span class="blind">좋아요</span>
+                                    </label>
+                                </div>
+                                <div class="feedback-btn-box-inner">
+                                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                                    <label class="feedback-btn bad" for="feedback-radio-02">
+                                        <!-- <img src="../../../resources/v1/img/icon/ico-feedback-bad_gray.png" width="50"> -->
+                                        <span class="blind">별로에요</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 상품영역 -->
+                    <div id="ins_view"></div>
+
+                    <!-- 동의 영역 -->
+                    <div class="agree-area white">
+                        <div class="all-agree-box" id="allAgreeBox">
+                            <label for="chkAll" class="check-style-all">
+                                <input type="checkbox" name="" id="chkAll" onclick="chkall();"><i></i><span>전체동의</span>
+                            </label>
+                        </div>
+                        <div class="agree-box" id="personalAgreeBox">
+                            <label for="chkAgr1" class="check-style-agr chk_agr_info">
+                                <input type="checkbox" name="typ-all" id="chkAgr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                            </label>
+                            <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+                        </div>
+                        <div class="agree-box" id="marketAgreeBox">
+                            <label for="chkAgr2" class="check-style-agr chk_agr_mkt">
+                                <input type="checkbox" name="typ-all" id="chkAgr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                            </label>
+                            <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+                        </div>
+                    </div>
+                    <div class="confirm-btn-box">
+                        <a class="confirm-btn link_login" id="confirm">
+                            확인하기
+                        </a>
+                    </div>
+                </div>
+                <!-- e: 컨텐츠 하단 영역-->
+            </div>
+        </div>
+
+        <!-- [S] footer -->
+        <footer class="footer_wrapper" data-is-not-result-page="false">
+            <div class="footer_body">
+                <div class="logo_box">
+                    <a id="link_home" class="logo_link">
+                            <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+                    </a>
+                    <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+                </div>
+                
+                <address class="footer_info_box">
+                    <div class="info_text_multi">
+                        <span class="info_text">교보문고</span>
+                        <span class="gap">|</span>
+                        <span class="info_text">대표이사 : 안병현, 김상훈</span>
+                    </div>
+                    <span class="info_text">서울특별시 종로구 종로 1</span>
+                    <span class="info_text">사업자등록번호 : 102-81-11670</span>
+                    <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+                    <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+                    <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+                    <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+                    <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+                </address>
+                
+                <div class="footer_menu_box">
+                    <ul class="footer_menu_list">
+                        <li class="footer_menu_item" id="li_login"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item" id="li_logout"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
+                        <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+                    </ul>
+                    <ul class="footer_menu_list sub">
+                        <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                        <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                        <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                        <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- [E] footer -->
+    </div>
+
+    <div class="top-bg-panel-wrapper">
+        <div class="top-bg-panel bg-5"></div>
+    </div>
+
+    <!--돌아가기 버튼-->
+    <!-- <div class="bottom-fixed-area" data-is-not-result-page="false">
+        <button class="com-btn bg-white fc-5 fs-4 fw-700 bdc-5" id="goFirstBtn">다시 선택하기</button>
+    </div> -->
+</div>
+<!-- [E] cont -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
+<!-- [S] 로그인 확인 팝업 -->
+<div id="poplogin">
+    <div class="poplogin-inner">
+        <div class="dialog-contents">
+            로그인하고<br>맞춤 상품 확인해보세요!
+        </div>
+        <div class="dialog-btn">
+            <button class="btn-next" id="btnNext">다음에 하기</button>
+            <button class="btn-login" id="btnLogin">로그인 하기</button>
+        </div>
+    </div>
+</div>
+<!-- [S] pop -->
+<!-- s: 개인정보 제3자 제공동의 팝업 -->
+<div id="cnst_personal_view"></div>
+<!-- e: 개인정보 제3자 제공동의 팝업 -->
+
+<!-- s: 마케팅 수신 동의 팝업 -->
+<div id="cnst_market_view"></div>
+<!-- e: 마케팅 수신 동의 팝업 -->
+
+<!-- 제3자 제공 동의 유도 토스트 메세지 -->
+<div class="toast_wrap_re">
+    <span class="toast_message">제3자 제공 동의 시에만<br>상품 안내를 받아 볼 수 있습니다.</span>
+</div>
+<!-- [E] pop -->
+
+<!-- [S]top버튼 -->
+<div class="btn-top-wrap">
+    <button type="top" class="btn-fixed-top">top</button>
+</div>
+<!-- [E]top버튼 -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                   background="transparent"
+                   style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+      고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+      이동중이에요!
+    </div>
+</div>
+  
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+        integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script type="module">
+import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+
+try {
+    // animation setting
+    AnimationManager.loadElementsToAnimate();
+}
+catch(error){
+    alert(error);
+    alert(error.stack);
+}
+</script>
+</body>
+</html>

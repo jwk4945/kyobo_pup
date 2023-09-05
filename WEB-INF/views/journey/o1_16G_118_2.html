@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="신조어 퀴즈"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+    
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="../../../resources/v1/js/ga-utils.js"></script>
+
+    <title>신조어 퀴즈</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_16G_118 survey-type type-g bg-6">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1>
+            신조어 퀴즈
+        </h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap" class="bg-6">
+    <div class="main-wrapper">
+        <div class="top-area">
+            <!-- [S] 로드화면 -->
+            <div id="survey-area" data-is-not-result-page="true">
+                <article class="fc-white">
+                        <span class="tag fc-13 opacity-0"
+                                data-animation-type="onload"
+                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                    start-ms:'300',
+                                                    transition-props:'[opacity]',
+                                                    transition-duration:'0.7s'">자기개발</span>
+                    <div class="mt-10">
+                        <div class="fs-22 opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                    style-bf-ani: 'transform:translateY(-100%);',
+                                                    style-af-ani: 'transform:',
+                                                    start-ms:'500',
+                                                    transition-props:'[opacity,transform]',
+                                                    transition-duration:'0.8s'">신조어 퀴즈! 조기 은퇴를
+                        </div>
+                        <div class="fs-22 strong-underline opacity-0"
+                            data-animation-type="onload"
+                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                    style-bf-ani: 'transform:translateY(-250%);',
+                                                    style-af-ani: 'transform:',
+                                                    start-ms:'700',
+                                                    transition-props:'[opacity,transform]',
+                                                    transition-duration:'0.8s'">
+                                                    꿈꾸는 이들을 부르는 말은?
+                        </div>
+                    </div>
+                    <div class="opacity-0 mt-10"
+                        data-animation-type="onload"
+                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                                style-bf-ani: 'transform:translateY(-400%);',
+                                                style-af-ani: 'transform:',
+                                                start-ms:'900',
+                                                transition-props:'[opacity,transform]',
+                                                transition-duration:'0.8s'">
+                            <span class="sub-tit">
+                                극단적인 소비 절감과 저축을 통해<br>
+                                경제적 자유를 이루고자 합니다.
+                            </span>
+                    </div>
+                </article>
+
+                <!-- <form class="survey-form"> -->
+                <form class="survey-form survey-form2">
+                    <div class="horizontal-box">
+                        <ul>
+                            <li>
+                                <div class="inner" style="width: 0;"
+                                    data-animation-type="onload"
+                                    data-animation-infos="style-bf-ani: 'width:0;',
+                                                            style-af-ani: 'width:100%',
+                                                            start-ms:'1100', transition-duration:'0.6s'">
+                                    <input type="radio" name="kyobolife-survey" value="01" id="answer-01">
+                                    <label for="answer-01"
+                                            data-animation-type="onload"
+                                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                                    style-af-ani: 'opacity:1;',
+                                                                    start-ms:'1600', transition-duration:'0.7s'">
+                                        <div class="box">
+                                            <dl>
+                                                <dt class="fs-13 fc-4">첫 번째</dt>
+                                                <dd class="mt5 fs-15 fw-700">파이어족</dd>
+                                            </dl>
+                                            <div class="img-box mt-10">
+                                                <img src="../../../resources/v1/img/16G_118/16G_118_01.png" alt="파이어족 대표 이미지">
+                                            </div>
+                                            <div class="radio-btn mt-15"></div>
+                                        </div>  
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inner" style="width: 0;"
+                                    data-animation-type="onload"
+                                    data-animation-infos="style-bf-ani: 'width:0;',
+                                                            style-af-ani: 'width:100%',
+                                                            start-ms:'1400', transition-duration:'0.6s'">
+                                    <input type="radio" name="kyobolife-survey" value="02" id="answer-02">
+                                    <label for="answer-02"
+                                            data-animation-type="onload"
+                                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                                    style-af-ani: 'opacity:1',
+                                                                    start-ms:'1900', transition-duration:'0.7s'">
+                                        <div class="box">
+                                            <dl>
+                                                <dt class="fs-13 fc-4">두 번째</dt>
+                                                <dd class="mt5 fs-15 fw-700">딩크족</dd>
+                                            </dl>
+                                            <div class="img-box mt-10">
+                                                <img src="../../../resources/v1/img/16G_118/16G_118_02.png" alt="딩크족 대표 이미지">
+                                            </div>
+                                            <div class="radio-btn mt-15"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="inner" style="width: 0;"
+                                    data-animation-type="onload"
+                                    data-animation-infos="style-bf-ani: 'width:0;',
+                                                            style-af-ani: 'width:100%',
+                                                            start-ms:'1700', transition-duration:'0.6s'">
+                                    <input type="radio" name="kyobolife-survey" value="03" id="answer-03">
+                                    <label for="answer-03"
+                                            data-animation-type="onload"
+                                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                                    style-af-ani: 'opacity:1',
+                                                                    start-ms:'2100', transition-duration:'0.7s'">
+                                        <div class="box">
+                                            <dl>
+                                                <dt class="fs-13 fc-4">세 번째</dt>
+                                                <dd class="mt5 fs-15 fw-700">캥거루족</dd>
+                                            </dl>
+                                            <div class="img-box mt-10">
+                                                <img src="../../../resources/v1/img/16G_118/16G_118_03.png" alt="캥거루족 대표 이미지">
+                                            </div>
+                                            <div class="radio-btn mt-15"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                <div class="footer-area">
+                    <button type="submit" id="goNextBtn" class="com-btn bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
+                </div>
+            </div>
+            <!-- [E] 로드화면 -->
+
+            <!-- [S] 컨텐츠 화면 -->
+            <!-- s: 컨텐츠 상단 -->
+            <article id="result-area" class="text-align-center pb-30" data-is-not-result-page="false">
+                <div>
+                    <div class="mt-5"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-100%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '300',
+                                                transition-duration: '0.5s'">
+                        <h1 class="fc-white fw-700">정답은 ‘파이어족’ 입니다.</h1>
+                    </div>
+                    <p class="mt-10 fc-white"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-250%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '500',
+                                                transition-duration: '0.5s'">
+                                                경제적 자립으로 빠른 시기에 은퇴하려는 사람들을<br>
+                                                ‘파이어족’이라고 부릅니다.
+                    </p>
+                    <p class="mt-5 fc-white"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-250%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '500',
+                                                transition-duration: '0.5s'">
+                                                ‘Financial Independence(경제적 자립)'<br>'Retire Early(조기 퇴직)’의 첫 글자를 따서<br>만든 신조어입니다.
+                    </p>
+                    <div class="mt-20">
+                        <img src="../../../resources/v1/img/16G_118/16G_118_04.gif" width="300"
+                            alt="파이어족 대표 이미지"
+                            data-animation-type="onresult"
+                            data-animation-infos="style-bf-ani: 'transform:translateX(100vw); opacity:0;',
+                                                style-af-ani: 'transform:translateX(0vw); opacity:1;',
+                                                start-ms: '700',
+                                                transition-duration: '0.7s'">
+                    </div>
+                    <p class="mt-20 fc-3"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-250%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '900',
+                                                transition-duration: '0.5s'">
+                                                파이어족은 30대 후반이나 늦어도 40대 초반쯤<br>
+                                                조기 은퇴를 목표로 착실히 은퇴자금을 마련합니다.
+                    </p>
+                    <p class="mt-5 fc-3"
+                        data-animation-type="onresult"
+                        data-animation-infos="style-bf-ani: 'transform:translateY(-250%); opacity:0;',
+                                                style-af-ani: 'transform:translateY(0%); opacity:1;',
+                                                start-ms: '1100',
+                                                transition-duration: '0.5s'">
+                                                최근 코로나 팬데믹으로 운영이 어려워진<br>
+                                                기업들이 신입사원이나 입사한 지 3~4년밖에 되지 않은<br>
+                                                직원들에게 퇴직을 권고한 것이 알려져 충격을 안겼습니다.
+                    </p>
+                </div>
+            </article>
+            <!-- e: 컨텐츠 상단 -->
+        </div>
+
+        <section class="card-section-wrap bg-6" data-is-not-result-page="false">
+            <div class="card-section"
+                data-animation-type="onscroll"
+                data-animation-infos="style-bf-ani: 'background-color:#f4f4f4;', style-af-ani: 'background-color:#ffffff;'">
+                <article class="text-align-left">
+                    <div class="title-msg mt-30">
+                        <span class="section-no fw-700 fc-7"
+                            id="animation04"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                style-af-ani: 'opacity:0.2;',
+                                                start-ms: '1000',
+                                                transition-duration: '0.5s'">TIP.</span>
+                        <div class="fs-22 fw-700 fc-1" id="animation05"
+                            data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                style-af-ani: 'opacity:1;',
+                                                start-ms: '1100',
+                                                transition-duration: '0.5s'">
+                                                경제 전문가들이 알려 준<br>
+                                                조기 은퇴 잘하는 현실적인 방법
+                        </div>
+                    </div>
+                    <div class="mt-20 list-num c555">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-01">
+                            <p class="fw-700 fs-18">나의 재정 상태를 파악하라.</p>
+                            <p class="mt-5 fc-3">부자가 되고 싶다는 막연한 생각으로는 절대 자산을 불릴 수 없습니다.</p>
+                            <p class="mt-5 fc-3">목돈을 잘 불리려면 충분한 꼭 필요합니다.</p>
+                            <p class="mt-5 fc-3">1,000만 원으로 10% 수익을 내면 100만 원이지만 1억 원으로 10% 수익을 내면 1,000만 원을 벌 수 있습니다.</p>
+                            <p class="mt-5 fc-3">지금 본인의 수익과 소비를 파악해 불필요한 소비를 줄이는 습관을 들이는 것이 중요합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-20 text-align-center" 
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                        <img src="../../../resources/v1/img/16G_118/16G_118_05.png" alt="나의 재정 상태를 파악하라 대표 이미지" width="300">
+                    </div>
+
+                    <div class="mt-20 list-num c555">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-02">
+                            <p class="fw-700 fs-18">투자로 현금흐름을 만들라.</p>
+                            <p class="mt-5 fc-3">투자는 가치 있는 자산을 저렴하게 구입하여 자산을 늘리는 것입니다.</p>
+                            <p class="mt-5 fc-3">저평가된 수익형 부동산이나 배당주를 구입하는 등의 투자를 통해, 급여 외에도 추가적인 현금흐름을 만들 수 있습니다.</p>
+                            <p class="mt-5 fc-3">조급한 마음을 버리고 내가 원하는 기준에 맞는 수익을 가져다주는 자산을 꾸준히 모아야 합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-20 text-align-center" 
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                        <img src="../../../resources/v1/img/16G_118/16G_118_06.png" alt="나의 재정 상태를 파악하라 대표 이미지" width="300">
+                    </div>
+
+                    <div class="mt-20 list-num c555">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-03">
+                            <p class="fw-700 fs-18">소득의 파이프라인을 찾아라.</p>
+                            <p class="mt-5 fc-3">주된 소득 외에도 부동산 임대 수입, 주식 및 채권 투자 수익, 인지세 등 다양한 수익을 창출할 수 있습니다.</p>
+                            <p class="mt-5 fc-3">이렇게 여러 소스에서 지속적으로 발생하는 소득이 합쳐져서 소득의 파이프라인을 형성하게 됩니다.</p>
+                            <p class="mt-5 fc-3">소득이 충분하지 않다면 절약하는 것만으로 파이어족이 되는 것은 쉽지 않습니다.</p>
+                            <p class="mt-5 fc-3">부업 등 현실적인 방법을 적극적으로 찾는 것이 필요합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-20 text-align-center" 
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                        <img src="../../../resources/v1/img/16G_118/16G_118_07.png" alt="소득의 파이프라인을 찾아라 대표 이미지" width="300">
+                    </div>
+
+                    <div class="mt-20 list-num c555">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-04">
+                            <p class="fw-700 fs-18">금융상품을 똑똑하게 활용하라.</p>
+                            <p class="mt-5 fc-3">은퇴 이후에 자금이 고갈되지 않도록 인출 비율을 지키는 것도 중요합니다.</p>
+                            <p class="mt-5 fc-3">단기 수익을 좇아 목돈의 은퇴자금을 활용한 투자를 감행하기보다는 계획적인 장기투자를 하는 것이 바람직합니다.</p>
+                            <p class="mt-5 fc-3">또한 필요 자산의 일부는 안정성을 고려한 금융상품을 활용하는 전략이 필요합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-20 text-align-center" 
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                        <img src="../../../resources/v1/img/16G_118/16G_118_08.png" alt="금융상품을 똑똑하게 활용하라 대표 이미지" width="300">
+                    </div>
+
+                    <div class="mt-20 list-num c555">
+                        <div data-animation-type="onscroll"
+                            data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1';"
+                            class="list-item num-05">
+                            <p class="fw-700 fs-18">저축 연습을 시작하라.</p>
+                            <p class="mt-5 fc-3">파이어족을 목표로 한다면 우선 원하는 목표를 구체화하고 실행 계획을 실천해야 합니다.</p>
+                            <p class="mt-5 fc-3">하지만 큰 목돈도 소액의 저축 습관에서부터 시작됩니다.</p>
+                            <p class="mt-5 fc-3">10만 원씩 저축해서 1년간 120만 원을 모으는 경험을 해 본 사람이 1억 원의 목돈 만들기도 해낼 수 있습니다.</p>
+                            <p class="mt-5 fc-3">월 10만 원씩 저축하는 통장 만들기부터 시작하시기를 바랍니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-20 text-align-center" 
+                        data-animation-type="onscroll"
+                        data-animation-infos="style-bf-ani: 'display:inline-block; width:100%;opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                        <img src="../../../resources/v1/img/16G_118/16G_118_09.png" alt="저축 연습을 시작하라 대표 이미지" width="300">
+                    </div>
+                </article>
+            </div>
+
+            <div class="mt-30 text-align-center">
+                <img src="../../../resources/v1/img/check-bg-07.png" width="50"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                <div class="fs-22 fc-13 fw-700 mt-5"
+                    data-animation-type="onscroll"
+                    data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    현실적인 준비로<br>
+                    원하는 미래를 달성하길 바랍니다.
+                </div>
+            </div>
+        </section>
+
+        <!-- s: 컨텐츠 하단 영역-->
+        <div class="bg-btm-pink btm-wrap" data-is-not-result-page="false">
+            <!-- 평가영역 -->
+            <section id="feedback-area" class="bg-f4f4f4">
+                <div class="feedback-inner">
+                    <div class="feedback-txt">콘텐츠가 유익했어요!</div>
+                    <div class="feedback-btn-box">
+                        <div class="feedback-btn-box-inner">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                            <label class="feedback-btn good" for="feedback-radio-01">
+                                <span class="blind">좋아요</span>
+                            </label>
+                        </div>
+                        <div class="feedback-btn-box-inner">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                            <label class="feedback-btn bad" for="feedback-radio-02">
+                                <span class="blind">별로에요</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 상품영역 -->
+            <div id="ins_view"></div>
+
+            <!-- 동의 영역 -->
+            <div class="agree-area white">
+                <div class="all-agree-box" id="allAgreeBox">
+                    <label for="chkAll" class="check-style-all">
+                        <input type="checkbox" name="" id="chkAll" onclick="chkall();"><i></i><span>전체동의</span>
+                    </label>
+                </div>
+                <div class="agree-box" id="personalAgreeBox">
+                    <label for="chkAgr1" class="check-style-agr chk_agr_info">
+                        <input type="checkbox" name="typ-all" id="chkAgr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                    </label>
+                    <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+                </div>
+                <div class="agree-box" id="marketAgreeBox">
+                    <label for="chkAgr2" class="check-style-agr chk_agr_mkt">
+                        <input type="checkbox" name="typ-all" id="chkAgr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                    </label>
+                    <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+                </div>
+            </div>
+            <div class="confirm-btn-box">
+            <a class="confirm-btn link_login" id="confirm">
+                확인하기
+            </a>
+            </div>
+        </div>
+        <!-- e: 컨텐츠 하단 영역-->
+        
+        <!-- [S] footer -->
+        <footer class="footer_wrapper" data-is-not-result-page="false">
+            <div class="footer_body">
+                <div class="logo_box">
+                    <a id="link_home" class="logo_link">
+                            <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+                    </a>
+                    <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+                </div>
+                
+                <address class="footer_info_box">
+                    <div class="info_text_multi">
+                        <span class="info_text">교보문고</span>
+                        <span class="gap">|</span>
+                        <span class="info_text">대표이사 : 안병현, 김상훈</span>
+                    </div>
+                    <span class="info_text">서울특별시 종로구 종로 1</span>
+                    <span class="info_text">사업자등록번호 : 102-81-11670</span>
+                    <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+                    <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+                    <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+                    <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+                    <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+                </address>
+                
+                <div class="footer_menu_box">
+                    <ul class="footer_menu_list">
+                        <li class="footer_menu_item" id="li_login"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item" id="li_logout"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
+                        <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+                    </ul>
+                    <ul class="footer_menu_list sub">
+                        <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                        <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                        <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                        <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- [E] footer -->
+    </div>
+    <!-- 상단 패널 -->
+    <div class="top-bg-panel-wrapper">
+        <div class="top-bg-panel bg-7"></div>
+    </div>
+    <!-- [E] 컨텐츠 화면 -->
+</div>
+<!-- [E] cont -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
+<!-- [S] 로그인 확인 팝업 -->
+<div id="poplogin">
+    <div class="poplogin-inner">
+        <div class="dialog-contents">
+            로그인하고<br>맞춤 상품 확인해보세요!
+        </div>
+        <div class="dialog-btn">
+            <button class="btn-next" id="btnNext">다음에 하기</button>
+            <button class="btn-login" id="btnLogin">로그인 하기</button>
+        </div>
+    </div>
+</div>
+<!-- [S] pop -->
+<!-- s: 개인정보 제3자 제공동의 팝업 -->
+<div id="cnst_personal_view"></div>
+<!-- e: 개인정보 제3자 제공동의 팝업 -->
+
+<!-- s: 마케팅 수신 동의 팝업 -->
+<div id="cnst_market_view"></div>
+<!-- e: 마케팅 수신 동의 팝업 -->
+
+<!-- 제3자 제공 동의 유도 토스트 메세지 -->
+<div class="toast_wrap_re">
+    <span class="toast_message">제3자 제공 동의 시에만<br>상품 안내를 받아 볼 수 있습니다.</span>
+</div>
+<!-- [E] pop -->
+
+<!-- [S]top버튼 -->
+<div class="btn-top-wrap">
+    <button type="top" class="btn-fixed-top">top</button>
+</div>
+<!-- [E]top버튼 -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                   background="transparent"
+                   style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+      고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+      이동중이에요!
+    </div>
+</div>
+  
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+        integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script type="module">
+import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+
+try {
+    // animation setting
+    AnimationManager.loadElementsToAnimate();
+}
+catch(error){
+    alert(error);
+    alert(error.stack);
+}
+</script>
+</body>
+</html>
