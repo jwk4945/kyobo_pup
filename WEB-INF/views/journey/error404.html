@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+
+    <title>404</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<style>
+    body{height: var(--100vh-inner);overflow: hidden;padding-top: 0;}
+    .cont-404{width: 100%;height: 100%;position: relative;}
+    .cont-404 .e404-inner{position: absolute;top: calc(50% - 86px);left: 50%;transform: translate(-50%, -50%);min-width: 300px;padding: 0 20px;}
+    .cont-404 .e404-inner .img-box{width: 120px;margin: 0 auto;}
+    .cont-404 .e404-inner .img-box img{width: 100%;}
+    .cont-404 .e404-inner p{text-align: center;}
+    .cont-404 .e404-btm{position: absolute;bottom: 0;width: 100vw;padding: 0 20px 30px;display: flex;flex: 1;}
+    .cont-404 .e404-btm a{display: inline-flex;flex: 1;justify-content: center;align-items: center;cursor: pointer;height: 56px;padding: 0 23px 1px;border-radius: 6px;font-size: 16px;line-height: 26px;letter-spacing: -0.01em;font-family: "Noto Sans KR", sans-serif;font-weight: 700;}
+    .cont-404 .e404-btm a + a{margin-left: 5px;}
+    .cont-404 .e404-btm a.btn-line-primary{color: #474c98;border: 1px solid #474c98;background: #fff;transition: background-color 0.2s ease-out, border-color 0.2s ease-out;}
+    .cont-404 .e404-btm a.btn-primary{color: #fff;background: #5055b1;border: 1px solid #5055b1;transition: background-color 0.2s ease-out, border-color 0.2s ease-out;}
+</style>
+<body class="e404">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap" class="cont-404">
+    <div class="e404-inner">
+        <div class="img-box">
+            <img src="../../../resources/v1/img/icon_404.png" alt="404">
+        </div>
+        <p class="fs-20 mt-10 fw-700" style="color: #004b79;">
+            죄송합니다.<br>
+            페이지를 찾을 수 없습니다.
+        </p>
+        <p class="fs-14 mt-5 fc-3">
+            페이지의 주소가 잘못 입력되었거나<br>
+            주소가 변경, 삭제되어 찾을 수 없습니다.
+        </p>
+    </div>
+    <div class="e404-btm">
+        <a class="btn-line-primary" href="https://www.kyobobook.co.kr/">
+            <span class="text">교보문고 홈</span>
+        </a>
+        <a class="btn-primary" href="javascript:history.back();">
+            <span class="text">이전페이지</span>
+        </a>
+    </div>
+</div>
+<!-- [E] cont -->
+</body>
+</html>
