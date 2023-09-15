@@ -4,10 +4,18 @@
     href=${ renderInfo.linkInfoForInsurance.url }
 */
 
+const exPilot = ['6F_007', '8B_110', '13G_029'];
+const exOpen = []; 
+
 export function renderInsuaranceView(renderInfo, fileName) {
     // console.log('renderInsuaranceView', renderInfo);
 
     let template;
+
+    if (xPilot.includes(fileName)) {
+        return; 
+    }
+
     if (fileName === '18B_023') {
         // '교보e암케어보험' 인 경우 explain이 2줄이 되기때문에 예외 케이스로 작성
         template = `
