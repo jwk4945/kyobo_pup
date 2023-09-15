@@ -12,7 +12,7 @@ export function renderInsuaranceView(renderInfo, fileName) {
 
     let template;
 
-    if (xPilot.includes(fileName)) {
+    if (exPilot.includes(fileName)) {
         return; 
     }
 
