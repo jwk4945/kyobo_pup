@@ -66,25 +66,27 @@
 <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
 
 <!-- [S] cont -->
-<div id="cont-wrap" class="bg-9">
-
+<div id="cont-wrap">
+    <section class="p1-area">
+        <img src="../../../resources/v1/img/pilot/p1_13G_029.png" alt="">
+    </section>
     <!-- s: 컨텐츠 하단 영역-->
-    <div class="bg-btm-gray btm-wrap">
+    <div class="btm-wrap">
         <!-- 평가영역 -->
-        <section id="feedback-area" style="background-color: #562222;">
+        <section id="feedback-area">
             <div class="feedback-inner">
                 <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                 <div class="feedback-btn-box">
                     <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
-                        <label class="feedback-btn" for="feedback-radio-01">
-                            <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001" onclick="setGAClickHandler(event)">
+                        <label class="feedback-btn good" for="feedback-radio-01">
+                            <span class="blind">좋아요</span>
                         </label>
                     </div>
                     <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
-                        <label class="feedback-btn" for="feedback-radio-02">
-                            <img src="../../../resources/v1/img/icon/ico-feedback-bad.png" width="50">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002" onclick="setGAClickHandler(event)">
+                        <label class="feedback-btn bad" for="feedback-radio-02">
+                            <span class="blind">별로에요</span>
                         </label>
                     </div>
                 </div>

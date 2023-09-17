@@ -518,3 +518,26 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .type-g .info-txt-wrap .info-txt li{color: #fff;}
 .type-d .info-txt-wrap .info-txt li::before, 
 .type-g .info-txt-wrap .info-txt li::before{background-color: #fff;}
+
+/* ================ [S] 고객여정 2.0 pilot ================ */
+section.p1-area{padding-bottom: 0 !important;display: flex;justify-content: center;}
+section.p1-area img{width: 100%;max-width: 510px;font-size: 0;}
+section.p1-area + .btm-wrap{background: #444;}
+section.p1-area + .btm-wrap #feedback-area{box-shadow: none;padding: 0 20px 5px;background: #fff;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
+section.p1-area + .btm-wrap #feedback-area .feedback-inner{border-top: 1px solid #ddd;padding-top: 5px;}
+section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-txt{color: #222;}
+section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box::before{background: #000;opacity: 0.3;}
+
+section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box .feedback-btn.good{background: url(../img/icon/ico-feedback-good_off2.png) 0 0 no-repeat;background-size: contain;opacity: 1;}
+section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box .feedback-btn.bad{background: url(../img/icon/ico-feedback-bad_off2.png) 0 0 no-repeat;background-size: contain;opacity: 1;}
+
+section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.good{background: url(../img/icon/ico-feedback-good_on2.png) 0 0 no-repeat;background-size: contain;}
+section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.bad{background: url(../img/icon/ico-feedback-bad_on2.png) 0 0 no-repeat;background-size: contain;}
+
+section.p1-area + .btm-wrap .btm-area .explain{color: #fff;}
+section.p1-area + .btm-wrap .agree-area label span{color: #fff;}
+section.p1-area + .btm-wrap .agree-area .agree-box a{color: #fff;}
+section.p1-area + .btm-wrap .confirm-btn-box .confirm-btn{box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);background-color: #fff;color: #222;}
+section.p1-area + .btm-wrap .info-txt-wrap .info-txt li{color: #ddd;}
+section.p1-area + .btm-wrap .info-txt-wrap .info-txt li::before{background: #ddd;}
+/* ================ [E] 고객여정 2.0 pilot ================ */
