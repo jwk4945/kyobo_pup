@@ -540,4 +540,9 @@ section.p1-area + .btm-wrap .agree-area .agree-box a{color: #fff;}
 section.p1-area + .btm-wrap .confirm-btn-box .confirm-btn{box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);background-color: #fff;color: #222;}
 section.p1-area + .btm-wrap .info-txt-wrap .info-txt li{color: #ddd;}
 section.p1-area + .btm-wrap .info-txt-wrap .info-txt li::before{background: #ddd;}
+
+section.p1-area + .btm-wrap .agree-area .all-agree-box label input + i{background: url(../img/icon/ico-chk-all-2.png) 0 0 no-repeat;background-size: contain;}
+section.p1-area + .btm-wrap .agree-area .agree-box label input + i{background: url(../img/icon/ico-chk-2.png)0 0 no-repeat;background-size: contain;}
+section.p1-area + .btm-wrap .agree-area .all-agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on2.png) 0 0 no-repeat;background-size: contain;}
+section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{background: url(../img/icon/ico-chk-on2.png)0 0 no-repeat;background-size: contain;}
 /* ================ [E] 고객여정 2.0 pilot ================ */

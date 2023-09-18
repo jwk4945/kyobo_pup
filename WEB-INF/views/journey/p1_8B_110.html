@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="외벌이"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+    
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="../../../resources/v1/js/ga-utils.js"></script>
+
+    <title>외벌이</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="p1_8B_110">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <div class="link_back">
+            <a href="javascript:history.back()" class="go-back-btn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1></h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap">
+    <section class="p1-area">
+        <img src="../../../resources/v1/img/pilot/p1_13G_029.png" alt="">
+    </section>
+    <!-- s: 컨텐츠 하단 영역-->
+    <div class="btm-wrap">
+        <!-- 평가영역 -->
+        <section id="feedback-area">
+            <div class="feedback-inner">
+                <div class="feedback-txt">콘텐츠가 유익했어요!</div>
+                <div class="feedback-btn-box">
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001" onclick="setGAClickHandler(event)">
+                        <label class="feedback-btn good" for="feedback-radio-01">
+                            <span class="blind">좋아요</span>
+                        </label>
+                    </div>
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002" onclick="setGAClickHandler(event)">
+                        <label class="feedback-btn bad" for="feedback-radio-02">
+                            <span class="blind">별로에요</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 상품영역 -->
+        <!-- <div id="ins_view"></div> -->
+
+        <section class="btm-area">
+            <p class="explain">가입한 모든 보험계약 한눈에!</p>
+            <a id="linkForInsurance" onclick="setGAClickHandler(event)">
+                <div class="pd-area">
+                    <div class="clear">
+                        <div class="ci fl">
+                            <img src="../../../resources/v1/img/img-ci-pd.png" alt="KYOBO 교보생명">
+                        </div>
+                        <dl class="fl">
+                            <dt class="name">내 보험 바로알기</dt>
+                            <dd class="certificationMsg">
+                                <div class="certificationMsg-txt">준법감시인확인필 9-2308-5 플랫폼기획팀</div>
+                                <div class="certificationMsg-date">(2023-08-23 ~ 2024-08-22)</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="ico-arw"></div>
+                </div>
+            </a>
+        </section>
+
+        <!-- 동의 영역 -->
+        <div class="agree-area">
+            <div class="all-agree-box" id="allAgreeBox">
+                <label for="chkAll" class="check-style-all">
+                    <input type="checkbox" name="" id="chkAll" onclick="chkall();"><i></i><span>전체동의</span>
+                </label>
+            </div>
+            <div class="agree-box" id="personalAgreeBox">
+                <label for="chkAgr1" class="check-style-agr chk_agr_info">
+                    <input type="checkbox" name="typ-all" id="chkAgr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+            </div>
+            <div class="agree-box" id="marketAgreeBox">
+                <label for="chkAgr2" class="check-style-agr chk_agr_mkt">
+                    <input type="checkbox" name="typ-all" id="chkAgr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+            </div>
+        </div>
+        <div class="confirm-btn-box">
+            <a class="confirm-btn link_login" id="confirm">
+                확인하기
+            </a>
+        </div>
+
+        <!-- 유의문구 영역 -->
+        <div class="info-txt-wrap">
+            <ul class="info-txt">
+                <li>가입전에 상품설명와 약관을 읽어보시기 바랍니다.</li>
+                <li>교보생명은 상품에 대해 충분히 설명할 의무가 있으며, 가입자는 앞서 이에 대한 충분한 설명을 받으시기 바랍니다.</li>
+                <li>보험계약자가 기존 보험계약을 해지하고, 새로운 보험계약을 가입할 경우 인수 거절, 보험료 인상, 보장내용 축소 등 불이익이 생길 수 있습니다.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- e: 컨텐츠 하단 영역-->
+</div>
+<!-- [E] cont -->
+
+<!-- [S] footer -->
+<footer class="footer_wrapper">
+    <div class="footer_body">
+        <div class="logo_box">
+            <a id="link_home" class="logo_link">
+                    <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+            </a>
+            <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+        </div>
+        
+        <address class="footer_info_box">
+            <div class="info_text_multi">
+                <span class="info_text">교보문고</span>
+                <span class="gap">|</span>
+                <span class="info_text">대표이사 : 안병현, 김상훈</span>
+            </div>
+            <span class="info_text">서울특별시 종로구 종로 1</span>
+            <span class="info_text">사업자등록번호 : 102-81-11670</span>
+            <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+            <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+            <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+        </address>
+        
+        <div class="footer_menu_box">
+            <ul class="footer_menu_list">
+                <li class="footer_menu_item" id="li_login"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item" id="li_logout"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
+                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+            </ul>
+            <ul class="footer_menu_list sub">
+                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- [E] footer -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+                <a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
+<!-- [S] 로그인 확인 팝업 -->
+<div id="poplogin">
+    <div class="poplogin-inner">
+        <div class="dialog-contents">
+            로그인하고<br>맞춤 상품 확인해보세요!
+        </div>
+        <div class="dialog-btn">
+            <button class="btn-next" id="btnNext">다음에 하기</button>
+            <button class="btn-login" id="btnLogin">로그인 하기</button>
+        </div>
+    </div>
+</div>
+<!-- [S] pop -->
+<!-- s: 개인정보 제3자 제공동의 팝업 -->
+<div id="cnst_personal_view"></div>
+<!-- e: 개인정보 제3자 제공동의 팝업 -->
+
+<!-- s: 마케팅 수신 동의 팝업 -->
+<div id="cnst_market_view"></div>
+<!-- e: 마케팅 수신 동의 팝업 -->
+
+<!-- 제3자 제공 동의 유도 토스트 메세지 -->
+<div class="toast_wrap_re">
+    <span class="toast_message">제3자 제공 동의 시에만<br>상품 안내를 받아 볼 수 있습니다.</span>
+</div>
+<!-- [E] pop -->
+
+<!-- [S]top버튼 -->
+<div class="btn-top-wrap">
+    <button type="top" class="btn-fixed-top">top</button>
+</div>
+<!-- [E]top버튼 -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
+    </div>
+</div>
+
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+        integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script type="module">
+import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+
+try {
+    // animation setting
+    AnimationManager.loadElementsToAnimate();
+}
+catch(error){
+    alert(error);
+    alert(error.stack);
+}
+</script>
+</body>
+</html>
