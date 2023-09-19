@@ -534,8 +534,9 @@ section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box .fe
 section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.good{background: url(../img/icon/ico-feedback-good_on2.png) 0 0 no-repeat;background-size: contain;}
 section.p1-area + .btm-wrap #feedback-area .feedback-inner .feedback-btn-box input[type='radio'][name='feedback-radio']:checked+.feedback-btn.bad{background: url(../img/icon/ico-feedback-bad_on2.png) 0 0 no-repeat;background-size: contain;}
 
-section.p1-area + .btm-wrap .btm-area .explain{color: #fff;}
+section.p1-area + .btm-wrap .btm-area .explain{color: #fff;font-size: 18px;}
 section.p1-area + .btm-wrap .agree-area label span{color: #fff;}
+section.p1-area + .btm-wrap .agree-area .all-agree-box{border-bottom: 1px solid rgba(255, 255, 255, 0.2);}
 section.p1-area + .btm-wrap .agree-area .agree-box a{color: #fff;}
 section.p1-area + .btm-wrap .confirm-btn-box .confirm-btn{box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);background-color: #fff;color: #222;}
 section.p1-area + .btm-wrap .info-txt-wrap .info-txt li{color: #ddd;}
