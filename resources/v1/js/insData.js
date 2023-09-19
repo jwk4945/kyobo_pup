@@ -319,7 +319,7 @@ export default
         }
     },
     {
-        contentsId: "13G_029",
+        contentsId: "6F_007",
         linkInfoForInsurance: {
             url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
             name: "내 보험 바로알기",

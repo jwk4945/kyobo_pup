@@ -4,7 +4,7 @@
     href=${ renderInfo.linkInfoForInsurance.url }
 */
 
-const exPilot = ['6F_007', '8B_110', '13G_029'];
+const exPilot = ['6F_007', '8B_110', '7D_003'];
 const exOpen = []; 
 
 export function renderInsuaranceView(renderInfo, fileName) {
