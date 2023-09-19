@@ -191,42 +191,6 @@ export default
         }
     },
     {
-        contentsId: "8B_110",
-        linkInfoForInsurance: {
-            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내 보험 바로알기",
-            imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
-            period: "(2023-08-23 ~ 2024-08-22)"
-        },
-        gaParams: {
-            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
-            ep_button_area2: "상품페이지 이동",
-            ep_button_name: "배너선택",
-            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
-            params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
-        }
-    },
-    {
-        contentsId: "7D_003",
-        linkInfoForInsurance: {
-            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
-            name: "내 보험 바로알기",
-            imgUrl: '/resources/v1/img/img-ci-pd.png',
-            explain: '가입한 모든 보험계약 한눈에!',
-            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
-            period: "(2023-08-23 ~ 2024-08-22)"
-        },
-        gaParams: {
-            ep_button_area: "질병_척추근골격계_버섯목증후군_상세",
-            ep_button_area2: "상품페이지 이동",
-            ep_button_name: "배너선택",
-            ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
-            params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
-        }
-    },
-    {
         contentsId: "9B_062",
         linkInfoForInsurance: {
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
@@ -315,6 +279,61 @@ export default
             ep_button_name: "배너선택",
             ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
+        }
+    },
+    /* 09/21 고객여정 2.0 pilot */
+    {
+        contentsId: "8B_110",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",
+            name: "교보e1년저축보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '소액으로 차근차근 오늘부터 시작해요!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03968호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
+        }
+    },
+    {
+        contentsId: "7D_003",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내 보험 바로알기",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
+        }
+    },
+    {
+        contentsId: "13G_029",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내 보험 바로알기",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
         }
     }
 ]
