@@ -1,21 +1,3 @@
-/*
- * * 08/31 정식오픈 콘텐츠ID
-2B_061
-3C_033
-6G_054
-13G_045
-5B_041
-16B_011
-1B_067
-4B_043
-8B_110
-7D_003
-9B_062
-12G_108
-14G_057
-18B_023
-19G_142
-* */
 
 // event_name, ep_button_area, ep_button_area2, ep_button_name, ep_click_variable
 export default
@@ -279,6 +261,97 @@ export default
             ep_button_name: "배너선택",
             ep_click_variable: "DBS_자산관리_재테크_스노우볼효과",
             params4: "DBS_상품_(무)교보내맘쏙건강보험(DM)",
+        }
+    },
+    /* 09/21 고객여정 1.0 o2 추가 */
+    {
+        contentsId: "15B_051",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내 보험 바로알기",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
+        }
+    },
+    {
+        contentsId: "21G_086",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
+            name: "교보e생활습관케어보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '언제든 발생할 수 있는 생활습관 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03965호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
+        }
+    },
+    {
+        contentsId: "11B_144",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내 보험 바로알기",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
+        }
+    },
+    {
+        contentsId: "10B_059",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내 보험 바로알기",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
+        }
+    },
+    {
+        contentsId: "17B_020",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내 보험 바로알기",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        },
+        gaParams: {
+            ep_button_area: "",
+            ep_button_area2: "",
+            ep_button_name: "",
+            ep_click_variable: "",
+            params4: "",
         }
     },
     /* 09/21 고객여정 2.0 pilot */

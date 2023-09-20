@@ -3,7 +3,7 @@
 
 // event_name, ep_button_area, ep_button_area2, ep_button_name, ep_click_variable
 function setGAClickHandler(e) {
-    console.log(e.currentTarget);
+    // console.log(e.currentTarget);
 
     // get fileName
     const url = window.location.href;
@@ -14,10 +14,10 @@ function setGAClickHandler(e) {
     const contentsId = fileNameWithoutPrefix.replace('.html', '');
 
     const eventName = 'DBS_캠페인_MO';
-    const epButtonArea = (GAData.find(e => e.contentsId === contentsId) || {}).ep_button_area || 'not found';
-    const epButtonName = (GAData.find(e => e.contentsId === contentsId) || {}).ep_button_name || 'not found';
-    const epClickVariable = (GAData.find(e => e.contentsId === contentsId) || {}).ep_click_variable || 'not found';
-    const epClickVariable2 = (GAData.find(e => e.contentsId === contentsId) || {}).ep_click_variable2 || 'not found';
+    const epButtonArea = (GAData.find(el => el.contentsId === contentsId) || {}).ep_button_area || 'not found';
+    const epButtonName = (GAData.find(el => el.contentsId === contentsId) || {}).ep_button_name || 'not found';
+    const epClickVariable = (GAData.find(el => el.contentsId === contentsId) || {}).ep_click_variable || 'not found';
+    const epClickVariable2 = (GAData.find(el => el.contentsId === contentsId) || {}).ep_click_variable2 || 'not found';
 
     // yy yn ny nn (동의유무 값) epSearchInternalSearchWord에 임시로 저장
     const epSearchInternalSearchWord = (document.getElementById('chkAgr1').checked ? 'Y' : 'N')
@@ -54,7 +54,8 @@ function setGAClickHandler(e) {
     }
 
     // 5. 상품페이지 이동
-    // render.js 에 정의
+    // 5-1. 1.0 콘텐츠 : render.js에 정의
+    // 5-2. 2.0 pilot : html에 정의(하드코딩)
     if (e.currentTarget.id === 'linkForInsurance') {
         e.preventDefault();
         // 상품페이지 이동의 경우 ep_click_variable2 사용

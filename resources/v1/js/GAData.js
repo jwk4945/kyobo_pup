@@ -72,7 +72,7 @@ const GAData = [
         ep_search_internalSearchWord: ""
     },
     {
-        contentsId: "4B_043 ",
+        contentsId: "4B_043",
         ep_button_area: "질병_척추근골격계_버섯목증후군",
         ep_button_area2: "",
         ep_button_name: "",
@@ -151,6 +151,92 @@ const GAData = [
         ep_click_variable: "DBS_질병_뇌심_고혈압관리",
         ep_click_variable2: "상품_교보e뇌·심장케어보험(무배당,서비스선택형)",
         ep_search_internalSearchWord: ""
-    }
+    },
+
+/*
+ * * 08/31 정식오픈 콘텐츠ID
+15B_051
+21G_086
+11B_144
+10B_059
+17B_020
+*
+6F_007
+8B_110
+7D_003
+ * */
+    {
+        contentsId: "15B_051",
+        ep_button_area: "자산관리_연금_5025전략",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_자산관리_연금_5025전략",
+        ep_click_variable2: "서비스_내보험바로알기",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "21G_086",
+        ep_button_area: "생활건강_치질통증",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_생활건강_치질통증",
+        ep_click_variable2: "상품_교보e생활습관케어보험(무배당)",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "11B_144",
+        ep_button_area: "자산관리_세금_주식증여",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_자산관리_세금_주식증여",
+        ep_click_variable2: "서비스_내보험바로알기",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "10B_059",
+        ep_button_area: "건강관리_마음건강_마음의병",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_건강관리_마음건강_마음의병",
+        ep_click_variable2: "서비스_내보험바로알기",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "17B_020",
+        ep_button_area: "질병_여성건강_자궁근종",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_질병_여성건강_자궁근종",
+        ep_click_variable2: "서비스_내보험바로알기",
+        ep_search_internalSearchWord: ""
+    },
+    /* 고객여정 2.0 pilot */
+    {
+        contentsId: "6F_007",
+        ep_button_area: "자녀_태아&신생아_부인과아기_2.0",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_자녀_태아&신생아_부인과아기_2.0",
+        ep_click_variable2: "서비스_내보험바로알기",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "8B_110",
+        ep_button_area: "일상생활_부부_외벌이_2.0",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_일상생활_부부_외벌이_2.0",
+        ep_click_variable2: "상품_교보e1년저축보험(무배당)",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "7D_003",
+        ep_button_area: "건강관리_운동외_건강검진_2.0",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "DBS_건강관리_운동외_건강검진_2.0",
+        ep_click_variable2: "서비스_내보험바로알기",
+        ep_search_internalSearchWord: ""
+    },
 ];
 

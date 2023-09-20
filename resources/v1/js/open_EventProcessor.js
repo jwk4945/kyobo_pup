@@ -5,7 +5,6 @@ import ua from "./ua.js";
 import { renderInsuaranceView, renderConsentView } from "./render.js";
 
 let info = null;
-let bookstoreMemberNo = null;
 
 export const EventProcessor = (function (){
     let _isAutoBottomStyle=false;
@@ -357,7 +356,6 @@ export const EventProcessor = (function (){
             , csjr_srvy_ansr_srmb: checkedInput.value // 응답 라디오 순번
             , csjr_srvy_ansr_cntt: dataSurvey // 응답 보기설문내용
         };
-        // console.log(sendData);
 
         postData(url, sendData, result=>{
             // console.log(result);
@@ -397,14 +395,16 @@ export const EventProcessor = (function (){
 
     function postBannerClickInfo(href, callback) {
         const url = `/journey/form/banner-visit`;
+        const tmpContentsId = document.querySelector('#csjr_ctts_num').value;
+
         const sendData = {
             csjr_ctts_advr_expr_srmb: 1 //_bannerHistorySeq // 배너이력순번
             , srch_kywr_name: _searchKeyword // 교보문고 검색키워드
-            , csjr_ctts_num: _contentsId // 콘텐츠아이디
+            , csjr_ctts_num: tmpContentsId // _contentsId // 콘텐츠아이디
             , bnnr_expr_mthd_dvsn_code: '003' // 자동 : 수동          -> 5/18 고정값 "003" 으로 변경
             , bnnr_expr_cmdt_kind_code: '003' // 보험 : 부가서비스      -> 5/18 고정값 "003" 으로 변경
-            , bnnr_expr_cmdt_name: getLinkInfos().linkName
-            , bnnr_urladrs: getLinkInfos().linkUrl
+            , bnnr_expr_cmdt_name: info.linkInfoForInsurance.name //getLinkInfos().linkName
+            , bnnr_urladrs: info.linkInfoForInsurance.url //getLinkInfos().linkUrl
         };
         postData(url, sendData, result=>{
             console.log('postBannerClickInfo::', result);
@@ -938,13 +938,6 @@ const shareFacebook = (shareUrl) => {
     const message = {
         "exec" : {
             "method": "outLink",
-            "params": "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl
-        },
-        "callback" : ""
-    };
-    const message2 = {
-        "exec" : {
-            "method": "outLink",
             "params": {
                 "url": "https://www.facebook.com/sharer/sharer.php?u=" + shareUrl
             },
@@ -1000,8 +993,6 @@ function initialize(shareUrl, accessToken) {
     // userAgent set
     checkUserAgent();
 
-
-
     let agreeBox = document.getElementById("agreeBox");
     let allAgreeBox = document.getElementById("allAgreeBox");
     let perSonalAgreeBox = document.getElementById("personalAgreeBox");
@@ -1032,7 +1023,7 @@ function initialize(shareUrl, accessToken) {
             if (ua.isLogined) {
                 // linkLogin.innerHTML = '로그아웃';
 
-                return fetch(`/journey/consent/personal-information/agreement/${bookstoreMemberNo}`, {
+                return fetch(`/journey/consent/personal-information/agreement/${ua.bookstoreMemberNo}`, {
                     method: 'GET',
                     headers: {
                         'accessToken': accessToken,
@@ -1487,11 +1478,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const accessToken = getAccessTokenFromCookie();
-    bookstoreMemberNo = getSubFromAccessToken(accessToken);
-    ua.bookstoreMemberNo = bookstoreMemberNo;
+    ua.bookstoreMemberNo = getSubFromAccessToken(accessToken);
 
 
-    // confirm
+    // 확인하기
     const confirmClick = document.getElementById('confirm');
     confirmClick.addEventListener('click', function(e) {
         const tempFlags = getFlags();
@@ -1502,22 +1492,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (ua.isLogined) {
-            EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFlags);
+            EventProcessor.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
             triggerLoadingScreen();
         } else {
             handleConfirmButtonClick(e);
         }
     });
 
-    // consent Test
+    // 확인하기 -> 로그인 하기
     const consentClick = document.getElementById('btnLogin');
     consentClick.addEventListener('click', e => {
         // console.log(accessToken);
         const tempFlags = getFlags();
         setConsentLocalStorage();
-        EventProcessor.postConsent(accessToken, bookstoreMemberNo, tempFlags);
+        EventProcessor.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
     });
 
+    // 확인하기 -> 다음에 하기
     const consentNextClick = document.getElementById('btnNext');
     consentNextClick.addEventListener('click', e => {
         e.preventDefault();

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="오늘은 몇 주 차일까?"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="../../../resources/v1/js/ga-utils.js" defer></script>
+    <script src="../../../resources/v1/js/GAData.js" defer></script>
+    <script src="../../../resources/v1/js/GA.js"></script>
+
+    <title>오늘은 몇 주 차일까?</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="_16B_011 information-type type-b">
+<!--GA 파라미터-->
+<input type="hidden" id="event_name" value="DBS_캠페인_MO" />
+<input type="hidden" id="ep_button_area" value="자기개발_요즘20대들은모른다는문제_상세" />
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <div class="link_back">
+            <a class="go-back-btn" onclick="setGAClickHandler(event)" id="goBackBtn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
+        <div>
+            <a id="link_home" onclick="setGAClickHandler(event)">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div>
+        <h1>
+            오늘은 몇 주 차일까?
+        </h1>
+        <div>
+            <a id="link_share" onclick="setGAClickHandler(event)">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap" class="bg-9 fc-white">
+    <div class="top-area">
+        <article class="text-align-center">
+            <div>
+                <span class="tag mb-10 opacity-0 fc-13"
+                      data-animation-type="onload"
+                      data-animation-infos="remove-class-nm: 'opacity-0',
+                                        start-ms:'300',
+                                        transition-props:'[opacity]',
+                                        transition-duration:'0.7s'">자기개발을 위한 소소한 꿀팁</span>
+                <div>
+                    <div class="fw-400 fs-22 opacity-0"
+                         data-animation-type="onload"
+                         data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateY(-100%);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'500',
+                                        transition-props:'[opacity,transform]',
+                                        transition-duration:'0.8s'">오늘은 몇 주 차일까?</div>
+                    <div class="fw-700 fs-22 strong-underline mb-10 opacity-0"
+                         data-animation-type="onload"
+                         data-animation-infos="remove-class-nm: 'opacity-0',
+                                            style-bf-ani: 'transform:translateY(-250%);',
+                                            style-af-ani: 'transform:',
+                                            start-ms:'700',
+                                            transition-props:'[opacity,transform]',
+                                            transition-duration:'0.8s'">의외로 헷갈리는 월 단위 주차 계산</div>
+                </div>
+                <div class="opacity-0"
+                     data-animation-type="onload"
+                     data-animation-infos="remove-class-nm: 'opacity-0',
+                                        style-bf-ani: 'transform:translateY(-400%);',
+                                        style-af-ani: 'transform:',
+                                        start-ms:'900',
+                                        transition-props:'[opacity,transform]',
+                                        transition-duration:'0.8s'">
+                    오늘 2주 차인지, 3주 차인지 헷갈립니다.<br>
+                    주차 계산은 어떻게 하는지 알려주세요.
+                </div>
+            </div>
+            <div class="main-banner-wrapper center-type mt-25 mb-5 opacity-0"
+                 data-animation-type="onload"
+                 data-animation-infos="remove-class-nm: 'opacity-0',
+                                    style-bf-ani: 'transform:translateX(100vw);',
+                                    style-af-ani: 'transform:',
+                                    start-ms:'300',
+                                    transition-duration:'0.7s',
+                                    transition-props:'[transform]'">
+                <div class="banner-inner">
+                    <img src="../../../resources/v1/img/16B_011_01.gif" class="width-100" alt="아토피 피부염이란? 대표 이미지">
+                    <div class="mt-10">
+                        <h3 class="fw-700">
+                            10월 16일은 10월의 몇 주 차일까요?
+                        </h3>
+                        <p class="mt-9 fs-14">
+                            KSX ISO 8601 날짜와 시간을 다루는<br>
+                            표준규격에 따라 2주 차가 됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-40">
+                <div class="fs-20 fw-700 mb-20"
+                     data-animation-type="onload"
+                     data-animation-infos="style-bf-ani: 'opacity:0;', style-af-ani: 'opacity:1', start-ms: '1000', transition-duration: '1s';">
+                    지금부터<br>
+                    차근차근 주차계산에 대해서<br>
+                    알아볼게요!
+                </div>
+                <div class="animation-vertical-box"
+                     style="height: 0"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'height: 0px',
+                                    style-af-ani: 'height: 100px',
+                                    scroll-duration: 100">
+                    <div class="animation-vertical"></div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <section data-animation-type="onscroll"
+             data-animation-infos="style-bf-ani: 'background-color: #c34c4c',
+                                    style-af-ani: 'background-color: #c34c4c',
+                                    scroll-duration: 300,
+                                onscroll-declared-animation-types:'adjust-bg-color-brightness:[1, 0.82]'">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                      data-animation-type="onscroll"
+                      data-animation-infos="style-bf-ani: 'opacity:0',
+                                            style-af-ani: 'opacity:0.2'">1</span>
+                <div class="fw-700 fs-22"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    국제표준에 따르면<br>
+                    10월 16일은 10월의 둘째 주입니다.
+                </div>
+            </div>
+            <div>
+                <p class="mt-5 mb-0 fs-5"
+                   data-animation-type="onscroll"
+                   data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                                        날짜와 시간에 대한 국제 표준(ISO-8601)에 따르면<br>
+                                        매주의 시작일은 월요일이며, 매월의 첫 주는 새로운 달의<br>
+                                        4일 이상이 포함된 주를 기준으로 합니다.
+                </p>
+                <div class="text-align-right mt-20">
+                    <img src="../../../resources/v1/img/16B_011_02.png" width="200"
+                         alt="국제표준에 따르면 10월 16일은 10월의 둘째 주입니다.이미지"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                </div>
+            </div>
+
+            <div class="mt-30">
+                <p class="mt-5 mb-0 fs-5"
+                   data-animation-type="onscroll"
+                   data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    따라서 10월 2일까지는 9월의 마지막 주이고<br>
+                    10월의 첫 주는 10월 3일부터 10월 9일까지 10월의 둘째 주는 10월 10일부터 16일까지입니다.
+                </p>
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/16B_011_03.png" width="200"
+                         alt="10월의 첫 주는 10월 3일부터 10월 9일까지 10월의 둘째 주는 10월 10일부터 16일까지입니다.이미지"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                </div>
+            </div>
+        </article>
+    </section>
+    <section data-animation-type="onscroll"
+             data-animation-infos="style-bf-ani: 'background-color: #c34c4c',
+                                    style-af-ani: 'background-color: #ad4444',
+                                    scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-10">
+                <span class="section-no fw-700"
+                      data-animation-type="onscroll"
+                      data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:0.2'">2</span>
+                <div class="fw-700 fs-22"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    주차계산과 함께 알아두면 좋은<br>
+                    돈이 되는 나이 계산법이 있습니다.
+                </div>
+            </div>
+            <div class="text-align-right mt-20">
+                <img src="../../../resources/v1/img/16B_011_04.png" width="200"
+                     alt="주차계산과 함께 알아두면 좋은 돈이 되는 나이 계산법이 있습니다. 이미지"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+            </div>
+            <div class="mt-30 fs-20 fw-700"
+                 data-animation-type="onscroll"
+                 data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                Q. 1987년 3월 1일이 생일인<br>
+                사람의 나이는 언제 바뀔까요?
+            </div>
+            <div class="cards-box-wrap text-align-center">
+                <div class="cards-box mt-20">
+                    <div data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                style-af-ani: 'opacity:1;'">
+                        <div>
+                            <img src="../../../resources/v1/img/16B_011_05.png" alt="매년 1월 1일에 바뀐다.이미지">
+                        </div>
+                        <span class="text-align-center fs-15 mt-15">① 매년<br>1월 1일에<br>바뀐다.</span>
+                    </div>
+                    <div data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                        <div>
+                            <img src="../../../resources/v1/img/16B_011_06.png" alt="매년 3월 1일에 바뀐다.">
+                        </div>
+                        <span class="text-align-center fs-15 mt-15">② 매년<br>3월 1일에<br>바뀐다.</span>
+                    </div>
+                    <div data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0;',
+                                                style-af-ani: 'opacity:1;'">
+                        <div>
+                            <img src="../../../resources/v1/img/16B_011_07.png" alt="매년 9월 1일에 바뀐다.">
+                        </div>
+                        <span class="text-align-center fs-15 mt-15">③ 매년<br>9월 1일에<br>바뀐다.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-30 text-align-center fc-white">
+                <img src="../../../resources/v1/img/check-bg-white.svg" width="50"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                <div class="fs-22 mt-5"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    돈이 되는 나이는<br>
+                    바로 <span class="fw-700 va-top">③ 보험 상령일</span> 입니다.
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="pb-0"
+             data-animation-type="onscroll"
+             data-animation-infos="style-bf-ani: 'background-color: #ad4444',
+                                    style-af-ani: 'background-color: #983b3b',
+                                    scroll-duration: 300;">
+        <article class="text-align-left">
+            <div class="title-msg mt-20">
+                <span class="section-no fw-700"
+                      data-animation-type="onscroll"
+                      data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:0.2'">3</span>
+                <div class="fs-22 fw-700"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    보험회사는 생일에서 6개월이 지나면<br>
+                    한 살을 더 먹었다고 계산합니다.
+                </div>
+            </div>
+            <div>
+                <p class="mt-5 mb-0 fs-5"
+                   data-animation-type="onscroll"
+                   data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    보험 상령일이 지난 이후에 가입하면 대부분의 보험에서 보험료가 올라갑니다.
+                </p>
+                <div class="text-align-right mt-20">
+                    <img src="../../../resources/v1/img/16B_011_08.png" width="200"
+                         alt="보험 상령일 대표 이미지"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                </div>
+            </div>
+            <div class="mt-35">
+                <p class="fs-5"
+                   data-animation-type="onscroll"
+                   data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    보험료 예시 - 종신 1억 20년 납 기준
+                </p>
+                <div class="text-align-center mt-20">
+                    <img src="../../../resources/v1/img/16B_011_09.gif" width="335"
+                         alt="보험료 예시 - 종신 1억 20년 납 기준 이미지"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0',
+                                            style-af-ani: 'opacity:1'">
+                </div>
+            </div>
+            <div class="mt-50">
+                <p class="fs-5"
+                   data-animation-type="onscroll"
+                   data-animation-infos="style-bf-ani: 'opacity:0',
+                                        style-af-ani: 'opacity:1'">
+                    깜빡! 하루 차이지만 평생 보험료가 올라갑니다.
+                </p>
+                <div class="mt-20">
+                    <img src="../../../resources/v1/img/16B_011_10.png" width="200"
+                         alt="깜빡! 하루 차이지만 평생 보험료가 올라갑니다.이미지"
+                         data-animation-type="onscroll"
+                         data-animation-infos="style-bf-ani: 'opacity:0',
+                                    style-af-ani: 'opacity:1'">
+                </div>
+            </div>
+            <div class="mt-30 text-align-center fc-white">
+                <img src="../../../resources/v1/img/check-bg-white.svg" width="50"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                        style-af-ani: 'transform: scale(1); opacity:1'">
+                <div class="fs-22 mt-5"
+                     data-animation-type="onscroll"
+                     data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                    가입하려고 한 보험이 있다면<br>
+                    <span class="fw-700 va-top">미루지 말고 확인해 보세요.</span>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- s: 컨텐츠 하단 영역-->
+    <div class="bg-btm-gray btm-wrap">
+        <!-- 평가여역 -->
+        <section id="feedback-area" class="bg-6c2a2a">
+            <div class="feedback-inner">
+                <div class="feedback-txt">콘텐츠가 유익했어요!</div>
+                <div class="feedback-btn-box">
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001" onclick="setGAClickHandler(event)">
+                        <label class="feedback-btn" for="feedback-radio-01">
+                            <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
+                        </label>
+                    </div>
+                    <div class="feedback-btn-box-inner">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002" onclick="setGAClickHandler(event)">
+                        <label class="feedback-btn" for="feedback-radio-02">
+                            <img src="../../../resources/v1/img/icon/ico-feedback-bad.png" width="50">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 상품영역 -->
+        <div id="ins_view"></div>
+
+        <!-- 동의 영역 -->
+        <div class="agree-area">
+            <div class="all-agree-box" id="allAgreeBox">
+                <label for="chkAll" class="check-style-all">
+                    <input type="checkbox" name="" id="chkAll" onclick="chkall();"><i></i><span>전체동의</span>
+                </label>
+            </div>
+            <div class="agree-box" id="personalAgreeBox">
+                <label for="chkAgr1" class="check-style-agr chk_agr_info">
+                    <input type="checkbox" name="typ-all" id="chkAgr1"><i></i><span>개인정보 제3자 제공 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('personalPop');">보기</a>
+            </div>
+            <div class="agree-box" id="marketAgreeBox">
+                <label for="chkAgr2" class="check-style-agr chk_agr_mkt">
+                    <input type="checkbox" name="typ-all" id="chkAgr2"><i></i><span>마케팅 수신 동의(선택)</span>
+                </label>
+                <a href="javascript:void(0);" onclick="popOpen('marketPop');">보기</a>
+            </div>
+        </div>
+        <div class="confirm-btn-box">
+            <a class="confirm-btn link_login" id="confirm" onclick="setGAClickHandler(event)">
+                확인하기
+            </a>
+        </div>
+    </div>
+    <!-- e: 컨텐츠 하단 영역-->
+</div>
+<!-- [E] cont -->
+
+<!-- [S] footer -->
+<footer class="footer_wrapper">
+    <div class="footer_body">
+        <div class="logo_box">
+            <a id="link_home" class="logo_link">
+                <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+            </a>
+            <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+        </div>
+
+        <address class="footer_info_box">
+            <div class="info_text_multi">
+                <span class="info_text">교보문고</span>
+                <span class="gap">|</span>
+                <span class="info_text">대표이사 : 안병현, 김상훈</span>
+            </div>
+            <span class="info_text">서울특별시 종로구 종로 1</span>
+            <span class="info_text">사업자등록번호 : 102-81-11670</span>
+            <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+            <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+            <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+        </address>
+
+        <div class="footer_menu_box">
+            <ul class="footer_menu_list">
+                <li class="footer_menu_item" id="li_login"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item" id="li_logout"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
+                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+            </ul>
+            <ul class="footer_menu_list sub">
+                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- [E] footer -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+    <button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+    <!-- dialog_header -->
+    <div class="dialog_header">
+        <h2 class="dialog_title">공유하기</h2>
+    </div>
+    <!-- //dialog_header -->
+    <!-- dialog_contents -->
+    <div class="dialog_contents">
+        <ul class="sns_share_list">
+            <li class="list_item">
+                <a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+                    <span class="ico_sns kakao"></span>
+                    <span class="sns_text">카카오톡</span>
+                </a>
+            </li>
+            <li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+            <li class="list_item">
+                <a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+                    <span class="ico_sns message"></span>
+                    <span class="sns_text">메세지</span>
+                </a>
+            </li>
+            <li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+        </ul>
+    </div>
+    <!-- //dialog_contents -->
+    <!-- dialog_footer -->
+    <div class="dialog_footer">
+        <div class="sns_share_link_box">
+            <span class="sns_share_link" id="url-copy-span"></span>
+            <button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+        </div>
+    </div>
+    <!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
+<!-- [S] 로그인 확인 팝업 -->
+<div id="poplogin">
+    <div class="poplogin-inner">
+        <div class="dialog-contents">
+            로그인하고<br>맞춤 상품 확인해보세요!
+        </div>
+        <div class="dialog-btn">
+            <button class="btn-next" id="btnNext">다음에 하기</button>
+            <button class="btn-login" id="btnLogin">로그인 하기</button>
+        </div>
+    </div>
+</div>
+<!-- [S] pop -->
+<!-- s: 개인정보 제3자 제공동의 팝업 -->
+<div id="cnst_personal_view"></div>
+<!-- e: 개인정보 제3자 제공동의 팝업 -->
+
+<!-- s: 마케팅 수신 동의 팝업 -->
+<div id="cnst_market_view"></div>
+<!-- e: 마케팅 수신 동의 팝업 -->
+
+<!-- 제3자 제공 동의 유도 토스트 메세지 -->
+<div class="toast_wrap_re">
+    <span class="toast_message">제3자 제공 동의 시에만<br>상품 안내를 받아 볼 수 있습니다.</span>
+</div>
+<!-- [E] pop -->
+
+<!-- [S]top버튼 -->
+<div class="btn-top-wrap">
+    <button type="top" class="btn-fixed-top">top</button>
+</div>
+<!-- [E]top버튼 -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                   background="transparent"
+                   style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
+    </div>
+</div>
+
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+        integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script type="module">
+    import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+    import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+
+    try {
+        // animation setting
+        AnimationManager.loadElementsToAnimate();
+    }
+    catch(error){
+        alert(error);
+        alert(error.stack);
+    }
+</script>
+</body>
+</html>
+
+<!-- [컨텐츠 오픈 히스토리] -->
+<!-- 230518 확대오픈 -->
+<!-- [ // 컨텐츠 오픈 히스토리] -->
