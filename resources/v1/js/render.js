@@ -1,18 +1,16 @@
+
 /*
     보험 상품 info template literal
     const data = { name: 'test name', explain: 'test explain' };
     href=${ renderInfo.linkInfoForInsurance.url }
 */
 
-const exPilot = ['6F_007', '8B_110', '7D_003'];
-const exOpen = []; 
-
 export function renderInsuaranceView(renderInfo, fileName) {
     // console.log('renderInsuaranceView', renderInfo);
 
     let template;
 
-    if (exPilot.includes(fileName)) {
+    if (window.exPilot.includes(fileName)) {
         return; 
     }
 
