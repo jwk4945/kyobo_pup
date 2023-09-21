@@ -95,3 +95,23 @@ html.lock{overflow: hidden;height: 100vh;}
 .toast_wrap_re.on{height: 72px;opacity: 1;}
 .toast_wrap_re .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;min-height: 50px;padding: 15px 30px 11px;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 14px;line-height: 22px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
 /* // 약관 팝업 */
+
+/* 확인하기 버튼 로그인 컨펌 link_login */
+#poplogin{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);max-width: 335px;width: calc(100vw - 40px);}
+#poplogin.active{display: block;}
+#poplogin .poplogin-inner{border-radius: 16px;overflow: hidden;}
+#poplogin .poplogin-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}
+#poplogin .poplogin-inner .dialog-btn{display: flex;}
+#poplogin .poplogin-inner .dialog-btn button{flex: 1;cursor: pointer;color: #fff;padding: 5px 0;height: 50px;font-size: 15px;font-weight: 700;}
+#poplogin .poplogin-inner .dialog-btn .btn-next{background: #767676;}
+#poplogin .poplogin-inner .dialog-btn .btn-login{background: #5055b1;}
+
+/* 공통 팝업 스타일1 - 얼럿 */
+.com-pop01{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);max-width: 335px;width: calc(100vw - 40px);}
+.com-pop01.active{display: block;}
+.com-pop01 .com-pop01-inner{border-radius: 16px;overflow: hidden;}
+.com-pop01 .com-pop01-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}
+.com-pop01 .com-pop01-inner .dialog-btn{display: flex;}
+.com-pop01 .com-pop01-inner .dialog-btn button{flex: 1;cursor: pointer;color: #fff;padding: 5px 0;height: 50px;font-size: 15px;font-weight: 700;}
+.com-pop01 .com-pop01-inner .dialog-btn .btn-next{background: #767676;}
+.com-pop01 .com-pop01-inner .dialog-btn .btn-login{background: #5055b1;}

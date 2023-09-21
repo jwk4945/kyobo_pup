@@ -498,16 +498,6 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 .agree-area.white .agree-box label input:checked + i{background: url(../img/icon/ico-chkwt-on.png) 0 0 no-repeat;background-size: contain;}
 .agree-area.white .agree-box a{color: #fff;}
 
-/* 확인하기 버튼 로그인 컨펌 link_login */
-#poplogin{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);max-width: 335px;width: calc(100vw - 40px);}
-#poplogin.active{display: block;}
-#poplogin .poplogin-inner{border-radius: 16px;overflow: hidden;}
-#poplogin .poplogin-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}
-#poplogin .poplogin-inner .dialog-btn{display: flex;}
-#poplogin .poplogin-inner .dialog-btn button{flex: 1;cursor: pointer;color: #fff;padding: 5px 0;height: 50px;font-size: 15px;font-weight: 700;}
-#poplogin .poplogin-inner .dialog-btn .btn-next{background: #767676;}
-#poplogin .poplogin-inner .dialog-btn .btn-login{background: #5055b1;}
-
 /* 유의문구 영역 */
 .info-txt-wrap{margin: 20px auto 0;padding: 0 20px;max-width: 540px;}
 .info-txt-wrap .info-txt li{position: relative;font-size: 12px;color: #888;padding-left: 10px;}
@@ -547,3 +537,18 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input + i{background: u
 section.p1-area + .btm-wrap .agree-area .all-agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on2.png) 0 0 no-repeat;background-size: contain;}
 section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{background: url(../img/icon/ico-chk-on2.png)0 0 no-repeat;background-size: contain;}
 /* ================ [E] 고객여정 2.0 pilot ================ */
+
+/* ====================== [S] POINT ====--================ */
+.agree-area{position: relative;}
+.agree-area .flag-point-box{position: absolute;top: 0;left: 123px;width: 190px;height: 40px;}
+
+.type-a .agree-area .flag-point-box{background: url(../img/common/info-point-a.png) 0 0 no-repeat;background-size: contain;}
+.type-b .agree-area .flag-point-box{background: url(../img/common/info-point-b.png) 0 0 no-repeat;background-size: contain;}
+.type-c .agree-area .flag-point-box{background: url(../img/common/info-point-c.png) 0 0 no-repeat;background-size: contain;}
+.type-d .agree-area .flag-point-box{background: url(../img/common/info-point-d.png) 0 0 no-repeat;background-size: contain;}
+.type-e .agree-area .flag-point-box{background: url(../img/common/info-point-eg.png) 0 0 no-repeat;background-size: contain;}
+.type-f .agree-area .flag-point-box{background: url(../img/common/info-point-f.png) 0 0 no-repeat;background-size: contain;}
+.type-g .agree-area .flag-point-box{background: url(../img/common/info-point-eg.png) 0 0 no-repeat;background-size: contain;}
+.type-2 .agree-area .flag-point-box{background: url(../img/common/info-point-2.png) 0 0 no-repeat;background-size: contain;}
+/* ====================== [E] POINT ====--================ */
+
