@@ -59,6 +59,9 @@ html.lock{overflow: hidden;height: 100vh;}
 .type-f .pop-area .pop-footer .btn-box .btn.agree{background: #33b4c7;}
 .type-g .pop-area .pop-footer .btn-box .btn.agree{background: #d95584;}
 
+.type-2 .pop-area .pop-footer .btn-box .btn{border: solid 1px #444;background-color: #fff;color: #444;}
+.type-2 .pop-area .pop-footer .btn-box .btn.agree{background: #444;border: none;color: #fff}
+
 .pop-area .dl-box{font-size: 13px;}
 .pop-area .dl-box dl{padding-left: 7px;position: relative;}
 .pop-area .dl-box dl::before{content: "";position: absolute;top: 9px;left: 0;width: 2px;height: 2px;border-radius: 50%;background-color: #777;}
