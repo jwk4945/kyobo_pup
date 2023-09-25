@@ -539,8 +539,8 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
 /* ================ [E] 고객여정 2.0 pilot ================ */
 
 /* ====================== [S] POINT ====--================ */
-.agree-area{position: relative;}
-.agree-area .flag-point-box{position: absolute;top: 0;left: 123px;width: 190px;height: 40px;}
+.agree-area .all-agree-box{position: relative;}
+.agree-area .all-agree-box .flag-point-box{position: absolute;top: 0;left: 123px;width: 190px;height: 40px;}
 
 .type-a .agree-area .flag-point-box{background: url(../img/common/info-point-a.png) 0 0 no-repeat;background-size: contain;}
 .type-b .agree-area .flag-point-box{background: url(../img/common/info-point-b.png) 0 0 no-repeat;background-size: contain;}
