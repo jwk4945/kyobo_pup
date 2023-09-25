@@ -556,7 +556,7 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
 .type-g .agree-area .flag-point-box{background: url(../img/common/info-point-eg.png) 0 0 no-repeat;background-size: contain;}
 .type-2 .agree-area .flag-point-box{background: url(../img/common/info-point-2.png) 0 0 no-repeat;background-size: contain;}
 
-.info-point-area{padding: 20px 20px 0;}
+.info-point-area{padding: 20px 20px 0;max-width: 540px;margin: 0 auto;}
 .info-point-area > div{font-size: 13px;font-weight: 700;}
 .info-point-area .info-point-list{font-size: 12px;}
 .info-point-area .info-point-list li{margin-top: 5px;padding-left: 10px;position: relative;}
