@@ -540,7 +540,11 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
 
 /* ====================== [S] POINT ====--================ */
 .agree-area .all-agree-box{position: relative;}
-.agree-area .all-agree-box .flag-point-box{position: absolute;top: 0;left: 123px;width: 190px;height: 40px;}
+.agree-area .all-agree-box .flag-point-box{position: absolute;top: 0;left: 103px;width: 190px;height: 40px;animation:ani 0.8s infinite alternate;}
+@keyframes ani{
+    0%{transform:translate(0,0);}
+    100%{transform:translate(0,-6px);}
+}
 
 .type-a .agree-area .flag-point-box{background: url(../img/common/info-point-a.png) 0 0 no-repeat;background-size: contain;}
 .type-b .agree-area .flag-point-box{background: url(../img/common/info-point-b.png) 0 0 no-repeat;background-size: contain;}
@@ -550,5 +554,17 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
 .type-f .agree-area .flag-point-box{background: url(../img/common/info-point-f.png) 0 0 no-repeat;background-size: contain;}
 .type-g .agree-area .flag-point-box{background: url(../img/common/info-point-eg.png) 0 0 no-repeat;background-size: contain;}
 .type-2 .agree-area .flag-point-box{background: url(../img/common/info-point-2.png) 0 0 no-repeat;background-size: contain;}
+
+.info-point-area{padding: 20px 20px 0;}
+.info-point-area > div{font-size: 13px;font-weight: 700;}
+.info-point-area .info-point-list{font-size: 12px;}
+.info-point-area .info-point-list li{margin-top: 5px;padding-left: 10px;position: relative;}
+.info-point-area .info-point-list li::before{content: "";display: block;width: 3px;height: 3px;border-radius: 50%;background: #888;position: absolute;top: 7px;left: 0;}
+
+.type-a .info-point-area > div, .type-b .info-point-area > div, .type-c .info-point-area > div{color: #555;}
+.type-a .info-point-area .info-point-list, .type-b .info-point-area .info-point-list, .type-c .info-point-area .info-point-list{color: #888;}
+.type-d .info-point-area > div, .type-e .info-point-area > div, .type-f .info-point-area > div, .type-g .info-point-area > div{color: #fff;}
+.type-d .info-point-area .info-point-list, .type-e .info-point-area .info-point-list, .type-f .info-point-area .info-point-list, .type-g .info-point-area .info-point-list{color: #fff;}
+
 /* ====================== [E] POINT ====--================ */
 
