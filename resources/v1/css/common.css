@@ -563,8 +563,10 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
 
 .type-a .info-point-area > div, .type-b .info-point-area > div, .type-c .info-point-area > div{color: #555;}
 .type-a .info-point-area .info-point-list, .type-b .info-point-area .info-point-list, .type-c .info-point-area .info-point-list{color: #888;}
-.type-d .info-point-area > div, .type-e .info-point-area > div, .type-f .info-point-area > div, .type-g .info-point-area > div{color: #fff;}
-.type-d .info-point-area .info-point-list, .type-e .info-point-area .info-point-list, .type-f .info-point-area .info-point-list, .type-g .info-point-area .info-point-list{color: #fff;}
+.type-a .info-point-area .info-point-list li::before, .type-b .info-point-area .info-point-list li::before, .type-c .info-point-area .info-point-list li::before{background: #888;}
+.type-d .info-point-area > div, .type-e .info-point-area > div, .type-f .info-point-area > div, .type-g .info-point-area > div, .type-2 .info-point-area > div{color: #fff;}
+.type-d .info-point-area .info-point-list, .type-e .info-point-area .info-point-list, .type-f .info-point-area .info-point-list, .type-g .info-point-area .info-point-list, .type-2 .info-point-area .info-point-list{color: #fff;}
+.type-d .info-point-area .info-point-list li::before, .type-e .info-point-area .info-point-list li::before, .type-f .info-point-area .info-point-list li::before, .type-g .info-point-area .info-point-list li::before, .type-2 .info-point-area .info-point-list li::before{background: #fff;}
 
 /* ====================== [E] POINT ====--================ */
 
