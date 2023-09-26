@@ -540,6 +540,8 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
 /* ================ [E] 고객여정 2.0 pilot ================ */
 
 /* ====================== [S] POINT ====--================ */
+.eventView{display: none;}
+
 .agree-area .all-agree-box{position: relative;}
 .agree-area .all-agree-box .flag-point-box{position: absolute;top: 0;left: 103px;width: 190px;height: 40px;animation:ani 0.8s infinite alternate;}
 @keyframes ani{
