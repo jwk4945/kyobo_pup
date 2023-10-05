@@ -303,16 +303,16 @@ export const main = (function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     // 🔷 add GA event
-    document.getElementById('goBackBtn').addEventListener('click', ga.setGAClickHandler);
-    document.getElementById('link_home').addEventListener('click', ga.setGAClickHandler);
-    document.getElementById('link_share').addEventListener('click', ga.setGAClickHandler);
+    document.getElementById('goBackBtn').addEventListener('click', e => ga.setGAClickHandler(e));
+    document.getElementById('link_home').addEventListener('click', e => ga.setGAClickHandler(e));
+    document.getElementById('link_share').addEventListener('click', e => ga.setGAClickHandler(e));
 
-    document.getElementById('feedback-radio-01').addEventListener('click', ga.setGAClickHandler);
-    document.getElementById('feedback-radio-02').addEventListener('click', ga.setGAClickHandler);
-    document.getElementById('confirm').addEventListener('click', ga.setGAClickHandler);
+    document.getElementById('feedback-radio-01').addEventListener('click', e => ga.setGAClickHandler(e));
+    document.getElementById('feedback-radio-02').addEventListener('click', e => ga.setGAClickHandler(e));
+    document.getElementById('confirm').addEventListener('click', e => ga.setGAClickHandler(e));
 
     // 포인트에서는 확인하기 버튼 눌렀을 때 상품으로 이동
-    document.getElementById('btnNextPonintEnd01').addEventListener('click', ga.setGAClickHandler);
+    document.getElementById('btnNextPonintEnd01').addEventListener('click', e => ga.setGAClickHandler(e));
 
     // 🔶 보험 영역 동적으로 render 하므로 render.js 에서 이벤트 등록해줌
     // document.getElementById('linkForInsurance').addEventListener('click', ga.setGAClickHandler);
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 🔶 참여형(정답 확인하기)
     const goNextBtn = document.getElementById('goNextBtn');
     if (goNextBtn) {
-        document.getElementById('goNextBtn').addEventListener('click', ga.setGAClickHandler);
+        document.getElementById('goNextBtn').addEventListener('click', e => ga.setGAClickHandler(e));
     }
 
 });
@@ -394,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         ui.showLoadingScreen();
         window.setTimeout(()=>
-            post.postBannerClickInfo(info, ui.closeLoadingScreen(info.linkInfoForInsurance)), 2000); //로딩스크린 2초후 실행
+            post.postBannerClickInfo(info.linkInfoForInsurance, ui.closeLoadingScreen(info.linkInfoForInsurance)), 2000); //로딩스크린 2초후 실행
     });
 
 
