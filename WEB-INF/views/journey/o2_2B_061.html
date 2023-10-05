@@ -23,7 +23,7 @@
     <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
     <script src="../../../resources/v1/js/ga-utils.js" defer></script>
     <script src="../../../resources/v1/js/GAData.js" defer></script>
-    <script src="../../../resources/v1/js/GA.js"></script>
+    <script src="../../../resources/v1/js/GA.js" type="module"></script>
 
     <title>스노우볼의 효과</title>
 </head>
@@ -41,13 +41,13 @@
 <header id="header">
     <nav class="bg-white">
         <div class="link_back">
-            <a class="go-back-btn" onclick="setGAClickHandler(event)" id="goBackBtn">
+            <a class="go-back-btn" id="goBackBtn">
                 <span class="blind">뒤로가기</span>
                 <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
             </a>
         </div>
         <div>
-            <a id="link_home" onclick="setGAClickHandler(event)">
+            <a id="link_home">
                 <span class="blind">홈으로</span>
                 <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
             </a>
@@ -56,7 +56,7 @@
             스노우볼의 효과
         </h1>
         <div>
-            <a id="link_share" onclick="setGAClickHandler(event)">
+            <a id="link_share">
                 <span class="blind">공유하기</span>
                 <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
             </a>
@@ -430,13 +430,13 @@
                 <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                 <div class="feedback-btn-box">
                     <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001" onclick="setGAClickHandler(event)">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
                         <label class="feedback-btn" for="feedback-radio-01">
                             <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
                         </label>
                     </div>
                     <div class="feedback-btn-box-inner">
-                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002" onclick="setGAClickHandler(event)">
+                        <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
                         <label class="feedback-btn" for="feedback-radio-02">
                             <img src="../../../resources/v1/img/icon/ico-feedback-bad.png" width="50">
                         </label>
@@ -454,7 +454,7 @@
                 <label for="chkAll" class="check-style-all">
                     <input type="checkbox" name="" id="chkAll" onclick="chkall();"><i></i><span>전체동의</span>
                 </label>
-                <div class="flag-point-box">
+                <div class="flag-point-box eventView">
                     <span class="blind">전체 동의하고 교보문고 3,000 통합포인트 받기!</span>
                 </div>
             </div>
@@ -472,12 +472,12 @@
             </div>
         </div>
         <div class="confirm-btn-box">
-            <a class="confirm-btn link_login" id="confirm" onclick="setGAClickHandler(event)">
+            <a class="confirm-btn link_login" id="confirm">
                 확인하기
             </a>
         </div>
         <!-- s: 이벤트 유의사항 -->
-        <div class="info-point-area">
+        <div class="info-point-area eventView">
             <div>이벤트 유의사항</div>
             <ul class="info-point-list">
                 <li>해당 이벤트는 개인정보 제3자 제공 동의 및 마케팅 수신 동의한 분들에 대해서만 1인 1회 참여 가능합니다.</li>
@@ -616,8 +616,8 @@
             교보문고 통합포인트 받아보세요!
         </div>
         <div class="dialog-btn">
-            <button class="btn-next" id="btnNext">다음에 하기</button>
-            <button class="btn-login" id="btnLogin">로그인 하기</button>
+            <button class="btn-next" id="btnNextPonint">다음에 하기</button>
+            <button class="btn-login" id="btnLoginPoint">로그인 하기</button>
         </div>
     </div>
 </div>
@@ -631,8 +631,8 @@
             맞춤 상품을 확인해보세요.
         </div>
         <div class="dialog-btn">
-            <button class="btn-next" id="btnNext">다음에 하기</button>
-            <button class="btn-login" id="btnLogin">확인하기</button>
+            <button class="btn-next" id="btnNextPonintEnd01">다음에 하기</button>
+            <button class="btn-login" id="btnLoginPointEnd01">확인하기</button>
         </div>
     </div>
 </div>
@@ -646,8 +646,8 @@
             맞춤 상품을 확인해보세요.
         </div>
         <div class="dialog-btn">
-            <button class="btn-next" id="btnNext">다음에 하기</button>
-            <button class="btn-login" id="btnLogin">로그인 하기</button>
+            <button class="btn-next" id="btnNextPointEnd02">다음에 하기</button>
+            <button class="btn-login" id="btnLoginPointEnd02">로그인 하기</button>
         </div>
     </div>
 </div>
@@ -692,7 +692,8 @@
         integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
 <script type="module">
 import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
-import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+// import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+import { main } from "../../../resources/v1/js/mo-main.js";
 
 try {
     // animation setting

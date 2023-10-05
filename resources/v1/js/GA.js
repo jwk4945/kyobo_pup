@@ -1,19 +1,22 @@
 // import GAData  from './GAData.js';
+import { exPilot, exOpen } from "./mo-data-contents.js";
+import { getFileName } from "./mo-util-utils.js";
+import ua from "./ua.js";
+
 
 // event_name, ep_button_area, ep_button_area2, ep_button_name, ep_click_variable
-function setGAClickHandler(e) {
+export function setGAClickHandler(e) {
     // console.log(e.currentTarget);
 
     // get fileName
-    const url = window.location.href;
-    const fileNameWithQuery = url.split('/').pop();
-    const fileNameWithoutKeyword = fileNameWithQuery.split('?')[0];
-    // const fileNameWithoutPrefix = fileNameWithoutKeyword.replace('open_', '');
-    const fileNameWithoutPrefix = fileNameWithoutKeyword.slice(3);
-    const contentsId = fileNameWithoutPrefix.replace('.html', '');
+    const contentsId = getFileName();
+
+    // get searchKeyword
+    const searchKeyword = ua.searchKeyword;
+    console.log(searchKeyword);
 
     // version prefix
-    const v = 'DBS_' + (window.exPilot.includes(contentsId) ? 'p1' : 'o2') + '_';
+    const v = 'DBS_' + (exPilot.includes(contentsId) ? 'p1' : 'o2') + '_';
 
     // 매개변수 셋팅
     const eventName = 'DBS_캠페인_MO';
@@ -25,7 +28,7 @@ function setGAClickHandler(e) {
 
     // yy yn ny nn (동의유무 값) epSearchInternalSearchWord에 임시로 저장
     const epSearchInternalSearchWord = (document.getElementById('chkAgr1').checked ? 'Y' : 'N')
-                                     + (document.getElementById('chkAgr2').checked ? 'Y' : 'N');
+        + (document.getElementById('chkAgr2').checked ? 'Y' : 'N');
 
 
     // const goBackBtn = document.getElementById('goBackBtn');
@@ -85,6 +88,12 @@ function setGAClickHandler(e) {
     if (e.currentTarget.id === 'goNextBtn') { // goNextBtn: 정답 확인하기 버튼 / btnNext: 다음에하기 버튼
         const checked = document.querySelector('input[name="kyobolife-survey"]:checked').value;
         ga360.GA_Event(eventName, epButtonArea + '_메인', '정답 확인하기', checked, v + epClickVariable);
+    }
+
+    // 8. 포인트 팝업번호 2번 > '확인하기' 버튼
+    if (e.currentTarget.id === 'btnNextPonintEnd01') {
+        e.preventDefault();
+        ga360.GA_Event(eventName, epButtonArea + '_상세', '상품페이지이동3', '포인트팝업확인', v + epClickVariable2, epSearchInternalSearchWord);
     }
 
 }

@@ -1,5 +1,9 @@
 
 let ua = {
+    contentsId: '',
+    searchKeyword: '',
+    searchKeywordDecoded: '',
+    userKey: '',
     isLogined: false,
     bookstoreMemberNo: '',
     device: {
@@ -20,7 +24,6 @@ let ua = {
         remainingPointsFlag: 'N' // 포인트 정책 여부
     },
     setUserAgent: function(deviceName, deviceFlag) {
-        console.log(deviceName, deviceFlag)
         if (this.device.hasOwnProperty(deviceName)) {
             this.device[deviceName] = deviceFlag;
         }

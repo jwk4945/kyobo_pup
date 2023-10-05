@@ -6,21 +6,26 @@ window.dataLayer = window.dataLayer || [];
 window.ga360 = window.ga360 || {};
 
 const pageDict = {
-    'https://life-marketing.kyobobook.co.kr/journey/o1_2B_061': '교보문고>DBS캠페인>자산관리_재테크',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_3C_033': '교보문고>DBS캠페인>자녀_아동',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_13G_045': '교보문고>DBS캠페인>질병_당뇨',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_6G_054': '교보문고>DBS캠페인>자녀_태아&신생아',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_5B_041': '교보문고>DBS캠페인>건강관리_운동',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_16B_011': '교보문고>DBS캠페인>자기개발',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_4B_043': '교보문고>DBS캠페인>질병_척추/근골격계',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_1B_067': '교보문고>DBS캠페인>자녀_초중등',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_8B_110': '교보문고>DBS캠페인>일상생활_부부',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_7D_003': '교보문고>DBS캠페인>건강관리_운동 외',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_9B_062': '교보문고>DBS캠페인>일상생활_요리',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_12G_108': '교보문고>DBS캠페인>일상생활_야외활동',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_14G_057': '교보문고>DBS캠페인>질병_치매',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_18B_023': '교보문고>DBS캠페인>질병_암',
-    'https://life-marketing.kyobobook.co.kr/journey/o1_19G_142': '교보문고>DBS캠페인>질병_뇌/심'
+    'https://life-marketing.kyobobook.co.kr/journey/o2_2B_061': '교보문고>DBS캠페인>자산관리_재테크',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_3C_033': '교보문고>DBS캠페인>자녀_아동',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_13G_045': '교보문고>DBS캠페인>질병_당뇨',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_5B_041': '교보문고>DBS캠페인>건강관리_운동',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_16B_011': '교보문고>DBS캠페인>자기개발',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_1B_067': '교보문고>DBS캠페인>자녀_초중등',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_4B_043': '교보문고>DBS캠페인>질병_척추&근골격계',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_9B_062': '교보문고>DBS캠페인>일상생활_요리',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_12G_108': '교보문고>DBS캠페인>일상생활_야외활동',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_14G_057': '교보문고>DBS캠페인>질병_치매',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_18B_023': '교보문고>DBS캠페인>질병_암',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_19G_142': '교보문고>DBS캠페인>질병_뇌&심',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_15B_051': '교보문고>DBS캠페인>자산관리_연금',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_21G_086': '교보문고>DBS캠페인>생활건강',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_11B_144': '교보문고>DBS캠페인>자산관리_세금',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_10B_059': '교보문고>DBS캠페인>건강관리_마음건강',
+    'https://life-marketing.kyobobook.co.kr/journey/o2_17B_020': '교보문고>DBS캠페인>질병_여성건강',
+    'https://life-marketing.kyobobook.co.kr/journey/p1_6F_007': '교보문고>DBS캠페인>자녀_태아&신생아',
+    'https://life-marketing.kyobobook.co.kr/journey/p1_8B_110': '교보문고>DBS캠페인>일상생활_부부',
+    'https://life-marketing.kyobobook.co.kr/journey/p1_7D_003': '교보문고>DBS캠페인>건강관리_운동 외'
 };
 
 const pageDictDev = {
