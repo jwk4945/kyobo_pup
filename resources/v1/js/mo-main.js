@@ -281,6 +281,41 @@ export const main = (function () {
     }
 
 
+    function setUserInLastPage(isTrue){
+        _isUserInLastPage = isTrue;
+    }
+
+    function initSettingForFactCheck(){
+        const swiper = new Swiper(".swiper-container",{
+            loop: false,
+            pagination:{
+                el: '.swiper-pagination',
+                type: 'bullets',
+                bulletClass: 'swiper-my-bullet',
+                bulletActiveClass: 'active',
+            }
+        });
+
+        main.setUserInLastPage(false);
+
+        swiper.on('slideChange',swiper=>{
+
+            if((swiper.realIndex === swiper.slides.length-1) //마지막 슬라이드 도착했거나
+                ||(swiper.realIndex === swiper.slides.length-2 && swiper.previousIndex === swiper.slides.length-1)) //마지막슬라이드에서 직전슬라이드로 돌아온 경우
+            {
+                togglePageContents();
+                main.setUserInLastPage(true);
+                document.querySelector('.swiper-pagination').classList.toggle('display-none');
+                // 마지막 슬라이드
+                if(swiper.realIndex === swiper.slides.length-1) {
+                    document.querySelector('#nextDiv').style.marginTop = `-${document.querySelector('.swiper-wrapper').clientHeight}px`;
+                    AnimationManager.setElemsAniOnScroll();
+                    AnimationManager.setElemsAniOnResult();
+                }
+            }
+        })
+    }
+
     /******************************************************************************** 고객여정 1.0 initSetting */
 
 
@@ -294,7 +329,7 @@ export const main = (function () {
 
     return {
         initSetting, createUserKey, setPropertiesForCss, setAutoHideElements, getMethodForShowResult, initSettingForBfCache, initSettingForSubmitButton
-        , initSettingForButtonEnable, initSettingForSubmitSurvey, setGoNextAndFirstBtn, togglePageContents, showSelectiveResult
+        , initSettingForButtonEnable, initSettingForSubmitSurvey, setGoNextAndFirstBtn, togglePageContents, showSelectiveResult, initSettingForFactCheck, setUserInLastPage
         , triggerLoadingScreen
     }
 })();
@@ -612,8 +647,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         /* 🔴set TEST data */
-        ua.changeFlag('eventFlag', 'Y');
-        ua.changeFlag('remainingPointsFlag', 'Y');
+        ua.changeFlag('eventFlag', 'N');
+        ua.changeFlag('remainingPointsFlag', 'N');
         ua.changeFlag('personalInformationAgreementFlag', 'N');
         ua.changeFlag('marketingConsentAgreementFlag', 'N');
         ua.changeFlag('marketingConsentAgreementSmsFlag', 'N');
