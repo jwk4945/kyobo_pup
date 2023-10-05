@@ -133,17 +133,17 @@ $(document).ready(function (){
     //     }
     // });
 
-    $('.dialog-btn > button').on('click', function(){
-        if($('#poplogin').hasClass('active')){
-            $('#poplogin').removeClass('active');
-            $('.dim').removeClass('active');
-            $('html').removeClass('lock');
-        } else{
-            $('#poplogin').addClass('active');
-            $('.dim').addClass('active');
-            $('html').addClass('lock');
-        }
-    });
+    // $('.dialog-btn > button').on('click', function(){
+    //     if($('#poplogin').hasClass('active')){
+    //         $('#poplogin').removeClass('active');
+    //         $('.dim').removeClass('active');
+    //         $('html').removeClass('lock');
+    //     } else{
+    //         $('#poplogin').addClass('active');
+    //         $('.dim').addClass('active');
+    //         $('html').addClass('lock');
+    //     }
+    // });
     // // 로그인 컨펌 팝업
 });
 

@@ -23,7 +23,7 @@
     <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
     <script src="../../../resources/v1/js/ga-utils.js" defer></script>
     <script src="../../../resources/v1/js/GAData.js" defer></script>
-    <script src="../../../resources/v1/js/GA.js"></script>
+    <script src="../../../resources/v1/js/GA.js" type="module"></script>
 
     <title>자전거 사고, 보상은?</title>
 </head>
@@ -41,13 +41,13 @@
 <header id="header">
     <nav class="bg-white">
         <div class="link_back">
-            <a class="go-back-btn" onclick="setGAClickHandler(event)" id="goBackBtn">
+            <a class="go-back-btn" id="goBackBtn">
                 <span class="blind">뒤로가기</span>
                 <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
             </a>
         </div>
         <div>
-            <a id="link_home" onclick="setGAClickHandler(event)">
+            <a id="link_home">
                 <span class="blind">홈으로</span>
                 <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
             </a>
@@ -56,7 +56,7 @@
             자전거 사고, 보상은?
         </h1>
         <div>
-            <a id="link_share" onclick="setGAClickHandler(event)">
+            <a id="link_share">
                 <span class="blind">공유하기</span>
                 <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
             </a>
@@ -180,7 +180,7 @@
 
                 </form>
                 <div class="footer-area">
-                    <button type="submit" id="goNextBtn" class="com-btn bg-7 fs-4 fw-700" onclick="setGAClickHandler(event)" disabled>정답 확인하기</button>
+                    <button type="submit" id="goNextBtn" class="com-btn bg-7 fs-4 fw-700" disabled>정답 확인하기</button>
                 </div>
             </div>
             <!-- [E] 로드화면 -->
@@ -566,13 +566,13 @@
                     <div class="feedback-txt">콘텐츠가 유익했어요!</div>
                     <div class="feedback-btn-box">
                         <div class="feedback-btn-box-inner">
-                            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001" onclick="setGAClickHandler(event)">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
                             <label class="feedback-btn good" for="feedback-radio-01">
                                 <span class="blind">좋아요</span>
                             </label>
                         </div>
                         <div class="feedback-btn-box-inner">
-                            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002" onclick="setGAClickHandler(event)">
+                            <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
                             <label class="feedback-btn bad" for="feedback-radio-02">
                                 <span class="blind">별로에요</span>
                             </label>
@@ -608,7 +608,7 @@
                 </div>
             </div>
             <div class="confirm-btn-box">
-                <a class="confirm-btn link_login" id="confirm" onclick="setGAClickHandler(event)">
+                <a class="confirm-btn link_login" id="confirm">
                 확인하기
                 </a>
             </div>
@@ -834,7 +834,7 @@
         integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
 <script type="module">
 import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
-import { EventProcessor } from "../../../resources/v1/js/open_EventProcessor.js";
+import { main } from "../../../resources/v1/js/mo-main.js";
 
 try {
     // animation setting
