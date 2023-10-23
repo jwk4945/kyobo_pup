@@ -94,18 +94,18 @@ $(document).ready(function (){
     // });
 
     // 탑버튼
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 30) {
-            $('.btn-fixed-top').fadeIn();
-        } else {
-            $('.btn-fixed-top').fadeOut();
-        }
-    });
+    // $(window).scroll(function() {
+    //     if ($(this).scrollTop() > 30) {
+    //         $('.btn-fixed-top').fadeIn();
+    //     } else {
+    //         $('.btn-fixed-top').fadeOut();
+    //     }
+    // });
 
-    $(".btn-fixed-top").on('click', function () {
-        $('html, body').stop().animate({ scrollTop: 0 }, 200);
-        return false;
-    });
+    // $(".btn-fixed-top").on('click', function () {
+    //     $('html, body').stop().animate({ scrollTop: 0 }, 200);
+    //     return false;
+    // });
     // // 탑버튼
 
     // 헤더 쉐도우 적용
@@ -116,6 +116,40 @@ $(document).ready(function (){
             $('#header').removeClass('shadow');
         }
     });
+
+    // 포인트 관련 플로팅 UI
+    const feedbackArea = document.querySelector('#feedback-area');
+    const clientRect = feedbackArea.getBoundingClientRect();
+    const relativeTop = clientRect.top; 
+    const scrolledTopLength = window.pageYOffset;
+
+    const absoluteTop = scrolledTopLength + relativeTop; 
+
+    console.log(absoluteTop);
+
+    const btmWrap = document.getElementById("btm-wrap").offsetHeight;
+    const footerWrap = document.getElementById("footer-wrap").offsetHeight;
+
+    const Wrap =  btmWrap + footerWrap + 100;
+
+    console.log(Wrap);
+
+    $(window).scroll(function() {
+        // var feedbackArea = $('#feedback-area').scrollTop();
+        // // var feedbackArea = document.querySelector("#feedback-area").offsetTop;
+
+        // console.log(feedbackArea);
+        // var winSc = $(this).scrollTop();
+        // console.log(winSc);
+
+        if ($(this).scrollTop() <= (absoluteTop - Wrap)) {
+            $('.btn-fixed-top').fadeIn();
+        } else {
+            $('.btn-fixed-top').fadeOut();
+        }
+    });
+
+    // // 포인트 관련 플로팅 UI
 
     // 로그인 컨펌 팝업
     // $('#header').on('click', function(){
