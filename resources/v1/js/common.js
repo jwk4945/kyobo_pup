@@ -118,37 +118,35 @@ $(document).ready(function (){
     });
 
     // 포인트 관련 플로팅 UI
-    const feedbackArea = document.querySelector('#feedback-area');
-    const clientRect = feedbackArea.getBoundingClientRect();
-    const relativeTop = clientRect.top; 
-    const scrolledTopLength = window.pageYOffset;
-
-    const absoluteTop = scrolledTopLength + relativeTop; 
-
-    console.log(absoluteTop);
-
-    const btmWrap = document.getElementById("btm-wrap").offsetHeight;
-    const footerWrap = document.getElementById("footer-wrap").offsetHeight;
-
-    const Wrap =  btmWrap + footerWrap + 100;
-
-    console.log(Wrap);
-
     $(window).scroll(function() {
-        // var feedbackArea = $('#feedback-area').scrollTop();
-        // // var feedbackArea = document.querySelector("#feedback-area").offsetTop;
+        const feedbackArea = document.querySelector('#feedback-area');
+        const clientRect = feedbackArea.getBoundingClientRect();
+        const relativeTop = clientRect.top; 
+        const scrolledTopLength = window.pageYOffset;
+    
+        const absoluteTop = scrolledTopLength + relativeTop; 
+    
+        // console.log(absoluteTop);
+    
+        const btmWrap = document.getElementById("btm-wrap").offsetHeight;
+        const footerWrap = document.getElementById("footer-wrap").offsetHeight;
+    
+        const Wrap =  btmWrap + footerWrap;
+    
+        // console.log(Wrap);
 
-        // console.log(feedbackArea);
-        // var winSc = $(this).scrollTop();
-        // console.log(winSc);
-
+        // btn-fixed-point gif 노출 관련
         if ($(this).scrollTop() <= (absoluteTop - Wrap)) {
-            $('.btn-fixed-top').fadeIn();
+            $('.btn-fixed-point').fadeIn();
         } else {
-            $('.btn-fixed-top').fadeOut();
+            $('.btn-fixed-point').fadeOut();
         }
-    });
 
+        // 교보문고 통합포인트 5,000P 받기!
+        if ($(this).scrollTop() > 100) {
+            $('.point-txt').addClass('ani-hide');
+        } 
+    });
     // // 포인트 관련 플로팅 UI
 
     // 로그인 컨펌 팝업
