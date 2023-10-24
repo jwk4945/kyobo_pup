@@ -590,9 +590,5 @@ section.p1-area + .btm-wrap .info-txt-wrap > div{color: #ddd;}
 .btn-point-wrap .point-txt.ani-hide{width: 0;opacity: 0;margin-left: 100%;-webkit-transition: 0.7s;transition: 0.7s;}
 .btn-point-wrap .point-txt.ani-hide span{opacity: 0;-webkit-transition: 0.3s;transition: 0.3s;}
 .btn-fixed-point{z-index: 11;position: fixed;right: 15px;bottom: 49px;width: 48px;height: 48px;font-size: 0;text-indent: -9999999px;background: url(../img/common/point_Final.gif) 0 0 no-repeat;background-size: contain;}
-/* @keyframes hide {
-    0%{width: calc(100% - 30px);display: block;}
-    100%{width: 0;display: none;}
-} */
 /* ====================== [E] POINT ====--================ */
 
