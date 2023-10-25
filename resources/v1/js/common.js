@@ -147,6 +147,12 @@ $(document).ready(function (){
             $('.point-txt').addClass('ani-hide');
         } 
     });
+
+    //클릭시 스크롤 이동 이벤트
+    $('.scrollToEv').on('click', function(){
+        const insView = $('#ins_view').offset().top;
+        window.scrollTo({top: insView, behavior: "smooth"});
+    });
     // // 포인트 관련 플로팅 UI
 
     // 로그인 컨펌 팝업

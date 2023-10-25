@@ -138,7 +138,7 @@ section:last-of-type{padding-bottom: 50px;}
 
 .head-msg{font-size: 1.375em;padding: 15px 0;line-height: 1.5;}
 .statistic .head-msg strong{background: linear-gradient(0deg,#02649a 50%,transparent 50%);padding: 0 10px 2px;}
-.main-banner-wrapper {background: white;border-radius: 15px;color: #222;padding: 15px 25px 20px;max-width: 540px;flex: 1;font-size: 14px;box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);margin-left: 2.5px;margin-right: 2.5px;}
+.main-banner-wrapper {background: white;border-radius: 15px;color: #222;padding: 15px 25px 20px;max-width: 540px;flex: 1;font-size: 14px;box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);margin-left: 5px;margin-right: 5px;}
 
 /* information-type */
 .information-type .main-banner-wrapper{padding: 32px 15px;}
