@@ -144,7 +144,7 @@ $(document).ready(function (){
 
         // 교보문고 통합포인트 5,000P 받기!
         if ($(this).scrollTop() > 200) {
-            $('.point-txt').addClass('ani-hide');
+            $('.btn-point-wrap').addClass('ani-hide');
         } 
     });
 
