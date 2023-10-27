@@ -488,7 +488,7 @@
         </section>
 
         <!-- s: 컨텐츠 하단 영역-->
-        <div class="bg-btm-pink btm-wrap" data-is-not-result-page="false">
+        <div id="btm-wrap" class="bg-btm-pink btm-wrap" data-is-not-result-page="false">
             <!-- 평가영역 -->
             <section id="feedback-area" class="bg-f4f4f4">
                 <div class="feedback-inner">
@@ -569,7 +569,7 @@
         <!-- e: 컨텐츠 하단 영역-->
 
         <!-- [S] footer -->
-        <footer class="footer_wrapper" data-is-not-result-page="false">
+        <footer id="footer-wrap" class="footer_wrapper" data-is-not-result-page="false">
             <div class="footer_body">
                 <div class="logo_box">
                     <a id="link_home" class="logo_link">
@@ -749,11 +749,19 @@
 </div>
 <!-- [E] pop -->
 
-<!-- [S]top버튼 -->
-<div class="btn-top-wrap">
-    <button type="top" class="btn-fixed-top">top</button>
+<!-- [S] 포인트 플로팅 UI -->
+<div class="btn-point-wrap" 
+    data-is-not-result-page="false"
+    data-animation-type="onresult"
+    data-animation-infos="style-bf-ani:'opacity:0;',
+                        style-af-ani:'opacity:1;',
+                        start-ms:'800'">
+    <div class="point-txt scrollToEv">
+        <span>교보문고 통합포인트 <b>5,000P</b> 받기!</span>
+    </div>
+    <button type="button" class="btn-fixed-point scrollToEv">POINT</button>
 </div>
-<!-- [E]top버튼 -->
+<!-- [E] 포인트 플로팅 UI -->
 
 <!--로딩스크린-->
 <div class="text-align-center loading-screen" data-is-playing-loading="false">

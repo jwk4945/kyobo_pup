@@ -94,18 +94,18 @@ $(document).ready(function (){
     // });
 
     // 탑버튼
-    // $(window).scroll(function() {
-    //     if ($(this).scrollTop() > 30) {
-    //         $('.btn-fixed-top').fadeIn();
-    //     } else {
-    //         $('.btn-fixed-top').fadeOut();
-    //     }
-    // });
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 30) {
+            $('.btn-fixed-top').fadeIn();
+        } else {
+            $('.btn-fixed-top').fadeOut();
+        }
+    });
 
-    // $(".btn-fixed-top").on('click', function () {
-    //     $('html, body').stop().animate({ scrollTop: 0 }, 200);
-    //     return false;
-    // });
+    $(".btn-fixed-top").on('click', function () {
+        $('html, body').stop().animate({ scrollTop: 0 }, 200);
+        return false;
+    });
     // // 탑버튼
 
     // 헤더 쉐도우 적용
@@ -146,6 +146,9 @@ $(document).ready(function (){
         if ($(this).scrollTop() > 200) {
             $('.btn-point-wrap').addClass('ani-hide');
         } 
+
+        // const now = $(this).scrollTop();
+        // console.log(now);
     });
 
     //클릭시 스크롤 이동 이벤트
