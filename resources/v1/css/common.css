@@ -373,7 +373,8 @@ textarea{display: block;padding: 10px;width: 100%;height: 100px;box-sizing: bord
 .confirm-btn-box{max-width: 540px;padding: 15px 20px 0;margin: 0 auto;font-weight: 700;}
 .confirm-btn-box .confirm-btn{display: inline-block; width: 100%;height: 50px;line-height: 50px;text-align: center;border-radius: 5px;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);}
 .type-a .confirm-btn-box .confirm-btn{background: #27809e;}
-.type-b .confirm-btn-box .confirm-btn{background: #d95555;}
+/* .type-b .confirm-btn-box .confirm-btn{background: #d95555;} */
+.type-b .confirm-btn-box .confirm-btn{background: #444;}
 .type-c .confirm-btn-box .confirm-btn{background: #7659d8;}
 .type-d .confirm-btn-box .confirm-btn{background: #fff;color: #1a4194;}
 .type-e .confirm-btn-box .confirm-btn{background: #fff;color: #d95584;}
@@ -466,7 +467,8 @@ article{padding: 50px 15px;text-align: center;max-width: 540px;margin: auto;}
 
 /* 삼품 border-color */
 .information-type.type-a .btm-wrap .btm-area .pd-area{border-color: #27809e;}
-.information-type.type-b .btm-wrap .btm-area .pd-area{border-color: #d95555;}
+/* .information-type.type-b .btm-wrap .btm-area .pd-area{border-color: #d95555;} */
+.information-type.type-b .btm-wrap .btm-area .pd-area{border-color: #d7d7d7;}
 .fact-chk.type-c .btm-wrap .btm-area .pd-area{border-color: #7659d8;}
 
 /* 개인전보 제3자 제공 동의, 마케팅 수신동의 */
