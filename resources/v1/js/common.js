@@ -153,7 +153,7 @@ $(document).ready(function (){
 
     //클릭시 스크롤 이동 이벤트
     $('.scrollToEv').on('click', function(){
-        const insView = $('#ins_view').offset().top;
+        const insView = $('.ins_view').offset().top;
         window.scrollTo({top: insView, behavior: "smooth"});
     });
     // // 포인트 관련 플로팅 UI
