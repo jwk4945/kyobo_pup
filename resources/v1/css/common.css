@@ -7,9 +7,9 @@
 /* z-index */
 /* 1: .top-bg-panel-wrapper */
 /* 2: bg패널있는 경우의 .main-wrapper */
-/* 10: header, btn-top-wrap */
-/* 11: btn-fixed-top */
-/* 20: dim */
+/* 10: header, btn-top-wrap, btn-fixed-top */
+/* 11: btn-fixed-point */
+/* 15: dim */
 /* 40: 공유하기 팝업(#popShare), 약관팝업(.pop-area) */
 /* 41: 약관팝업 헤더(.pop-area .pop-inner .pop-header) */
 /* 60: URL이 복사되었습니다. 토스트 메세지(.toast_wrap) */
@@ -240,7 +240,7 @@ b{font-weight: 700 !important;}
 .strong-underline{line-height: 1.4;background: linear-gradient(0deg,rgba(0,0,0,0.2) 40%,transparent 20%);padding: 0 10px;display: inline-block;font-weight: 700;}
 
 /* dim */
-.dimmed{background: #000;position: fixed;z-index: 15;left: 0;right: 0;top: 0;bottom: 0;opacity: 0.6;}
+.dimmed{z-index: 15;background: #000;position: fixed;left: 0;right: 0;top: 0;bottom: 0;opacity: 0.6;}
 
 /* num list */
 .list-num{}
