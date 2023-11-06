@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="외벌이"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+    
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link href="../../../resources/v1/img/favicon.ico" rel="apple-touch-icon-precomposed">
+    <link rel="stylesheet" type="text/css" href="../../../resources/v1/css/import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/common.js"></script>
+    <script src="../../../resources/v1/js/link.js"></script>
+
+    <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
+    <script src="../../../resources/v1/js/ga-utils.js" defer></script>
+    <script src="../../../resources/v1/js/GAData.js" defer></script>
+    <script src="../../../resources/v1/js/GA.js" type="module"></script>
+
+    <title>donots</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="donots type-2">
+<!-- [S] skip-nav -->
+<div class="skip-nav">
+    <a href="#cont-wrap">본문 바로가기</a>
+</div>
+<!-- [E] skip-nav -->
+
+<!-- [S] header-->
+<header id="header">
+    <nav class="bg-white">
+        <div class="link_back">
+            <a class="go-back-btn" id="goBackBtn">
+                <span class="blind">뒤로가기</span>
+                <img src="../../../resources/v1/img/ico-kyobobook-gnb-back.svg" alt="뒤로가기">
+            </a>
+        </div>
+        <div>
+            <a id="link_home">
+                <span class="blind">홈으로</span>
+                <img src="../../../resources/v1/img/icon/ico-home.png" alt="홈으로 버튼">
+            </a>
+        </div> 
+        <h1></h1>
+        <div>
+            <a id="link_share">
+                <span class="blind">공유하기</span>
+                <img src="../../../resources/v1/img/icon/ico-share.png" alt="공유하기 버튼">
+            </a>
+        </div>
+    </nav>
+</header>
+<!-- [E] header-->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+<input type="hidden" id="srch_kywr_name_d" class="srch_kywr_name_d" th:value="${srch_kywr_name_d}" />
+
+<!-- [S] cont -->
+<div id="cont-wrap">
+    <section class="d1-area">
+        <img src="../../../resources/v1/img/alliance/img-content-donots.png" 
+            alt="우리 아이에게 무엇을 어떻게 먹일지 고민이라면?
+            #우리 아이 맞춤 레시피 #알레르기 걱정 끝!
+            이유식 고민방
+            아가밥상: 우리 아이가 아토피가 있어서 걱정이에요ㅠ 변비에 좋은 음식은 어떤게 있을까요??? 저희 아이가 계란 알레르기가 있어서 식단 짜는 데 고민이 많아요. 어떡하죠?
+            우리 아이 도낫츠: 도낫츠 맞춤 레시피로 해결하세요! 유아식/이유식 전문가와 육아 고수들이 작성한 레시피가 우리 아이의 건강 키워드에 맞춰 자동 추천 됩니다.
+            1. 알레르기/관심사 입력하기: 도낫츠 앱에 접속한 후 MY 메뉴에서 아이 아이콘을 클릭하면 알레르기 유발 재료와 건강 키워드를 선택할 수 있어요.
+            2. 맞춤 레시피 둘러보기: 알레르기 유발 재료 제거식, 대체식, 건강 키워드에 맞는  맞춤 레시피를 둘러보세요.
+            3. 레시피 따라하기: 레시피를 클릭하면 섭취 열량, 영양소, 알레르기 유발 재료 등 상세한 설명을 확인할 수 있어요.">
+    </section>
+    <!-- s: 컨텐츠 하단 영역-->
+    <div id="btm-wrap" class="btm-wrap">
+        <!-- 상품영역 -->
+        <section class="btm-area ins_view">
+            <p class="explain">오늘도 건강하게 우리아이를 위한 donots</p>
+            <a id="linkForInsurance">
+                <div class="pd-area">
+                    <div class="clear">
+                        <div class="ci fl">
+                            <img src="../../../resources/v1/img/alliance/logo-donots.png" alt="donots logo">
+                        </div>
+                        <dl class="fl">
+                            <dt class="name">도낫츠(donots)</dt>
+                            <dd class="certificationMsg">
+                                <div class="certificationMsg-txt">아이 영양관리, 건강꿀팁 공유</div>
+                                <div class="certificationMsg-txt">Kyobo Life Insurance Co.,LTD.</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="ico-arw"></div>
+                    <div class="txt-go">둘러보기</div>
+                </div>
+            </a>
+        </section>
+    </div>
+    <!-- e: 컨텐츠 하단 영역-->
+</div>
+<!-- [E] cont -->
+
+<!-- [S] footer -->
+<footer id="footer-wrap" class="footer_wrapper">
+    <div class="footer_body">
+        <div class="logo_box">
+            <a id="link_home" class="logo_link">
+                    <img src="../../../resources/v1/img/icon/logo-foorer.png" alt="KYOBO 교보문고" />
+            </a>
+            <button type="button" class="btn_more_body"><span class="text">사업자정보</span><span class="ico_arw"></span></button>
+        </div>
+        
+        <address class="footer_info_box">
+            <div class="info_text_multi">
+                <span class="info_text">교보문고</span>
+                <span class="gap">|</span>
+                <span class="info_text">대표이사 : 안병현, 김상훈</span>
+            </div>
+            <span class="info_text">서울특별시 종로구 종로 1</span>
+            <span class="info_text">사업자등록번호 : 102-81-11670</span>
+            <span class="info_text"><b>대표전화 : 1544-9000</b></span>
+            <span class="info_text">FAX : 0502-987-5711(지역번호 공통)</span>
+            <span class="info_text"><span class="text_inner">서울특별시 통신판매업신고번호 : 제 653호</span></span>
+            <a id="link_companyChk" class="btn_footer_link">사업자정보확인</a>
+            <a id="link_paychk" class="btn_footer_link">구매안전서비스</a>
+        </address>
+        
+        <div class="footer_menu_box">
+            <ul class="footer_menu_list">
+                <li class="footer_menu_item" id="li_login"><a id="link_login" class="footer_menu_link">로그인</a></li>
+                <li class="footer_menu_item" id="li_logout"><a id="link_logout" class="footer_menu_link">로그아웃</a></li>
+                <li class="footer_menu_item"><a id="link_join" class="footer_menu_link">회원가입</a></li>
+            </ul>
+            <ul class="footer_menu_list sub">
+                <li class="footer_menu_item"><a id="link_provision" class="footer_menu_link">이용약관</a></li>
+                <li class="footer_menu_item privacy"><a id="link_privacy" class="footer_menu_link">개인정보처리방침</a></li>
+                <li class="footer_menu_item"><a id="link_youth" class="footer_menu_link">청소년보호정책</a></li>
+                <li class="footer_menu_item"><a id="link_chargeperson" class="footer_menu_link">협력사여러분</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- [E] footer -->
+
+<!-- dim -->
+<div class="dim"></div>
+
+<!-- [S] 공유하기 팝업 -->
+<div id="popShare" class="dialog_wrap">
+	<button type="button" class="btn_dialog_close" data-dialog-close>
+        <span class="ico_dialog_close"></span><span class="blind">닫기</span>
+    </button>
+	<!-- dialog_header -->
+	<div class="dialog_header">
+		<h2 class="dialog_title">공유하기</h2>
+	</div>
+	<!-- //dialog_header -->
+	<!-- dialog_contents -->
+	<div class="dialog_contents">
+		<ul class="sns_share_list">
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="ka-share-btn">
+					<span class="ico_sns kakao"></span>
+					<span class="sns_text">카카오톡</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="fb-share-btn">
+					<span class="ico_sns facebook"></span>
+					<span class="sns_text">페이스북</span>
+				</a>
+			</li>
+			<li class="list_item">
+                <a href="javascript:void(0)" class="btn_sns_share" id="msg-share-btn">
+					<span class="ico_sns message"></span>
+					<span class="sns_text">메세지</span>
+				</a>
+			</li>
+			<li class="list_item">
+				<a href="javascript:void(0)" class="btn_sns_share" id="more-share-btn">
+					<span class="ico_sns more"></span>
+					<span class="sns_text">더보기</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- //dialog_contents -->
+	<!-- dialog_footer -->
+	<div class="dialog_footer">
+		<div class="sns_share_link_box">
+			<span class="sns_share_link" id="url-copy-span"></span>
+			<button type="button" class="btn_share_link" id="url-copy-btn">URL 복사</button>
+		</div>
+	</div>
+	<!-- //dialog_footer -->
+</div>
+<!-- URL공유 토스트 팝업 -->
+<div class="toast_wrap_share">
+    <span class="toast_message">URL이 복사되었습니다.</span>
+</div>
+<!-- [E] 공유하기 팝업 -->
+
+<!-- [S] pop -->
+
+<!-- [E] pop -->
+
+<!-- [S]top버튼 -->
+<div class="btn-top-wrap">
+    <button type="top" class="btn-fixed-top">top</button>
+</div>
+<!-- [E]top버튼 -->
+
+<!--로딩스크린-->
+<div class="text-align-center loading-screen" data-is-playing-loading="false">
+    <lottie-player src="../../../resources/v1/img/loading-animation.json"
+                    background="transparent"
+                    style="width: 100px; height: 100px; display:inline-block" speed="1" loop autoplay>
+    </lottie-player>
+    <div class="fc-2 fs-6 fw-500">
+        고객님에게 맞는 <b>교보생명</b> 상품으로<br>
+        이동중이에요!
+    </div>
+</div>
+
+<!-- <script src="../../../resources/v1/js/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+        integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+<script type="module">
+import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+import { main } from "../../../resources/v1/js/mo-main.js";
+
+try {
+    // animation setting
+    AnimationManager.loadElementsToAnimate();
+}
+catch(error){
+    alert(error);
+    alert(error.stack);
+}
+</script>
+</body>
+</html>

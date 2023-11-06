@@ -595,3 +595,17 @@ section.p1-area + .btm-wrap .info-txt-wrap > div{color: #ddd;}
 .btn-fixed-point{z-index: 11;position: fixed;right: 20px;bottom: 49px;width: 48px;height: 48px;font-size: 0;text-indent: -9999999px;background: url(../img/common/point_Final.gif) 0 0 no-repeat;background-size: contain;}
 /* ====================== [E] POINT ====--================ */
 
+/* ================ [S] donots ================ */
+.donots #cont-wrap{background-color: #452108;}
+.donots #cont-wrap section.d1-area{background-color: #fff;}
+section.d1-area{padding-bottom: 60px !important;display: flex;justify-content: center;border-bottom-left-radius:15px;  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
+section.d1-area img{width: 100%;max-width: 510px;font-size: 0;}
+section.d1-area + .btm-wrap{background: #452108;padding-bottom: 50px;}
+section.d1-area + .btm-wrap #feedback-area{box-shadow: none;padding: 0 20px 5px;background: #fff;box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);}
+section.d1-area + .btm-wrap #feedback-area .feedback-inner{border-top: 1px solid #ddd;padding-top: 5px;}
+
+section.d1-area + .btm-wrap .btm-area .explain{color: #fff;font-size: 18px;}
+section.d1-area + .btm-wrap .btm-area .pd-area{position: relative;}
+section.d1-area + .btm-wrap .btm-area .pd-area .txt-go{position: absolute;top: 50%;right: 34px;margin-top: -9px;font-size: 13px;color: #999;text-align: right;}
+/* ================ [E] donots ================ */
+
