@@ -9,13 +9,31 @@ import ua from "./ua.js";
 */
 export function postConsent(accessToken, sub, tempFlags) {
     const url = `/journey/consent/personal-information/agreement`;
-    const sendData = {
-        bookstoreMemberNo: ua.bookstoreMemberNo
-        , personalInformationAgreementFlag: tempFlags.chkAgr1
-        , marketingConsentAgreementFlag: tempFlags.chkAgr2
-        , marketingConsentAgreementSmsFlag: tempFlags.chkSms
-        , marketingConsentAgreementEmailFlag: tempFlags.chkMail
-    };
+
+    let sendData;
+    if (tempFlags === '') {
+        sendData = {
+            bookstoreMemberNo: ua.bookstoreMemberNo
+            , personalInformationAgreementFlag: 'N'
+            , marketingConsentAgreementFlag: 'N'
+            , marketingConsentAgreementSmsFlag: 'N'
+            , marketingConsentAgreementEmailFlag: 'N'
+        }
+    } else {
+        sendData = {
+            bookstoreMemberNo: ua.bookstoreMemberNo
+            , personalInformationAgreementFlag: tempFlags.chkAgr1
+            , marketingConsentAgreementFlag: tempFlags.chkAgr2
+            , marketingConsentAgreementSmsFlag: tempFlags.chkSms
+            , marketingConsentAgreementEmailFlag: tempFlags.chkMail
+        }
+    }
+
+    // 🔸 제3자제공동의 Y인 경우에만 수집
+    if (tempFlags.chkAgr1 !== 'Y' && accessToken !== null && tempFlags !== '') {
+        console.log('제 3자 제공 동의 N -> postConsent Exit. ');
+        return;
+    }
 
     fetch(url, {
         method: 'POST',
@@ -61,15 +79,19 @@ export function postConsent(accessToken, sub, tempFlags) {
 * @param {Long} mmbrNum(고객번호) - not null
 *
 */
-export function postEvent(sub) {
+// 'LMSE1'
+export function postEvent(accessToken, sub, isSmsEvent, smsEventType) {
     const url = `/journey/consent/personal-information/agreement/event`;
     const sendData = {
-        mmbrNum: sub
+        mmbrNum: sub,
+        smsEventYN: isSmsEvent,
+        smsEventType: smsEventType,
     };
 
     fetch(url, {
         method: 'POST',
         headers: {
+            'accessToken': accessToken,
             'Content-type': 'application/json',
             'x-requested-with': 'XMLHttpRequest'
         },
@@ -119,6 +141,23 @@ export function postBannerClickInfo(info, callback) {
         window.location.href = info.url;
         if (callback !== undefined)
             callback();
+    })
+}
+
+export function postAffBannerClickInfo(affInfo) {
+    const url = `/journey/form/banner-visit`;
+    const sendData = {
+        csjr_ctts_advr_expr_srmb: 1 //_bannerHistorySeq // 배너이력순번
+        , srch_kywr_name: ua.searchKeyword // 교보문고 검색키워드
+        , csjr_ctts_num: ua.contentsId // _contentsId // 콘텐츠아이디
+        , bnnr_expr_mthd_dvsn_code: '003' // 자동 : 수동          -> 5/18 고정값 "003" 으로 변경
+        , bnnr_expr_cmdt_kind_code: '003' // 보험 : 부가서비스      -> 5/18 고정값 "003" 으로 변경
+        , bnnr_expr_cmdt_name: affInfo.name //getLinkInfos().linkName
+        , bnnr_urladrs: affInfo.url //getLinkInfos().linkUrl
+    };
+    postData(url, sendData, result => {
+        console.log('postBannerClickInfo::', result);
+        window.location.href = affInfo.url;
     })
 }
 

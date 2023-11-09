@@ -84,5 +84,5 @@ const shareFacebook = (shareUrl) => {
 
 
 const shareSms = (shareUrl) => {
-    location.href = (ua.device.isAndroid ? "sms:?body=" : "sms:&body=") + shareUrl;
+    location.href = (ua.devices.isAndroid ? "sms:?body=" : "sms:&body=") + shareUrl;
 }

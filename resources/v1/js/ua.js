@@ -2,11 +2,15 @@
 let ua = {
     contentsId: '',
     searchKeyword: '',
-    searchKeywordDecoded: '',
+    searchKeywordD: '',
     userKey: '',
     isLogined: false,
     bookstoreMemberNo: '',
-    device: {
+    isSmsEvent: 'N',
+    smsEventType: '',
+    isHeymama: 'N',
+    isDonots: 'N',
+    devices: {
         isMobile: false,
         isMobileApp: false,
         isIOS: false,
@@ -21,11 +25,11 @@ let ua = {
         marketingConsentAgreementSmsFlag: 'N', // 마케팅 정보 sms 동의
         marketingConsentAgreementEmailFlag: 'N', // 마케팅 정보 email 동의
         eventFlag: 'N', // 이벤트 기간 여부
-        remainingPointsFlag: 'N' // 포인트 정책 여부
+        remainingPointsFlag: 'N' // 잔여 포인트 여부
     },
     setUserAgent: function(deviceName, deviceFlag) {
-        if (this.device.hasOwnProperty(deviceName)) {
-            this.device[deviceName] = deviceFlag;
+        if (this.devices.hasOwnProperty(deviceName)) {
+            this.devices[deviceName] = deviceFlag;
         }
     },
     changeLoginStatus: function(state) {

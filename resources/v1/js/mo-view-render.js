@@ -1,5 +1,6 @@
 
 import { exPilot, exOpen } from "./mo-data-contents.js";
+import { getIsAff } from "./mo-util-utils.js";
 import * as ga from "./GA.js";
 
 /*
@@ -14,6 +15,12 @@ export function renderInsuaranceView(renderInfo, fileName) {
     let template;
 
     if (exPilot.includes(fileName)) {
+        return;
+    }
+
+    const isAff = getIsAff();
+    if (isAff) {
+        // [제휴]인 경우 임시 pass
         return;
     }
 
@@ -71,6 +78,13 @@ export function renderInsuaranceView(renderInfo, fileName) {
 }
 
 export function renderConsentView(fileName) {
+
+    const isAff = getIsAff();
+    if (isAff) {
+        // [제휴]인 경우 임시 pass
+        return;
+    }
+
     // 개인정보 제3자 제공 동의 (선택)
     const personalTemplate = `
     <div id="personalPop" class="pop-area" style="display: none;">
@@ -188,5 +202,4 @@ export function renderConsentView(fileName) {
 
     document.querySelector('#cnst_market_view').innerHTML = marketTemplate;
 }
-
 

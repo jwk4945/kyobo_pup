@@ -1,6 +1,7 @@
 // console.log(1);
 import ua from "./ua.js";
 import * as storage from "./mo-util-storage.js";
+import { getIsAff } from "./mo-util-utils.js";
 
 
 export function popClose(pop) {
@@ -110,6 +111,18 @@ export function setFooterView() {
 
 export function setConsentView() {
 
+    const isAff = getIsAff();
+    if (isAff) {
+        // [제휴]인 경우 임시 pass
+        return;
+    }
+    // ua.changeFlag('eventFlag', 'Y');
+    // ua.changeFlag('remainingPointsFlag', 'Y');
+    // ua.changeFlag('personalInformationAgreementFlag', 'N');
+    // ua.changeFlag('marketingConsentAgreementFlag', 'N');
+    // ua.changeFlag('marketingConsentAgreementSmsFlag', 'N');
+    // ua.changeFlag('marketingConsentAgreementEmailFlag', 'N');
+
     let agreeBox = document.getElementById("agreeBox");
     let allAgreeBox = document.getElementById("allAgreeBox");
     let perSonalAgreeBox = document.getElementById("personalAgreeBox");
@@ -119,9 +132,9 @@ export function setConsentView() {
     // 동의여부 "display" - from api
     perSonalAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && ua.flag.personalInformationAgreementFlag !== 'Y')) ? 'flex' : 'none';
     marketAgreeBox.style.display = (!ua.isLogined || (ua.isLogined && ua.flag.marketingConsentAgreementFlag !== 'Y')) ? 'flex' : 'none';
-    allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') && (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
+    allAgreeBox.style.display = (perSonalAgreeBox.style.display === 'flex') || (marketAgreeBox.style.display === 'flex') ? 'flex' : 'none';
 
-    // 기존 동의 이력이 있을 때 checked
+    // 동의여부 "check" - from api
     document.getElementById('chkAgr1').checked = ua.flag.personalInformationAgreementFlag === 'Y' ? true : false;
     document.getElementById('chkAgr2').checked = ua.flag.marketingConsentAgreementFlag === 'Y' ? true : false;
     document.getElementById('chkSms').checked = ua.flag.marketingConsentAgreementSmsFlag === 'Y' ? true : false;
@@ -156,6 +169,13 @@ export function setEventView() {
     if (ua.flag.eventFlag === 'Y' && ua.flag.remainingPointsFlag === 'Y') {
         document.querySelectorAll('[class *= "eventView"]').forEach(e => {
             e.style.display = 'block';
+        });
+    }
+
+    // 전체 동의 이력이 있을때, eventView 미노출
+    if (ua.flag.marketingConsentAgreementFlag === 'Y' && ua.flag.personalInformationAgreementFlag === 'Y') {
+        document.querySelectorAll('[class *= "eventView"]').forEach(e => {
+            e.style.display = 'none';
         });
     }
 }

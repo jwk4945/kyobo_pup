@@ -23,6 +23,7 @@
     <script src="../../../resources/v1/js/jquery-1.8.2.js"></script>
     <script src="../../../resources/v1/js/ga-utils.js" defer></script>
     <script src="../../../resources/v1/js/GAData.js" defer></script>
+    <script src="../../../resources/v1/js/affGAData.js" defer></script>
     <script src="../../../resources/v1/js/GA.js" type="module"></script>
 
     <title>암 환자의 영양실조</title>
@@ -69,6 +70,7 @@
 <input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
 <input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
 <input type="hidden" id="srch_kywr_name_d" class="srch_kywr_name_d" th:value="${srch_kywr_name_d}" />
+<input type="hidden" id="devices" class="devices" th:value="${devices}" />
 
 <!-- [S] cont -->
 <div id="cont-wrap" class="bg-9">
@@ -672,7 +674,7 @@
 <!-- [E] pop -->
 
 <!-- [S] 포인트 플로팅 UI -->
-<div class="btn-point-wrap">
+<div id="btnPointWrap" class="btn-point-wrap">
     <div class="point-txt scrollToEv">
         <span>교보문고 통합포인트 <b>5,000P</b> 받기!</span>
     </div>

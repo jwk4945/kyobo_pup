@@ -73,24 +73,6 @@ const GAData = [
         ep_search_internalSearchWord: ""
     },
     {
-        contentsId: "8B_110",
-        ep_button_area: "일상생활_부부_외벌이",
-        ep_button_area2: "",
-        ep_button_name: "",
-        ep_click_variable: "일상생활_부부_외벌이",
-        ep_click_variable2: "서비스_내보험바로알기",
-        ep_search_internalSearchWord: ""
-    },
-    {
-        contentsId: "7D_003",
-        ep_button_area: "건강관리_운동외_건강검진",
-        ep_button_area2: "",
-        ep_button_name: "",
-        ep_click_variable: "건강관리_운동외_건강검진",
-        ep_click_variable2: "서비스_내보험바로알기",
-        ep_search_internalSearchWord: ""
-    },
-    {
         contentsId: "9B_062",
         ep_button_area: "일상생활_요리_똑똑한기름사용법",
         ep_button_area2: "",

@@ -12,11 +12,11 @@ import * as ga from "./GA.js";
 import { renderInsuaranceView, renderConsentView } from "./mo-view-render.js";
 import { handleShareButtonClick } from "./mo-util-share.js";
 
-import { getIsLogin, getAgreement } from "./mo-api-get.js";
+import { getIsLogin, getAgreement, getIsEvent } from "./mo-api-get.js";
 import { postEvent } from "./mo-api-post.js";
 
 import { exPilot, exOpen } from "./mo-data-contents.js";
-import { info, setInfo } from "./info.js";
+import { info, affInfo, setInfo, setAffInfo } from "./info.js";
 
 
 
@@ -41,6 +41,22 @@ export const main = (function () {
         // 교보문고 검색 키워드
         _searchKeyword = document.querySelector('#srch_kywr_name').value;
         ua.searchKeyword = document.querySelector('#srch_kywr_name').value;
+        // 교보문고 검색 키워드 - decoded
+        ua.searchKeywordD = document.querySelector('#srch_kywr_name_d').value;
+
+        if ((document.querySelector('#srch_kywr_name_d').value).substring(0, 3) === 'LMS') {
+            ua.isSmsEvent = 'Y';
+            ua.smsEventType = document.querySelector('#srch_kywr_name_d').value;
+        }
+
+        const devices = (document.querySelector('#devices').value).replace(/[{ }]/g, '').split(',')
+        devices.forEach(device => {
+            const [key, value] = device.split("=");
+            const boolValue = value === 'true';
+
+            ua.setUserAgent(key, boolValue);
+        })
+
 
         // contentsId
         //css 전역변수 설정
@@ -342,20 +358,55 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('link_home').addEventListener('click', e => ga.setGAClickHandler(e));
     document.getElementById('link_share').addEventListener('click', e => ga.setGAClickHandler(e));
 
-    document.getElementById('feedback-radio-01').addEventListener('click', e => ga.setGAClickHandler(e));
-    document.getElementById('feedback-radio-02').addEventListener('click', e => ga.setGAClickHandler(e));
-    document.getElementById('confirm').addEventListener('click', e => ga.setGAClickHandler(e));
+    if (document.getElementById('feedback-radio-01')) {
+        document.getElementById('feedback-radio-01').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+    if (document.getElementById('feedback-radio-02')) {
+        document.getElementById('feedback-radio-02').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+
+    // [제휴]인 경우 임시 pass
+    if (document.getElementById('confirm')) {
+        document.getElementById('confirm').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+
+    // default 팝업 (팝업 번호 0번)
+    if (document.getElementById('btnNext')) {
+        document.getElementById('btnNext').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
 
     // 포인트에서는 확인하기 버튼 눌렀을 때 상품으로 이동
-    document.getElementById('btnNextPonintEnd01').addEventListener('click', e => ga.setGAClickHandler(e));
+    if (document.getElementById('btnLoginPointEnd01')) {
+        document.getElementById('btnLoginPointEnd01').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
 
-    // 🔶 보험 영역 동적으로 render 하므로 render.js 에서 이벤트 등록해줌
-    // document.getElementById('linkForInsurance').addEventListener('click', ga.setGAClickHandler);
+    // 🔶 보험 영역 동적으로 render 하므로 render.js 에서 이벤트 등록
+    // 파일럿 페이지인 경우 html 하드코딩 하므로 DOMContentLoaded 시점에 render 완료되기 때문에 아래에서 이벤트 등록
+    if (document.getElementById('linkForInsurance')) {
+        document.getElementById('linkForInsurance').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+
 
     // 🔶 참여형(정답 확인하기)
     const goNextBtn = document.getElementById('goNextBtn');
     if (goNextBtn) {
         document.getElementById('goNextBtn').addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+
+    // 🔶 [제휴] linkForHeymama / linkForDonots
+    const linkForHeymama = document.getElementById('linkForHeymama');
+    if (linkForHeymama) {
+        linkForHeymama.addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+    const linkForDonots = document.getElementById('linkForDonots');
+    if (linkForDonots) {
+        linkForDonots.addEventListener('click', e => ga.setGAClickHandler(e));
+    }
+
+    // 🔶 이벤트 플로팅 UI
+    const btnPointWrap = document.getElementById('btnPointWrap');
+    if (btnPointWrap) {
+        btnPointWrap.addEventListener('click', e => ga.setGAClickHandler(e));
     }
 
 });
@@ -376,10 +427,12 @@ document.addEventListener('DOMContentLoaded', function() {
     setInfo(utils.getInfo());
     console.log(info);
 
+    const fullFileName = utils.getFullFileName();
+
     // 🔷 고객여정 1.0 initSetting
     main.initSetting(fileName, info);
     // 🔷 교보문고 검색 키워드
-    ua.searchKeyword = document.querySelector('#srch_kywr_name').value;
+    // ua.searchKeyword = document.querySelector('#srch_kywr_name').value;
     // 🔷 contentsId
     ua.contentsId = fileName; //document.querySelector('#csjr_ctts_num').value;
 
@@ -393,8 +446,26 @@ document.addEventListener('DOMContentLoaded', function() {
     storage.getConsentLocalStorage();
 
 
+    // 🔴 reset flag
+    // const home = document.getElementById('feedback-area');
+    // home.addEventListener('dblclick', e => {
+    //     post.postConsent(accessToken, ua.bookstoreMemberNo, 'TEST');
+    // });
 
-
+    /*
+    let touchTimer;
+    document.addEventListener('touchstart', function(e) {
+        touchTimer = setTimeout(function() {
+            post.postConsent(accessToken, ua.bookstoreMemberNo, '');
+        }, 20000);
+    });
+    document.addEventListener('touchend', function(e) {
+        clearTimeout(touchTimer);
+    });
+    document.addEventListener('touchcancel', function(e) {
+        clearTimeout(touchTimer);
+    });
+    */
 
     // 🔷 컨텐츠 평가(좋아요/싫어요) 저장 값 set
     const radios = document.querySelectorAll('input[name="feedback-radio"][type="radio"]');
@@ -424,171 +495,251 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 🔷 'linkForInsurance' add click event
     const linkForInsurance = document.getElementById('linkForInsurance');
-    linkForInsurance.addEventListener('click', e => {
-        e.preventDefault();
+    if (linkForInsurance) {
+        linkForInsurance.addEventListener('click', e => {
+            e.preventDefault();
 
-        ui.showLoadingScreen();
-        window.setTimeout(()=>
-            post.postBannerClickInfo(info.linkInfoForInsurance, ui.closeLoadingScreen(info.linkInfoForInsurance)), 2000); //로딩스크린 2초후 실행
-    });
+            ui.showLoadingScreen();
+            window.setTimeout(()=>
+                post.postBannerClickInfo(info.linkInfoForInsurance, ui.closeLoadingScreen(info.linkInfoForInsurance)), 2000); //로딩스크린 2초후 실행
+        });
+    }
+
 
 
     // 🔷 'confirm' add click event
     const confirmClick = document.getElementById('confirm');
-    confirmClick.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
+    if (confirmClick) {
+        // [제휴]인 경우 임시 pass
 
-        // 🔷 poplogin, popPoint(1번), popPointEnd01(2번), popPointEnd02(3번)
-        console.log('eventFlag: ' + ua.flag.eventFlag + ", remainingPointsFlag: " + ua.flag.remainingPointsFlag + ", isLogined: " + ua.isLogined);
+        confirmClick.addEventListener('click', e => {
+
+            // ua.changeFlag('eventFlag', 'N');
+            // ua.changeFlag('remainingPointsFlag', 'Y');
+
+            const tempFlags = ui.getFlags();
+
+            // 🔷 poplogin, popPoint(1번), popPointEnd01(2번), popPointEnd02(3번)
+            console.log('🔺before confirm 🔺eventFlag: ' + ua.flag.eventFlag + ", remainingPointsFlag: " + ua.flag.remainingPointsFlag + ", isLogined: " + ua.isLogined);
 
 
-        // 🔷 0. 제3자동의, 마케팅수신동의 모두 N일때 (eventFlag 상관 없음)
-        if (Object.values(tempFlags).every(val => val === 'N')) {
-            main.triggerLoadingScreen(info.linkInfoForInsurance);
-            return;
-        }
-
-        // 🔷 1. default. 이벤트 기간 N or 잔여포인트 N
-        if (ua.flag.eventFlag === 'N' || ua.flag.remainingPointsFlag === 'N') {
-            // 1-2. 로그인 여부
-            if (ua.isLogined) {
-                // 상품 연결
-                post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
+            // 🔷 0. 제3자동의만 N일때 (eventFlag 상관 없음)
+            // if (Object.values(tempFlags).every(val => val === 'N')) {
+            if (tempFlags.chkAgr1 === 'N') {
+                // 🌈🌈 보험상품으로 이동
                 main.triggerLoadingScreen(info.linkInfoForInsurance);
-            } else {
-                // 로그인 팝업
-                ui.handleConfirmButtonClick(e, 'poplogin');
+                return;
             }
-        }
 
-        // 🔷 2. EVENT. 제3자제공동의 Y && 마케팅동의 Y
-        if (tempFlags.chkAgr1 === 'Y' && tempFlags.chkAgr2 === 'Y') {
-            // 3. 이벤트기간 Y
-            if (ua.flag.eventFlag === 'Y') {
-                // 3-1. 이벤트 기간 Y + 잔여 포인트 Y + 로그인 하지 않은 경우
-                if (ua.flag.remainingPointsFlag === 'Y' && !ua.isLogined) {
-                    ui.handleConfirmButtonClick(e, 'popPoint');
+            // 🔷 default. 이벤트 기간 N or (이벤트기간 Y && 잔여 포인트 N)
+            if (ua.flag.eventFlag === 'N' || (ua.flag.eventFlag === 'Y' && ua.flag.remainingPointsFlag === 'N')) {
+
+                if (ua.isLogined) {
+                    // 🌈🌈 보험상품으로 이동
+                    post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
+                    main.triggerLoadingScreen(info.linkInfoForInsurance);
+                } else if (!ua.isLogined) {
+                    ui.handleConfirmButtonClick(e, 'poplogin');
                 }
-                // 3-2. 이벤트 기간 Y + 잔여 포인트 N + 로그인 한 경우
-                if (ua.flag.remainingPointsFlag === 'N' && ua.isLogined) {
-                    ui.handleConfirmButtonClick(e, 'popPointEnd01');
+
+                return;
+            }
+
+            let tempFlagAfterConfirm;
+
+            /* 팝업 케이스 재작성 ******************************************************************************************************* */
+            // 🔷 'confirm' 클릭 시 이벤트 기간 N -> Y 예외 케이스 아래 작성
+            getAgreement(accessToken).then(newFlag => {
+                // getIsEvent().then(newFlag => {
+                console.log('confirm -> newFlag: ', newFlag);
+                // for (let flagName in newFlag) {
+                //     ua.changeFlag(flagName, newFlag[flagName]);
+                // }
+                // ua.changeFlag('eventFlag', 'N');
+                // ua.changeFlag('remainingPointsFlag', 'N');
+
+                tempFlagAfterConfirm = {
+                    eventFlag: newFlag ? newFlag.eventFlag : ua.flag.eventFlag,
+                    remainingPointsFlag: newFlag ? newFlag.remainingPointsFlag : ua.flag.remainingPointsFlag
+                };
+
+                // 🔴 set test data
+                // tempFlagAfterConfirm = {
+                //     eventFlag: 'Y',
+                //     remainingPointsFlag: 'Y'
+                // };
+
+
+                return getIsLogin(accessToken);
+            }).then(newIsLogin => {
+                ua.changeLoginStatus(newIsLogin);
+
+                console.log('🔺after confirm 🔺eventFlag: ' + tempFlagAfterConfirm.eventFlag + ", remainingPointsFlag: " + tempFlagAfterConfirm.remainingPointsFlag + ", isLogined: " + ua.isLogined);
+
+                // 🔷 1. 이벤트 기간 N
+                if (tempFlagAfterConfirm.eventFlag === 'N') {
+                    // 1-2. 로그인 여부
+                    if (ua.isLogined) {
+                        // 2번 팝업
+                        ui.handleConfirmButtonClick(e, 'popPointEnd01');
+                        return;
+                    } else {
+                        // 3번 팝업
+                        ui.handleConfirmButtonClick(e, 'popPointEnd02');
+                        return;
+                    }
                 }
-                // 3-3. 이벤트 기간 Y + 잔여 포인트 N + 로그인 하지 않은 경우
-                if (ua.flag.remainingPointsFlag === 'N' && !ua.isLogined) {
-                    ui.handleConfirmButtonClick(e, 'popPointEnd02');
-                }
-                // 3-4. 이벤트 기간 Y + 잔여 포인트 Y + 로그인 한 경우
-                if (ua.flag.remainingPointsFlag === 'Y' && ua.isLogined) {
-                    // 3-4-1. 잔여포인트 확인
-                    getAgreement(accessToken).then(newFlag => {
-                        console.log('newFlag: ', newFlag);
-                        for (let flagName in newFlag) {
-                            ua.changeFlag(flagName, newFlag[flagName]);
-                            // ua.changeFlag(flagName, 'N');
+
+                // 🔷 2. EVENT. 제3자제공동의 Y && 마케팅동의 Y
+                if (tempFlags.chkAgr1 === 'Y' && tempFlags.chkAgr2 === 'Y') {
+                    // 🔷 3. 이벤트기간 Y
+                    if (tempFlagAfterConfirm.eventFlag === 'Y') {
+                        // 3-1. 이벤트 기간 Y + 잔여 포인트 Y + 로그인 하지 않은 경우
+                        // if (ua.flag.remainingPointsFlag === 'Y' && !ua.isLogined) {
+                        //     ui.handleConfirmButtonClick(e, 'popPoint');
+                        // }
+                        // 3-2. 이벤트 기간 Y + 잔여 포인트 N + 로그인 한 경우
+                        if (tempFlagAfterConfirm.remainingPointsFlag === 'N' && ua.isLogined) {
+                            // 2번 팝업
+                            ui.handleConfirmButtonClick(e, 'popPointEnd01');
                         }
-                        // 3-4-2. 잔여포인트 확인
-                        return getIsLogin(accessToken);
-                    }).then(newIsLogin => {
-                        console.log('newIsLogin: ', newIsLogin);
-                        if (ua.flag.remainingPointsFlag === 'Y') {
-                            if (newIsLogin) {
+                        // 3-3. 이벤트 기간 Y + 잔여 포인트 N + 로그인 하지 않은 경우
+                        if (tempFlagAfterConfirm.remainingPointsFlag === 'N' && !ua.isLogined) {
+                            // 3번 팝업
+                            ui.handleConfirmButtonClick(e, 'popPointEnd02');
+                        }
+                        // 3-4. 이벤트 기간 Y + 잔여 포인트 Y
+                        if (tempFlagAfterConfirm.remainingPointsFlag === 'Y') {
+                            if (ua.isLogined) {
+                                // 3-4-1. 로그인 한 경우
                                 // user의 event 참여 시점의 new AcceessToken (from cookie)
                                 const tempAccessToken = storage.getAccessTokenFromCookie();
                                 ua.bookstoreMemberNo = storage.getSubFromAccessToken(tempAccessToken);
                                 // event 호출(response 필요 X)
-                                postEvent(ua.bookstoreMemberNo);
+                                postEvent(tempAccessToken, ua.bookstoreMemberNo, ua.isSmsEvent, ua.smsEventType);
 
+                                // 🌈🌈 보험상품으로 이동
                                 console.log('교환권 회원 발급 api 호출 & 포인트 즉시 지급 >> 상품 이동');
+                                post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
                                 main.triggerLoadingScreen(info.linkInfoForInsurance);
-                            } else {
+                            } else if (!ua.isLogined) {
+                                // 3-4-2. 로그인 하지 않은 경우
                                 // 1번 팝업
                                 ui.handleConfirmButtonClick(e, 'popPoint');
                             }
-                        } else {
-                            if (newIsLogin) {
-                                // 2번 팝업
-                                ui.handleConfirmButtonClick(e, 'popPointEnd01');
-                            } else {
-                                // 3번 팝업
-                                ui.handleConfirmButtonClick(e, 'popPointEnd02');
-                            }
                         }
-                    });
-                }
-            }
-        }
+                    }
+                } else if (tempFlags.chkAgr1 === 'Y') {
+                    // 🔷 4. EVENT . 제3자 제공 동의 Y*
+                    if (ua.isLogined) {
+                        // 🌈🌈 보험상품으로 이동
+                        post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
+                        main.triggerLoadingScreen(info.linkInfoForInsurance);
+                    } else if (!ua.isLogined) {
+                        if (tempFlagAfterConfirm.eventFlag === 'N') {
+                            // 0번 팝업
+                            ui.handleConfirmButtonClick(e, 'poplogin');
+                        } else if (tempFlagAfterConfirm.eventFlag === 'Y' && tempFlagAfterConfirm.remainingPointsFlag === 'N') {
+                            // 3번 팝업
+                            ui.handleConfirmButtonClick(e, 'popPointEnd02');
+                        } else if (tempFlagAfterConfirm.eventFlag === 'Y') {
+                            // 1번 팝업
+                            ui.handleConfirmButtonClick(e, 'popPoint');
+                        }
+                    }
+                    // 🔷 5. EVENT . 제3자제공동의 N && 마케팅동의 Y
+                } //else if (tempFlags.chkAgr1 === 'N' && tempFlags.chkAgr2 === 'Y') {
 
-
-    });
+                //}
+            });
+            /* 팝업 케이스 재작성 ******************************************************************************************************* */
+        });
+    }
 
 
     // 🔷 "확인하기" -> 다음에 하기 / 확인하기 / 로그인하기
-    // 1. poplogin
+    // 1. poplogin (팝업번호 0번: 이벤트 진행X시 팝업)
     // 1-1. 확인하기 -> 로그인 하기
     const consentClick = document.getElementById('btnLogin');
-    consentClick.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        storage.setConsentLocalStorage();
-        post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
-    });
+    if (consentClick) {
+        consentClick.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            storage.setConsentLocalStorage();
+            post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
+        });
+    }
     // 1-2. 확인하기 -> 다음에 하기
     const consentNextClick = document.getElementById('btnNext');
-    consentNextClick.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        e.preventDefault();
-        main.triggerLoadingScreen(info.linkInfoForInsurance);
-    });
+    if (consentNextClick) {
+        consentNextClick.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            e.preventDefault();
+            main.triggerLoadingScreen(info.linkInfoForInsurance);
+        });
+    }
 
     // 2. popPoint (팝업번호 1번)
     // 2-1. 다음에 하기
     const btnNextPonint = document.getElementById('btnNextPonint');
-    btnNextPonint.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        ui.handlePointNextButtonClick(e, 'popPoint');
-        // e.preventDefault();
-        // main.triggerLoadingScreen(info.linkInfoForInsurance);
-    });
+    if (btnNextPonint) {
+        btnNextPonint.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            ui.handlePointNextButtonClick(e, 'popPoint');
+            // e.preventDefault();
+            // main.triggerLoadingScreen(info.linkInfoForInsurance);
+        });
+    }
     // 2-1. 로그인 하기
     const btnLoginPoint = document.getElementById('btnLoginPoint');
-    btnLoginPoint.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        storage.setConsentLocalStorage();
-        post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
-    });
+    if (btnLoginPoint) {
+        btnLoginPoint.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            storage.setConsentLocalStorage();
+            post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
+        });
+    }
 
     // 3. popPointEnd01 (팝업번호 2번)
     // 3-1. 다음에 하기
     const btnNextPonintEnd01 = document.getElementById('btnNextPonintEnd01');
-    btnNextPonintEnd01.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        ui.handlePointNextButtonClick(e, 'popPointEnd01');
-        // e.preventDefault();
-        // main.triggerLoadingScreen(info.linkInfoForInsurance);
-    });
+    if (btnNextPonintEnd01) {
+        btnNextPonintEnd01.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            ui.handlePointNextButtonClick(e, 'popPointEnd01');
+            // e.preventDefault();
+            // main.triggerLoadingScreen(info.linkInfoForInsurance);
+        });
+    }
     // 3-2. 확인하기
     const btnLoginPointEnd01 = document.getElementById('btnLoginPointEnd01');
-    btnLoginPointEnd01.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        e.preventDefault();
-        main.triggerLoadingScreen(info.linkInfoForInsurance);
-    });
+    if (btnLoginPointEnd01) {
+        btnLoginPointEnd01.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            e.preventDefault();
+            main.triggerLoadingScreen(info.linkInfoForInsurance);
+        });
+    }
 
     // 3. popPointEnd02 (팝업번호 3번)
     // 3-1. 다음에 하기
     const btnNextPointEnd02 = document.getElementById('btnNextPointEnd02');
-    btnNextPointEnd02.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        ui.handlePointNextButtonClick(e, 'popPointEnd02');
-        // e.preventDefault();
-        // main.triggerLoadingScreen(info.linkInfoForInsurance);
-    });
+    if (btnNextPointEnd02) {
+        btnNextPointEnd02.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            ui.handlePointNextButtonClick(e, 'popPointEnd02');
+            // e.preventDefault();
+            // main.triggerLoadingScreen(info.linkInfoForInsurance);
+        });
+    }
     // 3-1. 로그인하기
     const btnLoginPointEnd02 = document.getElementById('btnLoginPointEnd02');
-    btnLoginPointEnd02.addEventListener('click', e => {
-        const tempFlags = ui.getFlags();
-        storage.setConsentLocalStorage();
-        post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
-    });
+    if (btnLoginPointEnd02) {
+        btnLoginPointEnd02.addEventListener('click', e => {
+            const tempFlags = ui.getFlags();
+            storage.setConsentLocalStorage();
+            post.postConsent(accessToken, ua.bookstoreMemberNo, tempFlags);
+        });
+    }
 
 
     // 🔷popup 내 '동의안함', '동의' 버튼 add click event
@@ -597,9 +748,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+    // 🔷[제휴 배너 클릭]
+    // 제휴 info setting
+    setAffInfo(utils.getAffInfo());
+    console.log(affInfo);
+
+    // 헤이마마
+    const linkForHeymamaClick = document.getElementById('linkForHeymama');
+    if (linkForHeymamaClick) {
+        linkForHeymamaClick.addEventListener('click', e => {
+            post.postAffBannerClickInfo(affInfo.linkInfoForAff, '');
+        });
+    }
+
+    // 도낫츠
+    const linkForDonotsClick = document.getElementById('linkForDonots');
+    if (linkForDonotsClick) {
+        linkForDonotsClick.addEventListener('click', e => {
+            post.postAffBannerClickInfo(affInfo.linkInfoForAff, '');
+        });
+    }
+
 
     // 🔷userAgent set
-    utils.checkUserAgent();
+    // utils.checkUserAgent();
 
 
     // 🔷 sns share
@@ -633,6 +805,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     let marketAgreeBox = document.getElementById("marketAgreeBox");
 
     try {
+        const isEvent = await getIsEvent();
+        ua.changeFlag('eventFlag', isEvent.eventFlag);
+        ua.changeFlag('remainingPointsFlag', isEvent.remainingPointsFlag);
+
+        // 🔴 set test data
+        // ua.changeFlag('eventFlag', 'Y');
+        // ua.changeFlag('remainingPointsFlag', 'Y');
+
         const isLogin = await getIsLogin(accessToken);
         ua.changeLoginStatus(isLogin);
 
@@ -647,12 +827,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
         /* 🔴set TEST data */
-        ua.changeFlag('eventFlag', 'N');
-        ua.changeFlag('remainingPointsFlag', 'N');
-        ua.changeFlag('personalInformationAgreementFlag', 'N');
-        ua.changeFlag('marketingConsentAgreementFlag', 'N');
-        ua.changeFlag('marketingConsentAgreementSmsFlag', 'N');
-        ua.changeFlag('marketingConsentAgreementEmailFlag', 'N');
+        // ua.changeFlag('eventFlag', 'Y');
+        // ua.changeFlag('remainingPointsFlag', 'Y');
+        // ua.changeFlag('personalInformationAgreementFlag', 'N');
+        // ua.changeFlag('marketingConsentAgreementFlag', 'N');
+        // ua.changeFlag('marketingConsentAgreementSmsFlag', 'N');
+        // ua.changeFlag('marketingConsentAgreementEmailFlag', 'N');
 
         // 잔여포인트 N일때 기본화면 표시
         // 동의 N 일때 확인하기버튼 -> 상품 상세페이지 (loading)
@@ -673,38 +853,3 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 });
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // console.log('window onLoad');
-//
-//     const linkLogin = document.getElementById("link_login");
-//     const linkLogout = document.getElementById("link_logout");
-//
-//     const liLogin = document.getElementById("li_login");
-//     const liLogout = document.getElementById("li_logout");
-//
-//     if (ua.isLogined) {
-//         // 로그인 됨
-//         liLogin.style.display = 'none';
-//         liLogout.style.display = 'block';
-//
-//         linkLogout.addEventListener("click", function() {
-//             deleteCookie("accessToken");
-//             deleteCookie("refreshToken");
-//
-//             location.reload();
-//         });
-//     } else {
-//         // 로그인 되지 않음
-//         liLogin.style.display = 'block';
-//         liLogout.style.display = 'none';
-//
-//         document.getElementById("link_login").addEventListener("click", function() {
-//             self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-//             // self.location.href = "http://mmbr.ndev.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
-//         });
-//     }
-//
-// });
