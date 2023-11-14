@@ -291,6 +291,25 @@ h2{font-size: 20px;}
 .agree_area.white .agree_box label input:checked + i{background: url(../img/icon/ico-chkwt-on.png) 0 0 no-repeat;background-size: contain;}
 .agree_area.white .agree_box a{color: #fff;}
 
+/* 확인하기 confirm_btn_box */
+.confirm_btn_box{margin-top: 20px;text-align: center;}
+.confirm_btn_box .confirm_btn{width: 200px;height: 40px;border-radius: 5px;box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);font-size: 16px;font-weight: 700;line-height: 40px;}
+.type_b .confirm_btn_box  .confirm_btn{background-color: #d95555;color: #fff;}
+
+/* 이벤트 유의사행 */
+.info_point_area{margin-top: 30px;}
+.info_point_area > div{font-size: 13px;font-weight: 700;}
+.info_point_area .info_point_list{font-size: 12px;}
+.info_point_area .info_point_list li{margin-top: 5px;padding-left: 10px;position: relative;}
+.info_point_area .info_point_list li::before{content: "";display: block;width: 3px;height: 3px;border-radius: 50%;background: #888;position: absolute;top: 7px;left: 0;}
+
+.type_a .info_point_area > div, .type_b .info_point_area > div, .type_c .info_point_area > div{color: #888;}
+.type_a .info_point_area .info_point_list, .type_b .info_point_area .info_point_list, .type_c .info_point_area .info_point_list{color: #888;}
+.type_a .info_point_area .info_point_list li::before, .type_b .info_point_area .info_point_list li::before, .type_c .info_point_area .info_point_list li::before{background: #888;}
+.type_d .info_point_area > div, .type_e .info_point_area > div, .type_f .info_point_area > div, .type_g .info_point_area > div{color: #fff;}
+.type_d .info_point_area .info_point_list, .type_e .info_point_area .info_point_list, .type_f .info_point_area .info_point_list, .type_g .info_point_area .info_point_list{color: #fff;}
+.type_d .info_point_area .info_point_list li::before, .type_e .info_point_area .info_point_list li::before, .type_f .info_point_area .info_point_list li::before, .type_g .info_point_area .info_point_list li::before{background: #fff;}
+
 /* ***** 타입별 컬러 ***** */
 /* type_a */
 .type_a .content .con_area ul li.first{height: 742px;background: #27809E;}
