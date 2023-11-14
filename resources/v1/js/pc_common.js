@@ -16,6 +16,15 @@ $(document).ready(function (){
             $(this).closest('.share_area').addClass('active');
         }
     });
+
+    $('.btn_sns_share').on('click', function(){
+        if($(this).closest('.share_area').hasClass('active')){
+            $(this).closest('.share_area').removeClass('active');
+        } else{
+            $(this).closest('.share_area').addClass('active');
+        }
+    });
+
     // $('.dim').on('click', function(){
     //     if($('#popShare').hasClass('active')){
     //         $('#popShare').removeClass('active');

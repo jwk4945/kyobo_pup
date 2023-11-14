@@ -128,8 +128,7 @@ section article.inner{padding: 0 15px;}
 .balance-game .main-banner-wrapper .radio-btn-box{position: relative;max-width: 540px;margin: auto;display: flex;flex-direction: row;padding-bottom: 10px;}
 .balance-game .radio-btn-box h3,
 .balance-game .radio-btn-box h4{color: #105e69;}
-.balance-game .radio-btn-box>*:first-child
-,.balance-game .radio-btn-box>*:last-child{
+.balance-game .radio-btn-box>*:first-child,.balance-game .radio-btn-box>*:last-child{
     display: inline-block;
     width: 50%;
     box-sizing: border-box;
@@ -170,7 +169,7 @@ section article.inner{padding: 0 15px;}
 .type-c #cont-wrap{min-height: calc(100vh - 251px);}
 .fact-chk .main-banner-wrapper{padding: 30px 10px 23px;height: 340px;}
 .fact-chk h3{color: #b13e7d;}
-.fact-chk .main-banner-wrapper .section-no{font-style: italic;font-size: 30px;line-height: 1.2;}
+.fact-chk .main-banner-wrapper .section_no{font-style: italic;font-size: 30px;line-height: 1.2;}
 .fact-chk .swiper-slide .first-slide.main-banner-wrapper img{display: inline-block;margin: 0 auto;}
 .type-c .swiper-slide .main-banner-wrapper img{max-width: 305px;margin: 0 auto;}
 .type-c .swiper-slide .main-banner-wrapper h1{font-size: 40px;font-style: italic;color: #6a50c2;}
@@ -239,8 +238,8 @@ section article.inner{padding: 0 15px;}
 .second-section{padding-top: 85px;}
 section .title-msg{position: relative;}
 
-section .title-msg .section-no{opacity: 0.2;font-size: 50px;font-style: italic;position: absolute;top: -35px;left: -2px;line-height: 1;font-family: system-ui;}
-section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;text-align: center;position: initial;}
+section .title_msg .section_no{opacity: 0.2;font-size: 60px;font-weight: 700;font-style: italic;line-height: 71px;font-family: system-ui;vertical-align: middle;}
+section .title_msg .section_no.center-style{font-size: 50px;font-style: italic;text-align: center;position: initial;}
 
 .img-content{background-position: 50% 50%;background-size: cover;display: inline-block;border-radius: 15%;}
 .img-content.circle{border-radius: 50%;}
