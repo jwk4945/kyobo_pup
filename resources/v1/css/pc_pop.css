@@ -1,0 +1,88 @@
+@charset "utf-8";
+html.lock{overflow: hidden;height: 100vh;}
+
+/* 공유하기 팝업 */
+.dim{z-index: 20;display: none;position: fixed;top: 0;left: 0;min-width: 100%;min-height: 100%;width: 100vw;height: 100vh;background: #000;opacity: 0.5;}
+.dim.active{display: block;}
+
+/* URL공유 토스트 팝업 */
+.toast_wrap_share{z-index: 60;height: 0;opacity: 0;overflow: hidden;position: fixed;left: 50%;top: 50%;width: 300px;transform: translate(-50%);transition: all 0.4s;font-size: 0;}
+.toast_wrap_share.on{height: 60px;opacity: 1;}
+.toast_wrap_share .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;height: 60px;padding: 2px 30px 0;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 15px;line-height: 23px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
+
+/* 약관 팝업 */
+/* .pop-area{z-index: 40;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: #fff;overflow: hidden;color: #222;}
+.pop-area .pop-inner{height: var(--100vh-inner);overflow: hidden;}
+.pop-area .pop-inner .pop-header{z-index: 41;position: absolute;top: 0;left: 0;width: 100%;height: 60px;background: rgba(255, 255, 255, 0.95);box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.05);color: #000;line-height: 60px;text-align: center;font-size: 18px;font-weight: 500;}
+.pop-area .pop-inner .pop-header .btn-close{position: absolute;top: 10px;right: 14px;width: 40px;height: 40px;}
+.pop-area .pop-inner .pop-header .btn-close img{width: 100%;height: 100%;}
+.pop-area .pop-inner .pop-cont{font-size: 20px;height: 100%;overflow-y: scroll; padding: 80px 20px 90px;}
+.pop-area .pop-footer{width: 100%;height: auto;position: absolute;bottom: 0;left: 0;padding: 0 20px 0;}
+.pop-area .pop-footer .btn-box{padding-bottom: 20px;background: #fff;} */
+
+.pop-area .pop-footer .btn-box{width: 100%;display: flex;justify-content: space-between;}
+.pop-area .pop-footer .btn-box .btn{width: calc(50% - 2.5px);height: 50px;background: #555;border-radius: 5px;line-height: 50px;color: #fff;text-align: center;font-size: 15px;font-weight: 700;}
+.type-a .pop-area .pop-footer .btn-box .btn.agree{background: #27809e;}
+.type-b .pop-area .pop-footer .btn-box .btn.agree{background: #d95555;}
+.type-c .pop-area .pop-footer .btn-box .btn.agree{background: #7659d8;}
+.type-d .pop-area .pop-footer .btn-box .btn.agree{background: #2254c0;}
+.type-e .pop-area .pop-footer .btn-box .btn.agree{background: #d95584;}
+.type-f .pop-area .pop-footer .btn-box .btn.agree{background: #33b4c7;}
+.type-g .pop-area .pop-footer .btn-box .btn.agree{background: #d95584;}
+
+.type-2 .pop-area .pop-footer .btn-box .btn{border: solid 1px #444;background-color: #fff;color: #444;}
+.type-2 .pop-area .pop-footer .btn-box .btn.agree{background: #444;border: none;color: #fff}
+
+.pop-area .dl-box{font-size: 13px;}
+.pop-area .dl-box dl{padding-left: 7px;position: relative;}
+.pop-area .dl-box dl::before{content: "";position: absolute;top: 9px;left: 0;width: 2px;height: 2px;border-radius: 50%;background-color: #777;}
+.pop-area .dl-box dt{color: #555;}
+.pop-area .dl-box dd{color: #222;font-weight: 500;}
+
+.pop-area .gray-box{padding: 15px 20px;border-radius: 5px;border: solid 1px #eee;background-color: #f7f7f7;}
+.pop-area .gray-box dt{font-size: 13px;font-weight: 700;}
+.pop-area .gray-box dd{margin-top: 4px;font-size: 12px;color: #555;}
+
+.pop-area .chk-area{}
+.pop-area .chk-area::after{content: "";display: block;clear: both;}
+.pop-area .chk-area .agree-box{float: left;}
+.pop-area .chk-area .agree-box + .agree-box{margin-left: 45px;}
+.pop-area .chk-area label{display: inline-block;font-size: 0;height: 40px;position: relative;padding-left: 35px;}
+.pop-area .chk-area label input{width: 0;height: 0;opacity: 0;}
+.pop-area .chk-area label span{color: #222;font-size: 15px;line-height: 40px;}
+.pop-area .chk-area label input:checked + i + span{color: #222;font-weight: 500;}
+
+.pop-area .chk-area .agree-box label input + i{display: inline-block;font-size: 0;position: absolute;top: 5px;left: 0;width: 30px;height: 30px;background: url(../img/icon/ico-chk-all.png) 0 0 no-repeat;background-size: contain;}
+.pop-area .chk-area .agree-box label input:checked + i{background: url(../img/icon/ico-chk-all-on.png) 0 0 no-repeat;background-size: contain;}
+.pop-area .chk-area .agree-box label span{font-size: 16px;}
+
+/* 마케팅 수신 항복 미선택시 토스트 메세지 */
+.toast_wrap_agree{z-index: 60;height: 0;opacity: 0;overflow: hidden;position: fixed;left: 50%;bottom: 36px;width: calc(100% - 40px);max-width: 335px;transform: translateX(-50%);transition: all 0.4s;font-size: 0;}
+.toast_wrap_agree.on{height: 50px;opacity: 1;}
+.toast_wrap_agree .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;min-height: 50px;padding: 15px 30px 11px;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 14px;line-height: 22px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
+
+/* 제3자 제공 동의 유도 토스트 메세지 */
+.toast_wrap_re{z-index: 60;height: 0;opacity: 0;overflow: hidden;position: fixed;left: 50%;bottom: 36px;width: calc(100% - 40px);max-width: 335px;transform: translateX(-50%);transition: all 0.4s;font-size: 0;}
+.toast_wrap_re.on{height: 72px;opacity: 1;}
+.toast_wrap_re .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;min-height: 50px;padding: 15px 30px 11px;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 14px;line-height: 22px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
+/* // 약관 팝업 */
+
+/* 확인하기 버튼 로그인 컨펌 link_login */
+#poplogin{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);max-width: 335px;width: calc(100vw - 40px);}
+#poplogin.active{display: block;}
+#poplogin .poplogin-inner{border-radius: 16px;overflow: hidden;}
+#poplogin .poplogin-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}
+#poplogin .poplogin-inner .dialog-btn{display: flex;}
+#poplogin .poplogin-inner .dialog-btn button{flex: 1;cursor: pointer;color: #fff;padding: 5px 0;height: 50px;font-size: 15px;font-weight: 700;}
+#poplogin .poplogin-inner .dialog-btn .btn-next{background: #767676;}
+#poplogin .poplogin-inner .dialog-btn .btn-login{background: #5055b1;}
+
+/* 공통 팝업 스타일1 - 얼럿 */
+.com-pop01{z-index: 40;display: none;position: fixed;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);max-width: 335px;width: calc(100vw - 40px);}
+.com-pop01.active{display: block;}
+.com-pop01 .com-pop01-inner{border-radius: 16px;overflow: hidden;}
+.com-pop01 .com-pop01-inner .dialog-contents{background: #fff;padding: 30px;display: flex;justify-content: center;color: #000;text-align: center;font-size: 15px;font-weight: 500;}
+.com-pop01 .com-pop01-inner .dialog-btn{display: flex;}
+.com-pop01 .com-pop01-inner .dialog-btn button{flex: 1;cursor: pointer;color: #fff;padding: 5px 0;height: 50px;font-size: 15px;font-weight: 700;}
+.com-pop01 .com-pop01-inner .dialog-btn .btn-next{background: #767676;}
+.com-pop01 .com-pop01-inner .dialog-btn .btn-login{background: #5055b1;}

@@ -25,6 +25,14 @@ $(document).ready(function (){
         }
     });
 
+    // URL공유 토스트 팝업
+    $('.btn_share_link').on('click', function(){
+        $('.toast_wrap_share').addClass('on');
+        setTimeout(function(){
+            $('.toast_wrap_share').removeClass('on');
+        }, 2500);
+    });
+
     // $('.dim').on('click', function(){
     //     if($('#popShare').hasClass('active')){
     //         $('#popShare').removeClass('active');
