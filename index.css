@@ -37,6 +37,7 @@ header .tit div{padding: 15px 0 0 0;vertical-align: bottom;}
 .bul_list li::before{content: "";display: block;position: absolute;top: 8px;left: 0;width: 3px;height: 3px;border-radius: 50%;background: #666;}
 
 .banner{width: 200px;border-radius: 5px;overflow: hidden;margin-top: 10px;}
+.banner.pc{width: 300px;}
 
 .list_wrap .list .col_wrap{color: #999;}
 .list_wrap .list .col_wrap.done{color: #333;}
