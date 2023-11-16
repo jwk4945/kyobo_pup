@@ -167,7 +167,7 @@ h2{font-size: 20px;}
 #container .content{min-height: calc(100vh - 145px);margin: 0 auto;padding-top: 42px; overflow: hidden;}
 #container .content .con_tit_area{position: relative;width: 1200px;margin: 0 auto 36px;padding-right: 240px;}
 #container .content .con_tit_area .tit{font-size: 24px;line-height: 36px;font-weight: 700;}
-#container .content .con_tit_area .sub_tit{margin-top: 10px;font-size: 14px;color: #767676;line-height: 22px;}
+#container .content .con_tit_area .sub_tit{margin-top: 10px;font-size: 14px;color: #767676;line-height: 22px;font-weight: 400;}
 
 #container .content .con_area{letter-spacing: -1px;}
 #container .content .con_area li{}

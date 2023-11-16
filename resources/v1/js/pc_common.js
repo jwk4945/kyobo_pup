@@ -33,6 +33,15 @@ $(document).ready(function (){
         }, 2500);
     });
 
+    // 퍼블임시 마케팅 수신동의만했을 때
+    $('#marketAgreeBox').on('click', function(){
+        $('.toast_wrap_re').addClass('on');
+        setTimeout(function(){
+            $('.toast_wrap_re').removeClass('on');
+        }, 2500);
+    });
+    // // 퍼블임시 마케팅 수신동의만했을 때
+
     // $('.dim').on('click', function(){
     //     if($('#popShare').hasClass('active')){
     //         $('#popShare').removeClass('active');
