@@ -34,13 +34,22 @@ $(document).ready(function (){
     });
 
     // 퍼블임시 마케팅 수신동의만했을 때
-    $('#marketAgreeBox').on('click', function(){
+    $('.chk_agr_mkt').on('click', function(){
         $('.toast_wrap_re').addClass('on');
         setTimeout(function(){
             $('.toast_wrap_re').removeClass('on');
         }, 2500);
     });
     // // 퍼블임시 마케팅 수신동의만했을 때
+
+
+    // 마케팅 수신 항복 미선택시 토스트 메세지
+    $('.btn_agree').on('click', function(){
+        $('.toast_wrap_agree').addClass('on');
+        setTimeout(function(){
+            $('.toast_wrap_agree').removeClass('on');
+        }, 2500);
+    });
 
     // $('.dim').on('click', function(){
     //     if($('#popShare').hasClass('active')){
@@ -137,6 +146,7 @@ function popOpen(id) {
 
     $lyAcive.show();
     $lyAcive.addClass('open');
+    $('.dim').addClass('active');
 }
 
 function popClose(id) {
@@ -145,5 +155,6 @@ function popClose(id) {
 
     $lyAcive.hide();
     $lyAcive.removeClass('open');
+    $('.dim').removeClass('active');
 }
 // // 약관팝업 노출
