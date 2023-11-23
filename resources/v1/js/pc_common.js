@@ -32,6 +32,7 @@ $(document).ready(function (){
             $('.toast_wrap_share').removeClass('on');
         }, 2500);
     });
+    // // SNS 공유하기
 
     // 퍼블임시 마케팅 수신동의만했을 때
     $('.chk_agr_mkt').on('click', function(){
@@ -43,30 +44,14 @@ $(document).ready(function (){
     // // 퍼블임시 마케팅 수신동의만했을 때
 
 
-    // 마케팅 수신 항복 미선택시 토스트 메세지
+    // 퍼블임시 마케팅 수신 항복 미선택시 토스트 메세지
     $('.btn_agree').on('click', function(){
         $('.toast_wrap_agree').addClass('on');
         setTimeout(function(){
             $('.toast_wrap_agree').removeClass('on');
         }, 2500);
     });
-    // //SNS 공유하기
-
-
-    // 탑버튼
-    // $(window).scroll(function() {
-    //     if ($(this).scrollTop() > 30) {
-    //         $('.btn-fixed-top').fadeIn();
-    //     } else {
-    //         $('.btn-fixed-top').fadeOut();
-    //     }
-    // });
-
-    // $(".btn-fixed-top").on('click', function () {
-    //     $('html, body').stop().animate({ scrollTop: 0 }, 200);
-    //     return false;
-    // });
-    // // 탑버튼
+    // // 퍼블임시 마케팅 수신 항복 미선택시 토스트 메세지
 
     // 퍼블임시 로그인 컨펌 팝업
     $('.confirm_btn_box .confirm_btn').on('click', function(){
