@@ -50,62 +50,51 @@ $(document).ready(function (){
             $('.toast_wrap_agree').removeClass('on');
         }, 2500);
     });
-
-    // $('.dim').on('click', function(){
-    //     if($('#popShare').hasClass('active')){
-    //         $('#popShare').removeClass('active');
-    //         $('#link_share').removeClass('active');
-    //         $('.dim').removeClass('active');
-    //         $('html').removeClass('lock');
-    //     }
-    // });
-
     // //SNS 공유하기
 
 
     // 탑버튼
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 30) {
-            $('.btn-fixed-top').fadeIn();
-        } else {
-            $('.btn-fixed-top').fadeOut();
+    // $(window).scroll(function() {
+    //     if ($(this).scrollTop() > 30) {
+    //         $('.btn-fixed-top').fadeIn();
+    //     } else {
+    //         $('.btn-fixed-top').fadeOut();
+    //     }
+    // });
+
+    // $(".btn-fixed-top").on('click', function () {
+    //     $('html, body').stop().animate({ scrollTop: 0 }, 200);
+    //     return false;
+    // });
+    // // 탑버튼
+
+    // 퍼블임시 로그인 컨펌 팝업
+    $('.confirm_btn_box .confirm_btn').on('click', function(){
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $('#poplogin').removeClass('active');
+            $('.dim').removeClass('active');
+            $('html').removeClass('lock');
+        } else{
+            $(this).addClass('active');
+            $('#poplogin').addClass('active'); 
+            $('.dim').addClass('active');
+            $('html').addClass('lock');
         }
     });
 
-    $(".btn-fixed-top").on('click', function () {
-        $('html, body').stop().animate({ scrollTop: 0 }, 200);
-        return false;
+    $('.dialog-btn > button').on('click', function(){
+        if($('#poplogin').hasClass('active')){
+            $('#poplogin').removeClass('active');
+            $('.dim').removeClass('active');
+            $('html').removeClass('lock');
+        } else{
+            $('#poplogin').addClass('active');
+            $('.dim').addClass('active');
+            $('html').addClass('lock');
+        }
     });
-    // // 탑버튼
-
-    // 로그인 컨펌 팝업
-    // $('#header').on('click', function(){
-    //     console.log(222)
-    //     if($(this).hasClass('active')){
-    //         $(this).removeClass('active');
-    //         $('#poplogin').removeClass('active');
-    //         $('.dim').removeClass('active');
-    //         $('html').removeClass('lock');
-    //     } else{
-    //         $(this).addClass('active');
-    //         $('#poplogin').addClass('active'); 
-    //         $('.dim').addClass('active');
-    //         $('html').addClass('lock');
-    //     }
-    // });
-
-    // $('.dialog-btn > button').on('click', function(){
-    //     if($('#poplogin').hasClass('active')){
-    //         $('#poplogin').removeClass('active');
-    //         $('.dim').removeClass('active');
-    //         $('html').removeClass('lock');
-    //     } else{
-    //         $('#poplogin').addClass('active');
-    //         $('.dim').addClass('active');
-    //         $('html').addClass('lock');
-    //     }
-    // });
-    // // 로그인 컨펌 팝업
+    // // 퍼블임시 로그인 컨펌 팝업
 });
 
 // 동의영역 전체 선택
