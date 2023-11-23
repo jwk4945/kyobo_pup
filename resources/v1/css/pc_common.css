@@ -384,6 +384,17 @@ h2{font-size: 20px;}
     background-size: 13px 13px;
     background-image: url(../pc_img/icon/btn_share_close.png);}
 
+/* .btn_point_wrap 플로팅 UI */
+.btn_point_wrap{z-index: 10;position: fixed;bottom: 40px;left: calc(50% + 390px);width: 50px;height: 50px;background: black}
+.btn_point_wrap .point_txt{position: absolute;top: -100px;left: -10px;width: 70px;height: 96px;padding-bottom: 6px;text-align: center;font-size: 11px;color: #fff;}
+.btn_point_wrap .point_txt span{display: inline-block;width: 100%;height: 89px;padding-top: 10px;border-radius: 10px;background-color: rgba(0, 0, 0, 0.5);}
+.btn_point_wrap .point_txt span::before{content: "";display: inline-block;position: absolute;bottom: -1px;left: 50%;margin-left: -5.5px;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid rgba(0, 0, 0, 0.5);
+    border-left: 5.5px solid transparent;
+    border-right: 5.5px solid transparent;}
+.btn_point_wrap .point_txt span b{font-size: 14px;font-weight: 700;}
+
 
 
 
