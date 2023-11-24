@@ -34,6 +34,47 @@ $(document).ready(function (){
     });
     // // SNS 공유하기
 
+    // 포인트 관련 플로팅 UI
+    $(window).scroll(function() {
+        const feedbackArea = document.querySelector('#feedback_area');
+        const clientRect = feedbackArea.getBoundingClientRect();
+        const relativeTop = clientRect.top; //뷰포트 상의 피드백 영역의 상대 위치
+        const scrolledTopLength = window.pageYOffset; // 스크롤된 길이 
+    
+        const absoluteTop = scrolledTopLength + relativeTop; 
+    
+        // console.log(absoluteTop);
+    
+        const conBtm = document.getElementById("conBtm").offsetHeight;
+        const footer = document.getElementById("footer").offsetHeight;
+    
+        const btm =  conBtm + footer;
+    
+        // console.log(btm);
+
+        // btn-fixed-point gif 노출 관련
+        if ($(this).scrollTop() <= (absoluteTop - btm)) {
+            $('#btnPointWrap').fadeIn();
+        } else {
+            $('#btnPointWrap').fadeOut();
+        }
+
+        // 교보문고 통합포인트 5,000P 받기!
+        // if ($(this).scrollTop() > 200) {
+        //     $('.btn-point-wrap').addClass('ani-hide');
+        // } 
+
+        // const now = $(this).scrollTop();
+        // console.log(now);
+    });
+
+    //클릭시 스크롤 이동 이벤트
+    $('.scrollToEv').on('click', function(){
+        const insView = $('.ins_view').offset().top;
+        window.scrollTo({top: insView, behavior: "smooth"});
+    });
+    // // 포인트 관련 플로팅 UI
+
     // 퍼블임시 마케팅 수신동의만했을 때
     $('.chk_agr_mkt').on('click', function(){
         $('.toast_wrap_re').addClass('on');
