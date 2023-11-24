@@ -52,25 +52,17 @@ $(document).ready(function (){
     
         // console.log(btm);
 
-        // btn-fixed-point gif 노출 관련
+        // gif 노출 관련
         if ($(this).scrollTop() <= (absoluteTop - btm)) {
             $('#btnPointWrap').fadeIn();
         } else {
             $('#btnPointWrap').fadeOut();
         }
-
-        // 교보문고 통합포인트 5,000P 받기!
-        // if ($(this).scrollTop() > 200) {
-        //     $('.btn-point-wrap').addClass('ani-hide');
-        // } 
-
-        // const now = $(this).scrollTop();
-        // console.log(now);
     });
 
     //클릭시 스크롤 이동 이벤트
     $('.scrollToEv').on('click', function(){
-        const insView = $('.ins_view').offset().top;
+        const insView = $('.con_btm_inner').offset().top;
         window.scrollTo({top: insView, behavior: "smooth"});
     });
     // // 포인트 관련 플로팅 UI
