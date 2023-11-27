@@ -11,7 +11,7 @@ html.lock{overflow: hidden;height: 100vh;}
 .toast_wrap_share .toast_message{display: -ms-inline-flexbox;display: inline-flex;display: -webkit-inline-flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-justify-content: center;-webkit-box-align: center;-moz-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-moz-box-orient: horizontal;-moz-box-direction: normal;-ms-flex-direction: row;-webkit-flex-direction: row;flex-direction: row;box-sizing: border-box;width: 100%;height: 60px;padding: 2px 30px 0;border-radius: 10px;background: rgba(80, 85, 177, 0.9);border: 1px solid #5055b1;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);color: #fff;font-size: 15px;line-height: 23px;letter-spacing: -0.01em;font-weight: 500;text-align: center;}
 
 /* 약관 팝업 */
-.pop_area{z-index: 40;position: fixed;top: 50%;left: 50%;margin: -300px 0 0 -300px;width: 600px;height: 600px;background: #fff;overflow: hidden;color: #222; border-radius: 10px;box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);}
+.pop_area{z-index: 40;position: fixed;top: 50%;left: 50%;margin: -300px 0 0 -300px;width: 600px;height: 600px;background: #fff;overflow: hidden;color: #222; border-radius: 10px;box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);letter-spacing: -1px;}
 .pop_area .pop_inner{overflow: hidden;}
 .pop_area .pop_inner .pop_header{width: 100%;height: 71px;padding: 30px 30px 0; color: #000;font-size: 20px;font-weight: 500;}
 .pop_area .pop_inner .pop_header .pop_header_inner{padding-bottom: 10px;border-bottom: 1px solid #eee;}
