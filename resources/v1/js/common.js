@@ -117,45 +117,45 @@ $(document).ready(function (){
         }
     });
 
-    // 포인트 관련 플로팅 UI
-    $(window).scroll(function() {
-        const feedbackArea = document.querySelector('#feedback-area');
-        const clientRect = feedbackArea.getBoundingClientRect();
-        const relativeTop = clientRect.top; 
-        const scrolledTopLength = window.pageYOffset;
+    // 포인트 관련 플로팅 UI - 이벤트시 활성화
+    // $(window).scroll(function() {
+    //     const feedbackArea = document.querySelector('#feedback-area');
+    //     const clientRect = feedbackArea.getBoundingClientRect();
+    //     const relativeTop = clientRect.top; 
+    //     const scrolledTopLength = window.pageYOffset;
     
-        const absoluteTop = scrolledTopLength + relativeTop; 
+    //     const absoluteTop = scrolledTopLength + relativeTop; 
     
-        // console.log(absoluteTop);
+    //     // console.log(absoluteTop);
     
-        const btmWrap = document.getElementById("btm-wrap").offsetHeight;
-        const footerWrap = document.getElementById("footer-wrap").offsetHeight;
+    //     const btmWrap = document.getElementById("btm-wrap").offsetHeight;
+    //     const footerWrap = document.getElementById("footer-wrap").offsetHeight;
     
-        const Wrap =  btmWrap + footerWrap;
+    //     const Wrap =  btmWrap + footerWrap;
     
-        // console.log(Wrap);
+    //     // console.log(Wrap);
 
-        // btn-fixed-point gif 노출 관련
-        if ($(this).scrollTop() <= (absoluteTop - Wrap)) {
-            $('.btn-fixed-point').fadeIn();
-        } else {
-            $('.btn-fixed-point').fadeOut();
-        }
+    //     // btn-fixed-point gif 노출 관련
+    //     if ($(this).scrollTop() <= (absoluteTop - Wrap)) {
+    //         $('.btn-fixed-point').fadeIn();
+    //     } else {
+    //         $('.btn-fixed-point').fadeOut();
+    //     }
 
-        // 교보문고 통합포인트 5,000P 받기!
-        if ($(this).scrollTop() > 200) {
-            $('.btn-point-wrap').addClass('ani-hide');
-        } 
+    //     // 교보문고 통합포인트 5,000P 받기!
+    //     if ($(this).scrollTop() > 200) {
+    //         $('.btn-point-wrap').addClass('ani-hide');
+    //     } 
 
-        // const now = $(this).scrollTop();
-        // console.log(now);
-    });
+    //     // const now = $(this).scrollTop();
+    //     // console.log(now);
+    // });
 
-    //클릭시 스크롤 이동 이벤트
-    $('.scrollToEv').on('click', function(){
-        const insView = $('.ins_view').offset().top;
-        window.scrollTo({top: insView, behavior: "smooth"});
-    });
+    // //클릭시 스크롤 이동 이벤트
+    // $('.scrollToEv').on('click', function(){
+    //     const insView = $('.ins_view').offset().top;
+    //     window.scrollTo({top: insView, behavior: "smooth"});
+    // });
     // // 포인트 관련 플로팅 UI
 
     // 로그인 컨펌 팝업
