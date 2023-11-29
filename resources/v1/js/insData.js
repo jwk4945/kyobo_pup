@@ -29,6 +29,64 @@ export default
         }
     },
     {
+        contentsId: "21A_126",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
+            name: "교보e생활습관케어보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '언제든 발생할 수 있는 생활습관 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03965호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        }
+    },
+    {
+        contentsId: "12A_096",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
+            name: "교보e감염케어보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '여가생활 도중 걸릴 수 있는 감염질환 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03967호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        }
+    }
+    ,
+    {
+        contentsId: "14B_036",
+        linkInfoForInsurance: {
+            url: "https://mdirect.kyobo.co.kr:8877/biz/intro/introMain.do?wrkType=GM_EV_PM",
+            name: "내보험바로알기 서비스",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '가입한 모든 보험계약 한눈에!',
+            certificationMsg: '준법감시인확인필 9-2308-5 플랫폼기획팀',
+            period: "(2023-08-23 ~ 2024-08-22)"
+        }
+    }
+    ,
+    {
+        contentsId: "19B_050",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000975?evcode=KB_CJ_EI",
+            name: "교보e뇌·심장케어보험(무배당,서비스선택형)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '필요한 보장부터 간병에 힘이 되는 서비스까지!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03966호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        }
+    }
+    ,
+    {
+        contentsId: "2B_141",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",
+            name: "교보e1년저축보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '소액으로 차근차근 오늘부터 시작해요!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03968호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        }
+    },
+    {
         contentsId: "2B_061",
         linkInfoForInsurance: {
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000976?evcode=KB_CJ_EI",

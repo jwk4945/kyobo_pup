@@ -8,6 +8,7 @@ let fullFileName;
 let info;
 
 export function getFileName() {
+    // 🔷 url -> "2B_061" 추출
     const url = window.location.href;
     const fileNameWithQuery = url.split('/').pop();
     const fileNameWithoutKeyword = fileNameWithQuery.split('?')[0];
@@ -67,6 +68,7 @@ export function getAffInfo() {
 
 
 export function findByfileName(fileName) {
+    // 🔷 insData 중에 처음 일치하는 값
     for (let obj of insData) {
         if (obj.contentsId && obj.contentsId.includes(fileName)) {
             return obj;

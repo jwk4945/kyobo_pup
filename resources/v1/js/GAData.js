@@ -1,5 +1,58 @@
 
 const GAData = [
+    /*
+    * * 12/07 콘텐츠 추가
+21A_126
+12A_096
+14B_036
+19B_050
+2B_141
+    * */
+    {
+        contentsId: "21A_126",
+        ep_button_area: "생활건강_허리디스크",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "생활건강_허리디스크",
+        ep_click_variable2: "교보e생활습관케어보험(무배당)",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "12A_096",
+        ep_button_area: "일상생활_야외활동_캠핑족",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "일상생활_야외활동_캠핑족",
+        ep_click_variable2: "교보e감염케어보험(무배당)",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "14B_036",
+        ep_button_area: "질병_치매_초로기치매",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "질병_치매_초로기치매",
+        ep_click_variable2: "내보험바로알기 서비스",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "19B_050",
+        ep_button_area: "질병_뇌&심_심장질환(국내 사망원인 2위)",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "질병_뇌&심_심장질환(국내 사망원인 2위)",
+        ep_click_variable2: "교보e뇌·심장케어보험(무배당,서비스선택형)",
+        ep_search_internalSearchWord: ""
+    },
+    {
+        contentsId: "2B_141",
+        ep_button_area: "자산관리_재테크_전세보증보험",
+        ep_button_area2: "",
+        ep_button_name: "",
+        ep_click_variable: "자산관리_재테크_전세보증보험",
+        ep_click_variable2: "교보e1년저축보험(무배당)",
+        ep_search_internalSearchWord: ""
+    },
     {
         contentsId: "2B_061",
         ep_button_area: "자산관리_재테크_스노우볼효과",
