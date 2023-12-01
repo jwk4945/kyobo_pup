@@ -399,6 +399,8 @@ h2{font-size: 20px;}
     border-right: 5.5px solid transparent;}
 .btn_point_wrap .point_txt span b{font-size: 14px;font-weight: 700;}
 .btn_point_wrap button{width: 50px;height: 50px;background:url(../pc_img/common/point_Final.gif) 0 0 no-repeat;background-size: contain;font-size: 0;text-indent: -99999px;}
+.btn_point_wrap.no_point .point_txt span{padding-top: 20px;}
+.btn_point_wrap.no_point button{width: 50px;height: 50px;background:url(../pc_img/common/point_none_final.gif) 0 0 no-repeat;background-size: contain;font-size: 0;text-indent: -99999px;}
 
 
 
