@@ -1,8 +1,6 @@
 $(document).ready(function (){
     // 인터넷 교보문고
     $('#link_home').attr('href', 'http://www.kyobobook.co.kr/index.laf');
-    //매장안내
-    $('#link_store').attr('href', 'http://www.kyobobook.co.kr/storen/MainStore.laf?SITE=01');
     // 로그인
     $('#link_login').attr('href', 'https://mmbr.kyobobook.co.kr/login?continue=https%3A%2F%2Fwww.kyobobook.co.kr%2F');
     // 회원가입
@@ -19,6 +17,8 @@ $(document).ready(function (){
     $('#link_csCenter').attr('href', 'http://www.kyobobook.co.kr/cscenter/csCenterMain.laf?Kc=GNHHNOcscenter&amp;orderClick=rXo');
     // 매장안내
     $('#link_store').attr('href', 'https://www.kyobobook.co.kr/store/?storeCode=001');
+    // 매장안내
+    $('#link_store_f').attr('href', 'https://www.kyobobook.co.kr/store/?storeCode=001');
     // 사업자정보확인
     // $('#link_companyChk').attr('href', 'https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1028111670&apv_perm_no=');
     // 구매인전서비스
