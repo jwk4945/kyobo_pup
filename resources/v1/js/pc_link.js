@@ -8,9 +8,9 @@ $(document).ready(function (){
     // 이용약관
     $('#link_provision').attr('href', 'https://www.kyobobook.co.kr/contents/provision');
     // 개인정보처리방침
-    $('#link_privacy').attr('href', 'http://www.kyobobook.co.kr/contents/privacyPolicy.laf?orderClick=rXd');
+    $('#link_privacy').attr('href', 'https://www.kyobobook.co.kr/contents/privacy-policy');
     // 청소년보호정책
-    $('#link_youth').attr('href', 'http://www.kyobobook.co.kr/contents/youthPolicy.laf');
+    $('#link_youth').attr('href', 'https://www.kyobobook.co.kr/contents/youth-policy');
     // 제휴·제안
     $('#link_suggest').attr('href', 'https://www.kyobobook.co.kr/guidePublisher/suggest.laf?orderClick=rXi');
     // 고객센터
