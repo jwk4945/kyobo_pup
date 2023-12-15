@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../resources/v1/css/pc_import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/pc_common.js"></script>
+    <script src="../../../resources/v1/js/pc_link.js"></script>
+
+    <title>pc 공통영역</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body>
+    <!-- [S] skip-nav -->
+    <div class="skip_nav">
+        <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- [E] skip-nav -->
+
+    <div class="wrap type_b">
+        <!-- [S] header -->
+        <header id="header">
+            <div class="header_inner">
+                <div class="logo"><a href="#">KYOBO 교보문고</a></div>
+                <ul class="company_snb clear">
+                    <li class="fl"><a id="link_home" target="_blank">인터넷교보문고</a></li>
+                    <li class="fl"><a id="link_store" target="_blank">매장안내</a></li>
+                    <li class="fl"><a id="link_join" target="_blank">회원가입</a></li>
+                    <li class="fl"><a id="link_login" target="_blank">로그인</a></li>
+                    <!-- user 상태 로그인인 경우 로그아웃 버튼 노출 -->
+                    <!-- <li class="fl"><a href="javascript:void(0);">로그아웃</a></li> -->
+                </ul>
+            </div>
+        </header>
+        <!-- [E] header -->
+
+        <!-- [S] container -->
+        <div id="container">
+            <div class="top_area">
+                <div class="breadcrumb_wrap">
+                    <ol class="breadcrumb_list">
+                        <li class="breadcrumb_item">
+                            <a href="https://www.kyobobook.co.kr/" class="home_link"><span class="blind">HOME</span></a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <div class="cate">자산관리</div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="content">
+                <!-- S: con_tit_area : 콘텐츠 상단 영역(타이틀, 서브타이틀) -->
+                <div class="con_tit_area">
+                    <div class="tit">
+                        전세보증금 지키는 법, 내 돈은 내가 지킨다!
+                    </div>
+                    <div class="sub_tit">
+                        2023-01-01 ~ 2023-12-31
+                    </div>
+                    <div class="share_area">
+                        <button type="button" id="btn_share" class="btn_share">
+                            <span class="ico_share"></span>
+                            <span class="blind">공유하기</span>
+                        </button>
+                        <div class="share_box">
+                            <a href="javascript:void(0)" class="btn_sns_share kakao_talk">
+                                <span class="blind">카카오톡</span>
+                            </a>
+                            <a href="javascript:void(0)" class="btn_sns_share facebook">
+                                <span class="blind">페이스북</span>
+                            </a>
+                            <a href="javascript:void(0)" class="btn_sns_share link">
+                                <span class="blind">링크복사하기</span>
+                            </a>
+                            <button type="button" id="btn_share_close" class="btn_share_close">
+                                <span class="blind">닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- E: con_tit_area : 콘텐츠 상단 영역(타이틀, 서브타이틀) -->
+
+                <!-- S: con_area : 콘텐츠 영역 -->
+                <article class="con_area">
+                    <ul>
+                        <li class="first">
+                            <section class="section">
+                                <div class="con">
+                                    <div class="opacity-0"
+                                        data-animation-type="onload"
+                                        data-animation-infos="remove-class-nm: 'opacity-0',
+                                                            start-ms:'300',
+                                                            transition-props:'[opacity]',
+                                                            transition-duration:'0.7s'">
+                                        <div class="frag">
+                                            <span>자산관리</span>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </article>
+                <!-- E: con_area : 콘텐츠 영역 -->
+            </div>
+        </div>
+        <!-- [E] container -->
+
+        <!-- s: footer -->
+        <footer id="footer">
+            <div class="footer_inner">
+                <ul class="footer_top">
+                    <li><a id="link_provision" target="_blank">이용약관</a></li>
+                    <li><a id="link_privacy" target="_blank"><strong>개인정보처리방침</strong></a></li>
+                    <li><a id="link_youth" target="_blank" href="">청소년보호정책</a></li>
+                    <li><a id="link_suggest" target="_blank" href="">제휴·제안</a></li>
+                    <li><a id="link_csCenter" target="_blank">고객센터</a></li>
+                    <li><a id="link_store" target="_blank">매장안내</a></li>
+                </ul>
+
+                <div class="footer_btm">
+                    <div class="logo_area">
+                        <img src="../../../resources/v1/pc_img/icon/logo.png" alt="KYOBO 교보문고">
+                    </div>
+                    <div class="info_area">
+                        <address>
+                            ㈜ 교보문고 &nbsp; 서울시 종로구 종로 1 &nbsp; 대표이사 : 안병현, 김상훈 &nbsp; 사업자등록번호 : 102-81-11670<br>
+                            대표전화 : 1544-1900 (발신자 부담전화)  &nbsp;  팩스 : 0502-987-5711 (지역번호공통)<br />
+                            서울특별시 통신판매업신고번호 : 제 653호  ▶<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1028111670" target="_blank" title="새 창 열림">사업자정보확인</a><br />
+                            <div class="copy">COPYRIGHT(C) <strong>KYOBO BOOK CENTRE</strong> ALL RIGHTS RESERVED.</div>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- e: footer -->
+    </div>
+
+    <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+            integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+    <script src="../../../resources/v1/js/open_Customer-Journey.js"></script>
+    <script>
+        //애니메이션 설정 로딩
+        AnimationManager.loadElementsToAnimate();
+    </script>
+</body>
+</html>

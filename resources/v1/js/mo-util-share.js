@@ -4,14 +4,15 @@ import ua from "./ua.js";
 
 
 export function handleShareButtonClick(event, url) {
-    if (event.target.parentElement.id === 'ka-share-btn') {
+
+    if (event.target.parentElement.id === 'ka-share-btn' || event.target.id === 'ka-share-btn') {
         shareKakao(url);
-    } else if (event.target.parentElement.id === 'fb-share-btn') {
+    } else if (event.target.parentElement.id === 'fb-share-btn' || event.target.id === 'fb-share-btn') {
         shareFacebook(url);
     } else if (event.target.parentElement.id === 'msg-share-btn') {
         // event.preventDefault();
         shareSms(url);
-    } else if (event.target.innerHTML === 'URL 복사') {
+    } else if (event.target.innerHTML === 'URL 복사' || event.target.id === 'url-copy-btn') {
         navigator.clipboard.writeText(url);
     } else if (event.target.parentElement.id === 'more-share-btn') {
         if (navigator.share) {
