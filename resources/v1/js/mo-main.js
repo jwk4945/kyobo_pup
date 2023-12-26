@@ -49,6 +49,11 @@ export const main = (function () {
             ua.smsEventType = document.querySelector('#srch_kywr_name_d').value;
         }
 
+        if ((document.querySelector('#srch_kywr_name_d').value).substring(0, 7) === 'apppush') {
+            ua.isSmsEvent = 'Y';
+            ua.smsEventType = document.querySelector('#srch_kywr_name_d').value;
+        }
+
         const devices = (document.querySelector('#devices').value).replace(/[{ }]/g, '').split(',')
         devices.forEach(device => {
             const [key, value] = device.split("=");
@@ -80,7 +85,7 @@ export const main = (function () {
             const now = new Date();
 
             const yyyy = now.getFullYear();
-            const MM = String(now.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed, so add 1
+            const MM = String(now.getMonth() + 1).padStart(2, '0');
             const dd = String(now.getDate()).padStart(2, '0');
             const HH = String(now.getHours()).padStart(2, '0');
             const mm = String(now.getMinutes()).padStart(2, '0');
@@ -508,11 +513,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // 🔷 'confirm' add click event
+    let isClicked = false;
     const confirmClick = document.getElementById('confirm');
+    // [제휴]인 경우 임시 pass
     if (confirmClick) {
-        // [제휴]인 경우 임시 pass
-
         confirmClick.addEventListener('click', e => {
+
+            // 🔷 다중 클릭 방지
+            if (isClicked) {
+                e.preventDefault();
+                return;
+            }
+            isClicked = true;
 
             // ua.changeFlag('eventFlag', 'N');
             // ua.changeFlag('remainingPointsFlag', 'Y');
@@ -653,6 +665,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 //}
             });
             /* 팝업 케이스 재작성 ******************************************************************************************************* */
+
+            setTimeout(() => {
+                isClicked = false;
+            }, 2000);
         });
     }
 
@@ -747,6 +763,8 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', ui.handleAgreeButtonClick);
     });
 
+    // 🔷마케팅수신동의 popup 내 'X' 버튼 add click event
+
 
     // 🔷[제휴 배너 클릭]
     // 제휴 info setting
@@ -833,12 +851,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         // ua.changeFlag('marketingConsentAgreementFlag', 'N');
         // ua.changeFlag('marketingConsentAgreementSmsFlag', 'N');
         // ua.changeFlag('marketingConsentAgreementEmailFlag', 'N');
-
-        // 잔여포인트 N일때 기본화면 표시
-        // 동의 N 일때 확인하기버튼 -> 상품 상세페이지 (loading)
-        // 잔여포인트Api 한번 더체크하고 -> Y:로그인체크 N:로그인체크 -> 교환권 회원 발급 API 호출 -> N: 3번 팝업 Y: 상품 페이지 (포인트 즉시 지급에 대한 response는 필요X)
-
-
 
 
     } catch(err) {

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SNS 공유하기 (카카오, 페이스북, 메세지) -->
+    <meta property="og:url" content="https://kyobobook.co.kr/"/>
+    <meta property="og:title" content="전세보증보험"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://contents.kyobobook.co.kr/resources/fo/images/common/ink/img_logo_kyobo@2x.png"/>
+    <meta property="og:description" content="교보문고 사이트에서 현재 진행하고 있는 자산관리, 자녀, 질병, 건강관리, 일상생활, 자기개발의 꿀팁을 한눈에 확인해보세요."/>
+
+    <link href="../../../resources/v1/img/favicon.ico" rel="shrtcut icon">
+    <link rel="stylesheet" href="../../../resources/v1/css/pc_import.css">
+
+    <script src="../../../resources/v1/js/jquery-3.4.1.min.js"></script>
+    <script src="../../../resources/v1/js/pc_common.js"></script>
+    <script src="../../../resources/v1/js/pc_link.js"></script>
+    <script src="../../../resources/v1/js/pc-main.js" type="module"></script>
+
+    <script src="../../../resources/v1/js/ga-utils.js" defer></script>
+    <script src="../../../resources/v1/js/GA.js" type="module"></script>
+
+    <title>전세보증금 지키는 법, 내 돈은 내가 지킨다!</title>
+</head>
+<script>
+    document.documentElement.style.setProperty('--100vh-inner', `${document.documentElement.clientHeight}px`);
+</script>
+<body class="type_b">
+    <!-- [S] skip-nav -->
+    <div class="skip_nav">
+        <a href="#container">본문 바로가기</a>
+    </div>
+    <!-- [E] skip-nav -->
+
+    <div class="wrap">
+        <!-- [S] header -->
+        <header id="header">
+            <div class="header_inner">
+                <div class="logo"><a href="#">KYOBO 교보문고</a></div>
+                <ul class="company_snb clear">
+                    <li class="fl"><a id="link_home" target="_blank">인터넷교보문고</a></li>
+                    <li class="fl"><a id="link_store" target="_blank">매장안내</a></li>
+                    <li class="fl"><a id="link_join" target="_blank">회원가입</a></li>
+                    <li class="fl"><a id="link_login" target="_blank">로그인</a></li>
+                    <!-- user 상태 로그인인 경우 로그아웃 버튼 노출 -->
+                    <li class="fl"><a id="link_logout" href="javascript:void(0);">로그아웃</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- [E] header -->
+
+<!--서버로부터 전달받는 변수영역-->
+<input type="hidden" id="srch_kywr_name" class="srch_kywr_name" th:value="${srch_kywr_name}" />
+<input type="hidden" id="csjr_ctts_num" class="csjr_ctts_num" th:value="${csjr_ctts_num}" />
+<input type="hidden" id="srch_kywr_name_d" class="srch_kywr_name_d" th:value="${srch_kywr_name_d}" />
+<input type="hidden" id="devices" class="devices" th:value="${devices}" />
+
+        <!-- [S] container -->
+        <div id="container">
+            <div class="top_area">
+                <div class="breadcrumb_wrap">
+                    <ol class="breadcrumb_list">
+                        <li class="breadcrumb_item">
+                            <a href="https://www.kyobobook.co.kr/" class="home_link"><span class="blind">HOME</span></a>
+                        </li>
+                        <li class="breadcrumb_item">
+                            <div class="cate">자산관리</div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="content">
+                <!-- S: con_tit_area : 콘텐츠 상단 영역(타이틀, 서브타이틀) -->
+                <div class="con_tit_area">
+                    <h2 class="tit">
+                        전세보증금 지키는 법, 내 돈은 내가 지킨다!
+                    </h2>
+                    <h3 class="sub_tit">
+                        2023-12-01 ~ 2099-12-31
+                    </h3>
+                    <div class="share_area">
+                        <button type="button" id="btn_share" class="btn_share">
+                            <span class="ico_share"></span>
+                            <span class="blind">공유하기</span>
+                        </button>
+                        <div class="share_box">
+                            <a href="javascript:void(0)" class="btn_sns_share kakao_talk" id="ka-share-btn">
+                                <span class="blind">카카오톡</span>
+                            </a>
+                            <a href="javascript:void(0)" class="btn_sns_share facebook" id="fb-share-btn">
+                                <span class="blind">페이스북</span>
+                            </a>
+                            <a href="javascript:void(0)" class="btn_sns_share link btn_share_link" id="url-copy-btn">
+                                <span class="blind">URL 복사</span>
+                            </a>
+                            <button type="button" id="btn_share_close" class="btn_share_close">
+                                <span class="blind">닫기</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- E: con_tit_area : 콘텐츠 상단 영역(타이틀, 서브타이틀) -->
+
+                <!-- S: con_area : 콘텐츠 영역 -->
+                <article class="con_area">
+                    <ul>
+                        <li class="first" style="background-color: #d95555;">
+                            <section class="section">
+                                <div class="con">
+                                    <!-- s: main_area -->
+                                    <div class="main_area">
+                                        <div class="frag opacity-0"
+                                            data-animation-type="onload"
+                                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                start-ms:'300',
+                                                                transition-props:'[opacity]',
+                                                                transition-duration:'0.7s'">
+                                            <span>자산관리</span>
+                                        </div>
+                                        <div class="main_txt">
+                                            <div class="fw_400 fs_22 opacity-0"
+                                                data-animation-type="onload"
+                                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                    style-bf-ani: 'transform:translateY(-100%);',
+                                                                    style-af-ani: 'transform:',
+                                                                    start-ms:'500',
+                                                                    transition-props:'[opacity,transform]',
+                                                                    transition-duration:'0.8s'">전세보증금 지키는 법,</div>
+                                            <div class="fw_700 fs_22 strong-underline opacity-0"
+                                                    data-animation-type="onload"
+                                                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                                style-bf-ani: 'transform:translateY(-250%);',
+                                                                                style-af-ani: 'transform:',
+                                                                                start-ms:'700',
+                                                                                transition-props:'[opacity,transform]',
+                                                                                transition-duration:'0.8s'">내 돈은 내가 지킨다!</div>
+                                        </div>
+                                        <div class="main_sub opacity-0"
+                                            data-animation-type="onload"
+                                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                        style-bf-ani: 'transform:translateY(-250%);',
+                                                                        style-af-ani: 'transform:',
+                                                                        start-ms:'900',
+                                                                        transition-props:'[opacity,transform]',
+                                                                        transition-duration:'0.8s'">
+                                            "전세사기 무서워"<br>
+                                            전세보증보험 가입 '껑충'
+                                        </div>
+                                        <!-- main_box -->
+                                        <div class="main_box opacity-0"
+                                            data-animation-type="onload"
+                                            data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                        style-bf-ani: 'transform: scaleX(0);',
+                                                                        style-af-ani: 'transform: scaleX(1);',
+                                                                        start-ms:'900',
+                                                                        transition-props:'[opacity,transform]',
+                                                                        transition-duration:'0.8s'">
+                                            <div class="main_img_box">
+                                                <img src="../../../resources/v1/pc_img/2B_141/2B_141_01.gif" alt="전세보증보험이란? 대표 이미지"
+                                                    class="opacity-0"
+                                                    data-animation-type="onload"
+                                                    data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                        start-ms:'1200',
+                                                                        transition-props:'[opacity]',
+                                                                        transition-duration:'0.9s'">
+                                            </div>
+                                            <dl class="main_txt opacity-0"
+                                                data-animation-type="onload"
+                                                data-animation-infos="remove-class-nm: 'opacity-0',
+                                                                    start-ms:'1200',
+                                                                    transition-props:'[opacity]',
+                                                                    transition-duration:'0.9s'">
+                                                <dt>전세보증보험이란?</dt>
+                                                <dd>보증금을 제때 못 돌려받는 세입자에게<br>
+                                                    보증금에 대한 일종의 보험을 제공하는 것입니다.
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                        <!-- // main_box -->
+                                        <div class="main_txt_under">
+                                            <div data-animation-type="onload"
+                                                data-animation-infos="style-bf-ani: 'opacity:0;', 
+                                                                    style-af-ani: 'opacity:1', 
+                                                                    start-ms: '1000', 
+                                                                    transition-duration: '1s';">
+                                                                    전세보증금을 돌려받지 못해 곤란한 상황을 겪는 것,<br>
+                                                                    남의 일이 아닙니다.
+                                            </div>
+                                            <div class="animation-vertical-box"
+                                                style="height: 0"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'height: 0px',
+                                                                        style-af-ani: 'height: 100px',
+                                                                        scroll-duration: 100">
+                                                <div class="animation-vertical"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- e: main_area -->
+                                </div>
+                            </section>
+                        </li>
+                        <li style="background-color: #cd5050;">
+                            <section class="section">
+                                <div class="con text_align_center">
+                                    <div class="title_msg">
+                                        <span class="section_no"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0',
+                                                                    style-af-ani: 'opacity:0.2'">- 1 -</span>
+                                        <div class="fw_700 fs_22"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            전세보증금 돌려받을 수 있을까?
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            무자본으로 신축 빌라와 오피스텔을 사 모으던 ‘빌라왕’들이 사망하면서<br>
+                                            전세보증금을 돌려받지 못하는 세입자들이 속출하고 있습니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            2023년 1~7월 보증사고 건수는 9,994건으로<br>
+                                            2022년 1년간 발생 건수 5,443건에 약 2배를 기록했습니다.
+                                        </p>
+                                        <p class="mt5 fs_13 text_align_right"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            [출처. 주택도시보증공사(HUG)]
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            전세 사기에 대한 관심도 그만큼 높아졌습니다.
+                                        </p>
+                                        <div class="mt20">
+                                        <img src="../../../resources/v1/pc_img/2B_141/2B_141_02.gif" width="200" loading="lazy"
+                                            alt="전세보증금 돌려받을 수 있을까? 대표 이미지"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li style="background-color: #c34c4c;">
+                            <section class="section">
+                                <div class="con text_align_center">
+                                    <div class="title_msg">
+                                        <span class="section_no"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0',
+                                                                    style-af-ani: 'opacity:0.2'">- 2 -</span>
+                                        <div class="fw_700 fs_22"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            전세보증금 반환에 어려움을 겪는 세입자들 대표 사례 📋
+                                        </div>
+                                    </div>
+                                    <div class="col_2 mt20">
+                                        <div class="col_txt text_align_left">
+                                            <div class="bull_list_chk fs_20"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                                “임대차 계약이 끝났는데도 집주인이 보증금을 돌려주지 않아요.”
+                                            </div>
+                                            <div class="bull_list_chk fs_20 mt15"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                                “임대인이 사망했어요.”
+                                            </div>
+                                            <div class="bull_list_chk fs_20 mt15"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                                “임대계약 만료 이전 집주인의 경제적 상황으로 인해 집이 경매에 넘어갔어요.”
+                                            </div>
+                                            <div class="bull_list_chk fs_20 mt15"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                                “다음 임차인이 안 구해졌어요.”
+                                            </div>
+                                            <div class="bull_list_chk fs_20 mt15"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                                “금리 인상, 부동산 가격 하락으로 현금 유동성이 떨어져요.”
+                                            </div>
+                                        </div>
+                                        <div class="col_img text_align_right">
+                                            <img src="../../../resources/v1/pc_img/2B_141/2B_141_03.gif" width="200" loading="lazy"
+                                                alt="전세보증금 반환에 어려움을 겪는 세입자들 대표 사례 대표 이미지"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li style="background-color: #ad4444;">
+                            <section class="section">
+                                <div class="con text_align_center">
+                                    <div class="title_msg">
+                                        <span class="section_no"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0',
+                                                                    style-af-ani: 'opacity:0.2'">- 3 -</span>
+                                        <div class="fw_700 fs_22"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            어떤 구제 방안 있을까?
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            정부는 전세 사기 예방과 피해를 막기 위해, 악성 임대인의 명단을 공개하고<br>
+                                            임대인의 세금 체납이나 보험 가입 여부를 세입자가 계약 전에 확인할 수 있게 할 것으로 발표했습니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            또한 전세사기피해자 지원 특별법이 시행중에 있으나<br>
+                                            피해자의 범위가 정확하지 않는 등의 지적이 많아 보완이 필요할 것으로 보입니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            현실적인 방안은, 세입자가 ‘전세보증보험’을 통해 전세보증금을 보호하는 것입니다.
+                                        </p>
+                                        <div class="mt20">
+                                        <img src="../../../resources/v1/pc_img/2B_141/2B_141_04.gif" width="200" loading="lazy"
+                                            alt="어떤 구제 방안 있을까? 대표 이미지"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li style="background-color: #a23f3f;">
+                            <section class="section">
+                                <div class="con text_align_center">
+                                    <div class="title_msg">
+                                        <span class="section_no"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0',
+                                                                    style-af-ani: 'opacity:0.2'">- 4 -</span>
+                                        <div class="fw_700 fs_22"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            ‘전세보증보험’이란?
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            세입자가 보증금을 지키기 위해 가입하는 보증상품입니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            집주인이 계약 기간 만료 후 전세보증금을 돌려주지 못하면 보증기관이 대신 보증금을<br>
+                                            가입자(세입자)에게 지급(대위변제)하고, 나중에 집주인에게 구상권을 청구해 받아내는 것입니다.
+                                        </p>
+                                        <div class="mt20">
+                                            <img src="../../../resources/v1/pc_img/2B_141/2B_141_05.gif" width="200" loading="lazy"
+                                                alt="‘전세보증보험’이란? 대표 이미지"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li style="background-color: #983b3b;">
+                            <section class="section">
+                                <div class="con text_align_center">
+                                    <div class="title_msg">
+                                        <span class="section_no"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0',
+                                                                    style-af-ani: 'opacity:0.2'">- 5 -</span>
+                                        <div class="fw_700 fs_22"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            전세보증보험 종류는?
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="mt20">
+                                            <img src="../../../resources/v1/pc_img/2B_141/2B_141_06.png" width="600"
+                                                alt="전세보증금 반환 보증 (주택도시보증공사 HUG)
+                                                    - 가입 대상, - 보증료율, - 가입방법
+                                                    전세보증금 수도권 7억 원 이하, 비수도권 5억 원 이하인 주택 연 0.115~0.154% (보증 금액, 주택 유형, 부채비율 고려하여 결정됨)
+                                                    네이버부동산, 카카오페이 등
+                                                    전세 지킴 보증 (주택금융공사 HF)
+                                                    - 가입 대상, - 보증료율, - 가입방법
+                                                    전세보증금이 수도권 7억 원 이하, 비수도권 5억 원 이하인 주택 (단, 주택금융공사 보증 전세대출 차주에 한함)
+                                                    연 0.02~0.04%로 차등 적용 (우대가구 여부 등 고려)
+                                                    해당 상품을 취급하는 시중은행에서 가입 가능
+                                                    전세금 보장 신용 보험 (SG 서울보증)
+                                                    - 가입 대상, - 보증료율, - 가입방법
+                                                    아파트 (임차보증금 가입 한도가 없음), 보증금 10억 원 이하 기타 주택 (단독, 다가구, 빌라, 오피스텔 등)
+                                                    아파트 연0.192%, 기타 주택 연 0.218%
+                                                    SG서울보증 홈페이지 및 지점, 공인중개사 사무실 등"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                        </div>
+                                        <p class="mt30 fs_20 fw_700" 
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            [전세보증보험 가입 유의 사항]
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            전세보증보험은 보증 대상 주택의 전세 계약서상 임차인이면 가입할 수 있습니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            그러나 빌라 건축물대장에 ‘근린생활시설’로 분류되어 있다면 전세보증보험에 가입할 수 없습니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            오피스텔도 ‘주거용’이라고 명시되어 있어야 하며, 상업용 오피스텔은 가입이 불가합니다.
+                                        </p>
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            전세보증보험에 가입할 예정이라면, 건축물대장을 확인하여 내가 계약할 건물의 용도를 체크하세요.
+                                        </p>
+                                        <div class="mt20">
+                                            <img src="../../../resources/v1/pc_img/2B_141/2B_141_07.gif" width="200" loading="lazy"
+                                                alt="전세보증보험 가입 유의 사항 대표 이미지"
+                                                data-animation-type="onscroll"
+                                                data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                        </div>
+                                    </div>
+                                    <div class="mt30 pb30 text-align-center">
+                                        <img src="../../../resources/v1/img/check-bg-white.svg" width="50"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'transform: scale(3.3); opacity:0',
+                                                                        style-af-ani: 'transform: scale(1); opacity:1'">
+                                        <p class="mt5 fs_18"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            소중한 전세보증금을 지키고, 꾸준한 저축으로 목돈도 마련하여
+                                        </p>
+                                        <div class="fs_22 fw_700 mt5"
+                                            data-animation-type="onscroll"
+                                            data-animation-infos="style-bf-ani: 'opacity:0', style-af-ani: 'opacity:1'">
+                                            원하는 내 집 마련에 한 걸음 다가가세요.
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                        <li class="feedback_wrap" style="background-color: #8d3737;">
+                            <section class="section">
+                                <div class="feedback">
+                                    <div id="feedback_area">
+                                        <div class="feedback_inner">
+                                            <div class="feedback_txt">콘텐츠가 유익했어요!</div>
+                                            <div class="feedback_btn_box">
+                                                <div class="feedback_btn_box_inner">
+                                                    <input type="radio" name="feedback-radio" id="feedback-radio-01" value="001">
+                                                    <label class="feedback_btn" for="feedback-radio-01">
+                                                        <img src="../../../resources/v1/img/icon/ico-feedback-good.png" width="50">
+                                                    </label>
+                                                </div>
+                                                <div class="feedback_btn_box_inner">
+                                                    <input type="radio" name="feedback-radio" id="feedback-radio-02" value="002">
+                                                    <label class="feedback_btn" for="feedback-radio-02">
+                                                        <img src="../../../resources/v1/img/icon/ico-feedback-bad.png" width="50">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>
+                    </ul>
+                </article>
+                <!-- E: con_area : 콘텐츠 영역 -->
+
+                <!-- S: con_btm_area : 콘텐츠 하단영역 -->
+                <div id="conBtm" class="con_btm_area">
+                    <div class="con_btm_inner">
+                        <div class="btm_tit">
+                            소액으로 차근차근 오늘부터 시작해요!
+                        </div>
+                        <div class="pd_area">
+                            <a id="linkForInsurance">
+                                <div class="pd_inner">
+                                    <div class="clear">
+                                        <div class="ci fl">
+                                            <img src="../../../resources/v1/img/img-ci-pd.png" alt="KYOBO 교보생명">
+                                        </div>
+                                        <dl class="txt fl">
+                                            <dt class="name">교보1년저축보험(무배당)[D]</dt>
+                                            <dd class="certificationMsg">
+                                                <div class="certificationMsg_txt">생명보험협회 심의필 제 2023-02901호 (2023-07-04 ~ 2024-07-03)</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="ico_arw"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- E: con_btm_area : 콘텐츠 하단영역 -->
+
+                <!-- S: 플로팅 UI -->
+                <div id="btnPointWrap" class="btn_point_wrap no_point scrollToEv">
+                    <div class="point_txt scrollToEv">
+                        <span>나를 위한,<br>우리를 위한<br>안전한 선택</span>
+                    </div>
+                    <button type="button" class="btn_fixed_point scrollToEv">POINT</button>
+                </div>
+                <!-- E: 플로팅 UI -->
+            </div>
+        </div>
+        <!-- [E] container -->
+
+        <!-- s: footer -->
+        <footer id="footer">
+            <div class="footer_inner">
+                <ul class="footer_top">
+                    <li><a id="link_provision" target="_blank">이용약관</a></li>
+                    <li><a id="link_privacy" target="_blank"><strong>개인정보처리방침</strong></a></li>
+                    <li><a id="link_youth" target="_blank" href="">청소년보호정책</a></li>
+                    <li><a id="link_suggest" target="_blank" href="">제휴·제안</a></li>
+                    <li><a id="link_csCenter" target="_blank">고객센터</a></li>
+                    <li><a id="link_store_f" target="_blank">매장안내</a></li>
+                </ul>
+
+                <div class="footer_btm">
+                    <div class="logo_area">
+                        <img src="../../../resources/v1/pc_img/icon/logo.png" alt="KYOBO 교보문고">
+                    </div>
+                    <div class="info_area">
+                        <address>
+                            ㈜ 교보문고 &nbsp; 서울시 종로구 종로 1 &nbsp; 대표이사 : 안병현, 김상훈 &nbsp; 사업자등록번호 : 102-81-11670<br>
+                            대표전화 : 1544-1900 (발신자 부담전화)  &nbsp;  팩스 : 0502-987-5711 (지역번호공통)<br />
+                            서울특별시 통신판매업신고번호 : 제 653호  ▶<a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=1028111670" target="_blank" title="새 창 열림">사업자정보확인</a><br />
+                            <div class="copy">COPYRIGHT(C) <strong>KYOBO BOOK CENTRE</strong> ALL RIGHTS RESERVED.</div>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- e: footer -->
+    </div>
+
+    <!-- [S] pop -->
+
+    <!-- dim -->
+    <div class="dim"></div>
+
+    <!-- s: 개인정보 제3자 제공동의 팝업 -->
+    <div id="personalPop" class="pop_area" style="display: none;">
+        <div class="pop_inner">
+            <div class="pop_header">
+                <div class="pop_header_inner">
+                    개인정보 제3자 제공 동의 (선택)
+                    <a href="javascript:void(0);" class="btn-close" onclick="popClose('personalPop');">
+                        <img src="../../../resources/v1/img/icon/ico-close-pop.png" alt="닫기">
+                    </a>
+                </div>
+            </div>
+            <div class="pop_cont">
+                <div class="fc_000">
+                    <p class="fs_16">교보생명 보험 상품 서비스 이용을 위한</p>
+                    <p class="fs_22 fw_700">제3자 정보제공 동의 안내</p>
+                </div>
+                <div class="dl_box mt20">
+                    <dl>
+                        <dt>제공 받는 자</dt>
+                        <dd>교보생명보험(주)</dd>
+                    </dl>
+                </div>
+                <div class="dl_box mt10">
+                    <dl>
+                        <dt>제공 목적</dt>
+                        <dd>교보문고 이용 고객 행태 자료 분석 및 보험 상품·서비스 소개</dd>
+                    </dl>
+                </div>
+                <div class="dl_box mt10">
+                    <dl>
+                        <dt>제공 항목</dt>
+                        <dd>교보문고ID, 이름, 휴대전화번호, 성별, 생년월일, 본인확인(CI), 이메일, 교보문고 회원번호, 최근 2년 월별 통합포인트(적립, 차감, 잔여), 최근 2년 월별 구매도서 데이터(인터넷 중분류, 도서명, 구입권수, 구입액) , 교보문고 이용행동(입력 검색어, 교보생명 클릭 배너 정보, 노출 콘텐츠 ID, 콘텐츠 평가)</dd>
+                    </dl>
+                </div>
+                <div class="dl_box mt10">
+                    <dl>
+                        <dt>보유 및 이용 기간</dt>
+                        <dd>2026.12.31기간까지 (단, 철회 요청 시 즉시 파기)</dd>
+                    </dl>
+                </div>
+                <div class="gray_box mt40">
+                    <dl>
+                        <dt>동의를 거부하는 경우에 대한 안내</dt>
+                        <dd>본 동의를 거부하실 수 있으나, 거부하는 경우에는 교보생명보험(주) 보험·서비스 소개 제공이 제한될 수 있습니다.</dd>
+                    </dl>
+                </div>
+                <div class="gray_box mt5">
+                    <dl>
+                        <dt>동의 철회를 위한 안내</dt>
+                        <dd>본 동의를 하시더라도 당사 고객센터(1544-1900)를 통해 동의를 철회하실 수 있습니다.</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="pop_footer shadow">
+                <div class="btn-box">      
+                    <a href="javascript:void(0);" class="btn btnConsent" onclick="popClose('personalPop');" id="personalDisAgrBtn">동의안함</a>
+                    <a href="javascript:void(0);" class="btn btnConsent agree" onclick="popClose('personalPop');" id="personalAgrBtn">동의</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- e: 개인정보 제3자 제공동의 팝업 -->
+
+    <!-- s: 마케팅 수신 동의 팝업 -->
+    <div id="marketPop" class="pop_area" style="display: none;">
+        <div class="pop_inner">
+            <div class="pop_header">
+                <div class="pop_header_inner">
+                    마케팅 수신 동의 (선택)
+                    <a href="javascript:void(0);" class="btn-close" onclick="popClose('marketPop');">
+                        <img src="../../../resources/v1/img/icon/ico-close-pop.png" alt="닫기">
+                    </a>
+                </div>
+            </div>
+            <div class="pop_cont pb0">
+                <div>
+                    <p class="fs_16 fc_000 fw_500">교보생명보험(주) 보험 상품·서비스 소개 등 다양한 정보를 제공합니다.</p>
+                    <p class="fs_16 fc_000 fw_500 mt5">고객은 수신 동의 철회를 통하여 언제든지 수신을 거부할 수 있습니다.</p>
+                </div>
+                <div class="fs_16 fc_000 fw_700 mt25">
+                    이에 동의하시겠습니까?
+                </div>
+                <div class="chk_area mt15">
+                    <div class="agree_box">
+                        <label for="chkSms">
+                            <input type="checkbox" name="" id="chkSms"><i></i><span>SMS(메신저 등)</span>
+                        </label>
+                    </div>
+                    <div class="agree_box">
+                        <label for="chkMail">
+                            <input type="checkbox" name="" id="chkMail"><i></i><span>이메일</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="gray_box" style="margin-top: 187px;">
+                    <dl>
+                        <dt>동의 철회를 위한 안내</dt>
+                        <dd>본 동의를 하시더라도 당사 고객센터(1544-1900)를 통해 동의를 철회하실 수 있습니다.</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="pop_footer">
+                <div class="btn-box">
+                    <a href="javascript:void(0);" class="btn btnConsent" onclick="popClose('marketPop');" id="marketDisAgrBtn">동의안함</a>
+                    <a href="javascript:void(0);" class="btn btnConsent agree btn_agree" id="marketAgrBtn">동의</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="toast_wrap_agree">
+            <span class="toast_message">마케팅 수신 방법을 선택해주세요.</span>
+        </div>
+    </div>
+    <!-- e: 마케팅 수신 동의 팝업 -->
+
+    <!-- [S] 로그인/포인트 팝업 -->
+    <div id="poplogin">
+        <div class="poplogin-inner">
+            <div class="dialog-contents">
+                로그인하고<br>맞춤 상품 확인해보세요!
+            </div>
+            <div class="dialog-btn">
+                <button class="btn-next" id="btnNext">다음에 하기</button>
+                <button class="btn-login" id="btnLogin">로그인 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popPoint" class="com-pop01">
+        <div class="com-pop01-inner">
+            <div class="dialog-contents">
+                로그인하고<br>
+                교보문고 통합포인트 받아보세요!
+            </div>
+            <div class="dialog-btn">
+                <button class="btn-next" id="btnNextPonint">다음에 하기</button>
+                <button class="btn-login" id="btnLoginPoint">로그인 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popPointEnd01" class="com-pop01">
+        <div class="com-pop01-inner">
+            <div class="dialog-contents">
+                아쉽게도 통합포인트가 소진되었습니다.<br>
+                포인트 없이 맞춤 상품을 확인해보세요.
+            </div>
+            <div class="dialog-btn">
+                <button class="btn-login" id="btnLoginPointEnd01">확인하기</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popPointEnd02" class="com-pop01">
+        <div class="com-pop01-inner">
+            <div class="dialog-contents">
+                아쉽게도 통합포인트가 소진되었습니다.<br>
+                포인트 없이 맞춤 상품을 확인해보세요.
+            </div>
+            <div class="dialog-btn">
+                <button class="btn-next" id="btnNextPointEnd02">다음에 하기</button>
+                <button class="btn-login" id="btnLoginPointEnd02">로그인 하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- [E] 로그인/포인트 팝업 -->
+
+    <!-- 제3자 제공 동의 유도 토스트 메세지 -->
+    <div class="toast_wrap_re">
+        <span class="toast_message">제3자 제공 동의 시에만 상품 안내를 받아 볼 수 있습니다.</span>
+    </div>
+
+    <!-- URL공유 토스트 팝업 -->
+    <div class="toast_wrap_share">
+        <span class="toast_message">URL이 복사되었습니다.</span>
+    </div>
+    <!-- [E] pop -->
+
+    <script src="../../../resources/v1/js/swiper-bundle.min.js"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+            integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+
+    <script type="module">
+        import { AnimationManager } from "../../../resources/v1/js/open_AnimationManager.js";
+        // import { main } from "../../../resources/v1/js/pc-main.js";
+        
+        try {
+            // animation setting
+            AnimationManager.loadElementsToAnimate();
+        }
+        catch(error){
+            alert(error);
+            alert(error.stack);
+        }
+    </script>
+</body>
+</html>

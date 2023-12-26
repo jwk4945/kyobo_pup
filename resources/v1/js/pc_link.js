@@ -2,7 +2,7 @@ $(document).ready(function (){
     // 인터넷 교보문고
     $('#link_home').attr('href', 'http://www.kyobobook.co.kr/index.laf');
     // 로그인
-    $('#link_login').attr('href', 'https://mmbr.kyobobook.co.kr/login?continue=https%3A%2F%2Fwww.kyobobook.co.kr%2F');
+    // $('#link_login').attr('href', 'https://mmbr.kyobobook.co.kr/login?continue=https%3A%2F%2Fwww.kyobobook.co.kr%2F');
     // 회원가입
     $('#link_join').attr('href', 'https://mmbr.kyobobook.co.kr/join');
     // 이용약관

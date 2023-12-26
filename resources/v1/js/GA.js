@@ -18,9 +18,8 @@ export function setGAClickHandler(e) {
     const searchKeywordD = ua.searchKeywordD;
 
     // version prefix
-    // const v = 'DBS_' + (exPilot.includes(contentsId) ? 'p1' : 'o2') + '_';
     const v = 'DBS_' + fullContentsId.substring(0, 2) + '_';
-    console.log(v);
+    // console.log(v);
 
     // [제휴] 인지 아닌지
     let tempGAData = isAff ? affGAData : GAData;
@@ -42,8 +41,9 @@ export function setGAClickHandler(e) {
 
 
     // [제휴]인 경우 임시 pass
+    let tempFlags = '';
     if (!isAff) {
-        const tempFlags = ui.getFlags();
+        tempFlags = ui.getFlags();
     }
 
     // 1. 뒤로가기
@@ -146,6 +146,56 @@ export function setGAClickHandler(e) {
     // 11. 플로팅 UI
     if (e.currentTarget.id === 'btnPointWrap') {
         ga360.GA_Event(eventName, epButtonArea + '_상세_' + searchKeywordD, '플로팅UI클릭', '플로팅UI클릭', v + epClickVariable, epSearchInternalSearchWord);
+    }
+
+}
+
+export function setGAClickHandler_PC(e) {
+
+    // get fileName
+    const contentsId = '2B_141'; // getFileName();
+    const fullContentsId = 'o3_2B_141'; //getFullFileName();
+
+    // get searchKeyword
+    const searchKeywordD = ua.searchKeywordD;
+
+    // version prefix
+    const v = 'DBS_' + fullContentsId.substring(0, 2) + '_';
+    // console.log(v);
+
+
+    // 매개변수 셋팅
+    const eventName = 'DBS_캠페인_PC';
+
+    // yy yn ny nn (동의유무 값) epSearchInternalSearchWord에 임시로 저장
+    // [제휴]인 경우 임시 pass
+    let epSearchInternalSearchWord = '';
+    if (document.getElementById('chkAgr1') && document.getElementById('chkAgr2')) {
+        epSearchInternalSearchWord = (document.getElementById('chkAgr1').checked ? 'Y' : 'N') + (document.getElementById('chkAgr2').checked ? 'Y' : 'N');
+    }
+
+
+
+
+    // 공유하기
+    if (e.currentTarget.id === 'btn_share') {
+        ga360.GA_Event(eventName, '자산관리_재테크_전세보증보험_상세_' + searchKeywordD, '공유하기', '공유하기', 'DBS_o3_PC_자산관리_재테크_전세보증보험');
+    }
+
+    // 콘텐츠 평가
+    if (e.currentTarget.name === 'feedback-radio') {
+        if (e.currentTarget.id === 'feedback-radio-01') {
+            ga360.GA_Event(eventName, '자산관리_재테크_전세보증보험_상세_' + searchKeywordD, '콘텐츠평가', '버튼명_좋아요', 'DBS_o3_PC_자산관리_재테크_전세보증보험');
+        } else if (e.currentTarget.id === 'feedback-radio-02') {
+            ga360.GA_Event(eventName, '자산관리_재테크_전세보증보험_상세_' + searchKeywordD, '콘텐츠평가', '버튼명_싫어요', 'DBS_o3_PC_자산관리_재테크_전세보증보험');
+        }
+    }
+
+    // 상품페이지 이동
+    if (e.currentTarget.id === 'linkForInsurance') {
+        e.preventDefault();
+        // 상품페이지 이동의 경우 ep_click_variable2 사용
+        ga360.GA_Event(eventName, '자산관리_재테크_전세보증보험_상세_' + searchKeywordD, '상품페이지이동', '배너선택', 'DBS_o3_PC_교보1년저축보험(무배당)[D]');
     }
 
 }

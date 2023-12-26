@@ -262,6 +262,7 @@ export function handlePointNextButtonClick(e, popup) {
 }
 
 export function handleAgreeButtonClick(e) {
+
     // 체크 버튼
     const chkAgr1 = document.getElementById('chkAgr1');
     const chkAgr2 = document.getElementById('chkAgr2');
@@ -308,5 +309,11 @@ export function handleAgreeButtonClick(e) {
         popClose(marketPop);
 
         unchkAll(chkAgr1.checked, chkAgr2.checked);
+    } else if (e.target.id === 'btnClose') {
+        // pupup 내 'X' 클릭
+        chkSms.checked = chkAgr2.checked ? true : false;
+        chkMail.checked = chkAgr2.checked ? true : false;
+
+        popClose(marketPop);
     }
 }

@@ -72,14 +72,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // // 🔷 add GA event
-    // document.getElementById('link_home').addEventListener('click', e => ga.setGAClickHandler(e));
-    //
-    // if (document.getElementById('feedback-radio-01')) {
-    //     document.getElementById('feedback-radio-01').addEventListener('click', e => ga.setGAClickHandler(e));
-    // }
-    // if (document.getElementById('feedback-radio-02')) {
-    //     document.getElementById('feedback-radio-02').addEventListener('click', e => ga.setGAClickHandler(e));
-    // }
+    if (document.getElementById('btn_share')) {
+        document.getElementById('btn_share').addEventListener('click', e => ga.setGAClickHandler_PC(e));
+    }
+
+    if (document.getElementById('feedback-radio-01')) {
+        document.getElementById('feedback-radio-01').addEventListener('click', e => ga.setGAClickHandler_PC(e));
+    }
+    if (document.getElementById('feedback-radio-02')) {
+        document.getElementById('feedback-radio-02').addEventListener('click', e => ga.setGAClickHandler_PC(e));
+    }
+
+    if (document.getElementById('linkForInsurance')) {
+        document.getElementById('linkForInsurance').addEventListener('click', e => ga.setGAClickHandler_PC(e));
+    }
+
     //
     // // [제휴]인 경우 임시 pass
     // if (document.getElementById('confirm')) {
@@ -126,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 🔷 isLogin?
     const linkLogin = document.getElementById("link_login");
     const linkLogout = document.getElementById("link_logout");
+    const linkJoin = document.getElementById("link_join");
 
     getIsLogin(accessToken).then( res => {
         ua.changeLoginStatus(res);
@@ -133,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (res) { // true
             linkLogin.style.display = 'none';
             linkLogout.style.display = 'block';
+            linkJoin.style.display = 'none';
 
             linkLogout.addEventListener("click", function() {
                 storage.deleteCookie("accessToken");
@@ -143,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else { // false
             linkLogin.style.display = 'block';
             linkLogout.style.display = 'none';
+            linkJoin.style.display = 'block';
 
             document.getElementById("link_login").addEventListener("click", function() {
                 self.location.href = "https://mmbr.kyobobook.co.kr/login?continue=" + window.location.href + "&loginChannel=134";
@@ -211,7 +221,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (copyUrl) {
         copyUrl.innerText = currentUrl;
     }
-
 
 
 });
