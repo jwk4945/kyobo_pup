@@ -1,18 +1,18 @@
 /* ==========================================================================
-    웹폰트
+        웹폰트
 ========================================================================== */
 /* noto-sans-kr-100 - korean */
 @font-face {
-    font-family:'Noto Sans KR';
-    font-style:normal;
-    font-weight:100;
-    src:url('../font/noto-sans-kr-v12-korean-100.eot'); /* IE9 Compat Modes */
-    src:local('Noto Sans KR Thin'), local('NotoSansKR-Thin'),
-         url('../font/noto-sans-kr-v12-korean-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../font/noto-sans-kr-v12-korean-100.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../font/noto-sans-kr-v12-korean-100.woff') format('woff'), /* Modern Browsers */
-         url('../font/noto-sans-kr-v12-korean-100.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../font/noto-sans-kr-v12-korean-100.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+font-family:'Noto Sans KR';
+font-style:normal;
+font-weight:100;
+src:url('../font/noto-sans-kr-v12-korean-100.eot'); /* IE9 Compat Modes */
+src:local('Noto Sans KR Thin'), local('NotoSansKR-Thin'),
+        url('../font/noto-sans-kr-v12-korean-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../font/noto-sans-kr-v12-korean-100.woff2') format('woff2'), /* Super Modern Browsers */
+        url('../font/noto-sans-kr-v12-korean-100.woff') format('woff'), /* Modern Browsers */
+        url('../font/noto-sans-kr-v12-korean-100.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../font/noto-sans-kr-v12-korean-100.svg#NotoSansKR') format('svg'); /* Legacy iOS */
 }
 /* noto-sans-kr-300 - korean */
 @font-face {
@@ -81,7 +81,7 @@ src:local('Noto Sans KR Black'), local('NotoSansKR-Black'),
 }
 
 /* ==========================================================================
-    기본설정
+        기본설정
 ========================================================================== */
 /* reset */
 *           {margin:0; padding:0; box-sizing:border-box;}
