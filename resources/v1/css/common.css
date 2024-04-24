@@ -554,14 +554,15 @@ section.p1-area + .btm-wrap .agree-area .agree-box label input:checked + i{backg
     100%{transform:translate(0,-6px);}
 }
 
-.type-a .agree-area .flag-point-box{background: url(../img/common/info-point-a.png) 0 0 no-repeat;background-size: contain;}
-.type-b .agree-area .flag-point-box{background: url(../img/common/info-point-b.png) 0 0 no-repeat;background-size: contain;}
-.type-c .agree-area .flag-point-box{background: url(../img/common/info-point-c.png) 0 0 no-repeat;background-size: contain;}
-.type-d .agree-area .flag-point-box{background: url(../img/common/info-point-d.png) 0 0 no-repeat;background-size: contain;}
-.type-e .agree-area .flag-point-box{background: url(../img/common/info-point-eg.png) 0 0 no-repeat;background-size: contain;}
-.type-f .agree-area .flag-point-box{background: url(../img/common/info-point-f.png) 0 0 no-repeat;background-size: contain;}
-.type-g .agree-area .flag-point-box{background: url(../img/common/info-point-eg.png) 0 0 no-repeat;background-size: contain;}
-.type-2 .agree-area .flag-point-box{background: url(../img/common/info-point-2.png) 0 0 no-repeat;background-size: contain;}
+.type-a .agree-area .flag-point-box{background: url(../img/common/info-point-dark.png) 0 0 no-repeat;background-size: contain;}
+.type-b .agree-area .flag-point-box{background: url(../img/common/info-point-dark.png) 0 0 no-repeat;background-size: contain;}
+.type-c .agree-area .flag-point-box{background: url(../img/common/info-point-dark.png) 0 0 no-repeat;background-size: contain;}
+
+.type-d .agree-area .flag-point-box{background: url(../img/common/info-point-light.png) 0 0 no-repeat;background-size: contain;}
+.type-e .agree-area .flag-point-box{background: url(../img/common/info-point-light.png) 0 0 no-repeat;background-size: contain;}
+.type-f .agree-area .flag-point-box{background: url(../img/common/info-point-light.png) 0 0 no-repeat;background-size: contain;}
+.type-g .agree-area .flag-point-box{background: url(../img/common/info-point-light.png) 0 0 no-repeat;background-size: contain;}
+.type-2 .agree-area .flag-point-box{background: url(../img/common/info-point-light.png) 0 0 no-repeat;background-size: contain;}
 
 .info-point-area{padding: 20px 20px 0;max-width: 540px;margin: 0 auto;}
 .info-point-area > div{font-size: 13px;font-weight: 700;}
