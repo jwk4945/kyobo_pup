@@ -61,7 +61,7 @@ input[type='radio']:checked+* .radio-btn.bdc-5{border: 7px solid #2f65b3;}
 .survey-type .survey-form li .li-item-result>*:last-child{flex: 0 1 90px;font-style: italic;color: #2f65b3;}
 .survey-type .survey-form li .li-item-result.active>*:last-child{color: white;}
 .survey-type .survey-form li .li-item-result .progress-bar{height: 4px;background-color: #eee;border-radius: 4px;}
-.survey-type .survey-form li .li-item-result .progress-bar .painted-bar{background-color: #2f65b3;height: 100%;border-radius: 4px;}
+.survey-type .survey-form li .li-item-result .progress-bar .painted-bar{background-color: #99a8c0;height: 100%;border-radius: 4px;}
 .survey-type .survey-form li .li-item-result.active .progress-bar{background-color: rgba(255,255,255,0.2);}
 .survey-type .survey-form li .li-item-result.active .progress-bar .painted-bar{background-color: rgba(255,255,255,1);}
 .survey-type .survey-form li .li-item-result .result-ratio{font-size: 30px;font-weight: 500;color: #5c759d;}
@@ -492,9 +492,9 @@ section .title-msg .section-no.center-style{font-size: 50px;font-style: italic;t
 .horizontal-box ul li .inner label .box .img-box img{width: 80px;justify-content: center;}
 .horizontal-box ul li .inner label .box .radio-btn{margin: 20px auto 0;}
 
-.horizontal-box ul li .inner input:checked+label .box{border: 2px solid #cc3e70;padding: 18px 0;}
+.horizontal-box ul li .inner input:checked+label .box{border: 2px solid #1f265f;padding: 18px 0;}
 .horizontal-box ul li .inner input:checked+label .box::after{width: 20px;height: 12px;bottom: -12px;background: url(../img/ico_bg_q_on.png) 0 0 no-repeat;background-size: contain;}
-.horizontal-box ul li .inner input:checked+label .box .radio-btn{border: 7px solid #d95584;}
+.horizontal-box ul li .inner input:checked+label .box .radio-btn{border: 7px solid #303982;}
 
 
 /* 해상도 대응 */
