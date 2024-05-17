@@ -73,7 +73,7 @@ export function renderInsuaranceView(renderInfo, fileName) {
     `;
     }
 
-    document.querySelector('#ins_view').innerHTML = template;
+    document.querySelector('#').innerHTML = template;
     document.getElementById('linkForInsurance').addEventListener('click', ga.setGAClickHandler);
 }
 
