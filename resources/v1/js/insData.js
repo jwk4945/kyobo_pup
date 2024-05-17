@@ -29,6 +29,83 @@ export default
         }
     },
     {
+        contentsId: "4G_097",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
+            name: "교보e생활습관케어보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '언제든 발생할 수 있는 생활습관 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03965호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        }
+    },
+    {
+        contentsId: "12B_074",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
+            name: "교보e감염케어보험 23.11 (무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '여가생활 도중 걸리 수 있는 감염질환 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2024-00799호',
+            period: "(2024-02-21 ~ 2025-02-20)"
+        }
+    },
+    {
+        contentsId: "19B_060",
+        linkInfoForInsurance: {
+            url: "http://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1001033?evcode=KB_CJ_EI",
+            name: "교보e암·뇌·심장보험 BASIC (무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '꼭 필요한 주요 3대 질병을 콕 집어서 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2024-02913호',
+            period: "(2024-05-14 ~ 2025-05-13)"
+        }
+    },
+    {
+        contentsId: "18A_058",
+        linkInfoForInsurance: {
+            url: "http://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1001033?evcode=KB_CJ_EI",
+            name: "교보e암·뇌·심장보험 BASIC (무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '꼭 필요한 주요 3대 질병을 콕 집어서 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2024-02913호',
+            period: "(2024-05-14 ~ 2025-05-13)"
+        }
+    },
+    {
+        contentsId: "5D_120",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000971?evcode=KB_CJ_EI",
+            name: "교보e상해케어보험 23.11 (무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '부담없는 보험료로 생활 안전 필수 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2024-00798호',
+            period: "(2024-02-21 ~ 2025-02-20)"
+        }
+    },
+    {
+        contentsId: "9B_072",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000969?evcode=KB_CJ_EI",
+            name: "교보e감염케어보험 23.11 (무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '여가생활 도중 걸리 수 있는 감염질환 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2024-00799호',
+            period: "(2024-02-21 ~ 2025-02-20)"
+        }
+    },
+    {
+        contentsId: "2B_061",
+        linkInfoForInsurance: {
+            url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
+            name: "교보e생활습관케어보험(무배당)",
+            imgUrl: '/resources/v1/img/img-ci-pd.png',
+            explain: '언제든 발생할 수 있는 생활습관 보장!',
+            certificationMsg: '생명보험협회 심의필 제 2023-03965호',
+            period: "(2023-08-29 ~ 2024-08-28)"
+        }
+    },
+    {
         contentsId: "21A_126",
         linkInfoForInsurance: {
             url: "https://www.kyobo.com/dgt/web/dtp/ei/insurance-detail/1000967?evcode=KB_CJ_EI",
